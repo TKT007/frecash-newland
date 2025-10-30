@@ -1,0 +1,2114 @@
+<!DOCTYPE html><html lang="fr"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="    Comment l'apnée du sommeil a failli causer une tragédie... Un signal d'alarme pour les personnes souffrant de troubles du sommeil
+">
+        <link rel="canonical" href="https://get-derila-ergo.com/article/derila-ergo-sleep-apnea-2">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" media="print" onload="this.media='all'" fetchpriority="high">
+        <noscript>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"/>
+        </noscript>
+        <title>    Comment l'apnée du sommeil a failli causer une tragédie... Un signal d'alarme pour les personnes souffrant de troubles du sommeil
+</title>
+                        <meta name="robots" content="noindex, nofollow">
+        
+    <script>
+        var sentryErrors = [];
+        window.sentryOnLoad = function () {
+            Sentry.init({
+                release: null,
+                environment: 'production',
+                ignoreErrors: [
+                    // Random plugins/extensions
+                    "top.GLOBALS",
+                    // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error.html
+                    "originalCreateNotification",
+                    "canvas.contentDocument",
+                    "MyApp_RemoveAllHighlights",
+                    "http://tt.epicplay.com",
+                    "Can't find variable: ZiteReader",
+                    "jigsaw is not defined",
+                    "ComboSearch is not defined",
+                    "http://loading.retry.widdit.com/",
+                    "atomicFindClose",
+                    // Facebook borked
+                    "fb_xd_fragment",
+                    // ISP "optimizing" proxy - `Cache-Control: no-transform` seems to
+                    // reduce this. (thanks @acdha)
+                    // See http://stackoverflow.com/questions/4113268
+                    "bmi_SafeAddOnload",
+                    "EBCallBackMessageReceived",
+                    // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
+                    "conduitPage",
+                    // 3rd party trackers
+                    // Tabola
+                    "_tfa is not defined",
+                    "Can't find variable: _tfa",
+                    "Can't find variable: iom",
+                    "iom is not defined",
+                    "Can't find variable: _vwo_code",
+                    "_vwo_code is not defined",
+                    "Can't find variable: msDiscoverChatAvailable",
+
+                    // Useful errors, but they flood sentry
+                    'Non-Error promise rejection captured with value:',
+                    "undefined is not an object (evaluating",
+                    "missing ) after argument list",
+                    "null is not an object (evaluating",
+                    "SecurityError",
+                    "Failed to load",
+                    "Failed to fetch",
+                    "Unable to preload CSS",
+                    "Load failed",
+
+                    // Couldn't find any info.
+                    "vcmidOfContent is not defined",
+                    "onGoogleTranslateError",
+                    "Can't find variable: _AutofillCallbackHandler",
+                    "Can't find variable: zaloJSV2",
+                    "Can't find variable: appControl",
+                    "appControl is not defined",
+
+                    // Not that important
+                    "ResizeObserver loop limit exceeded",
+                    "out of memory",
+
+                    // "URLSearchParams", // Polyfill is missing. We do not use this object in our project anyways.
+                    "Can't find variable: __firefox__", // https://stackoverflow.com/questions/26483541/referenceerror-cant-find-variable-gcrweb
+                    "UET is not defined", // https://stackoverflow.com/questions/60174224/refenceerror-uet-is-not-defined
+                    "pushNotification", // OneSignal safari permissions issue
+                    "Identifier 'VIDEO_PLAYING' has already been declared", // Amazon's tablet problem. Can't find any solutions.
+                    "NetworkError when attempting to fetch resource.", // Useful error, but nothing we can do about, good for monitoring maybe.
+                    "Firebase SDK",
+                    "zoid destroyed all components",
+                    "transaction_id",
+                    "Notification.requestPermission",
+                ],
+                beforeSend(event, hint) {
+                    let ignore = false;
+                    const patternsToIgnore = joinRegExp([
+                        /\/OneSignal\/OneSignal-Website-SDK/i,
+                        /C:\//i,
+                        /https:\/\/omnisnippet1\.com/i,
+                        /https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=GTM-WWQRLLH&l=gtmLayer/i,
+                        /uploads\/2319\/websites/i,
+                        /i18n\/pixel\/static\/main/i,
+                        /assets\/firebase/i,
+                    ]);
+                    const fileNamesToIgnore = ['/inshop/launcher-v2.js',
+                        '/sdks/OneSignalSDK.js',
+                        '/sdks/OneSignalPageSDKES6.js',
+                        '',
+                        '/gtm.js',
+                        '/gtag/js',
+                        '/uwt.js',
+                        '/scripts/sdk/everflow.js',
+                        '/js/widget.js'
+                    ];
+
+                    function isString(what) {
+                        return Object.prototype.toString.call(what) === '[object String]';
+                    }
+
+                    function joinRegExp(patterns) {
+                        var sources = [];
+
+                        for (let i = 0; i < patterns.length; i++) {
+                            let pattern = patterns[i];
+                            if (isString(pattern)) {
+                                sources.push(pattern.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1'));
+                            } else if (pattern && pattern.source) {
+                                sources.push(pattern.source);
+                            }
+                        }
+                        return new RegExp(sources.join('|'), 'i');
+                    }
+
+                    if (event && event.request && event.request.url) {
+                        if (joinRegExp([
+                            /graph\.facebook\.com/i,
+                            /connect\.facebook\.net\/en_US\/all\.js/i,
+                            /eatdifferent\.com\.woopra-ns\.com/i,
+                            /static\.woopra\.com\/js\/woopra\.js/i,
+                            /extensions\//i,
+                            /^chrome:\/\//i,
+                            /127\.0\.0\.1:4001\/isrunning/i, // Cacaoweb
+                            /webappstoolbarba\.texthelp\.com\//i,
+                            /metrics\.itunes\.apple\.com\.edgesuite\.net\//i,
+                            /dsw0trk\.com\/scripts\/sdk\/everflow\.js/i,
+                            /theme\.js\.download/i,
+                            /file:/i,
+                            /C:\//i,
+                            /sc\-static\.net\/scevent\.min\.js/i,
+                            /checkout\.bootstrap\.js/i
+                        ]).test(event.request.url)) {
+                            return null;
+                        }
+                    }
+                    if (hint && hint.originalException && hint.originalException.stack) {
+                        if (joinRegExp([
+                            /\/\/js\.klarna\.com/i,
+                            /\<\!DOCTYPE html\>/i
+                        ]).test(hint.originalException.stack)) {
+                            return null;
+                        }
+                    }
+                    if (hint && hint.originalException && hint.originalException.message) {
+                        if (hint.originalException.message in sentryErrors) {
+                            sentryErrors[hint.originalException.message] += 1;
+                            if (sentryErrors[hint.originalException.message] > 5) {
+                                return null;
+                            }
+                        } else {
+                            sentryErrors[hint.originalException.message] = 1;
+                        }
+                    }
+                    if (event && event.exception && event.exception.values && event.exception.values[0]) {
+                        if (event.exception.values[0].stacktrace && event.exception.values[0].stacktrace.frames && event.exception.values[0].stacktrace.frames[0]) {
+                            if (['<anonymous>', 'undefined'].includes(event.exception.values[0].stacktrace.frames[0].filename)) {
+                                return null
+                            }
+                            event.exception.values[0].stacktrace.frames.forEach(frame => {
+                                if (fileNamesToIgnore.includes(frame.filename) || patternsToIgnore.test(frame.filename)) {
+                                    ignore = true;
+                                }
+                            });
+                        }
+                    }
+
+                    return ignore ? null : event
+                },
+                                });
+        };
+    </script>
+    <script src="js/24683f7b5c11c1544352b48b0a77ae8b.min.js" crossorigin="anonymous"></script>
+            <link rel="icon" id="favicon" href="images/favicon.png">
+        <link rel="preload" as="style" href="css/app-a86d2151.css"><link rel="stylesheet" href="css/app-a86d2151.css" data-navigate-track="reload">    <link rel="modulepreload" href="/article/build/assets/app-4d733f3a.js"><script type="module" src="js/app-4d733f3a.js" data-navigate-track="reload"></script>    
+            <script>
+    var orbServerData = JSON.parse('{\u0022gtmLayerPage\u0022:\u0022article\u0022,\u0022pageCategory\u0022:\u0022article\u0022,\u0022brand\u0022:\u0022derila-ergo\u0022,\u0022country\u0022:\u0022BE\u0022,\u0022company\u0022:\u0022Everflow\u0022,\u0022locale\u0022:\u0022fr\u0022,\u0022currency\u0022:\u0022EUR\u0022}');
+            var orbSessionData = (function () {
+            var params = (function() {
+                let urlParams = location.search && window.URLSearchParams ?
+                    Object.fromEntries(new URLSearchParams(location.search)) : {};
+
+                let cookieParams = {};
+                try {
+                    cookieParams = getCookieValue('rpp') ? JSON.parse(getCookieValue('rpp')).params || {} : {};
+                } catch (e) {}
+
+                let hasDifferentParams = Object.keys(urlParams).some(key =>
+                    urlParams[key] && urlParams[key] !== cookieParams[key]);
+
+                return hasDifferentParams ? urlParams : Object.assign({}, cookieParams, urlParams);
+            })();
+
+            return {
+                uuid: params['uuid'] || generateUuidV7(),
+                subid1: params['subid'] ||
+                    getCookieValue('subid') ||
+                    null,
+                subid2: params['subid2'] ||
+                    getCookieValue('subid2') ||
+                    null,
+                subid3: params['subid3'] ||
+                    getCookieValue('subid3') ||
+                    null,
+                subid4: params['subid4'] ||
+                    getCookieValue('subid4') ||
+                    null,
+                subid5: params['subid5'] ||
+                    getCookieValue('subid5') ||
+                    null,
+                utm_campaign: params['utm_campaign'] || null,
+                product_page_version: '',
+                transaction_id: params['transaction_id'] || null,
+                affiliate_id: params['affiliate_id'] || null,
+                offid: params['offid'] || null,
+                ttclid: params['ttclid'] || null
+            };
+            function getCookieValue(name) {
+                var cookieValue = '';
+                var cookieMatch = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+                if (cookieMatch) {
+                    cookieValue = cookieMatch.pop();
+                }
+                return decodeURIComponent(cookieValue || '');
+            }
+            function generateUuidV7() {
+                return 'tttttttt-tttt-7xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = Math.trunc(Math.random() * 16);
+                    var v = c === 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                }).replace(/^[t]{8}-[t]{4}/, function() {
+                    var unixtimestamp = Date.now().toString(16).padStart(12, '0');
+                    return unixtimestamp.slice(0, 8) + '-' + unixtimestamp.slice(8);
+                });
+            }
+        })();
+        orbSessionData = Object.assign({}, orbServerData, orbSessionData);
+</script>
+
+    <script>
+                    window.gtmLayer = [{
+                page: orbServerData.gtmLayerPage || null,
+                page_category: orbServerData.pageCategory,
+                country: orbServerData.country,
+                subid: window.orbSessionData.subid1,
+                subid_2: window.orbSessionData.subid2,
+                subid_3: window.orbSessionData.subid3,
+                subid_4: window.orbSessionData.subid4,
+                subid_5: window.orbSessionData.subid5,
+                transaction_id: window.orbSessionData.transaction_id,
+                affiliate_id: window.orbSessionData.affiliate_id,
+            }];
+            window.brandGtmLayer = window.gtmLayer.slice();
+            </script>
+        
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    </script>
+                        <script>
+            (function () {
+                const fbGlobalPixel = '903090581609834';
+                fbq('init', fbGlobalPixel);
+                fbq('trackSingle', fbGlobalPixel, 'PageView');
+                
+                
+                
+                window.addEventListener("customer-info-form-touched", function () {
+                    fbq('trackSingle', fbGlobalPixel, 'InitiateCheckout');
+                });
+            })();
+        </script>
+        <noscript>
+            <img height="1" width="1" alt=""
+                 src="https://www.facebook.com/tr?id=903090581609834&ev=PageView&noscript=1"/>
+        </noscript>
+                        <script>
+            (function () {
+                const fbBrandPixel = '706726551851222';
+                fbq('init', fbBrandPixel);
+                fbq('trackSingle', fbBrandPixel, 'PageView');
+                
+                
+                
+                window.addEventListener("customer-info-form-touched", function () {
+                    fbq('trackSingle', fbBrandPixel, 'InitiateCheckout');
+                });
+            })();
+        </script>
+        <noscript>
+            <img height="1" width="1" alt=""
+                 src="https://www.facebook.com/tr?id=706726551851222&ev=PageView&noscript=1"/>
+        </noscript>
+                                                                        
+                            <script>
+                    (function () {
+                        window.addEventListener("customer-info-form-touched", function () {
+                            let data = {
+                                brand: 'derila-ergo',
+                                url: 'https://enence.com/api/vendor/headers?affiliate_id=10&aopens=1&brand=derila-ergo&evf=1&hj=1&l=fr&network_id=69&offid=78&subid=21138&subid2=44510&subid3=8070&subid4=www.djpcraze.com&subid5=73731d7e98d64dcbbeb8cf4719b3ab9c&ttclid=&uid=6722&vndr=evf',
+                                pixel_type: 'brand'
+                            };
+                            fetch('https://enence.com/send-meta-initiate-checkout-event', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                },
+                                body: JSON.stringify(data)
+                            }).catch((error) => {
+                            });
+                        });
+                    })();
+                </script>
+            
+                    <!-- End Facebook Pixel Code -->
+
+
+
+
+
+<script>
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "qwswrjc36r");
+        </script>
+    <script type="text/javascript">
+        window.getEverflowCookie = function(name) {
+            let matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+    </script>
+
+        <script type="text/javascript" src="js/everflow.js"></script>
+        <script type="text/javascript">
+                            if (typeof EF !== 'undefined') {
+                            function getEverflowParam(name) {
+                    return EF.urlParameter(name) !== undefined ? EF.urlParameter(name) :
+                        orbSessionData[name] !== undefined ? orbSessionData[name] : null;
+                }
+
+                function advertiserClick(overrides = {}) {
+                    const data = {
+                        offer_id: getEverflowParam('offid'),
+                        affiliate_id: getEverflowParam('affiliate_id'),
+                        sub1: getEverflowParam('subid'),
+                        sub2: getEverflowParam('subid2'),
+                        sub3: getEverflowParam('subid3'),
+                        sub4: getEverflowParam('subid4'),
+                        sub5: getEverflowParam('subid5'),
+                        uid: getEverflowParam('uid'),
+                        source_id: getEverflowParam('source_id'),
+                        parameters: {
+                            "ttclid" : getEverflowParam('ttclid'),
+                            "cjevent" : getEverflowCookie('cje') !== undefined ? getEverflowCookie('cje') : null,
+                        },
+                        ...overrides,
+                    };
+
+                    EF.click(data).then(function (transactionId) { // TODO IE doesn't support promises
+                        if (!transactionId) {
+                            return;
+                        }
+                        var date = new Date();
+                        date.setTime(date.getTime() + (2880*60*1000));
+                        document.cookie = "transaction_id=" + transactionId  + '; expires=' + date.toUTCString() + "; path=/";
+                    });
+                }
+                function affiliateEverflowClick(config) {
+                    return EF.click({
+                        tracking_domain: config.tracking_domain,
+                        offer_id: getEverflowParam(config.param_offer_id),
+                        affiliate_id: getEverflowParam(config.param_affiliate_id),
+                        sub1: getEverflowParam(config.param_sub1),
+                        sub2: getEverflowParam(config.param_sub2),
+                        sub3: getEverflowParam(config.param_sub3),
+                        sub4: getEverflowParam(config.param_sub4),
+                        sub5: getEverflowParam(config.param_sub5),
+                    });
+                }
+
+                const hasTransactionId = getEverflowParam('transaction_id') || getEverflowCookie('transaction_id') !== undefined;
+                if (!hasTransactionId) {
+                    const affiliateClickConfigs = JSON.parse('{\u00222472\u0022:{\u0022tracking_domain\u0022:\u0022https:\\\/\\\/www.gu-ecom.com\u0022,\u0022param_affiliate_id\u0022:\u0022guaffid\u0022,\u0022param_offer_id\u0022:\u0022guoid\u0022,\u0022param_sub1\u0022:\u0022sub6\u0022,\u0022param_sub2\u0022:\u0022sub7\u0022,\u0022param_sub3\u0022:\u0022sub8\u0022,\u0022param_sub4\u0022:\u0022sub9\u0022,\u0022param_sub5\u0022:\u0022sub10\u0022},\u00223443\u0022:{\u0022tracking_domain\u0022:\u0022https:\\\/\\\/www.plotorope.com\u0022,\u0022param_affiliate_id\u0022:\u0022affid2\u0022,\u0022param_offer_id\u0022:\u0022oid2\u0022,\u0022param_sub1\u0022:\u0022sub1\u0022,\u0022param_sub2\u0022:\u0022sub2\u0022,\u0022param_sub3\u0022:\u0022sub3\u0022,\u0022param_sub4\u0022:\u0022sub4\u0022,\u0022param_sub5\u0022:\u0022sub5\u0022}}');
+                    const affiliateClickConfig = affiliateClickConfigs[getEverflowParam('affiliate_id')];
+
+                    if (affiliateClickConfig) {
+                        affiliateEverflowClick(affiliateClickConfig).then((transaction_id) => {
+                            advertiserClick({ sub5: transaction_id });
+                        }).catch((error) => {
+                            advertiserClick();
+                        });
+                    } else {
+                        advertiserClick();
+                    }
+                }
+
+                                    }
+                        </script>
+    
+    
+
+                
+
+    
+    <script type="text/javascript">
+        function validateJS(jsCode) {
+            try {
+                new Function(jsCode);
+                return true; // Valid JavaScript
+            } catch (e) {
+                console.warn('Syntax Error in Vendor JS Code:', e.message);
+                return false; // Invalid JavaScript
+            }
+        }
+
+        function processScripts(fragment) {
+            const scripts = fragment.querySelectorAll('script');
+            scripts.forEach(oldScript => {
+                const newScript = cloneAndExecuteScript(oldScript);
+                oldScript.replaceWith(newScript);
+            });
+        }
+
+        function cloneAndExecuteScript(oldScript) {
+            const newScript = document.createElement('script');
+
+            // Copy all attributes
+            Array.from(oldScript.attributes).forEach(attr => {
+                newScript.setAttribute(attr.name, attr.value);
+            });
+
+            // Handle inline scripts
+            if (!oldScript.src) {
+                if (validateJS(oldScript.textContent)) {
+                    newScript.textContent = oldScript.textContent;
+                }
+            }
+
+            return newScript;
+        }
+
+        window.executeEverflowAffiliateScripts = function(scripts) {
+            try {
+                scripts.forEach(scriptString => {
+                    const parserDoc = new DOMParser().parseFromString(scriptString, 'text/html');
+
+                    const fragHead = document.createDocumentFragment();
+                    const fragBody = document.createDocumentFragment();
+
+                    const moveTo = (el, destFrag) => destFrag.appendChild(document.adoptNode(el));
+
+                    // Head: keep non-script in head, move script to body fragment
+                    Array.from(parserDoc.head.children).forEach(el => {
+                        if (el.tagName.toLowerCase() === 'script') {
+                            moveTo(el, fragBody);
+                        } else {
+                            moveTo(el, fragHead);
+                        }
+                    });
+
+                    // All other pixels that are not in the head appended at the end of body
+                    Array.from(parserDoc.body.children).forEach(el => {
+                        moveTo(el, fragBody);
+                    });
+
+                    processScripts(fragHead);
+                    processScripts(fragBody);
+
+                    document.head.appendChild(fragHead);
+
+                    const appendBody = () => document.body.appendChild(fragBody);
+                    if (document.body) {
+                        appendBody();
+                    } else {
+                        document.addEventListener('DOMContentLoaded', appendBody);
+                    }
+                });
+            } catch (err) {
+                console.log("Error while parsing vendor scripts :",  err);
+                Sentry.captureException(err);
+            }
+        }
+
+        var scripts = JSON.parse('[\u0022\\u003Cscript\\u003Etry{(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\\u0027gtm.start\\u0027:\\nnew Date().getTime(),event:\\u0027gtm.js\\u0027});var f=d.getElementsByTagName(s)[0],\\nj=d.createElement(s),dl=l!=\\u0027dataLayer\\u0027?\\u0027\\u0026l=\\u0027+l:\\u0027\\u0027;j.async=true;j.src=\\n\\u0027https:\\\/\\\/www.googletagmanager.com\\\/gtm.js?id=\\u0027+i+dl;f.parentNode.insertBefore(j,f);\\n})(window,document,\\u0027script\\u0027,\\u0027dataLayer\\u0027,\\u0027GTM-P67VG85\\u0027);} catch(e) { console.error(\\u0027Vendor script error: \\u0027, e)}\\u003C\\\/script\\u003E\u0022]');
+        executeEverflowAffiliateScripts(scripts);
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2DT0NCM1Q4&l=gaLayer"></script>
+        <script>
+        window.gaLayer = window.gaLayer || [];
+
+        function gatag() {
+            if (arguments[2]) {
+                arguments[2].real_timestamp = Date.now();
+            }
+            gaLayer.push(arguments);
+        }
+
+        window.setConsentMode = function (necessary, marketing, analytics, preferences) {
+            var consentMode = {
+                'functionality_storage': necessary ? 'granted' : 'denied',
+                'security_storage': necessary ? 'granted' : 'denied',
+                'ad_storage': marketing ? 'granted' : 'denied',
+                'analytics_storage': analytics ? 'granted' : 'denied',
+                'personalization_storage': preferences ? 'granted' : 'denied',
+            };
+            gatag('consent', 'update', consentMode);
+            localStorage.setItem('consentMode', JSON.stringify(consentMode));
+        }
+
+        window.addEventListener('consent:updated', function (event) {
+            if (event.detail) {
+                const { necessary, marketing, analytics, functional } = event.detail;
+                window.setConsentMode(necessary, marketing, analytics, functional);
+            }
+        });
+
+
+        
+        
+        var eventParameters = {
+            page: '' || location.pathname,
+            page_category: 'article',
+            upsell_index: null,
+            product_page_version: window.orbSessionData && window.orbSessionData.product_page_version
+        };
+        var userProperties = window.orbSessionData && {
+            uuid: window.orbSessionData.uuid,
+            locale: window.orbSessionData.locale,
+            currency: window.orbSessionData.currency,
+            brand: window.orbSessionData.brand,
+            country: window.orbSessionData.country,
+            company: window.orbSessionData.company,
+            subid1: window.orbSessionData.subid1,
+            subid2: window.orbSessionData.subid2,
+            subid3: window.orbSessionData.subid3,
+            subid4: window.orbSessionData.subid4,
+            subid5: window.orbSessionData.subid5,
+            utm_campaign: window.orbSessionData.utm_campaign
+        } || {};
+
+        gatag('js', new Date());
+        gatag('config', 'G-2DT0NCM1Q4', eventParameters); // This used as "User flow active" property (by Jurate)
+                gatag('config', 'G-CH66C6W2RT', eventParameters);
+                gatag('set', 'user_properties', userProperties);
+                        addEventListener('hashchange', function () {
+            var newFragment = location.hash;
+            gatag('event', 'page_view', {
+                'page_path': location.pathname + location.search + newFragment,
+                'url_fragment': newFragment.replace('#', '')
+            });
+        });
+
+
+        
+            </script>
+    <script type="text/javascript">
+        !function(s) {
+            let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
+            o.src = 'https://cdn.aggle.net/oir/oir.min.js';
+            o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', 'P8P4C7844');
+            u.parentNode.insertBefore(o, u);
+        }(document);
+    </script>
+    <script type="text/javascript">
+        !function(e) {
+            let t = {  };
+            (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
+        }(window);
+    </script>
+
+        </head>
+    <body dir="ltr">
+            <div class="">
+</div>
+
+    <div class="w-full mx-auto text-center py-1" style="background-color: #000000">
+                    <p><span style="color: rgb(179, 182, 183);">Advertorial</span><br class="softbreak"></p>
+            </div>
+
+            <script src="js/bundle.js" async=""></script>
+            <div>
+                                <div class="text-gray-800 body-font relative">
+        <div class="mt-block max-w-[1060px] px-container md:px-container-md lg:px-container-lg xl:px-0 mx-auto static">
+            <div class="flex justify-center flex-col md:flex-row">
+                <div class="md:basis-2/3 lg:basis-3/4 basis-full overflow-hidden w-full">
+                        <style>
+    .quote:before {
+        color: #ccc;
+        content: "“";
+        font-size: 64px;
+        line-height: 0;
+        margin-right: 5px;
+        position: relative;
+        bottom: -30px;
+    }
+    .quote * {
+        display: inline;
+    }
+</style>
+
+<div style="
+        background-color: ;
+        border-style: ;
+        border-color: ;
+     " class="mb-block block border shadow-md py-3 px-5 bg-[#FCF8E3] border-[#FBEED5]
+        text-start
+    ">
+    <p>Cet oreiller est très demandé pendant ce Black Friday, les stocks diminuent <strong>RAPIDEMENT</strong>. En ce moment, vous pouvez vous procurer l’oreiller Derila avec une REMISE DE <a href="https://get-derila-ergo.com/derila-ergo/product" rel="noopener noreferrer"><strong>70 % AUJOURD’HUI SEULEMENT</strong></a><br class="softbreak"></p>
+</div>
+<div class="mb-block block" x-data="localizedDate" x-init="">
+    <h1 class="
+        text-start
+    ">
+        <p>Comment l'apnée du sommeil a failli causer une tragédie... Un signal d'alarme pour les personnes souffrant de troubles du sommeil<br class="softbreak"></p>
+    </h1>
+        </div>
+
+<script>
+    document.addEventListener('alpine:init', function () {
+        Alpine.data('localizedDate', function () {
+            return {
+                localizedDate: '',
+                init() {
+                    const userLocale = 'fr' || 'en';
+                    const latinLocale = this.getLatinLocale(userLocale);
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    const currentDate = new Date();
+
+                    this.localizedDate = currentDate.toLocaleDateString(latinLocale, options);
+                },
+
+                getLatinLocale(locale) {
+                    const localeMap = {
+                        'sr': 'sr-Latn',
+                    };
+
+                    return localeMap[locale] || locale;
+                }
+            }
+        })
+    })
+</script>
+
+<div class="mb-block flex items-center gap-x-3 justify-start" x-data="localizedDate">
+            <span class="min-h-[40px] max-h-[50px] min-w-[40px] max-w-[50px] w-full h-full block rounded-full
+            overflow-hidden ">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2024-07-12-at-145315.png 100w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2024-07-12-at-145315.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/cfcdf9d6-dff5-45b2-9b98-7af9d12eedd4/screenshot-2024-07-12-at-145315.png?fm=webp&q=80&fit=max&crop=1390%2C1390%2C0%2C4&w=100 100w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/cfcdf9d6-dff5-45b2-9b98-7af9d12eedd4/screenshot-2024-07-12-at-145315.png?fm=webp&q=80&fit=max&crop=1390%2C1390%2C0%2C4&w=100"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </span>
+        <div class="block text-note1 text-black/50">
+                    <p>✅ Vérifié par Paul T.<br class="softbreak"></p>
+                            <p>Expert résident en science du sommeil<br class="softbreak"></p>
+            </div>
+    <div class="flex flex-col justify-center">
+                    </div>
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <p><a href="https://get-derila-ergo.com/derila-ergo/product" rel="noopener noreferrer"><strong>Promo du BLACK FRIDAY :</strong> 70 % DE RÉDUCTION sur l’oreiller Derila Ergo</a><br class="softbreak"></p>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.03%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/hero-1_2.jpg 400w, images/hero-1_1.jpg 600w, images/hero-1_4.jpg 900w, images/hero-1_3.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="eager" src="images/hero-1.jpg" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/7737ea15-9b13-4045-b1f6-478a68d0b64e/hero-1.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=400 400w, /article/assets/7737ea15-9b13-4045-b1f6-478a68d0b64e/hero-1.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=600 600w, /article/assets/7737ea15-9b13-4045-b1f6-478a68d0b64e/hero-1.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=900 900w, /article/assets/7737ea15-9b13-4045-b1f6-478a68d0b64e/hero-1.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="eager"      src="/article/assets/7737ea15-9b13-4045-b1f6-478a68d0b64e/hero-1.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=800"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+        </div>
+<style>
+    .quote:before {
+        color: #ccc;
+        content: "“";
+        font-size: 64px;
+        line-height: 0;
+        margin-right: 5px;
+        position: relative;
+        bottom: -30px;
+    }
+    .quote * {
+        display: inline;
+    }
+</style>
+
+<div style="
+        background-color: ;
+        border-style: ;
+        border-color: ;
+     " class="mb-block block border shadow-md py-3 px-5 bg-[#FCF8E3] border-[#FBEED5]
+        text-start
+    ">
+    <p>Je me suis réveillé la tête en bas, avec le pire mal de tête de ma vie.</p><p><br></p><p>Je pouvais voir à travers mon pare-brise fissuré que ma voiture avait dévalé un talus.</p><p><br></p><p>La dernière chose dont je me souvenais ? Lutter pour garder mes yeux ouverts en roulant. De nouveau.<br class="softbreak"></p>
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <p>C'est ce qui arrive quand on n'a pas eu une bonne nuit de sommeil depuis des mois. Lorsque l'apnée du sommeil règle vos nuits et que l'épuisement règne sur vos journées.</p><h2>J'ai eu un déclic lors de cet accident.</h2><p>My femme Marie et moi avions une vie parfaite. 25�ans de mariage. Deux magnifiques enfants. Une société en plein essor.</p><p><strong>Puis mes ronflements ont commencé.</strong></p><p>Je ronflais tellement fort que Marie devait me réveiller plusieurs fois par nuit. Une fois, je l'ai trouvée en train de dormir par terre avec un oreiller sur la tête.</p><p>Nous avons tout essayé�- bandes nasales, mentonnières, bouchons d'oreille. Rien n'a fonctionné.</p><p>Finalement, j'ai été exilé sur le canapé de la cave. En 25�ans de mariage, nous n'avions jamais dormi séparément.<br class="softbreak"></p>
+</div>
+<div class="mb-block">
+            <div class="block">
+                            </div>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>L'avertissement de mon médecin qui a tout changé</h2><p>"Vous souffrez d'apnée obstructive du sommeil", m'a dit un spécialiste. "Votre respiration s'arrête plusieurs fois par heure pendant que vous dormez."</p><p>Il a expliqué les choses simplement�: Les muscles de ma gorge se détendaient trop la nuit, ce qui bloquait mes voies respiratoires.</p><p>Pas étonnant que j'étais toujours épuisé.<br class="softbreak"></p>
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>Les signaux d'alarme à ne pas ignorer</h2><p><strong>Le spécialiste a expliqué que l'apnée du sommeil ne se limite pas à la fatigue. </strong>Votre corps mène une bataille nocturne dont vous n'avez même pas conscience.</p><p>Pour moi,<strong> ça a commencé avec des ronflements�</strong>- si forts qu'ils ont poussé ma femme à dormir sur le sol. Puis vinrent les maux de tête matinaux et le flou constant qui rendait mon travail impossible.</p><p>Le plus effrayant? <strong>Ma tension artérielle augmentait </strong>et mon humeur s'assombrissait de jour en jour. Le médecin m'a dit que c'était typique de l'apnée du sommeil - elle ne fait pas que gâcher vos nuits, elle détruit lentement votre santé.</p><p>"Malheureusement", a-t-il ajouté, "les traitements traditionnels n'ont pas beaucoup progressé depuis ces dernières années." Il m'a alors présenté les options habituelles.</p><p><strong>Le spécialiste m'a expliqué que l'apnée du sommeil est souvent due à un mauvais alignement de la nuque et de la colonne vertébrale pendant le sommeil.</strong> Lorsque votre tête n'est pas soutenue correctement, cela peut entraîner un affaissement des voies respiratoires, provoquant ainsi de dangereuses pauses dans la respiration.</p><p>"La position de votre tête et de votre nuque pendant que vous dormez est cruciale", a-t-il expliqué. "La plupart des gens ne se rendent pas compte que leur oreiller peut empirer leur apnée du sommeil."</p>
+</div>
+<div class="mb-block flex
+    justify-center
+">
+    <div style="background: #73f9f9;" class="!my-2 px-6 py-2 rounded-full">
+        <p><strong><em>"Malheureusement", </em></strong><em>a-t-il ajouté,</em><strong><em> "les traitements traditionnels n'ont pas beaucoup progressé depuis ces dernières années."</em></strong><br class="softbreak"></p>
+    </div>
+</div>
+<div x-data="{ enteredView: false }" x-intersect.once="enteredView = true">
+    <a href="https://get-derila-ergo.com/derila-ergo/product" class="md:hidden block w-[100vw]
+        bg-[linear-gradient(180deg,#4ba614,#008c00)] hover:bg-[linear-gradient(180deg,#36780f,#005900)]
+        font-bold text-[19px] !text-white fixed z-10 bottom-0 left-0 text-center" x-show="enteredView && !$store.intersect.isCtaButtonVisible" x-cloak="" x-collapse="">
+        <span class="block border-[1px] border-[#34740e] border-solid p-[10px_20px]">
+            <p>VÉRIFIER LA DISPONIBILITÉ<br class="softbreak"></p>
+        </span>
+    </a>
+</div>
+<div x-data="{ enteredView: false }" x-intersect.once="enteredView = true">
+    <div class="fixed z-10 bottom-0 left-0 w-full hidden md:block" style="background-color: black" x-show="enteredView && !$store.intersect.isCtaButtonVisible" x-cloak="" x-collapse="">
+        <div class="container py-3 px-container md:px-container-md lg:px-container-lg xl:px-container-xl">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                                            <img src="images/derila-logo-5-1-1.png" class="w-full h-full max-w-[11rem] max-h-[3rem] inline-block" alt="Logo" loading="lazy">
+                                        <div class="ml-8">
+                                                    <img class="min-w-[150px]" src="images/4-5.svg" alt="Four and a half stars icon" loading="lazy">
+                                            </div>
+                </div>
+                <a href="https://get-derila-ergo.com/derila-ergo/product" style="background-color: #0ed13d" class="md:max-w-[350px] lg:max-w-[unset] hover:opacity-80 text-white visited:text-white hover:text-white no-underline font-bold
+                    py-2 px-4 rounded lg:ml-6 text-center min-w-[200px] transition-all">
+                    <p>VÉRIFIER LA DISPONIBILITÉ<br class="softbreak"></p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr_2.png 400w, images/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr_4.png 600w, images/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr_1.png 900w, images/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr_3.png 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr.png" sizes="100vw" alt="Derila sleep apnea 2 hypertensive crisis C SM FR" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/618b8231-6859-4be3-abb0-2709fbe88842/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr.png?fm=webp&q=80&fit=max&crop=4168%2C2084%2C0%2C0&w=400 400w, /article/assets/618b8231-6859-4be3-abb0-2709fbe88842/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr.png?fm=webp&q=80&fit=max&crop=4168%2C2084%2C0%2C0&w=600 600w, /article/assets/618b8231-6859-4be3-abb0-2709fbe88842/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr.png?fm=webp&q=80&fit=max&crop=4168%2C2084%2C0%2C0&w=900 900w, /article/assets/618b8231-6859-4be3-abb0-2709fbe88842/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr.png?fm=webp&q=80&fit=max&crop=4168%2C2084%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/618b8231-6859-4be3-abb0-2709fbe88842/derila-sleep-apnea-2-hypertensive-crisis-c-sm-fr.png?fm=webp&q=80&fit=max&crop=4168%2C2084%2C0%2C0&w=800"                  sizes="100vw"      alt="Derila sleep apnea 2 hypertensive crisis C SM FR"      style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+                <div class="image-caption flex mt-1 [&>p]:py-1 [&>p]:px-2
+            justify-start
+            ">
+            <style>
+                .image-caption > p {
+                    background-color: #EAEAEA;
+                    color: #000000;
+                }
+            </style>
+            <h2>Les "solutions" qui n'ont fait qu'empirer les choses</h2><p><strong>D’abord, il y a eu le respirateur.</strong> Imaginez-vous essayer de dormir avec un aspirateur accroché au visage. Ma femme m’a dit que je ressemblais à Dark Vador et le romantisme était définitivement enterré.</p><p><strong>Les mentonnières et les dispositifs nasaux étaient tout aussi mauvais. </strong>Non seulement ils sont inconfortables, mais ils ne traitent pas le problème de fond : ma mauvaise position de sommeil.</p><p><strong>Même changer de position ne m’a pas aidé. </strong>Les oreillers traditionnels perdaient leur forme dès la première nuit, laissant ma nuque sans soutien et mes voies respiratoires compressées. Chaque matin, je me réveillais avec les bras engourdis et la nuque raide, en train de reprendre mon souffle.</p><p>J’ai dépensé des centaines d’euros dans des traitements qui ne fonctionnaient pas ou me faisaient sentir comme un patient dans un hôpital, plutôt que comme un mari. <strong>C’est alors que ma femme a décidé de prendre les choses en main.</strong><br class="softbreak"></p>
+        </div>
+    </div>
+<div class="">
+</div>
+<div class="">
+</div>
+<div class="">
+</div>
+<div class="">
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <p>Le médecin que je pouvais essayer un appareil d'assistance respiratoire connu sous le nom de CPAP, ou appareil à pression positive continue, qui utilise une pression positive pour maintenir les voies respiratoires ouvertes pendant le sommeil.<br class="softbreak"></p>
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2><br></h2>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.03%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/3-6_4.jpg 400w, images/3-6_2.jpg 600w, images/3-6_1.jpg 900w, images/3-6_3.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/3-6.jpg" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/de9e133d-0cec-4995-a5b2-90e892cd964f/3-6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=400 400w, /article/assets/de9e133d-0cec-4995-a5b2-90e892cd964f/3-6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=600 600w, /article/assets/de9e133d-0cec-4995-a5b2-90e892cd964f/3-6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=900 900w, /article/assets/de9e133d-0cec-4995-a5b2-90e892cd964f/3-6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/de9e133d-0cec-4995-a5b2-90e892cd964f/3-6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=800"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>La solution évidente que ma femme a trouvé</h2><p>C'est alors que Marie a découvert l'oreiller <a href="https://get-derila-ergo.com/derila-ergo/product" rel="noopener noreferrer"><strong>Derila Ergo</strong></a> en ligne. Au début, j'étais sceptique, mais ce qui a retenu mon attention, c'était sa forme ergonomique unique. Contrairement aux oreillers classiques, Derila Ergo a des ailes de soutien spéciales et une arche pour les épaules, qui permettent de garder les voies respiratoires dégagées toute la nuit.<br class="softbreak"></p>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.03%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/6-11_2.jpg 400w, images/6-11_1.jpg 600w, images/6-11_3.jpg 900w, images/6-11_4.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/6-11.jpg" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/7038dd09-95ae-4485-8d29-e2e50e71bf5f/6-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=400 400w, /article/assets/7038dd09-95ae-4485-8d29-e2e50e71bf5f/6-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=600 600w, /article/assets/7038dd09-95ae-4485-8d29-e2e50e71bf5f/6-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=900 900w, /article/assets/7038dd09-95ae-4485-8d29-e2e50e71bf5f/6-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/7038dd09-95ae-4485-8d29-e2e50e71bf5f/6-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=800"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+        </div>
+<div class="flex items-start gap-1 mt-3 ">
+            <div class="max-w-[32px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2024-07-15-at-094922_1.png 250w, images/screenshot-2024-07-15-at-094922_3.png 500w, images/screenshot-2024-07-15-at-094922_2.png 750w, images/screenshot-2024-07-15-at-094922.png 1000w, images/screenshot-2024-07-15-at-094922_4.png 1250w, images/screenshot-2024-07-15-at-094922_5.png 1500w, images/screenshot-2024-07-15-at-094922_6.png 2000w, images/screenshot-2024-07-15-at-094922_7.png 2500w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2024-07-15-at-094922.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=250 250w, /article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=500 500w, /article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=750 750w, /article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=1000 1000w, /article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=1250 1250w, /article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=1500 1500w, /article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=2000 2000w, /article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=2500 2500w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/aa77d0dd-5b34-4606-8ec3-a281d2890ce4/screenshot-2024-07-15-at-094922.png?fm=webp&q=80&fit=max&crop=1210%2C1210%2C30%2C0&w=1000"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                Pauline Dupont
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                L'un de vous a-t-il déjà essayé les oreillers Derila ? Comment sont-ils ?
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    2 jours
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                            <div class="flex items-center gap-1">
+                    <div class="flex items-center">
+                        <div class="text-[13px] leading-none text-[#65676B]">2</div>
+                        <div class="flex items-center">
+                                                            <div class="border-2 border-white rounded-full z-[4]">
+                                    <svg class="h-[18px]" fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="0" cy="0" gradientTransform="matrix(0 7.99958 -7.99958 0 8.0005 7.9995)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".5618" stop-color="#0866ff" stop-opacity="0"></stop><stop offset="1" stop-color="#0866ff" stop-opacity=".1"></stop></radialGradient><radialGradient id="b" cx="0" cy="0" gradientTransform="matrix(7.19961982 7.19961982 -7.19961982 7.19961982 6.398676 6.399631)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".3143" stop-color="#02adfc"></stop><stop offset="1" stop-color="#02adfc" stop-opacity="0"></stop></radialGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="2.3989" x2="13.5983" y1="2.3999" y2="13.5993"><stop offset="0" stop-color="#02adfc"></stop><stop offset=".5" stop-color="#0866ff"></stop><stop offset="1" stop-color="#2b7eff"></stop></linearGradient><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#c)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#a)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#b)" fill-opacity=".5"></path><path d="m7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1 -2.2374 1.764h-2.9944a.5752.5752 0 0 1 -.5752-.5752v-3.4836c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509zm-2.9344 3.1338a.767.767 0 0 0 -.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835v-4.0268a.3835.3835 0 0 0 -.3836-.3835z" fill="#fff"></path></svg>                                </div>
+                                                                                                                                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+<div class="flex items-start gap-1 mt-3 ml-[40px]">
+            <div class="max-w-[24px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2024-07-15-at-095957_3.png 250w, images/screenshot-2024-07-15-at-095957_2.png 500w, images/screenshot-2024-07-15-at-095957_1.png 750w, images/screenshot-2024-07-15-at-095957.png 1000w, images/screenshot-2024-07-15-at-095957_4.png 1250w, images/screenshot-2024-07-15-at-095957_5.png 1500w, images/screenshot-2024-07-15-at-095957_6.png 2000w, images/screenshot-2024-07-15-at-095957_7.png 2500w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2024-07-15-at-095957.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=250 250w, /article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=500 500w, /article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=750 750w, /article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=1000 1000w, /article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=1250 1250w, /article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=1500 1500w, /article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=2000 2000w, /article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=2500 2500w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/aa98d00c-d08f-45e9-a0ee-528aceea4bf5/screenshot-2024-07-15-at-095957.png?fm=webp&q=80&fit=max&crop=1194%2C1194%2C40%2C0&w=1000"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                Alice Normand
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                Oui ! Ma sœur m'en a offert deux comme cadeaux de Noël. Le meilleur sommeil que j'ai eu depuis DES ANNÉES
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    2 jours
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                            <div class="flex items-center gap-1">
+                    <div class="flex items-center">
+                        <div class="text-[13px] leading-none text-[#65676B]">1</div>
+                        <div class="flex items-center">
+                                                                                                                    <div class="border-2 border-white rounded-full ms-[-5px] z-[2]">
+                                    <svg class="h-[18px]" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g clip-path="url(#clip0_15251_63612)">
+        <path d="M15.9972 7.9996c0 4.418-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5816-7.9996-7.9996S3.5796 0 7.9976 0c4.4181 0 7.9996 3.5815 7.9996 7.9996Z" fill="url(#paint0_linear_15251_63612)"></path>
+        <path d="M15.9973 7.9992c0 4.4178-3.5811 7.9992-7.9987 7.9992C3.5811 15.9984 0 12.417 0 7.9992S3.5811 0 7.9986 0c4.4176 0 7.9987 3.5814 7.9987 7.9992Z" fill="url(#paint1_radial_15251_63612)"></path>
+        <path d="M15.9972 7.9996c0 4.418-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5816-7.9996-7.9996S3.5796 0 7.9976 0c4.4181 0 7.9996 3.5815 7.9996 7.9996Z" fill="url(#paint2_radial_15251_63612)" fill-opacity=".8"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.6144 10.8866c.159-1.8461 1.127-2.887 2.382-2.887 1.2551 0 2.2231 1.0418 2.3822 2.887.1591 1.8461-.7342 3.1127-2.3821 3.1127-1.648 0-2.5412-1.2666-2.3821-3.1127Z" fill="#4B280E"></path>
+        <ellipse cx="11.1978" cy="5.6997" rx="1.3999" ry="1.6999" fill="#1C1C1D"></ellipse>
+        <ellipse cx="4.7979" cy="5.6997" rx="1.3999" ry="1.6999" fill="#1C1C1D"></ellipse>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3528 3.166a1.4744 1.4744 0 0 0-1.8591-.3279.4.4 0 1 1-.3976-.6941c.9527-.5457 2.1592-.333 2.8678.5056a.4.4 0 0 1-.6111.5163ZM5.4998 2.8381a1.4744 1.4744 0 0 0-1.859.3278.4.4 0 0 1-.6111-.5162c.7085-.8387 1.915-1.0514 2.8677-.5057a.4.4 0 0 1-.3976.6941Z" fill="#E0761A"></path>
+    </g>
+    <defs>
+        <radialGradient id="paint1_radial_15251_63612" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)">
+            <stop offset=".5637" stop-color="#FF5758" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#FF5758" stop-opacity=".1"></stop>
+        </radialGradient>
+        <radialGradient id="paint2_radial_15251_63612" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5262 10.9226) scale(10.1818)">
+            <stop stop-color="#FFF287"></stop>
+            <stop offset="1" stop-color="#FFF287" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="paint0_linear_15251_63612" x1="2.3979" y1="2.3999" x2="13.5973" y2="13.5993" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFF287"></stop>
+            <stop offset="1" stop-color="#F68628"></stop>
+        </linearGradient>
+        <clipPath id="clip0_15251_63612">
+            <path fill="#fff" d="M-.002 0h15.9992v15.9992H-.002z"></path>
+        </clipPath>
+    </defs>
+</svg>                                </div>
+                                                                                </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+<div class="flex items-start gap-1 mt-3 ml-[40px]">
+            <div class="max-w-[24px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2024-07-15-at-100753_2.png 250w, images/screenshot-2024-07-15-at-100753_1.png 500w, images/screenshot-2024-07-15-at-100753_4.png 750w, images/screenshot-2024-07-15-at-100753.png 1000w, images/screenshot-2024-07-15-at-100753_6.png 1250w, images/screenshot-2024-07-15-at-100753_3.png 1500w, images/screenshot-2024-07-15-at-100753_5.png 2000w, images/screenshot-2024-07-15-at-100753_7.png 2500w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2024-07-15-at-100753.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=250 250w, /article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=500 500w, /article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=750 750w, /article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=1000 1000w, /article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=1250 1250w, /article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=1500 1500w, /article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=2000 2000w, /article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=2500 2500w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/2654d68d-0fb9-49bb-8512-4abbb9d1c162/screenshot-2024-07-15-at-100753.png?fm=webp&q=80&fit=max&crop=1154%2C1154%2C57%2C0&w=1000"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                Olivier Gérard
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                J'entends partout que Derila est génial. Il est temps pour moi d'essayer
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    1 jour
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2><strong>La première nuit a tout changé</strong></h2><p>Lorsqu'il est arrivé, j'étais impressionné par son design scientifique. Les ailes de soutien épousaient parfaitement la forme de ma tête, tandis que l'arche pour épaules gardait ma posture parfaitement alignée. Mais le véritable test a été de dormir dessus...</p><p>Cette première nuit était incroyable... La mousse respirante me gardait au frais et la technologie d'alignement de la colonne vertébrale m'évitait d'adopter des positions de sommeil dangereuses.</p><p><strong>Pour la première fois depuis des mois, j'ai dormi toute la nuit d'une seule traite.</strong></p><p>Le lendemain matin, Marie n'arrivait pas à y croire. "Non seulement tu n'as pas ronflé", m'a-t-elle dit, "mais en plus, tu ne t'es pas du tout tourné pour changer de position". Je me sentais tout simplement… Détendu, bien reposé… C'était tout simplement incroyable.<br class="softbreak"></p>
+</div>
+<div class="mb-block">
+            <a class="block" href="https://get-derila-ergo.com/derila-ergo/product">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.03%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/6_1.jpg 400w, images/6_2.jpg 600w, images/6_3.jpg 900w, images/6_4.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/6.jpg" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/6c1e74bd-d1b8-471b-b9c8-7f4dd4670c44/6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=400 400w, /article/assets/6c1e74bd-d1b8-471b-b9c8-7f4dd4670c44/6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=600 600w, /article/assets/6c1e74bd-d1b8-471b-b9c8-7f4dd4670c44/6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=900 900w, /article/assets/6c1e74bd-d1b8-471b-b9c8-7f4dd4670c44/6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/6c1e74bd-d1b8-471b-b9c8-7f4dd4670c44/6.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=800"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </a>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>Mon parcours de 30 jours avec Derila Ergo</h2><h3>Après un jour</h3><p>Je me suis réveillé en ayant l'impression d'être une nouvelle personne. Pas de bouche sèche, pas de maux de tête et ma nuque était complètement détendue pour la première fois depuis des mois. Marie n'en revenait pas : elle n'avait pas eu à me réveiller une seule fois dans la nuit pour que j'arrête de ronfler. Le design ergonomique permet de garder mes voies respiratoires dégagées naturellement toute la nuit. J'étais sceptique, mais bluffé.</p><h3>Après une semaine</h3><p>La transformation était incroyable. Ces coups de fatigue terribles de l'après-midi ? Disparus. Je ne luttais plus pour garder les yeux ouverts pendant les réunions ou au volant. Mon médecin a été surpris de voir ma tension revenir à des niveaux normaux. Même ma posture s'est améliorée : fini les épaules voûtées ou la nuque cassée à cause de mauvaises positions pendant la nuit.</p><h3>Après deux semaines</h3><p>Marie et moi faisions nos nuits, toutes les nuits. Nous avons retrouvé l'intimité que nous avions perdue : c'est fou l'effet qu'un bon sommeil peut avoir sur un couple. Mes collègues ne cessaient de faire remarquer à quel point j'avais l'air plus concentré et enjoué.</p><p>L'un d'eux m'a même demandé si j'étais parti en vacances ! Mais en vérité, j'avais tout simplement eu le sommeil profond et réparateur dont mon corps avait désespérément besoin.</p><h3>Après trente jours</h3><p>C'est comme si j'avais une nouvelle vie. Les symptômes de l'apnée du sommeil qui gâchaient mes nuits ? Disparus. Les ronflements qui forçaient ma femme à dormir par terre ? Un lointain souvenir.</p><p><strong>Mon médecin était stupéfait de mes progrès : non seulement pour l'apnée du sommeil, mais aussi pour ma santé en général. </strong>Le mieux dans tout ça�? Marie et moi sommes plus proches que jamais. Nous avons même prévu de partir en vacances pour la première fois depuis des années, maintenant que nous avons tous les deux assez d'énergie pour en profiter pleinement. L'oreiller Ergo n'a pas seulement amélioré mon sommeil, il m'a redonné la vie que je pensais avoir perdue.<br class="softbreak"></p>
+</div>
+<div class="mb-block">
+            <a class="block" href="https://get-derila-ergo.com/derila-ergo/product">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.03%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/5-11_1.jpg 400w, images/5-11_2.jpg 600w, images/5-11_3.jpg 900w, images/5-11_4.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/5-11.jpg" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/d0d06ec0-9a8e-4f03-aa8f-c75983298ccc/5-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=400 400w, /article/assets/d0d06ec0-9a8e-4f03-aa8f-c75983298ccc/5-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=600 600w, /article/assets/d0d06ec0-9a8e-4f03-aa8f-c75983298ccc/5-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=900 900w, /article/assets/d0d06ec0-9a8e-4f03-aa8f-c75983298ccc/5-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/d0d06ec0-9a8e-4f03-aa8f-c75983298ccc/5-11.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=800"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </a>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>Pourquoi Derila fonctionne vraiment</h2><p>Au début, mon médecin était sceptique. Mais après avoir examiné le design ergonomique de l'oreiller Ergo, il a commencé à le conseiller à tous ses patients souffrant d'apnée du sommeil. Voici ce qui l'a le plus impressionné�:</p><h2>La science derrière un meilleur sommeil</h2><p>Contrairement aux oreillers classiques ou avec une mousse à mémoire de forme basique, Derila Ergo est conçu avec plusieurs zones de soutien qui s'allient pour éliminer les facteurs déclencheurs de l'apnée du sommeil :</p><h3>Technologie avec ailes de soutien</h3><p>La plupart des oreillers laissent votre tête s'affaisser et prendre des positions qui restreignent votre respiration, mais les ailes de soutien de l'oreiller Ergo sont différentes. Elles agissent comme des "barrières de sécurité" pour votre tête en maintenant l'inclinaison idéale tout au long de la nuit. Fini les nuits à réajuster sans cesse votre oreiller : place à un sommeil pur, ininterrompu, avec des voies respiratoires parfaitement positionnées.</p><h3>Arche de soutien des épaules révolutionnaire</h3><p>Ce design révolutionnaire fait office de système de soutien sur mesure pour le haut de votre corps. L'arche épouse naturellement la forme de vos épaules tout en maintenant votre colonne vertébrale parfaitement alignée. C'est comme si un expert du sommeil veillait sur vous chaque nuit pour vous empêcher de prendre des positions à risque qui déclenchent l'apnée du sommeil.</p><h3>Système avancé de soutien de la nuque</h3><p>Voyez cela comme votre masseur personnel intégré directement dans votre oreiller. Les zones spécialisées agissent pour libérer les tensions dans les muscles critiques du cou tout au long de la nuit. En maintenant votre nuque correctement, vos voies respiratoires restent naturellement dégagées, favorisant un sommeil plus profond et plus réparateur.</p><h3>Alignement intelligent de la mâchoire</h3><p>Cette caractéristique innovante s'attaque à l'un des principaux déclencheurs de l'apnée du sommeil : une mauvaise position de la mâchoire. En maintenant votre menton dans une position optimale, elle évite naturellement la respiration par la bouche et réduit les ronflements. C'est comme si vous aviez un guide invisible qui garde vos voies respiratoires dégagées toute la nuit.</p><h3>Soutien stratégique des bras</h3><p>Vous vous souvenez de ces matins où vous vous réveillez avec les bras engourdis ? Cela provient d'une mauvaise circulation sanguine causée par une mauvaise position de sommeil. Le soutien stratégique des bras de l'oreiller Ergo maintient une bonne circulation sanguine tout en évitant les changements de position qui interrompent votre sommeil. C'est comme avoir une zone de confort qui vous garde parfaitement positionné toute la nuit.<br class="softbreak"></p>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.01%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/pillow-zones-fr-c-sm_1.png 400w, images/pillow-zones-fr-c-sm_2.png 600w, images/pillow-zones-fr-c-sm_3.png 900w, images/pillow-zones-fr-c-sm_4.png 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/pillow-zones-fr-c-sm.png" sizes="100vw" alt="Pillow zones FR C SM" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/b4f3ecaa-0b61-48fd-bcdf-3d3347bbd29c/pillow-zones-fr-c-sm.png?fm=webp&q=80&fit=max&crop=4167%2C2084%2C0%2C0&w=400 400w, /article/assets/b4f3ecaa-0b61-48fd-bcdf-3d3347bbd29c/pillow-zones-fr-c-sm.png?fm=webp&q=80&fit=max&crop=4167%2C2084%2C0%2C0&w=600 600w, /article/assets/b4f3ecaa-0b61-48fd-bcdf-3d3347bbd29c/pillow-zones-fr-c-sm.png?fm=webp&q=80&fit=max&crop=4167%2C2084%2C0%2C0&w=900 900w, /article/assets/b4f3ecaa-0b61-48fd-bcdf-3d3347bbd29c/pillow-zones-fr-c-sm.png?fm=webp&q=80&fit=max&crop=4167%2C2084%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/b4f3ecaa-0b61-48fd-bcdf-3d3347bbd29c/pillow-zones-fr-c-sm.png?fm=webp&q=80&fit=max&crop=4167%2C2084%2C0%2C0&w=800"                  sizes="100vw"      alt="Pillow zones FR C SM"      style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>Ce qui a le plus impressionné mon médecin�?</h2><p>L'oreiller fonctionne dans n'importe quelle position. Que vous dormiez sur le dos comme moi, sur le côté comme ma femme, ou même sur le ventre, Derila vous aide à maintenir un alignement correct. Pas étonnant que 87 % des utilisateurs déclarent mieux dormir dès la première semaine.</p><p>Alors que les appareils CPAP forcent l'air à pénétrer dans vos voies respiratoires, Derila travaille avec la position naturelle de votre corps pour les maintenir ouvertes. Simple, mais incroyablement efficace.<br class="softbreak"></p>
+</div>
+<div class="mb-block">
+            <a class="block" href="https://get-derila-ergo.com/derila-ergo/product">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.03%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/3-16_1.jpg 400w, images/3-16_2.jpg 600w, images/3-16_3.jpg 900w, images/3-16_4.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/3-16.jpg" sizes="100vw" alt="3 16" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/daada552-06ed-4257-bf77-f89a2d475670/3-16.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=400 400w, /article/assets/daada552-06ed-4257-bf77-f89a2d475670/3-16.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=600 600w, /article/assets/daada552-06ed-4257-bf77-f89a2d475670/3-16.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=900 900w, /article/assets/daada552-06ed-4257-bf77-f89a2d475670/3-16.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/daada552-06ed-4257-bf77-f89a2d475670/3-16.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=800"                  sizes="100vw"      alt="3 16"      style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </a>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>De vraies personnes pour de vrais résultats</h2><p>Après avoir partagé mon histoire en ligne, j'ai été inondé de messages d'autres utilisateurs de Derila. Ce qui m'a le plus surpris, c'est qu'il ne s'agit pas seulement d'une aide à l'apnée du sommeil.<br class="softbreak"></p>
+</div>
+<div class="grid sm:grid-cols-2 gap-4 mb-block md:grid-cols-3">
+    
+</div>
+<div class="grid sm:grid-cols-2 gap-4 mb-block md:grid-cols-3">
+    <div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Françoise Petit, Paris</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        </p><p>J'ai 67 ans et mon arthrite rendait le sommeil insupportable. J'ai essayé tellement d'oreillers avant celui-ci. Dès la première nuit avec Ergo, j'ai réussi à dormir jusqu'au matin. Ma nuque ne me fait plus mal et je peux enfin respirer correctement la nuit. Le mieux ? Je peux jouer avec mes petits-enfants sans me sentir épuisé�!</p>
+    <p></p>
+    </div>
+<div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Jean Martin, Bordeaux</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        </p><p>Cela fait des années que je lutte contre les ronflements et les douleurs cervicales. Je n'en reviens pas de la différence que peut faire un oreiller ! Mes ronflements ont presque complètement cessé et je me réveille sans cette douleur lancinante dans le cou. Je recommande vivement l'oreiller Derila Ergo à tous ceux qui sont confrontés à des problèmes similaires !</p>
+    <p></p>
+    </div>
+<div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Emeline Rousseau, Toulouse</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        Les migraines ont été le fléau de mon existence, mais l'oreiller Derila a changé la donne ! Mes migraines ont considérablement diminué et je dors beaucoup mieux. Si vous souffrez de migraines ou si vous souhaitez simplement mieux dormir, l'oreiller Derila vaut son pesant d'or.
+    </p>
+    </div>
+<div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Martine Dubuisson, Lille</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        </p><p>Avec trois enfants de moins de 10 ans, je n'ai pas le droit d'être fatigué. Avant, je me réveillais avec de terribles maux de tête tous les matins. J'utilise Ergo depuis deux mois�: je n'ai plus de maux de tête et je me réveille en me sentant vraiment reposé. Même mon fils ainé a remarqué que je suis moins grincheux le matin.</p>
+    <p></p>
+    </div>
+<div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Jean Beaumarchais, Perpignan</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        </p><p>J'ai dépensé des milliers d'euros dans des solutions de sommeil… j'ai même acheté un gros respirateur. Rien n'a fonctionné, jusqu'à ce que ma femme commande cet oreiller. Mes ronflements ont quasiment disparu et je ne me réveille plus en sueur. Ma femme a même cessé de dormir dans la chambre d'amis la semaine dernière�!</p>
+    <p></p>
+    </div>
+<div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Jean Beaumarchais, Perpignan</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        En tant qu'adepte du yoga, je me préoccupe beaucoup de ma santé et du bien-être de mon corps. Un sommeil de qualité est essentiel pour maintenir son niveau d'énergie au cours de la journée. Avant Derila, je me réveillais souvent pendant la nuit. Maintenant, je dors sans interruption ! Essayez et voyez par vous-même !
+    </p>
+    </div>
+
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>L'offre qui ne fait aucun doute</h2><p>Les caractéristiques ergonomiques avancées de Derila Ergo en font notre solution de sommeil la plus sophistiquée à ce jour. Tandis que les oreillers ergonomiques haut de gamme peuvent coûter 200�€ ou plus, nous rendons cette technologie révolutionnaire accessible à toutes les personnes souffrant d'apnée du sommeil.</p><p><strong>En ce moment, ils offrent une </strong><a href="https://get-derila-ergo.com/derila-ergo/product" rel="noopener noreferrer"><strong>réduction spéciale de 70 %</strong></a><strong> aux lecteurs de cet article.</strong> En plus, vous profitez des choses suivantes�:</p><p>✅ Expédition rapide dans le monde entier</p><p>✅ 60 jours délai de retour</p><p>✅ Housse de refroidissement de première qualité incluse<br class="softbreak"></p>
+</div>
+<div x-data="{}" class="mb-block text-center flex
+            justify-center">
+    <a href="https://get-derila-ergo.com/derila-ergo/product" x-intersect.half="$store.intersect.addToVisibleCtaButtonsArray($el)" x-intersect:leave.half="$store.intersect.removeFromVisibleCtaButtonsArray($el)" style="background: linear-gradient(180deg,#4ba614,#008c00)" class="
+            hover:brightness-75
+            !text-white border rounded border-[#34740e] border-solid p-[10px_20px]
+            font-bold text-[25px] no-underline
+            w-full">
+        <p>Ne nous en voulez pas si vous vous rendormez�- Commandez votre oreiller dès aujourd'hui�!<br class="softbreak"></p>
+    </a>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:125.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/70-black-friday-sale-fr_1.jpg 400w, images/70-black-friday-sale-fr_3.jpg 600w, images/70-black-friday-sale-fr_2.jpg 900w, images/70-black-friday-sale-fr_4.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/70-black-friday-sale-fr.jpg" sizes="100vw" alt="70% black friday sale FR" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/c0bdfe74-5e32-403b-b702-2d6910a30664/70-black-friday-sale-fr.jpg?fm=webp&q=80&fit=max&crop=1080%2C1350%2C0%2C0&w=400 400w, /article/assets/c0bdfe74-5e32-403b-b702-2d6910a30664/70-black-friday-sale-fr.jpg?fm=webp&q=80&fit=max&crop=1080%2C1350%2C0%2C0&w=600 600w, /article/assets/c0bdfe74-5e32-403b-b702-2d6910a30664/70-black-friday-sale-fr.jpg?fm=webp&q=80&fit=max&crop=1080%2C1350%2C0%2C0&w=900 900w, /article/assets/c0bdfe74-5e32-403b-b702-2d6910a30664/70-black-friday-sale-fr.jpg?fm=webp&q=80&fit=max&crop=1080%2C1350%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/c0bdfe74-5e32-403b-b702-2d6910a30664/70-black-friday-sale-fr.jpg?fm=webp&q=80&fit=max&crop=1080%2C1350%2C0%2C0&w=800"                  sizes="100vw"      alt="70% black friday sale FR"      style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>L'offre à durée limitée se termine bientôt</h2><p>La nouvelle se répand rapidement. <strong>Rien que le mois dernier, plus de 10.000 personnes ont franchi le pas et transformé leur sommeil.</strong></p><p>Avec la <strong>remise actuelle de 70 % pour le Black Friday</strong>, les stocks s'écoulent rapidement. Une fois épuisés, il sera trop tard... et ce prix spécial ne sera plus disponible.</p><p>Ne passez pas une autre nuit à vous tourner dans tous les sens. Ne mettez pas votre santé et vos relations en danger.</p><p>Cliquez ci-dessous pour obtenir votre oreiller Derila et rejoignez les milliers d'autres personnes qui profitent enfin du sommeil qu'elles méritent.<br class="softbreak"></p>
+</div>
+<div x-data="{}" class="mb-block text-center flex
+            justify-center">
+    <a href="https://get-derila-ergo.com/derila-ergo/product" x-intersect.half="$store.intersect.addToVisibleCtaButtonsArray($el)" x-intersect:leave.half="$store.intersect.removeFromVisibleCtaButtonsArray($el)" style="background: linear-gradient(180deg,#4ba614,#008c00)" class="
+            hover:brightness-75
+            !text-white border rounded border-[#34740e] border-solid p-[10px_20px]
+            font-bold text-[25px] no-underline
+            w-full">
+        <p>COMMANDEZ MAINTENANT !<br class="softbreak"></p>
+    </a>
+</div>
+<div class="grid sm:grid-cols-2 gap-4 mb-block md:grid-cols-2">
+    <div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Monique L.</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        Mes matinées commençaient toujours par des douleurs intenses dans le cou. Plus maintenant ! Depuis que j'utilise l'oreiller Derila, j'ai oublié ce qu'étaient les douleurs cervicales.
+    </p>
+    </div>
+<div class="p-3 p-md-4 rounded bg-[#F4F4F4] mb-4 break-inside-avoid">
+    <div class="flex items-center">
+                <div class="font-[14px]">
+            <span class="font-bold mr-1 text-black">Marc T.</span>
+            <svg class="inline-block h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fff"></circle><path d="M32,2C15.431,2,2,15.432,2,32c0,16.568,13.432,30,30,30c16.568,0,30-13.432,30-30C62,15.432,48.568,2,32,2z M25.025,50  l-0.02-0.02L24.988,50L11,35.6l7.029-7.164l6.977,7.184l21-21.619L53,21.199L25.025,50z" fill="#1e88e5"></path></svg>
+            <br>
+            <img src="images/5.svg" width="300" height="48" alt="Five stars" loading="lazy" class="mt-1 object-fit-contain h-[20px] w-auto">
+        </div>
+    </div>
+    <p class="my-4 text-black">
+        J'avais un problème de ronflement depuis longtemps. Grâce à Derila, ma femme peut enfin dormir en paix. Et je dors comme un bébé.
+    </p>
+    </div>
+
+</div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <h2>Pensez-y</h2><ul><li>Une visite chez un spécialiste du sommeil : 200-300 €</li><li>La machine CPAP : 500-1.000 €</li><li>Les fournitures mensuelles pour la machine CPAP : 50-100 €</li><li>Les visites chez le chiropracteur : 70 € par séance</li></ul><p>Ou <a href="https://get-derila-ergo.com/derila-ergo/product" rel="noopener noreferrer">obtenez l'oreiller Derila Ergo aujourd'hui pour UNE FRACTION du prix</a> (avec votre réduction de 70 %).</p><h3>Le mot de la fin</h3><p>Hier soir, alors que nous nous préparions à aller au lit, Marie a dit quelque chose qui m'a fait monter les larmes aux yeux�:</p><p><em>"J'avais oublié ce que c'était que de dormir à côté de toi sans m'inquiéter."</em></p><p>C'est ce que Derila Ergo nous a rendu - non seulement le sommeil, mais aussi la tranquillité d'esprit. L'intimité de partager à nouveau un lit. L'énergie pour profiter de notre vie ensemble.</p><p><strong>Ne laissez pas le manque de sommeil vous priver d'une nouvelle journée.</strong><br class="softbreak"></p>
+</div>
+<div x-data="{}" class="mb-block text-center flex
+            justify-center">
+    <a href="https://get-derila-ergo.com/derila-ergo/product" x-intersect.half="$store.intersect.addToVisibleCtaButtonsArray($el)" x-intersect:leave.half="$store.intersect.removeFromVisibleCtaButtonsArray($el)" style="background: linear-gradient(180deg,#4ba614,#008c00)" class="
+            hover:brightness-75
+            !text-white border rounded border-[#34740e] border-solid p-[10px_20px]
+            font-bold text-[25px] no-underline
+            w-full">
+        <p>Commandez dès aujourd'hui votre oreiller en mousse à mémoire de forme Derila Ergo et dormez comme un bébé !<br class="softbreak"></p>
+    </a>
+</div>
+<div class="mb-block">
+            <a class="block" href="https://get-derila-ergo.com/derila-ergo/product">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:50.03%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/8-12_1.jpg 400w, images/8-12_3.jpg 600w, images/8-12_2.jpg 900w, images/8-12_4.jpg 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/8-12.jpg" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/092bc08a-4094-4c84-b9e7-637c59e5b163/8-12.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=400 400w, /article/assets/092bc08a-4094-4c84-b9e7-637c59e5b163/8-12.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=600 600w, /article/assets/092bc08a-4094-4c84-b9e7-637c59e5b163/8-12.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=900 900w, /article/assets/092bc08a-4094-4c84-b9e7-637c59e5b163/8-12.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/092bc08a-4094-4c84-b9e7-637c59e5b163/8-12.jpg?fm=webp&q=80&fit=max&crop=1883%2C942%2C0%2C0&w=800"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </a>
+        </div>
+<div class="flex items-start gap-1 mt-3 ">
+            <div class="max-w-[32px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2024-02-08-at-115631_1.png 250w, images/screenshot-2024-02-08-at-115631_2.png 500w, images/screenshot-2024-02-08-at-115631_3.png 750w, images/screenshot-2024-02-08-at-115631.png 1000w, images/screenshot-2024-02-08-at-115631_4.png 1250w, images/screenshot-2024-02-08-at-115631_5.png 1500w, images/screenshot-2024-02-08-at-115631_6.png 2000w, images/screenshot-2024-02-08-at-115631_7.png 2500w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2024-02-08-at-115631.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=250 250w, /article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=500 500w, /article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=750 750w, /article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=1000 1000w, /article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=1250 1250w, /article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=1500 1500w, /article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=2000 2000w, /article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=2500 2500w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/5844b1e6-37cb-4daf-9c91-2ddc85072de4/screenshot-2024-02-08-at-115631.png?fm=webp&q=80&fit=max&crop=1522%2C1522%2C54%2C0&w=1000"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                François Leroy
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                Je me réveillais un nombre incalculable de fois pendant la nuit ! Plus maintenant. Aujourd'hui, je dors profondément et paisiblement chaque nuit.
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    8 heures
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                            <div class="flex items-center gap-1">
+                    <div class="flex items-center">
+                        <div class="text-[13px] leading-none text-[#65676B]">10</div>
+                        <div class="flex items-center">
+                                                            <div class="border-2 border-white rounded-full z-[4]">
+                                    <svg class="h-[18px]" fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="0" cy="0" gradientTransform="matrix(0 7.99958 -7.99958 0 8.0005 7.9995)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".5618" stop-color="#0866ff" stop-opacity="0"></stop><stop offset="1" stop-color="#0866ff" stop-opacity=".1"></stop></radialGradient><radialGradient id="b" cx="0" cy="0" gradientTransform="matrix(7.19961982 7.19961982 -7.19961982 7.19961982 6.398676 6.399631)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".3143" stop-color="#02adfc"></stop><stop offset="1" stop-color="#02adfc" stop-opacity="0"></stop></radialGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="2.3989" x2="13.5983" y1="2.3999" y2="13.5993"><stop offset="0" stop-color="#02adfc"></stop><stop offset=".5" stop-color="#0866ff"></stop><stop offset="1" stop-color="#2b7eff"></stop></linearGradient><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#c)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#a)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#b)" fill-opacity=".5"></path><path d="m7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1 -2.2374 1.764h-2.9944a.5752.5752 0 0 1 -.5752-.5752v-3.4836c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509zm-2.9344 3.1338a.767.767 0 0 0 -.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835v-4.0268a.3835.3835 0 0 0 -.3836-.3835z" fill="#fff"></path></svg>                                </div>
+                                                                                        <div class="border-2 border-white rounded-full ms-[-5px] z-[3]">
+                                    <svg class="h-[18px]" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g clip-path="url(#clip0_15251_63611)">
+        <path d="M15.9963 8c0 4.4179-3.5811 7.9993-7.9986 7.9993-4.4176 0-7.9987-3.5814-7.9987-7.9992 0-4.4179 3.5811-7.9992 7.9987-7.9992 4.4175 0 7.9986 3.5813 7.9986 7.9992Z" fill="url(#paint0_linear_15251_63611)"></path>
+        <path d="M15.9973 7.9992c0 4.4178-3.5811 7.9992-7.9987 7.9992C3.5811 15.9984 0 12.417 0 7.9992S3.5811 0 7.9986 0c4.4176 0 7.9987 3.5814 7.9987 7.9992Z" fill="url(#paint1_radial_15251_63611)"></path>
+        <path d="M7.9996 5.9081c-.3528-.8845-1.1936-1.507-2.1748-1.507-1.4323 0-2.4254 1.328-2.4254 2.6797 0 2.2718 2.3938 4.0094 4.0816 5.1589.3168.2157.7205.2157 1.0373 0 1.6878-1.1495 4.0815-2.8871 4.0815-5.159 0-1.3517-.993-2.6796-2.4254-2.6796-.9811 0-1.822.6225-2.1748 1.507Z" fill="#fff"></path>
+    </g>
+    <defs>
+        <radialGradient id="paint1_radial_15251_63611" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)">
+            <stop offset=".5637" stop-color="#E11731" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#E11731" stop-opacity=".1"></stop>
+        </radialGradient>
+        <linearGradient id="paint0_linear_15251_63611" x1="2.3986" y1="2.4007" x2="13.5975" y2="13.5993" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF74AE"></stop>
+            <stop offset=".5001" stop-color="#FA2E3E"></stop>
+            <stop offset="1" stop-color="#FF5758"></stop>
+        </linearGradient>
+        <clipPath id="clip0_15251_63611">
+            <path fill="#fff" d="M-.001.0009h15.9992v15.9984H-.001z"></path>
+        </clipPath>
+    </defs>
+</svg>                                </div>
+                                                                                                            </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+<div class="flex items-start gap-1 mt-3 ml-[40px]">
+            <div class="max-w-[24px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2023-11-27-at-130744_1.png 250w, images/screenshot-2023-11-27-at-130744_2.png 500w, images/screenshot-2023-11-27-at-130744_3.png 750w, images/screenshot-2023-11-27-at-130744_4.png 1000w, images/screenshot-2023-11-27-at-130744_5.png 1250w, images/screenshot-2023-11-27-at-130744_6.png 1500w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2023-11-27-at-130744.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/61bba3f1-a7af-4c02-8fe0-33630c164a85/screenshot-2023-11-27-at-130744.png?fm=webp&q=80&fit=max&crop=688%2C688%2C31%2C0&w=250 250w, /article/assets/61bba3f1-a7af-4c02-8fe0-33630c164a85/screenshot-2023-11-27-at-130744.png?fm=webp&q=80&fit=max&crop=688%2C688%2C31%2C0&w=500 500w, /article/assets/61bba3f1-a7af-4c02-8fe0-33630c164a85/screenshot-2023-11-27-at-130744.png?fm=webp&q=80&fit=max&crop=688%2C688%2C31%2C0&w=750 750w, /article/assets/61bba3f1-a7af-4c02-8fe0-33630c164a85/screenshot-2023-11-27-at-130744.png?fm=webp&q=80&fit=max&crop=688%2C688%2C31%2C0&w=1000 1000w, /article/assets/61bba3f1-a7af-4c02-8fe0-33630c164a85/screenshot-2023-11-27-at-130744.png?fm=webp&q=80&fit=max&crop=688%2C688%2C31%2C0&w=1250 1250w, /article/assets/61bba3f1-a7af-4c02-8fe0-33630c164a85/screenshot-2023-11-27-at-130744.png?fm=webp&q=80&fit=max&crop=688%2C688%2C31%2C0&w=1500 1500w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/61bba3f1-a7af-4c02-8fe0-33630c164a85/screenshot-2023-11-27-at-130744.png?fm=webp&q=80&fit=max&crop=688%2C688%2C31%2C0&w=688"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                Sylvie Froissard
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                Et ce n'est pas cher ! Je pense qu'il est très important d'investir dans un bon oreiller.
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    3 heures
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                            <div class="flex items-center gap-1">
+                    <div class="flex items-center">
+                        <div class="text-[13px] leading-none text-[#65676B]">7</div>
+                        <div class="flex items-center">
+                                                            <div class="border-2 border-white rounded-full z-[4]">
+                                    <svg class="h-[18px]" fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="0" cy="0" gradientTransform="matrix(0 7.99958 -7.99958 0 8.0005 7.9995)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".5618" stop-color="#0866ff" stop-opacity="0"></stop><stop offset="1" stop-color="#0866ff" stop-opacity=".1"></stop></radialGradient><radialGradient id="b" cx="0" cy="0" gradientTransform="matrix(7.19961982 7.19961982 -7.19961982 7.19961982 6.398676 6.399631)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".3143" stop-color="#02adfc"></stop><stop offset="1" stop-color="#02adfc" stop-opacity="0"></stop></radialGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="2.3989" x2="13.5983" y1="2.3999" y2="13.5993"><stop offset="0" stop-color="#02adfc"></stop><stop offset=".5" stop-color="#0866ff"></stop><stop offset="1" stop-color="#2b7eff"></stop></linearGradient><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#c)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#a)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#b)" fill-opacity=".5"></path><path d="m7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1 -2.2374 1.764h-2.9944a.5752.5752 0 0 1 -.5752-.5752v-3.4836c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509zm-2.9344 3.1338a.767.767 0 0 0 -.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835v-4.0268a.3835.3835 0 0 0 -.3836-.3835z" fill="#fff"></path></svg>                                </div>
+                                                                                                                                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+<div class="flex items-start gap-1 mt-3 ml-[40px]">
+            <div class="max-w-[24px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/download_3.jpg 250w, images/download_1.jpg 500w, images/download_2.jpg 750w, images/download_4.jpg 1000w, images/download_6.jpg 1250w, images/download_5.jpg 1500w, images/download_7.jpg 2000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/download.jpg" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=250 250w, /article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=500 500w, /article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=750 750w, /article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=1000 1000w, /article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=1250 1250w, /article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=1500 1500w, /article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=2000 2000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/1269bd93-f5e7-427b-8aaa-a7214e1bbd81/download.jpg?fm=webp&q=80&fit=max&crop=962%2C962%2C28%2C0&w=962"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                Victor Leman
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                Un bon oreiller, c'est celui qui s'adapte bien à votre tête et à votre cou. Ce n'est pas facile à trouver de nos jours. Heureusement que mon frère m'a recommandé Derila.
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    30 minutes
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                            <div class="flex items-center gap-1">
+                    <div class="flex items-center">
+                        <div class="text-[13px] leading-none text-[#65676B]">27</div>
+                        <div class="flex items-center">
+                                                            <div class="border-2 border-white rounded-full z-[4]">
+                                    <svg class="h-[18px]" fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="0" cy="0" gradientTransform="matrix(0 7.99958 -7.99958 0 8.0005 7.9995)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".5618" stop-color="#0866ff" stop-opacity="0"></stop><stop offset="1" stop-color="#0866ff" stop-opacity=".1"></stop></radialGradient><radialGradient id="b" cx="0" cy="0" gradientTransform="matrix(7.19961982 7.19961982 -7.19961982 7.19961982 6.398676 6.399631)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".3143" stop-color="#02adfc"></stop><stop offset="1" stop-color="#02adfc" stop-opacity="0"></stop></radialGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="2.3989" x2="13.5983" y1="2.3999" y2="13.5993"><stop offset="0" stop-color="#02adfc"></stop><stop offset=".5" stop-color="#0866ff"></stop><stop offset="1" stop-color="#2b7eff"></stop></linearGradient><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#c)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#a)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#b)" fill-opacity=".5"></path><path d="m7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1 -2.2374 1.764h-2.9944a.5752.5752 0 0 1 -.5752-.5752v-3.4836c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509zm-2.9344 3.1338a.767.767 0 0 0 -.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835v-4.0268a.3835.3835 0 0 0 -.3836-.3835z" fill="#fff"></path></svg>                                </div>
+                                                                                        <div class="border-2 border-white rounded-full ms-[-5px] z-[3]">
+                                    <svg class="h-[18px]" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g clip-path="url(#clip0_15251_63611)">
+        <path d="M15.9963 8c0 4.4179-3.5811 7.9993-7.9986 7.9993-4.4176 0-7.9987-3.5814-7.9987-7.9992 0-4.4179 3.5811-7.9992 7.9987-7.9992 4.4175 0 7.9986 3.5813 7.9986 7.9992Z" fill="url(#paint0_linear_15251_63611)"></path>
+        <path d="M15.9973 7.9992c0 4.4178-3.5811 7.9992-7.9987 7.9992C3.5811 15.9984 0 12.417 0 7.9992S3.5811 0 7.9986 0c4.4176 0 7.9987 3.5814 7.9987 7.9992Z" fill="url(#paint1_radial_15251_63611)"></path>
+        <path d="M7.9996 5.9081c-.3528-.8845-1.1936-1.507-2.1748-1.507-1.4323 0-2.4254 1.328-2.4254 2.6797 0 2.2718 2.3938 4.0094 4.0816 5.1589.3168.2157.7205.2157 1.0373 0 1.6878-1.1495 4.0815-2.8871 4.0815-5.159 0-1.3517-.993-2.6796-2.4254-2.6796-.9811 0-1.822.6225-2.1748 1.507Z" fill="#fff"></path>
+    </g>
+    <defs>
+        <radialGradient id="paint1_radial_15251_63611" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)">
+            <stop offset=".5637" stop-color="#E11731" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#E11731" stop-opacity=".1"></stop>
+        </radialGradient>
+        <linearGradient id="paint0_linear_15251_63611" x1="2.3986" y1="2.4007" x2="13.5975" y2="13.5993" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF74AE"></stop>
+            <stop offset=".5001" stop-color="#FA2E3E"></stop>
+            <stop offset="1" stop-color="#FF5758"></stop>
+        </linearGradient>
+        <clipPath id="clip0_15251_63611">
+            <path fill="#fff" d="M-.001.0009h15.9992v15.9984H-.001z"></path>
+        </clipPath>
+    </defs>
+</svg>                                </div>
+                                                                                                            </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+<div class="flex items-start gap-1 mt-3 ">
+            <div class="max-w-[32px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2024-07-16-at-162554_1.png 250w, images/screenshot-2024-07-16-at-162554_7.png 500w, images/screenshot-2024-07-16-at-162554_2.png 750w, images/screenshot-2024-07-16-at-162554.png 1000w, images/screenshot-2024-07-16-at-162554_3.png 1250w, images/screenshot-2024-07-16-at-162554_4.png 1500w, images/screenshot-2024-07-16-at-162554_5.png 2000w, images/screenshot-2024-07-16-at-162554_6.png 2500w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2024-07-16-at-162554.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=250 250w, /article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=500 500w, /article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=750 750w, /article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=1000 1000w, /article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=1250 1250w, /article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=1500 1500w, /article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=2000 2000w, /article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=2500 2500w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/bb821042-14b9-4c9b-85d9-d5f57a3bb5cd/screenshot-2024-07-16-at-162554.png?fm=webp&q=80&fit=max&crop=1208%2C1208%2C33%2C0&w=1000"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                Pierre Delille
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                C'est drôle, je ronfle beaucoup moins depuis que je dors sur l'oreiller Derila. Peut-être est-ce dû au support adéquat ? Je ne suis pas médecin, je ne sais pas. Mais ma vie s'est améliorée.
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    3 minutes
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                            <div class="flex items-center gap-1">
+                    <div class="flex items-center">
+                        <div class="text-[13px] leading-none text-[#65676B]">46</div>
+                        <div class="flex items-center">
+                                                            <div class="border-2 border-white rounded-full z-[4]">
+                                    <svg class="h-[18px]" fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="0" cy="0" gradientTransform="matrix(0 7.99958 -7.99958 0 8.0005 7.9995)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".5618" stop-color="#0866ff" stop-opacity="0"></stop><stop offset="1" stop-color="#0866ff" stop-opacity=".1"></stop></radialGradient><radialGradient id="b" cx="0" cy="0" gradientTransform="matrix(7.19961982 7.19961982 -7.19961982 7.19961982 6.398676 6.399631)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".3143" stop-color="#02adfc"></stop><stop offset="1" stop-color="#02adfc" stop-opacity="0"></stop></radialGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="2.3989" x2="13.5983" y1="2.3999" y2="13.5993"><stop offset="0" stop-color="#02adfc"></stop><stop offset=".5" stop-color="#0866ff"></stop><stop offset="1" stop-color="#2b7eff"></stop></linearGradient><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#c)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#a)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#b)" fill-opacity=".5"></path><path d="m7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1 -2.2374 1.764h-2.9944a.5752.5752 0 0 1 -.5752-.5752v-3.4836c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509zm-2.9344 3.1338a.767.767 0 0 0 -.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835v-4.0268a.3835.3835 0 0 0 -.3836-.3835z" fill="#fff"></path></svg>                                </div>
+                                                                                        <div class="border-2 border-white rounded-full ms-[-5px] z-[3]">
+                                    <svg class="h-[18px]" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g clip-path="url(#clip0_15251_63611)">
+        <path d="M15.9963 8c0 4.4179-3.5811 7.9993-7.9986 7.9993-4.4176 0-7.9987-3.5814-7.9987-7.9992 0-4.4179 3.5811-7.9992 7.9987-7.9992 4.4175 0 7.9986 3.5813 7.9986 7.9992Z" fill="url(#paint0_linear_15251_63611)"></path>
+        <path d="M15.9973 7.9992c0 4.4178-3.5811 7.9992-7.9987 7.9992C3.5811 15.9984 0 12.417 0 7.9992S3.5811 0 7.9986 0c4.4176 0 7.9987 3.5814 7.9987 7.9992Z" fill="url(#paint1_radial_15251_63611)"></path>
+        <path d="M7.9996 5.9081c-.3528-.8845-1.1936-1.507-2.1748-1.507-1.4323 0-2.4254 1.328-2.4254 2.6797 0 2.2718 2.3938 4.0094 4.0816 5.1589.3168.2157.7205.2157 1.0373 0 1.6878-1.1495 4.0815-2.8871 4.0815-5.159 0-1.3517-.993-2.6796-2.4254-2.6796-.9811 0-1.822.6225-2.1748 1.507Z" fill="#fff"></path>
+    </g>
+    <defs>
+        <radialGradient id="paint1_radial_15251_63611" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)">
+            <stop offset=".5637" stop-color="#E11731" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#E11731" stop-opacity=".1"></stop>
+        </radialGradient>
+        <linearGradient id="paint0_linear_15251_63611" x1="2.3986" y1="2.4007" x2="13.5975" y2="13.5993" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF74AE"></stop>
+            <stop offset=".5001" stop-color="#FA2E3E"></stop>
+            <stop offset="1" stop-color="#FF5758"></stop>
+        </linearGradient>
+        <clipPath id="clip0_15251_63611">
+            <path fill="#fff" d="M-.001.0009h15.9992v15.9984H-.001z"></path>
+        </clipPath>
+    </defs>
+</svg>                                </div>
+                                                                                        <div class="border-2 border-white rounded-full ms-[-5px] z-[2]">
+                                    <svg class="h-[18px]" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g clip-path="url(#clip0_15251_63612)">
+        <path d="M15.9972 7.9996c0 4.418-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5816-7.9996-7.9996S3.5796 0 7.9976 0c4.4181 0 7.9996 3.5815 7.9996 7.9996Z" fill="url(#paint0_linear_15251_63612)"></path>
+        <path d="M15.9973 7.9992c0 4.4178-3.5811 7.9992-7.9987 7.9992C3.5811 15.9984 0 12.417 0 7.9992S3.5811 0 7.9986 0c4.4176 0 7.9987 3.5814 7.9987 7.9992Z" fill="url(#paint1_radial_15251_63612)"></path>
+        <path d="M15.9972 7.9996c0 4.418-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5816-7.9996-7.9996S3.5796 0 7.9976 0c4.4181 0 7.9996 3.5815 7.9996 7.9996Z" fill="url(#paint2_radial_15251_63612)" fill-opacity=".8"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.6144 10.8866c.159-1.8461 1.127-2.887 2.382-2.887 1.2551 0 2.2231 1.0418 2.3822 2.887.1591 1.8461-.7342 3.1127-2.3821 3.1127-1.648 0-2.5412-1.2666-2.3821-3.1127Z" fill="#4B280E"></path>
+        <ellipse cx="11.1978" cy="5.6997" rx="1.3999" ry="1.6999" fill="#1C1C1D"></ellipse>
+        <ellipse cx="4.7979" cy="5.6997" rx="1.3999" ry="1.6999" fill="#1C1C1D"></ellipse>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3528 3.166a1.4744 1.4744 0 0 0-1.8591-.3279.4.4 0 1 1-.3976-.6941c.9527-.5457 2.1592-.333 2.8678.5056a.4.4 0 0 1-.6111.5163ZM5.4998 2.8381a1.4744 1.4744 0 0 0-1.859.3278.4.4 0 0 1-.6111-.5162c.7085-.8387 1.915-1.0514 2.8677-.5057a.4.4 0 0 1-.3976.6941Z" fill="#E0761A"></path>
+    </g>
+    <defs>
+        <radialGradient id="paint1_radial_15251_63612" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)">
+            <stop offset=".5637" stop-color="#FF5758" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#FF5758" stop-opacity=".1"></stop>
+        </radialGradient>
+        <radialGradient id="paint2_radial_15251_63612" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5262 10.9226) scale(10.1818)">
+            <stop stop-color="#FFF287"></stop>
+            <stop offset="1" stop-color="#FFF287" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="paint0_linear_15251_63612" x1="2.3979" y1="2.3999" x2="13.5973" y2="13.5993" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFF287"></stop>
+            <stop offset="1" stop-color="#F68628"></stop>
+        </linearGradient>
+        <clipPath id="clip0_15251_63612">
+            <path fill="#fff" d="M-.002 0h15.9992v15.9992H-.002z"></path>
+        </clipPath>
+    </defs>
+</svg>                                </div>
+                                                                                </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+<div class="flex items-start gap-1 mt-3 ml-[40px]">
+            <div class="max-w-[24px] w-full me-1">
+            <div class="twill-image-wrapper rounded-full" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:100.00%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/screenshot-2024-03-14-at-101344_1.png 250w, images/screenshot-2024-03-14-at-101344_2.png 500w, images/screenshot-2024-03-14-at-101344_3.png 750w, images/screenshot-2024-03-14-at-101344.png 1000w, images/screenshot-2024-03-14-at-101344_5.png 1250w, images/screenshot-2024-03-14-at-101344_4.png 1500w, images/screenshot-2024-03-14-at-101344_6.png 2000w, images/screenshot-2024-03-14-at-101344_7.png 2500w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/screenshot-2024-03-14-at-101344.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=250 250w, /article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=500 500w, /article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=750 750w, /article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=1000 1000w, /article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=1250 1250w, /article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=1500 1500w, /article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=2000 2000w, /article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=2500 2500w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/fbaf999f-187e-4e62-9d7a-f64ea1f2bd2f/screenshot-2024-03-14-at-101344.png?fm=webp&q=80&fit=max&crop=1212%2C1212%2C33%2C0&w=1000"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+        <div>
+        <div class="bg-[#F0F2F5] p-2 rounded-2xl">
+            <div class="font-semibold text-[13px]">
+                Astrid Latour
+            </div>
+            <div class="text-[15px] text-[#050505]">
+                Oh wow ! Mon mari et mon fils devraient l'essayer. Pouvez-vous m'envoyer le lien s'il vous plaît ?
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-2 text-[#65676B]">
+            <div class="flex items-center gap-1">
+                <div class="text-[11px]">
+                    2 minutes
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Aimer
+                </div>
+                <div> · </div>
+                <div class="text-[11px] font-bold">
+                    Répondre
+                </div>
+            </div>
+                            <div class="flex items-center gap-1">
+                    <div class="flex items-center">
+                        <div class="text-[13px] leading-none text-[#65676B]">5</div>
+                        <div class="flex items-center">
+                                                            <div class="border-2 border-white rounded-full z-[4]">
+                                    <svg class="h-[18px]" fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><radialGradient id="a" cx="0" cy="0" gradientTransform="matrix(0 7.99958 -7.99958 0 8.0005 7.9995)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".5618" stop-color="#0866ff" stop-opacity="0"></stop><stop offset="1" stop-color="#0866ff" stop-opacity=".1"></stop></radialGradient><radialGradient id="b" cx="0" cy="0" gradientTransform="matrix(7.19961982 7.19961982 -7.19961982 7.19961982 6.398676 6.399631)" gradientUnits="userSpaceOnUse" r="1"><stop offset=".3143" stop-color="#02adfc"></stop><stop offset="1" stop-color="#02adfc" stop-opacity="0"></stop></radialGradient><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="2.3989" x2="13.5983" y1="2.3999" y2="13.5993"><stop offset="0" stop-color="#02adfc"></stop><stop offset=".5" stop-color="#0866ff"></stop><stop offset="1" stop-color="#2b7eff"></stop></linearGradient><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#c)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#a)"></path><path d="m16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996s-7.9996-3.5816-7.9996-7.9996 3.5815-7.9996 7.9996-7.9996c4.418 0 7.9994 3.5815 7.9994 7.9996z" fill="url(#b)" fill-opacity=".5"></path><path d="m7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1 -2.2374 1.764h-2.9944a.5752.5752 0 0 1 -.5752-.5752v-3.4836c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509zm-2.9344 3.1338a.767.767 0 0 0 -.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835v-4.0268a.3835.3835 0 0 0 -.3836-.3835z" fill="#fff"></path></svg>                                </div>
+                                                                                        <div class="border-2 border-white rounded-full ms-[-5px] z-[3]">
+                                    <svg class="h-[18px]" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g clip-path="url(#clip0_15251_63611)">
+        <path d="M15.9963 8c0 4.4179-3.5811 7.9993-7.9986 7.9993-4.4176 0-7.9987-3.5814-7.9987-7.9992 0-4.4179 3.5811-7.9992 7.9987-7.9992 4.4175 0 7.9986 3.5813 7.9986 7.9992Z" fill="url(#paint0_linear_15251_63611)"></path>
+        <path d="M15.9973 7.9992c0 4.4178-3.5811 7.9992-7.9987 7.9992C3.5811 15.9984 0 12.417 0 7.9992S3.5811 0 7.9986 0c4.4176 0 7.9987 3.5814 7.9987 7.9992Z" fill="url(#paint1_radial_15251_63611)"></path>
+        <path d="M7.9996 5.9081c-.3528-.8845-1.1936-1.507-2.1748-1.507-1.4323 0-2.4254 1.328-2.4254 2.6797 0 2.2718 2.3938 4.0094 4.0816 5.1589.3168.2157.7205.2157 1.0373 0 1.6878-1.1495 4.0815-2.8871 4.0815-5.159 0-1.3517-.993-2.6796-2.4254-2.6796-.9811 0-1.822.6225-2.1748 1.507Z" fill="#fff"></path>
+    </g>
+    <defs>
+        <radialGradient id="paint1_radial_15251_63611" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)">
+            <stop offset=".5637" stop-color="#E11731" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#E11731" stop-opacity=".1"></stop>
+        </radialGradient>
+        <linearGradient id="paint0_linear_15251_63611" x1="2.3986" y1="2.4007" x2="13.5975" y2="13.5993" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF74AE"></stop>
+            <stop offset=".5001" stop-color="#FA2E3E"></stop>
+            <stop offset="1" stop-color="#FF5758"></stop>
+        </linearGradient>
+        <clipPath id="clip0_15251_63611">
+            <path fill="#fff" d="M-.001.0009h15.9992v15.9984H-.001z"></path>
+        </clipPath>
+    </defs>
+</svg>                                </div>
+                                                                                                                    <div class="border-2 border-white rounded-full ms-[-5px] z-[1]">
+                                    <svg class="h-[18px]" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g clip-path="url(#clip0_15251_63613)">
+        <path d="M15.9953 7.9996c0 4.418-3.5816 7.9996-7.9996 7.9996S-.004 12.4176-.004 7.9996 3.5776 0 7.9957 0c4.418 0 7.9996 3.5815 7.9996 7.9996Z" fill="url(#paint0_linear_15251_63613)"></path>
+        <path d="M15.9973 7.9992c0 4.4178-3.5811 7.9992-7.9987 7.9992C3.5811 15.9984 0 12.417 0 7.9992S3.5811 0 7.9986 0c4.4176 0 7.9987 3.5814 7.9987 7.9992Z" fill="url(#paint1_radial_15251_63613)"></path>
+        <path d="M15.9953 7.9996c0 4.418-3.5816 7.9996-7.9996 7.9996S-.004 12.4176-.004 7.9996 3.5776 0 7.9957 0c4.418 0 7.9996 3.5815 7.9996 7.9996Z" fill="url(#paint2_radial_15251_63613)" fill-opacity=".8"></path>
+        <path d="M12.5278 8.1957c.4057.1104.6772.4854.623.9024-.3379 2.6001-2.5167 4.9012-5.1542 4.9012s-4.8163-2.3011-5.1542-4.9012c-.0542-.417.2173-.792.623-.9024.8708-.237 2.5215-.596 4.5312-.596 2.0098 0 3.6605.359 4.5312.596Z" fill="#4B280E"></path>
+        <path d="M11.5809 12.3764c-.9328.9843-2.1948 1.6228-3.5841 1.6228-1.3892 0-2.6512-.6383-3.5839-1.6225a1.5425 1.5425 0 0 0-.016-.0174c.4475-1.0137 2.2-1.3599 3.5999-1.3599 1.4 0 3.1514.3468 3.5998 1.3599l-.0157.0171Z" fill="url(#paint3_linear_15251_63613)"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3049 5.8793c.1614-1.1485-.6387-2.2103-1.7872-2.3717l-.0979-.0138c-1.1484-.1614-2.2103.6388-2.3717 1.7872l-.0163.1164a.5.5 0 0 0 .9902.1392l.0163-.1164c.0846-.6016.6408-1.0207 1.2424-.9362l.0978.0138c.6016.0845 1.0207.6407.9362 1.2423l-.0164.1164a.5.5 0 0 0 .9903.1392l.0163-.1164ZM2.6902 5.8793c-.1614-1.1485.6387-2.2103 1.7872-2.3717l.0979-.0138c1.1484-.1614 2.2103.6388 2.3717 1.7872l.0164.1164a.5.5 0 1 1-.9903.1392l-.0163-.1164c-.0846-.6016-.6408-1.0207-1.2423-.9362l-.098.0138c-.6015.0845-1.0206.6407-.936 1.2423l.0163.1164a.5.5 0 0 1-.9902.1392l-.0164-.1164Z" fill="#1C1C1D"></path>
+    </g>
+    <defs>
+        <radialGradient id="paint1_radial_15251_63613" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)">
+            <stop offset=".5637" stop-color="#FF5758" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#FF5758" stop-opacity=".1"></stop>
+        </radialGradient>
+        <radialGradient id="paint2_radial_15251_63613" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5272 10.9202) scale(10.1818)">
+            <stop stop-color="#FFF287"></stop>
+            <stop offset="1" stop-color="#FFF287" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="paint0_linear_15251_63613" x1="2.396" y1="2.3999" x2="13.5954" y2="13.5993" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFF287"></stop>
+            <stop offset="1" stop-color="#F68628"></stop>
+        </linearGradient>
+        <linearGradient id="paint3_linear_15251_63613" x1="5.1979" y1="10.7996" x2="5.245" y2="14.2452" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF60A4"></stop>
+            <stop offset=".2417" stop-color="#FA2E3E"></stop>
+            <stop offset="1" stop-color="#BC0A26"></stop>
+        </linearGradient>
+        <clipPath id="clip0_15251_63613">
+            <path fill="#fff" d="M-.002 0h16v15.9992h-16z"></path>
+        </clipPath>
+    </defs>
+</svg>                                </div>
+                                                    </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+<div class="text-note2 opacity-75 mb-block block
+    text-center
+">
+    <p>Ce document est une annonce publicitaire et non pas un article d'actualité, un blog ou une mise à jour sur la protection des consommateurs.<br class="softbreak">DÉCLARATION MARKETING : Le présent site Internet est un marketplace. À ce titre, vous devez être conscient que le propriétaire a un lien monétaire avec les produits et les services annoncés sur le site. Il est rémunéré chaque fois qu'un prospect qualifié est orienté vers le site, mais cela s'arrête là.<br class="softbreak">DÉCLARATION SUR LA PUBLICITÉ : le présent site Internet et les produits et services qui y sont mentionnés sont des places de marché publicitaires. Ce site est une publicité et non pas un article d'actualité. Toutes les photos de personnes figurant sur ce site sont des mannequins. Le propriétaire de ce site et des produits et services auxquels il est fait référence sur ce site fournit uniquement un service permettant aux consommateurs d'obtenir et de comparer des produits et services.<br class="softbreak"></p>
+</div>
+
+                </div>
+                                    <div class="basis-1/3 lg:basis-1/4 md:block">
+                            <div x-data="{}" class="px-4 p-5 sticky top-0 md:ms-4" style="background-color: #fff">
+        <div class="block mb-block">
+    <h2 class="
+        text-start
+    ">
+        <p>L'OFFRE N°1 DU BLACK FRIDAY POUR SI VOUS AVEZ DES DOULEURS AU COU<br class="softbreak"></p>
+    </h2>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="rounded-xl overflow-hidden ">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:66.67%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/pillow-with-ribbon_1.png 400w, images/pillow-with-ribbon_2.png 600w, images/pillow-with-ribbon_3.png 900w, images/pillow-with-ribbon_4.png 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/pillow-with-ribbon.png" sizes="100vw" alt="Pillow with ribbon" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/431306b7-93ec-4d96-9968-f62b82d85294/pillow-with-ribbon.png?fm=webp&q=80&fit=max&crop=1536%2C1024%2C0%2C0&w=400 400w, /article/assets/431306b7-93ec-4d96-9968-f62b82d85294/pillow-with-ribbon.png?fm=webp&q=80&fit=max&crop=1536%2C1024%2C0%2C0&w=600 600w, /article/assets/431306b7-93ec-4d96-9968-f62b82d85294/pillow-with-ribbon.png?fm=webp&q=80&fit=max&crop=1536%2C1024%2C0%2C0&w=900 900w, /article/assets/431306b7-93ec-4d96-9968-f62b82d85294/pillow-with-ribbon.png?fm=webp&q=80&fit=max&crop=1536%2C1024%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/431306b7-93ec-4d96-9968-f62b82d85294/pillow-with-ribbon.png?fm=webp&q=80&fit=max&crop=1536%2C1024%2C0%2C0&w=800"                  sizes="100vw"      alt="Pillow with ribbon"      style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+        </div>
+<div class="content-blocks-paragraph block mb-block text-lg
+    text-start
+">
+    <p><strong>70% DE RÉDUCTION aujourd'hui UNIQUEMENT</strong><br class="softbreak"></p>
+</div>
+<div x-data="{}" class="mb-block text-center flex
+            justify-center">
+    <a href="https://get-derila-ergo.com/derila-ergo/product" x-intersect.half="$store.intersect.addToVisibleCtaButtonsArray($el)" x-intersect:leave.half="$store.intersect.removeFromVisibleCtaButtonsArray($el)" style="background: linear-gradient(180deg,#4ba614,#008c00)" class="
+            hover:brightness-75
+            !text-white border rounded border-[#34740e] border-solid p-[10px_20px]
+            font-bold text-[25px] no-underline
+            w-full">
+        <p>ESSAYEZ MAINTENANT ➢<br class="softbreak"></p>
+    </a>
+</div>
+<div class="mb-block">
+            <div class="block">
+                    <div class="">
+            <div class="twill-image-wrapper" style="position:relative;overflow:hidden;background-color:#e3e3e3" data-twill-image-wrapper="">
+    <div aria-hidden="true" style="padding-top:62.50%;"></div>
+    <div style="bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;background-color:#e3e3e3;opacity:1;transition:opacity 500ms linear" aria-hidden="true" data-placeholder-image=""></div>
+    <picture>
+                                    <source srcset="images/untitled-design-5_3.png 400w, images/untitled-design-5_1.png 600w, images/untitled-design-5_2.png 900w, images/untitled-design-5_4.png 1000w" sizes="100vw">
+                    
+        <img decoding="async" loading="lazy" src="images/untitled-design-5.png" sizes="100vw" style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1" data-main-image="">
+    </picture>
+<noscript>
+    <picture>
+                                    <source
+                                                                                    srcset="/article/assets/c9857651-32b4-4378-ba33-8cb2318975df/untitled-design-5.png?fm=webp&q=80&fit=max&crop=1200%2C750%2C0%2C0&w=400 400w, /article/assets/c9857651-32b4-4378-ba33-8cb2318975df/untitled-design-5.png?fm=webp&q=80&fit=max&crop=1200%2C750%2C0%2C0&w=600 600w, /article/assets/c9857651-32b4-4378-ba33-8cb2318975df/untitled-design-5.png?fm=webp&q=80&fit=max&crop=1200%2C750%2C0%2C0&w=900 900w, /article/assets/c9857651-32b4-4378-ba33-8cb2318975df/untitled-design-5.png?fm=webp&q=80&fit=max&crop=1200%2C750%2C0%2C0&w=1000 1000w"
+                                        sizes="100vw"
+                />
+                    
+        <img
+    decoding="async"
+     loading="lazy"      src="/article/assets/c9857651-32b4-4378-ba33-8cb2318975df/untitled-design-5.png?fm=webp&q=80&fit=max&crop=1200%2C750%2C0%2C0&w=800"                  sizes="100vw"          style="transform:translateZ(0px);will-change:opacity;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover;object-position:center center;opacity:1"      data-main-image />
+    </picture>
+</noscript>
+</div>
+
+        </div>
+                    </div>
+        </div>
+
+    </div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+                    <footer class="bg-footer text-white py-7" style="background-color:#ffffff">
+    <div class="container px-container md:px-container-md lg:px-container-lg xl:px-container-xl">
+                    <img src="images/group.png" width="388" height="89" class="mb-6 mx-auto md:mx-0 max-w-[150px]" alt="Logo" loading="lazy">
+                        <div class="flex justify-center md:block">
+            <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5">
+                <hr class="border-[#909090] block md:hidden">
+                            </div>
+        </div>
+    </div>
+</footer>
+
+    <div class="py-3">
+        <div class="container px-container md:px-container-md lg:px-container-lg xl:px-container-xl">
+            <div class="flex justify-between items-center w-full flex-col md:flex-row">
+                <p class="text-[12px] text-[#4A4A4A] md:flex-row mb-3 md:mb-0 grow">
+                                            ® 2024 All rights reserved.
+                                    </p>
+                                    <img class="mx-auto grow- md:mx-0 max-h-[40px]" src="images/without-background.png" alt="Payments Logo" loading="lazy">
+                            </div>
+        </div>
+    </div>
+            </div>
+            <link rel="modulepreload" href="/article/build/assets/tracktor-d2cb69ca.js"><script type="module" src="js/tracktor-d2cb69ca.js" data-navigate-track="reload"></script>    <script>
+        window.addEventListener('tracktor:init', function () {
+            if(!window.tracktor || !window.orbSessionData?.uuid) {
+                return;
+            }
+            window.tracktor.initialize(window.orbSessionData.uuid);
+            window.tracktor.pageView(
+                getCookieValue('rpp') ? JSON.parse(getCookieValue('rpp')).params || {} : Object.fromEntries(new URLSearchParams(location.search)) || {},
+                [{"key":"page_category","value":"article"},{"key":"ip_country","value":"NL"},{"key":"page_version","value":"derila-ergo-sleep-apnea-2"},{"key":"brand","value":"Derila-Ergo"},{"key":"locale","value":"fr"},{"key":"vendor","value":"evf"}]
+            );
+            function getCookieValue(name) {
+                var cookieValue = '';
+                var cookieMatch = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+                if (cookieMatch) {
+                    cookieValue = cookieMatch.pop();
+                }
+                return decodeURIComponent(cookieValue || '');
+            }
+        });
+    </script>
+    <script data-navigate-once="true">window.livewireScriptConfig = {"csrf":null,"uri":"\/livewire\/update","progressBar":"","nonce":""};</script>
+    <script>
+    function initialize(i, t) {
+        var e;
+        i.getElementById(t) ? initFreshChat() : (
+            (e = i.createElement("script")).id = t,
+                e.defer = !0,
+                e.src = "https://wchat.freshchat.com/js/widget.js",
+                e.onload = initFreshChat,
+                i.head.appendChild(e)
+        )
+    }
+
+    function initiateCall() {
+        setTimeout(function () {
+            initialize(document, "freshchat-js-sdk");
+        }, 2000);
+    }
+
+    function initFreshChat() {
+        if (window.fcWidget !== undefined) {
+            window.fcWidget.init({
+                token: "8f45d611-cca6-497c-b3db-a29cc93d7273",
+                host: "https://wchat.freshchat.com",
+            });
+        }
+    }
+    function openChat() {
+        if (window.fcWidget.isLoaded() === true)
+        {
+            window.fcWidget.track('open_campaign', {
+                trigger: true,
+            })
+        }
+    }
+
+    if (document.readyState === 'complete') {
+        initiateCall();
+    } else {
+        window.addEventListener ?
+            window.addEventListener("load", initiateCall, false) :
+            window.attachEvent("load", initiateCall, false);
+    }
+</script>    
+
+</body></html>
