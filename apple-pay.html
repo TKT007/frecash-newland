@@ -5,42 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968630.png">
 <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968630.png">
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-ttq.load('D41PHSBC77UA61AHK3NG');
-ttq.page();
-
-setTimeout(function() {
-  ttq.track('AddToCart', {content_id: 'apple-pay-750'});
-}, 2000);
-
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
-  
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '2466641977039062');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-<title>Apple Pay Rewards - Earn $750</title>
+<title>Get Your $1000 Apple Gift Card</title>
 <style>
   :root{
     --bg-dark: #0a0a0a;
@@ -52,6 +17,7 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
     --border: #242424;
     --blue: #0A84FF;
     --blue-glow: rgba(10, 132, 255, 0.2);
+    --yellow: #FFD60A;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -71,7 +37,7 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
     padding: 24px 20px 40px;
   }
 
-  /* Header com logo */
+  /* Header */
   .header{
     text-align: center;
     padding: 32px 0 24px;
@@ -108,82 +74,32 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
     font-size: 16px;
     color: var(--text-muted);
     font-weight: 400;
+    margin-bottom: 20px;
   }
 
-  /* Stats em grid horizontal */
-  .stats{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin: 20px 0 32px;
-  }
-
-  .stat-box{
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 16px 12px;
-    text-align: center;
-  }
-
-  .stat-value{
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-
-  .stat-label{
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
-  }
-
-  /* Progress bar simplificado */
-  .progress-section{
-    margin: 32px 0;
-  }
-
-  .progress-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-
-  .progress-label{
-    font-size: 14px;
+  /* CTA Button Top */
+  .cta-top{
+    display: inline-block;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%);
+    color: var(--text) !important;
+    font-size: 15px;
     font-weight: 600;
-    color: var(--text-muted);
+    text-align: center;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px var(--blue-glow);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
   }
 
-  .progress-goal{
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--blue);
+  .cta-top:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--blue-glow);
   }
 
-  .progress-bar{
-    height: 8px;
-    background: var(--bg-card);
-    border-radius: 999px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .progress-fill{
-    height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, var(--blue) 0%, var(--accent) 100%);
-    border-radius: 999px;
-    transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 20px var(--blue-glow);
-  }
-
-  /* Steps minimalistas */
+  /* Steps */
   .steps{
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -230,52 +146,7 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
     line-height: 1.5;
   }
 
-  /* Offer box moderno */
-  .offer{
-    background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
-    border: 1px solid var(--accent);
-    border-radius: 16px;
-    padding: 20px;
-    margin: 24px 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .offer::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    animation: shimmer 3s infinite;
-  }
-
-  @keyframes shimmer{
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-  }
-
-  .offer-title{
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--accent);
-  }
-
-  .offer-text{
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--text-muted);
-  }
-
-  .offer-text b{
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  /* CTA Button */
+  /* Main CTA Button */
   .cta{
     display: block;
     width: 100%;
@@ -287,7 +158,7 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
     padding: 20px;
     border-radius: 16px;
     text-decoration: none;
-    margin: 32px 0 20px;
+    margin: 32px 0 16px;
     box-shadow: 0 8px 24px var(--blue-glow);
     transition: all 0.3s ease;
     border: none;
@@ -305,59 +176,160 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
     transform: translateY(0);
   }
 
-  .footer{
+  .disclaimer{
     text-align: center;
     font-size: 12px;
     color: var(--text-muted);
-    padding: 20px 0;
+    margin-bottom: 32px;
   }
 
-  /* Notifications */
-  .notification-area{
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 440px;
-    z-index: 1000;
-    pointer-events: none;
+  /* Ratings Section */
+  .ratings-section{
+    margin: 40px 0;
   }
 
-  .notification{
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 13px;
+  .ratings-header{
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .ratings-header h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .rating-summary{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0.4s ease;
-    margin-bottom: 10px;
-    backdrop-filter: blur(20px);
+    margin-top: 12px;
   }
 
-  .notification.show{
-    opacity: 1;
-    transform: translateY(0);
+  .rating-number{
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--yellow);
   }
 
-  .notification-icon{
+  .rating-details{
+    text-align: left;
+  }
+
+  .stars{
+    color: var(--yellow);
     font-size: 18px;
+    letter-spacing: 2px;
   }
 
-  .notification-text{
-    flex: 1;
+  .rating-count{
+    font-size: 13px;
     color: var(--text-muted);
   }
 
-  .notification-amount{
-    color: var(--accent);
-    font-weight: 700;
+  /* Reviews */
+  .reviews{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .review{
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .review-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .review-author{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .review-date{
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .review-title{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .review-stars{
+    color: var(--yellow);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .review-text{
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .review-helpful{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .helpful-btn{
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .helpful-btn:hover{
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* Footer */
+  .footer{
+    text-align: center;
+    padding: 32px 0 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  .footer-links{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .footer-links a{
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover{
+    color: var(--blue);
   }
 
   @media (max-width: 480px){
@@ -369,153 +341,131 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
       font-size: 24px;
     }
 
-    .stats{
-      gap: 8px;
-    }
-
-    .stat-box{
-      padding: 14px 10px;
-    }
-
     .steps{
       padding: 20px 16px;
+    }
+
+    .rating-number{
+      font-size: 28px;
+    }
+
+    .review{
+      padding: 16px;
     }
   }
 </style>
 </head>
 <body>
-  <div class="notification-area" id="notificationArea"></div>
-
   <div class="container">
     <div class="header">
       <div class="logo-wrapper">
         <img class="logo" src="https://cdn-icons-png.flaticon.com/512/5968/5968630.png" alt="Apple Pay" />
       </div>
-      <h1>Start earning with Apple Pay<br>rewards today!</h1>
-      <p class="subtitle">Join thousands earning daily cashback</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat-box">
-        <span class="stat-value">47,394</span>
-        <div class="stat-label">Active Users</div>
-      </div>
-      <div class="stat-box">
-        <span class="stat-value">$8.7M</span>
-        <div class="stat-label">Rewards Paid</div>
-      </div>
-      <div class="stat-box">
-        <span class="stat-value">24/7</span>
-        <div class="stat-label">Payouts</div>
-      </div>
-    </div>
-
-    <div class="progress-section">
-      <div class="progress-header">
-        <span class="progress-label">Today's Bonus Progress</span>
-        <span class="progress-goal">$500</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
+      <h1>Get Your $1000 Apple Gift Card</h1>
+      <p class="subtitle">Complete 3 simple steps to claim your reward</p>
+      <a href="#" class="cta-top">Learn More</a>
     </div>
 
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
         <div class="step-content">
-          <h3>Click on "Start Earning Now"</h3>
-          <p>(The button below)</p>
+          <h3>Enter your basic info.</h3>
+          <p>Quick registration with just your name and email address</p>
         </div>
       </div>
       <div class="step">
         <div class="step-number">2</div>
         <div class="step-content">
-          <h3>Complete at least 2–5 suggested deals</h3>
-          <p>(Most people cashout at least $250 in cashable payouts with just a few deals!)</p>
+          <h3>Complete a quick survey.</h3>
+          <p>Answer a few questions about your shopping preferences</p>
         </div>
       </div>
       <div class="step">
         <div class="step-number">3</div>
         <div class="step-content">
-          <h3>Claim your deposit & repeat anytime</h3>
-          <p>(Many top users complete multiple deals for bonus payouts)</p>
+          <h3>Select partner deals.</h3>
+          <p>Choose from recommended offers to maximize your reward</p>
         </div>
       </div>
     </div>
 
-    <div class="offer">
-      <div class="offer-title">🚀 Secret Offer!</div>
-      <div class="offer-text">If you complete <b>5 deals</b> in one day you can receive an <b>additional cash bonus!</b></div>
-    </div>
+    <a href="#" class="cta">Claim Your Apple Reward</a>
+    <div class="disclaimer">No purchase necessary • 2 minutes to complete</div>
 
-    <a id="ctaButton" class="cta" href="#" onclick="if(typeof ttq !== 'undefined'){ttq.track('AddToCart', {content_id: 'apple-pay-750', content_type: 'product', value: 0.50, currency: 'USD'});}">
-      → Start Earning Now
-    </a>
+    <div class="ratings-section">
+      <div class="ratings-header">
+        <h2>Ratings & Reviews</h2>
+        <div class="rating-summary">
+          <div class="rating-number">4.8</div>
+          <div class="rating-details">
+            <div class="stars">★★★★★</div>
+            <div class="rating-count">24.8K Ratings</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews">
+        <div class="review">
+          <div class="review-header">
+            <div>
+              <div class="review-author">SarahJ2024</div>
+              <div class="review-date">10/15/24</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">Exceeded expectations!</div>
+          <div class="review-text">I was hesitant at first, but the process was straightforward. Received my gift card code within 48 hours of completing the requirements. Customer service was responsive when I had questions.</div>
+          <div class="review-helpful">
+            Helpful?
+            <button class="helpful-btn">Yes</button>
+            <button class="helpful-btn">No</button>
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="review-header">
+            <div>
+              <div class="review-author">Mike_R</div>
+              <div class="review-date">10/08/24</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">Legitimate offer</div>
+          <div class="review-text">Followed all the steps and got my $1000 Apple gift card as promised. The partner deals were actually useful services I was interested in anyway. Great experience overall.</div>
+          <div class="review-helpful">
+            Helpful?
+            <button class="helpful-btn">Yes</button>
+            <button class="helpful-btn">No</button>
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="review-header">
+            <div>
+              <div class="review-author">EmmaWilson</div>
+              <div class="review-date">09/30/24</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">Quick process</div>
+          <div class="review-text">The whole process took less than 10 minutes. Make sure to read the requirements carefully. Support team helped me when I had trouble with one of the steps.</div>
+          <div class="review-helpful">
+            Helpful?
+            <button class="helpful-btn">Yes</button>
+            <button class="helpful-btn">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="footer">
-      🔒 Secure & Private
+      <div class="footer-links">
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Apple.com</a>
+      </div>
     </div>
   </div>
-
-<script>
-  const CTA_URL = "https://fb.track-conv.shop/click";
-  document.getElementById("ctaButton").href = CTA_URL;
-
-  // Animate progress
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("progressFill").style.width = "73%";
-    }, 500);
-  });
-
-  // Notifications
-  const notifications = [
-    { icon: "💰", text: "Sarah used Apple Pay and earned", amount: "$287.63", time: "4 minutes ago" },
-    { icon: "✨", text: "Mike completed setup and got", amount: "$250.89 instant bonus", time: "2 minutes ago" },
-    { icon: "💳", text: "Jessica made purchases and earned", amount: "$342.17 cashback", time: "8 minutes ago" },
-    { icon: "🎯", text: "David hit daily goal and earned", amount: "$425.94 + bonus", time: "12 minutes ago" },
-    { icon: "💵", text: "Anna cashed out and received", amount: "$467.28 via Apple Pay", time: "6 minutes ago" },
-    { icon: "🔥", text: "Tom used Apple Pay 5x today and earned", amount: "$391.55", time: "15 minutes ago" },
-    { icon: "⭐", text: "Lisa completed weekly challenge and earned", amount: "$318.42 bonus", time: "3 minutes ago" }
-  ];
-
-  let notifIndex = 0;
-  let isShowing = false;
-
-  function showNotification(){
-    if(isShowing) return;
-    
-    isShowing = true;
-    const container = document.getElementById("notificationArea");
-    const notif = notifications[notifIndex];
-    
-    const el = document.createElement("div");
-    el.className = "notification";
-    el.innerHTML = `
-      <span class="notification-icon">${notif.icon}</span>
-      <span class="notification-text">${notif.text} <span class="notification-amount">${notif.amount}</span></span>
-    `;
-    
-    container.appendChild(el);
-    
-    requestAnimationFrame(() => {
-      el.classList.add("show");
-    });
-    
-    setTimeout(() => {
-      el.classList.remove("show");
-      setTimeout(() => {
-        if(container.contains(el)) container.removeChild(el);
-        isShowing = false;
-        
-        notifIndex = (notifIndex + 1) % notifications.length;
-        setTimeout(showNotification, 8000 + Math.random() * 4000);
-      }, 400);
-    }, 3500);
-  }
-
-  setTimeout(showNotification, 2000);
-</script>
 </body>
 </html>
