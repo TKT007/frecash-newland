@@ -8,22 +8,23 @@
 <title>Get Your $1000 Apple Gift Card</title>
 <style>
   :root{
-    --bg-dark: #0a0a0a;
-    --bg-card: #141414;
-    --accent: #0AE448;
-    --accent-glow: rgba(10, 228, 72, 0.25);
-    --text: #ffffff;
-    --text-muted: #8a8a8a;
-    --border: #242424;
-    --blue: #0A84FF;
-    --blue-glow: rgba(10, 132, 255, 0.2);
-    --yellow: #FFD60A;
+    --bg-light: #ffffff;
+    --bg-card: #f8f9fa;
+    --accent: #34C759;
+    --accent-glow: rgba(52, 199, 89, 0.25);
+    --text: #1d1d1f;
+    --text-muted: #6e6e73;
+    --border: #e5e7eb;
+    --blue: #007AFF;
+    --blue-glow: rgba(0, 122, 255, 0.2);
+    --yellow: #FF9500;
+    --shadow: rgba(0,0,0,.08);
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
   
   body{
-    background: var(--bg-dark);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     min-height: 100vh;
@@ -49,11 +50,11 @@
     justify-content: center;
     width: 72px;
     height: 72px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+    background: #ffffff;
     border-radius: 20px;
     margin-bottom: 20px;
     border: 1px solid var(--border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 32px var(--shadow), 0 3px 12px rgba(0,122,255,.1);
   }
 
   .logo{
@@ -68,6 +69,7 @@
     line-height: 1.2;
     margin-bottom: 12px;
     letter-spacing: -0.02em;
+    color: var(--text);
   }
 
   .subtitle{
@@ -81,7 +83,7 @@
   .cta-top{
     display: inline-block;
     background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%);
-    color: var(--text) !important;
+    color: #ffffff !important;
     font-size: 15px;
     font-weight: 600;
     text-align: center;
@@ -101,11 +103,12 @@
 
   /* Steps */
   .steps{
-    background: var(--bg-card);
+    background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 24px;
     margin: 32px 0;
+    box-shadow: 0 4px 16px var(--shadow);
   }
 
   .step{
@@ -131,6 +134,7 @@
     font-weight: 700;
     flex-shrink: 0;
     box-shadow: 0 4px 12px var(--blue-glow);
+    color: #ffffff;
   }
 
   .step-content h3{
@@ -151,7 +155,7 @@
     display: block;
     width: 100%;
     background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%);
-    color: var(--text) !important;
+    color: #ffffff !important;
     font-size: 16px;
     font-weight: 700;
     text-align: center;
@@ -197,6 +201,7 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
+    color: var(--text);
   }
 
   .rating-summary{
@@ -236,10 +241,11 @@
   }
 
   .review{
-    background: var(--bg-card);
+    background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 20px;
+    box-shadow: 0 2px 8px var(--shadow);
   }
 
   .review-header{
@@ -290,7 +296,7 @@
   }
 
   .helpful-btn{
-    background: transparent;
+    background: #ffffff;
     border: 1px solid var(--border);
     color: var(--text-muted);
     padding: 4px 12px;
@@ -303,6 +309,7 @@
   .helpful-btn:hover{
     border-color: var(--blue);
     color: var(--blue);
+    background: rgba(0,122,255,0.05);
   }
 
   /* Footer */
@@ -363,7 +370,7 @@
       </div>
       <h1>Get Your $1000 Apple Gift Card</h1>
       <p class="subtitle">Complete 3 simple steps to claim your reward</p>
-      <a href="#" class="cta-top">Learn More</a>
+      <a href="https://fb.track-conv.shop/click" class="cta-top">Learn More</a>
     </div>
 
     <div class="steps">
@@ -390,7 +397,7 @@
       </div>
     </div>
 
-    <a href="#" class="cta">Claim Your Apple Reward</a>
+    <a href="https://fb.track-conv.shop/click" class="cta">Claim Your Apple Reward</a>
     <div class="disclaimer">No purchase necessary • 2 minutes to complete</div>
 
     <div class="ratings-section">
