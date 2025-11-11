@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Playful Rewards - Earn Playing Games</title>
+<link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2331/2331966.png">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2331/2331966.png">
+<title>Playful Rewards - Your Opinions Power Your Earnings</title>
 <style>
-  /* ===== Modern Playful Rewards Design ===== */
   :root{
     --bg:#050510;
     --text:#e8e4f3;
@@ -71,16 +72,26 @@
   }
 
   /* Logo */
-  .logo{
-    width:70px;height:70px;
+  .logo-wrapper{
+    width:70px;
+    height:70px;
     margin:0 auto 20px;
     border-radius:20px;
-    display:block;
-    object-fit:cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(168,85,247,.1);
+    border:1px solid rgba(168,85,247,.3);
     box-shadow:0 10px 40px rgba(168,85,247,.4);
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .logo:hover{transform: scale(1.1) rotate(5deg);}
+  .logo-wrapper:hover{transform: scale(1.1) rotate(5deg);}
+  
+  .logo{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+  }
 
   /* Headline */
   .headline{
@@ -98,38 +109,45 @@
   .subhead{
     font-size:15px;
     color:var(--muted);
-    margin-bottom:40px;
+    margin-bottom:30px;
     line-height:1.5;
     font-weight:400;
   }
 
-  /* Stats */
-  .stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin:30px 0;
+  /* CTA Button Top */
+  .cta-top{
+    display:inline-block;
+    background:linear-gradient(135deg, var(--brand), var(--brand2));
+    color:#fff !important;
+    font-size:15px;
+    font-weight:700;
+    text-align:center;
+    padding:14px 32px;
+    border-radius:12px;
+    text-decoration:none;
+    box-shadow:0 8px 24px rgba(168,85,247,.4);
+    transition:all 0.3s ease;
+    border:none;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
   }
-  .stat{
-    background:rgba(168,85,247,.05);
-    border:1px solid rgba(168,85,247,.15);
-    border-radius:16px;
-    padding:16px 12px;
-    backdrop-filter:blur(10px);
+
+  .cta-top::before{
+    content:'';
+    position:absolute;
+    top:0;left:-100%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+    transition:left 0.5s;
   }
-  .stat-num{
-    font-size:22px;
-    font-weight:800;
-    color:var(--brand);
-    display:block;
-    margin-bottom:4px;
+
+  .cta-top:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(168,85,247,.5);
   }
-  .stat-label{
-    font-size:10px;
-    color:var(--muted);
-    text-transform:uppercase;
-    letter-spacing:.5px;
-  }
+
+  .cta-top:hover::before{left:100%;}
 
   /* Main card */
   .main-card{
@@ -137,7 +155,7 @@
     border:1px solid rgba(168,85,247,.2);
     border-radius:24px;
     padding:30px 24px;
-    margin:30px 0;
+    margin:40px 0 30px;
     backdrop-filter:blur(20px);
     box-shadow:0 20px 60px rgba(0,0,0,.3);
   }
@@ -179,33 +197,7 @@
     line-height:1.5;
   }
 
-  /* Info banner */
-  .info-banner{
-    background:linear-gradient(135deg, rgba(251,191,36,.1), rgba(168,85,247,.05));
-    border:1px solid rgba(251,191,36,.3);
-    border-radius:20px;
-    padding:20px;
-    margin:24px 0;
-    text-align:left;
-    backdrop-filter:blur(10px);
-  }
-  .info-banner-title{
-    font-size:15px;
-    font-weight:700;
-    color:#fbbf24;
-    margin-bottom:8px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .info-banner-text{
-    font-size:13px;
-    color:var(--text);
-    line-height:1.6;
-    opacity:.9;
-  }
-
-  /* CTA Button */
+  /* CTA Button Main */
   .cta{
     display:block;
     width:100%;
@@ -240,53 +232,93 @@
   }
   .cta:hover::before{left:100%;}
 
-  .footer{
+  .disclaimer{
     color:var(--muted);
     font-size:12px;
-    margin-top:20px;
-    opacity:.7;
+    margin-top:16px;
+    opacity:.8;
   }
 
-  /* Notifications */
-  .notif-container{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:90%;
-    max-width:400px;
-    z-index:999;
-    pointer-events:none;
+  /* FAQ Section */
+  .faq-section{
+    margin:40px 0;
   }
-  .notif{
-    background:rgba(15,10,30,.95);
-    border:1px solid rgba(168,85,247,.3);
-    border-radius:16px;
-    padding:16px;
-    margin-bottom:10px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:13px;
-    opacity:0;
-    transform:translateY(-20px);
-    transition:all 0.4s ease;
-    backdrop-filter:blur(20px);
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+  .faq-header{
+    text-align:center;
+    margin-bottom:24px;
   }
-  .notif.show{opacity:1;transform:translateY(0);}
-  .notif-icon{font-size:20px;}
-  .notif .earned{
-    color:var(--accent);
+
+  .faq-header h2{
+    font-size:26px;
     font-weight:800;
+    margin-bottom:8px;
+    background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  /* Responsive */
-  @media (max-width:480px){
-    .headline{font-size:26px;}
-    .wrap{padding:40px 16px 32px;}
-    .stats{grid-template-columns:repeat(3,1fr);gap:8px;}
-    .stat{padding:12px 8px;}
+  .faqs{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .faq{
+    background:rgba(15,10,30,.6);
+    border:1px solid rgba(168,85,247,.2);
+    border-radius:20px;
+    padding:20px;
+    text-align:left;
+    backdrop-filter:blur(20px);
+    box-shadow:0 8px 24px rgba(0,0,0,.2);
+    transition:all 0.3s ease;
+  }
+
+  .faq:hover{
+    border-color:rgba(168,85,247,.4);
+    box-shadow:0 12px 32px rgba(168,85,247,.2);
+  }
+
+  .faq-question{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#fff;
+  }
+
+  .faq-answer{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  /* Footer */
+  .footer{
+    text-align:center;
+    padding:32px 0 20px;
+    border-top:1px solid rgba(168,85,247,.1);
+    margin-top:40px;
+  }
+
+  .footer-links{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:16px;
+  }
+
+  .footer-links a{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:13px;
+    transition:color 0.2s ease;
+  }
+
+  .footer-links a:hover{
+    color:var(--brand);
   }
 
   /* Pulse animation */
@@ -295,47 +327,34 @@
     50%{box-shadow:0 15px 40px rgba(168,85,247,.6);}
   }
   .cta{animation:pulse 3s ease-in-out infinite;}
+
+  @media (max-width:480px){
+    .headline{font-size:26px;}
+    .wrap{padding:40px 16px 32px;}
+    .main-card{padding:24px 20px;}
+    .faq{padding:16px;}
+  }
 </style>
 </head>
 <body>
-  <!-- Background orbs -->
   <div class="bg-orb orb1"></div>
   <div class="bg-orb orb2"></div>
 
-  <!-- Notifications -->
-  <div class="notif-container" id="notifBox"></div>
-
   <div class="wrap">
-    <!-- Logo -->
-    <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
-
-    <!-- Headline -->
+    <div class="logo-wrapper">
+      <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards" />
+    </div>
+    
     <h1 class="headline">Follow the instructions <br>to start earning today!</h1>
     <p class="subhead">Where Your Opinions Power Your Earnings</p>
+    <a href="https://fb.track-conv.shop/click" class="cta-top">Start Earning Now</a>
 
-    <!-- Stats -->
-    <div class="stats">
-      <div class="stat">
-        <span class="stat-num">10K+</span>
-        <span class="stat-label">Active Users</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">$1M+</span>
-        <span class="stat-label">Paid Out</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">4.8★</span>
-        <span class="stat-label">Rating</span>
-      </div>
-    </div>
-
-    <!-- Main Card -->
     <div class="main-card">
       <div class="feature">
         <div class="feature-icon">📱</div>
         <div class="feature-content">
-          <h3>Download the Playful App</h3>
-          <p>Click the button below to get started and unlock access to hundreds of games.</p>
+          <h3>Download the Playful app</h3>
+          <p>Click the button below</p>
         </div>
       </div>
 
@@ -343,83 +362,52 @@
         <div class="feature-icon">💰</div>
         <div class="feature-content">
           <h3>Earn More by Testing Multiple Games</h3>
-          <p>Play different games and complete tasks to maximize your earnings. Earn up to $200-$500 per day!</p>
+          <p>Earn up to $200-$500/day</p>
         </div>
       </div>
 
       <div class="feature">
         <div class="feature-icon">💡</div>
         <div class="feature-content">
-          <h3>Pro Tip: Make In-App Purchases</h3>
-          <p>Make in-app purchases on the games to earn even faster. They reimburse you for anything you spend!</p>
+          <h3>Pro tip: Make in-app purchases on the games to earn faster</h3>
+          <p>They reimburse you for anything you spend!</p>
         </div>
       </div>
     </div>
 
-    <!-- Info Banner -->
-    <div class="info-banner">
-      <div class="info-banner-title">
-        <span>✨</span>
-        <span>How It Works</span>
+    <a href="https://fb.track-conv.shop/click" class="cta">Start Playing & Earning</a>
+    <div class="disclaimer">Free to play • Cash out from $1.00</div>
+
+    <div class="faq-section">
+      <div class="faq-header">
+        <h2>Frequent Questions</h2>
       </div>
-      <div class="info-banner-text">
-        <strong>Play games. Complete offers. Get paid.</strong> Test new games and apps to earn coins that convert into <strong>real cash or gift cards</strong>. Start with just <strong>$1 minimum cashout</strong>—no weeks of waiting!
+
+      <div class="faqs">
+        <div class="faq">
+          <div class="faq-question">How does it work?</div>
+          <div class="faq-answer">Get coins for playing games and taking surveys. All games are free from the App Store.</div>
+        </div>
+
+        <div class="faq">
+          <div class="faq-question">How long are the surveys?</div>
+          <div class="faq-answer">Just 3 simple questions to help improve the games.</div>
+        </div>
+
+        <div class="faq">
+          <div class="faq-question">How long to earn a reward?</div>
+          <div class="faq-answer">Cash out from just $1.00. Earn enough in a single day for a gift card!</div>
+        </div>
       </div>
     </div>
 
-    <!-- CTA -->
-    <a id="cta" class="cta" href="CTA_URL">
-      Start Earning Now
-    </a>
-
-    <div class="footer">🔒 100% Free • No Credit Card Required</div>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
   </div>
-
-<script>
-  // CTA URL
-  const CTA_URL = "https://fb.track-conv.shop/click";
-  document.getElementById("cta").href = CTA_URL;
-
-  // Notifications
-  const notifications = [
-    "Emma earned <span class='earned'>$52.15</span> playing puzzle games · 12m ago",
-    "Marcus completed surveys and earned <span class='earned'>$38.90</span> · 8m ago", 
-    "Sarah cashed out <span class='earned'>$65.20</span> in one day · 3m ago",
-    "Alex reached bonus tier: <span class='earned'>$41.60</span> · 18m ago",
-    "Lisa earned her first <span class='earned'>$50 gift card</span> · 6m ago",
-    "David completed 5 surveys: <span class='earned'>$47.30</span> · 25m ago"
-  ];
-
-  let notifIndex = 0;
-  let isShowingNotif = false;
-  
-  function showNotif(){
-    if(isShowingNotif) return;
-    
-    isShowingNotif = true;
-    const box = document.getElementById("notifBox");
-    box.innerHTML = '';
-    
-    const n = document.createElement("div");
-    n.className = "notif";
-    n.innerHTML = `<div class="notif-icon">🎮</div><div>${notifications[notifIndex]}</div>`;
-    box.appendChild(n);
-    
-    requestAnimationFrame(()=> n.classList.add("show"));
-    
-    setTimeout(()=> {
-      n.classList.remove("show");
-      setTimeout(()=> {
-        if(box.contains(n)) box.removeChild(n);
-        isShowingNotif = false;
-        
-        notifIndex = (notifIndex + 1) % notifications.length;
-        setTimeout(showNotif, 1500 + Math.random() * 1000);
-      }, 400);
-    }, 3500);
-  }
-  
-  setTimeout(showNotif, 2000);
-</script>
 </body>
 </html>
