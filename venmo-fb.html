@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '2466641977039062');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<title>Venmo - Earn $750</title>
+<style>
+  /* ===== Enhanced Venmo-style palette ===== */
+  :root{
+    --bg:#0a0f14;         /* deeper slate */
+    --panel:#0e1419;      /* header/panel */
+    --card:#0c1218;       /* cards */
+    --line:#1a2533;       /* borders */
+    --text:#f0f6ff;       /* brighter primary text */
+    --muted:#7d94a8;      /* secondary text */
+    --brand:#018cff;      /* Venmo blue */
+    --brand2:#0066cc;     /* deeper blue for gradients */
+    --brandGlow: rgba(1,140,255,.3);
+    --accent:#ff6b35;     /* orange accent for urgency */
+    --success:#018cff;
+    --warning:#ffb800;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(1,140,255,.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0,102,204,.06) 0%, transparent 50%),
+      radial-gradient(900px 380px at 50% -10%, #0e1a25 0%, #0a0f14 60%), 
+      #0a0f14;
+    color:var(--text);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+
+  /* Layout */
+  .wrap{
+    max-width:540px;
+    margin:0 auto;
+    padding:100px 24px 32px; /* increased padding */
+    text-align:center;
+    position:relative;
+  }
+
+  /* Logo */
+  .logo{
+    width:80px;height:80px; /* slightly larger */
+    margin:0 auto 16px;
+    object-fit:cover;border-radius:20px;display:block;
+    box-shadow:0 8px 32px rgba(0,0,0,.5), 0 0 20px var(--brandGlow);
+    transition: transform 0.3s ease;
+  }
+  .logo:hover{
+    transform: scale(1.05);
+  }
+
+  /* Headline */
+  .headline{
+    font-size:26px;font-weight:900;line-height:1.15;margin:12px 0 24px;
+    color:var(--text);
+    background: linear-gradient(135deg, var(--text), var(--brand));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0,0,0,.3);
+  }
+
+  /* Stats bar */
+  .stats{
+    display:flex;justify-content:space-between;margin:20px 0;
+    background:rgba(1,140,255,.05);border:1px solid rgba(1,140,255,.2);
+    border-radius:16px;padding:12px 16px;
+  }
+  .stat{
+    text-align:center;flex:1;
+  }
+  .stat-num{
+    font-size:18px;font-weight:800;color:var(--brand);display:block;
+  }
+  .stat-label{
+    font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;
+  }
+
+  /* Progress */
+  .progress{
+    height:32px;background:#060b0f;border:2px solid var(--line);
+    border-radius:999px;overflow:hidden;margin:24px auto;max-width:440px;position:relative;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.4);
+  }
+  .fill{
+    height:100%;width:0;
+    background:linear-gradient(90deg,var(--brand),var(--brand2));
+    box-shadow: 0 0 20px var(--brandGlow);
+    transition:width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;
+  }
+  .fill::after{
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+    animation: shimmer 2s infinite;
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .goal{
+    position:absolute;right:12px;top:50%;transform:translateY(-50%);
+    font-size:14px;font-weight:800;color:#e6f3ff;
+    text-shadow:0 0 12px var(--brandGlow);
+    background:rgba(1,140,255,.1);padding:2px 8px;border-radius:8px;
+  }
+
+  /* Card */
+  .card{
+    background:linear-gradient(145deg,#0e1a28 0%, #0c1218 100%);
+    border:1px solid var(--line);
+    border-radius:24px;padding:24px;text-align:left;margin-top:24px;
+    box-shadow:0 16px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(1,140,255,.1);
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg, transparent, var(--brand), transparent);
+    opacity:.6;
+  }
+  .li{
+    display:flex;gap:14px;padding:16px 0;border-bottom:1px dashed #243548;align-items:flex-start;
+    transition: all 0.3s ease;
+  }
+  .li:last-child{border-bottom:0}
+  .li:hover{
+    background:rgba(1,140,255,.02);margin:0 -8px;padding-left:24px;padding-right:24px;
+    border-radius:12px;
+  }
+  .check{
+    display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+    border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+    font-size:14px;font-weight:900;color:#ffffff;flex-shrink:0;
+    box-shadow:0 4px 12px var(--brandGlow), 0 0 0 2px rgba(1,140,255,.2);
+  }
+  .li b{display:block;color:#f0f8ff;font-size:15px;margin-bottom:4px;}
+  .muted{color:var(--muted);font-size:13px;line-height:1.4;}
+
+  /* Offer block */
+  .offer{
+    background:linear-gradient(135deg, #1a0f0a 0%, #0f1419 100%);
+    border:2px solid var(--accent);border-radius:18px;padding:18px;margin-top:20px;text-align:left;
+    position:relative;overflow:hidden;
+    box-shadow: 0 0 30px rgba(255,107,53,.2);
+  }
+  .offer::before{
+    content:'🔥 LIMITED TIME';position:absolute;top:-1px;right:20px;
+    background:var(--accent);color:#fff;font-size:10px;font-weight:800;
+    padding:4px 12px;border-radius:0 0 8px 8px;letter-spacing:.5px;
+  }
+  .timer{font-weight:800;color:#ffcc66;margin-bottom:8px;font-size:15px;}
+  .timer::before{content:'⏰ ';font-size:16px;}
+  .divider{border-top:1px dashed #3a4555;margin:14px 0}
+
+  /* CTA */
+  .cta{
+    display:block;text-align:center;
+    background:linear-gradient(135deg,var(--brand) 0%,var(--brand2) 100%);
+    color:#ffffff !important;font-weight:900;border-radius:18px;padding:20px;margin-top:24px;font-size:18px;
+    text-decoration:none;
+    box-shadow:0 12px 32px var(--brandGlow), 0 4px 12px rgba(0,0,0,.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;overflow:hidden;
+    text-transform:uppercase;letter-spacing:.5px;
+  }
+  .cta::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+    transition:left 0.6s ease;
+  }
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 40px var(--brandGlow), 0 8px 16px rgba(0,0,0,.4);
+  }
+  .cta:hover::before{left:100%;}
+  .cta:active{transform:translateY(0);}
+
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.8;}
+
+  /* Enhanced Notifications */
+  .notif-container{
+    position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    width:94%;max-width:440px;z-index:9999;pointer-events:none;
+  }
+  .notif{
+    background:linear-gradient(135deg, #0e1a28, #0a0f14);
+    border:1px solid #2a4058;border-radius:14px;
+    padding:14px 16px;font-size:13px;display:flex;align-items:center;gap:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,.6), 0 0 0 1px rgba(1,140,255,.1);
+    opacity:0;transform:translateY(-40px);transition:all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    color:#f0f6ff;margin-bottom:8px;
+    backdrop-filter: blur(10px);
+  }
+  .notif.show{opacity:1;transform:translateY(0)}
+  .notif .earned{font-weight:800;color:var(--brand);text-shadow:0 0 8px var(--brandGlow);}
+  .notif::before{
+    content:'💰';font-size:16px;flex-shrink:0;
+  }
+
+  /* Responsive improvements */
+  @media (max-width:480px){
+    .headline{font-size:22px}
+    .progress{max-width:100%;height:28px;}
+    .wrap{padding:80px 16px 24px;}
+    .card{padding:20px 16px;}
+    .stats{flex-direction:column;gap:8px;}
+    .stat{padding:4px 0;}
+  }
+
+  /* Pulse animation for CTA */
+  @keyframes pulse {
+    0%, 100% { box-shadow:0 12px 32px var(--brandGlow), 0 4px 12px rgba(0,0,0,.3); }
+    50% { box-shadow:0 16px 40px var(--brandGlow), 0 6px 16px rgba(0,0,0,.4); }
+  }
+  .cta{
+    animation: pulse 3s ease-in-out infinite;
+  }
+</style>
+</head>
+<body>
+  <!-- Notifications container -->
+  <div class="notif-container" id="notifBox"></div>
+
+  <div class="wrap">
+    <!-- Logo -->
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Venmo_logo.png/1024px-Venmo_logo.png" alt="Venmo Logo" />
+
+    <!-- Headline -->
+    <div class="headline">Get started below to claim your Venmo voucher</div>
+
+    <!-- Progress -->
+    <div class="progress">
+      <div class="fill" id="progressBar"></div>
+      <div class="progress-text">Bonus Progress</div>
+      <div class="goal">$750</div>
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Click on "Start Earning Now"</b>
+          <div class="muted">(The button below)</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Provide a valid email address</b>
+          <div class="muted">(For notifications and rewards)</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Complete at least 2–5 suggested deals</b>
+          <div class="muted">Most people get $500+ in Venmo deposits completing just a few deals!</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Claim your deposit & repeat anytime</b>
+          <div class="muted">Many top users complete multiple deals for bonus payouts</div>
+        </div>
+      </div>
+
+      <!-- Offer -->
+      <div class="offer">
+        <div class="timer">Exclusive offer expires in <span id="countdown">02:27</span></div>
+        <div><b>🎯 First Day Bonus!</b> Complete <u>any 2-5 suggested deals</u> in your first 24 hours and unlock up to a <b>$300 Bonus!</b></div>
+        <div class="divider"></div>
+        <div class="muted">💡 <b>Pro strategy:</b> Focus on beginner-friendly deals first. Most new players hit $250+ in their first day by completing suggested offers. Play daily to keep your streaks going to earn even more! 
+</div>
+      </div>
+    </div>
+
+   <!-- CTA -->
+<a id="cta" class="cta" href="CTA_URL">
+  START EARNING NOW
+</a>
+
+    <div class="foot">🔒 Secure & Confidential</div>
+  </div>
+
+<script>
+  // Replace with your deep link
+  const CTA_URL = "https://www.wellnesshealth360.shop/click";
+  document.getElementById("cta").href = CTA_URL;
+
+  // Animate progress bar to ~73%
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("progressBar").style.width = "73%";
+    }, 600);
+  });
+
+  // Enhanced countdown with more urgency
+  let remain = 2*60 + 27;
+  const cd = document.getElementById("countdown");
+  setInterval(()=>{
+    if(remain>0){
+      remain--;
+      const m = String(Math.floor(remain/60)).padStart(2,"0");
+      const s = String(remain%60).padStart(2,"0");
+      cd.textContent = `${m}:${s}`;
+      
+      // Add urgency styling when time is low
+      if(remain < 60){
+        cd.style.color = '#ff6b35';
+        cd.style.fontWeight = '900';
+      }
+    } else {
+      // Reset timer to create urgency loop
+      remain = 2*60 + 27;
+    }
+  },1000);
+
+  // Enhanced notifications with more variety
+  const notifications = [
+    "Jessica just completed suggested deals and <span class='earned'>earned $673.24</span> · 8 minutes ago",
+    "Marcus finished his profile setup and <span class='earned'>earned $642.87</span> · 15 minutes ago", 
+    "Sarah completed 3 deals and <span class='earned'>earned $719.45</span> · 3 minutes ago",
+    "Alex finished daily tasks and <span class='earned'>earned $687.92</span> · 22 minutes ago",
+    "Emma reached bonus tier and <span class='earned'>earned $734.16</span> · 12 minutes ago",
+    "David completed 5 deals and <span class='earned'>earned $698.53</span> · 28 minutes ago",
+    "Lisa cashed out her first $700 and <span class='earned'>earned $657.34 bonus</span> · 6 minutes ago"
+  ];
+
+  let notifIndex = 0;
+  let isShowingNotif = false;
+  
+  function showNotif(){
+    // Não mostrar nova notificação se já tem uma sendo exibida
+    if(isShowingNotif) return;
+    
+    isShowingNotif = true;
+    const box = document.getElementById("notifBox");
+    
+    // Limpar notificações anteriores
+    box.innerHTML = '';
+    
+    const n = document.createElement("div");
+    n.className = "notif";
+    n.innerHTML = notifications[notifIndex];
+    box.appendChild(n);
+    
+    // Animar entrada
+    requestAnimationFrame(()=> n.classList.add("show"));
+    
+    // Manter visível por 3 segundos, depois esconder
+    setTimeout(()=> {
+      n.classList.remove("show");
+      setTimeout(()=> {
+        if(box.contains(n)) box.removeChild(n);
+        isShowingNotif = false;
+        
+        // Agendar próxima notificação em 1-2 segundos
+        notifIndex = (notifIndex + 1) % notifications.length;
+        const nextDelay = 1000 + Math.random() * 1000; // 1–2 sec
+        setTimeout(showNotif, nextDelay);
+      }, 500);
+    }, 3000);
+  }
+  
+  // Iniciar stream de notificações
+  setTimeout(showNotif, 1000);
+  
+  // Add some interactive micro-animations
+  document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.card, .offer');
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+        card.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) * 0.01}deg) rotateY(${(x - rect.width/2) * 0.01}deg)`;
+      } else {
+        card.style.transform = '';
+      }
+    });
+  });
+</script>
+</body>
+</html>
