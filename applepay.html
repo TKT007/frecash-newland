@@ -324,6 +324,18 @@
         value: 1.00,
         currency: 'USD'
       });
+      ttq.track('Purchase', {
+        content_type: 'product',
+        content_id: 'apple-pay-750',
+        value: 1.00,
+        currency: 'USD'
+      });
+        ttq.track('SubmitForm', {
+        content_type: 'product',
+        content_id: 'apple-pay-750',
+        value: 1.00,
+        currency: 'USD'
+      });
       console.log('✅ TikTok tracking events fired successfully');
     } catch (e) {
       console.warn('⚠️ TikTok tracking failed:', e);
