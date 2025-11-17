@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Freecash - Gagnez plus de 180€ par jour en jouant</title>
+<style>
+  /* ===== Enhanced Freecash-style palette ===== */
+  :root{
+    --bg:#0a0f14;         /* deeper slate */
+    --panel:#0e1419;      /* header/panel */
+    --card:#0c1218;       /* cards */
+    --line:#1a2533;       /* borders */
+    --text:#f0f6ff;       /* brighter primary text */
+    --muted:#7d94a8;      /* secondary text */
+    --brand:#00ff88;      /* brighter neon green */
+    --brand2:#00d175;     /* deeper green for gradients */
+    --brandGlow: rgba(0,255,136,.3);
+    --accent:#ff6b35;     /* orange accent for urgency */
+    --success:#00ff88;
+    --warning:#ffb800;
+  }
+
+  .cta-sub {
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    margin-top:6px;
+    color:#0a2318; /* darker text to contrast on neon button */
+    opacity:.95;
+  }
+  .cta-sub .red {
+    color:#ff2d47 !important; /* more vibrant red */
+    font-weight:800;
+    text-shadow: 0 0 8px rgba(255,45,71,.4);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(0,255,136,.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0,209,117,.06) 0%, transparent 50%),
+      radial-gradient(900px 380px at 50% -10%, #0e1a25 0%, #0a0f14 60%), 
+      #0a0f14;
+    color:var(--text);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+
+  /* Main Section */
+  .main-section {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 100px 24px 32px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Original styles */
+  .logo{
+    width:80px;height:80px;
+    margin:0 auto 16px;
+    object-fit:cover;border-radius:20px;display:block;
+    box-shadow:0 8px 32px rgba(0,0,0,.5), 0 0 20px var(--brandGlow);
+    transition: transform 0.3s ease;
+  }
+  .logo:hover{
+    transform: scale(1.05);
+  }
+
+  /* Headline */
+  .headline{
+    font-size:26px;font-weight:900;line-height:1.15;margin:12px 0 24px;
+    color:var(--text);
+    background: linear-gradient(135deg, var(--text), var(--brand));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0,0,0,.3);
+  }
+
+  /* Stats bar */
+  .stats{
+    display:flex;justify-content:space-between;margin:20px 0;
+    background:rgba(0,255,136,.05);border:1px solid rgba(0,255,136,.2);
+    border-radius:16px;padding:12px 16px;
+  }
+  .stat{
+    text-align:center;flex:1;
+  }
+  .stat-num{
+    font-size:18px;font-weight:800;color:var(--brand);display:block;
+  }
+  .stat-label{
+    font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;
+  }
+
+  /* Progress */
+  .progress{
+    height:32px;background:#060b0f;border:2px solid var(--line);
+    border-radius:999px;overflow:hidden;margin:24px auto;max-width:440px;position:relative;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.4);
+  }
+  .fill{
+    height:100%;width:0;
+    background:linear-gradient(90deg,var(--brand),var(--brand2));
+    box-shadow: 0 0 20px var(--brandGlow);
+    transition:width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;
+  }
+  .fill::after{
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+    animation: shimmer 2s infinite;
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .goal{
+    position:absolute;right:12px;top:50%;transform:translateY(-50%);
+    font-size:14px;font-weight:800;color:#eafff6;
+    text-shadow:0 0 12px var(--brandGlow);
+    background:rgba(0,255,136,.1);padding:2px 8px;border-radius:8px;
+  }
+
+  /* Card */
+  .card{
+    background:linear-gradient(145deg,#0e1a28 0%, #0c1218 100%);
+    border:1px solid var(--line);
+    border-radius:24px;padding:24px;text-align:left;margin-top:24px;
+    box-shadow:0 16px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(0,255,136,.1);
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg, transparent, var(--brand), transparent);
+    opacity:.6;
+  }
+  .li{
+    display:flex;gap:14px;padding:16px 0;border-bottom:1px dashed #243548;align-items:flex-start;
+    transition: all 0.3s ease;
+  }
+  .li:last-child{border-bottom:0}
+  .li:hover{
+    background:rgba(0,255,136,.02);margin:0 -8px;padding-left:24px;padding-right:24px;
+    border-radius:12px;
+  }
+  .check{
+    display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+    border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+    font-size:14px;font-weight:900;color:#0a2318;flex-shrink:0;
+    box-shadow:0 4px 12px var(--brandGlow), 0 0 0 2px rgba(0,255,136,.2);
+  }
+  .li b{display:block;color:#f0f8ff;font-size:15px;margin-bottom:4px;}
+  .muted{color:var(--muted);font-size:13px;line-height:1.4;}
+
+  /* Offer block */
+  .offer{
+    background:linear-gradient(135deg, #1a0f0a 0%, #0f1419 100%);
+    border:2px solid var(--accent);border-radius:18px;padding:18px;margin-top:20px;text-align:left;
+    position:relative;overflow:hidden;
+    box-shadow: 0 0 30px rgba(255,107,53,.2);
+  }
+  .offer::before{
+    content:'🔥 OFFRE LIMITÉE';position:absolute;top:-1px;right:20px;
+    background:var(--accent);color:#fff;font-size:10px;font-weight:800;
+    padding:4px 12px;border-radius:0 0 8px 8px;letter-spacing:.5px;
+  }
+  .timer{font-weight:800;color:#ffcc66;margin-bottom:8px;font-size:15px;}
+  .timer::before{content:'⏰ ';font-size:16px;}
+  .divider{border-top:1px dashed #3a4555;margin:14px 0}
+
+  /* CTA */
+  .cta{
+    display:block;text-align:center;
+    background:linear-gradient(135deg,var(--brand) 0%,var(--brand2) 100%);
+    color:#0a2318;font-weight:900;border-radius:18px;padding:20px;margin-top:24px;font-size:18px;
+    text-decoration:none;
+    box-shadow:0 12px 32px var(--brandGlow), 0 4px 12px rgba(0,0,0,.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;overflow:hidden;
+    text-transform:uppercase;letter-spacing:.5px;
+  }
+  .cta::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+    transition:left 0.6s ease;
+  }
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 40px var(--brandGlow), 0 8px 16px rgba(0,0,0,.4);
+  }
+  .cta:hover::before{left:100%;}
+  .cta:active{transform:translateY(0);}
+
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.8;}
+
+  /* Enhanced Notifications */
+  .notif-container{
+    position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    width:94%;max-width:440px;z-index:9999;pointer-events:none;
+  }
+  .notif{
+    background:linear-gradient(135deg, #0e1a28, #0a0f14);
+    border:1px solid #2a4058;border-radius:14px;
+    padding:14px 16px;font-size:13px;display:flex;align-items:center;gap:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,.6), 0 0 0 1px rgba(0,255,136,.1);
+    opacity:0;transform:translateY(-40px);transition:all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    color:#f0f6ff;margin-bottom:8px;
+    backdrop-filter: blur(10px);
+  }
+  .notif.show{opacity:1;transform:translateY(0)}
+  .notif .earned{font-weight:800;color:var(--brand);text-shadow:0 0 8px var(--brandGlow);}
+  .notif::before{
+    content:'💰';font-size:16px;flex-shrink:0;
+  }
+
+  /* Responsive improvements */
+  @media (max-width:480px){
+    .headline{font-size:22px}
+    .progress{max-width:100%;height:28px;}
+    .main-section{padding:80px 16px 24px;}
+    .card{padding:20px 16px;}
+    .stats{flex-direction:column;gap:8px;}
+    .stat{padding:4px 0;}
+  }
+
+  /* Pulse animation for notifications */
+  @keyframes pulse {
+    0%, 100% { box-shadow:0 12px 32px var(--brandGlow), 0 4px 12px rgba(0,0,0,.3); }
+    50% { box-shadow:0 16px 40px var(--brandGlow), 0 6px 16px rgba(0,0,0,.4); }
+  }
+  .cta{
+    animation: pulse 3s ease-in-out infinite;
+  }
+</style>
+</head>
+<body>
+  <!-- Notifications container -->
+  <div class="notif-container" id="notifBox"></div>
+
+  <!-- Main Section -->
+  <section class="main-section">
+    <!-- Logo -->
+    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Logo Freecash" />
+
+    <!-- Headline -->
+    <div class="headline">Suivez les instructions pour commencer à gagner dès aujourd'hui</div>
+
+    <!-- Progress -->
+    <div class="progress">
+      <div class="fill" id="progressBar"></div>
+      <div class="progress-text">Progression du bonus</div>
+      <div class="goal">300€</div>
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Créez votre compte FreeCash instantanément</b>
+          <div class="muted">Prend 30 secondes • Aucune carte bancaire requise</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Gagnez en testant plusieurs jeux</b>
+          <div class="muted">Complétez des offres gaming, sondages, téléchargements d'apps & missions pour gagner des coins</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Astuce pro : Effectuez des achats intégrés dans les jeux pour gagner plus vite</b>
+          <div class="muted">Ils vous remboursent tout ce que vous dépensez !</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">✓</span>
+        <div>
+          <b>Retirez instantanément sur PayPal, Crypto ou Cartes-cadeaux</b>
+          <div class="muted">Retrait minimum : 5€ • Traitement moyen : 2 minutes</div>
+        </div>
+      </div>
+
+      <!-- Offer -->
+      <div class="offer">
+        <div class="timer">L'offre exclusive expire dans <span id="countdown">02:27</span></div>
+        <div><b>🎯 Bonus du premier jour !</b> Installez & complétez <u>3 objectifs de jeu au choix</u> dans vos premières 24 heures et débloquez jusqu'à <b>300€ de bonus</b> !</div>
+        <div class="divider"></div>
+        <div class="muted">💡 <b>Stratégie pro :</b> Concentrez-vous d'abord sur les jeux adaptés aux débutants. La plupart des nouveaux joueurs atteignent 90€+ dès leur premier jour en complétant les missions tutoriels.</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a id="cta" class="cta" href="https://fb.track-conv.shop/click">
+      🚀 COMMENCER À GAGNER MAINTENANT
+      <div class="cta-sub">⚠️ Vous devez avoir <span class="red">21 ans+</span> pour recevoir les paiements</div>
+    </a>
+
+    <div class="foot">⚡ Rejoignez 847 000+ joueurs qui gagnent quotidiennement • Aucun frais caché • Paiements instantanés</div>
+  </section>
+
+<script>
+  // Enhanced countdown with more urgency
+  let remain = 2*60 + 27;
+  const cd = document.getElementById("countdown");
+  setInterval(()=>{
+    if(remain>0){
+      remain--;
+      const m = String(Math.floor(remain/60)).padStart(2,"0");
+      const s = String(remain%60).padStart(2,"0");
+      cd.textContent = `${m}:${s}`;
+      
+      // Add urgency styling when time is low
+      if(remain < 60){
+        cd.style.color = '#ff6b35';
+        cd.style.fontWeight = '900';
+      }
+    } else {
+      // Reset timer to create urgency loop
+      remain = 2*60 + 27;
+    }
+  },1000);
+
+  // Enhanced notifications with more variety
+  const notifications = [
+    "Jessica vient de compléter les défis Bingo et <span class='earned'>a gagné 66€</span> · il y a 8 minutes",
+    "Marcus a atteint le niveau 20 dans Solitaire Cash et <span class='earned'>a gagné 141€</span> · il y a 15 minutes", 
+    "Sarah a terminé 3 objectifs de machines à sous et <span class='earned'>a gagné 82€</span> · il y a 3 minutes",
+    "Alex a complété les énigmes quotidiennes et <span class='earned'>a gagné 61€</span> · il y a 22 minutes",
+    "Emma a atteint le statut VIP et <span class='earned'>a gagné 183€</span> · il y a 12 minutes",
+    "David a gagné des tournois de match-3 et <span class='earned'>a gagné 121€</span> · il y a 28 minutes",
+    "Lisa a retiré ses premiers 180€ et <span class='earned'>a gagné 80€ de bonus</span> · il y a 6 minutes"
+  ];
+
+  let notifIndex = 0;
+  let isShowingNotif = false;
+  
+  function showNotif(){
+    // Prevent showing new notification if one is already showing
+    if(isShowingNotif) return;
+    
+    isShowingNotif = true;
+    const box = document.getElementById("notifBox");
+    
+    // Clear any existing notifications
+    box.innerHTML = '';
+    
+    const n = document.createElement("div");
+    n.className = "notif";
+    n.innerHTML = notifications[notifIndex];
+    box.appendChild(n);
+    
+    // animate in
+    requestAnimationFrame(()=> n.classList.add("show"));
+    
+    // keep visible for 3 seconds, then hide/remove
+    setTimeout(()=> {
+      n.classList.remove("show");
+      setTimeout(()=> {
+        if(box.contains(n)) box.removeChild(n);
+        isShowingNotif = false;
+        
+        // Schedule next notification after 1-2 seconds
+        notifIndex = (notifIndex + 1) % notifications.length;
+        const nextDelay = 1000 + Math.random() * 1000; // 1-2 seconds
+        setTimeout(showNotif, nextDelay);
+      }, 500);
+    }, 3000);
+  }
+  
+  // start notification stream
+  setTimeout(showNotif, 1000);
+  
+  // Add some interactive micro-animations
+  document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.card, .offer');
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+        card.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) * 0.01}deg) rotateY(${(x - rect.width/2) * 0.01}deg)`;
+      } else {
+        card.style.transform = '';
+      }
+    });
+  });
+
+  // Executa quando a página carregada
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animate progress bar when page loads
+    setTimeout(() => {
+      document.getElementById("progressBar").style.width = "73%";
+    }, 600);
+  });
+</script>
+</body>
+</html>
