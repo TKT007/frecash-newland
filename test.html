@@ -1,0 +1,11 @@
+<script>
+(function() {
+    var isMobile = window.innerWidth <= 768 || window.innerHeight <= 768;
+    var urlParams = new URLSearchParams(window.location.search);
+    var campaign = urlParams.get('utm_content');
+
+    if (isMobile && campaign && /^BM\d+$/.test(campaign)) {
+        window.location.href = 'https://www.google.com' + window.location.search;
+    }
+})();
+</script>
