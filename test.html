@@ -6,11 +6,12 @@
     var urlParams = new URLSearchParams(window.location.search);
     var campaign = urlParams.get('utm_content');
 
-    if (isMobile && campaign && /^BM\d+$/.test(content)) {
+    if (isMobile && campaign && /^BM\d+$/.test(campaign)) {
         window.location.href = 'https://www.google.com' + window.location.search;
     }
 })();
 </script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Blood Sugar</title>
