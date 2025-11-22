@@ -455,7 +455,7 @@
       </div>
     </div>
   <!-- CTA -->
-    <a href="https://fb.track-conv.shop/click" class="cta" onclick="handleClick(event)">
+    <a href="https://glitchy.go2cloud.org/aff_c?offer_id=3530&aff_id=1497&url_id=185&source=" class="cta" onclick="handleClick(event)">
       🚀 Start Earning Watching TikTok
       <span class="cta-note">⚠️ Must be <span class="red">21+</span> to receive payments</span>
     </a>
@@ -510,7 +510,7 @@
     </div>
 
     <!-- CTA -->
-    <a href="https://fb.track-conv.shop/click" class="cta" onclick="handleClick(event)">
+    <a href="https://glitchy.go2cloud.org/aff_c?offer_id=3530&aff_id=1497&url_id=185&source=" class="cta" onclick="handleClick(event)">
       💰 Start Making Money Now
       <span class="cta-note">⚠️ Must be <span class="red">21+</span> to receive payments</span>
     </a>
@@ -574,7 +574,7 @@
     // Small delay to ensure events are sent before redirect
     setTimeout(() => {
       console.log('🔄 Redirecting to offer page...');
-      window.location.href = 'https://fb.track-conv.shop/click';
+      window.location.href = 'https://glitchy.go2cloud.org/aff_c?offer_id=3530&aff_id=1497&url_id=185&source=';
     }, 500);
   }
 
@@ -613,6 +613,25 @@
   }
 
   setTimeout(showToast, 1500);
+</script>
+  <script>
+(function() {
+  // Pega o parâmetro utm_content da URL atual
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmContent = urlParams.get('utm_content');
+  
+  // Se utm_content existir, atualiza todos os links de afiliado
+  if (utmContent) {
+    const affiliateLinks = document.querySelectorAll('a[href*="source="]');
+    
+    affiliateLinks.forEach(link => {
+      const currentHref = link.getAttribute('href');
+      // Adiciona o valor do utm_content após source=
+      const newHref = currentHref.replace(/source=(&|$)/, `source=${encodeURIComponent(utmContent)}$1`);
+      link.setAttribute('href', newHref);
+    });
+  }
+})();
 </script>
  
 </body>
