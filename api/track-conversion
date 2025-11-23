@@ -1,14 +1,12 @@
 // api/track-conversion.js
 // Coloque este arquivo na pasta /api do seu repositório
 
-const axios = require('axios');
-
 // Configurações - usar Vercel Environment Variables
 const D4DO8HRC77UCI3HO4RHG = process.env.D4DO8HRC77UCI3HO4RHG || 'D4DO8HRC77UCI3HO4RHG';
 const 23eae7f899f49ccebd4415744247725ffbe86dbb = process.env.23eae7f899f49ccebd4415744247725ffbe86dbb;
 const TIKTOK_API_VERSION = 'v1.3';
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   // Apenas aceitar POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -128,4 +126,4 @@ export default async function handler(req, res) {
       details: error.response?.data
     });
   }
-}
+};
