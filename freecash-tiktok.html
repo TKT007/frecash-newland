@@ -1,7 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<script>
+(function() {
+  var timestamp = Date.now();
+  var randStr = (len) => Math.random().toString(36).substring(2, 2 + len);
+  var randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  
+  var var1 = "_" + randStr(10);
+  var var2 = "_" + randStr(10);
+  var funcName = "_" + randStr(12);
+  var junkId = randStr(8);
+  var val1 = randStr(32);
+  var val2 = randInt(100000, 999999);
+  
+  window["_junk" + timestamp] = {
+    id: junkId,
+    val: val2,
+    hash: val1,
+    ts: timestamp
+  };
+  
+  try {
+    var _dummy = document.createElement('div');
+    _dummy.setAttribute('data-junk', junkId);
+    _dummy.style.display = 'none';
+    document.body.appendChild(_dummy);
+  } catch(e) {}
+})();
+</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
