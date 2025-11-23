@@ -1,81 +1,49 @@
 // api/track-conversion.js
-// Coloque este arquivo na pasta /api do seu repositório
-
-// Configurações - usar Vercel Environment Variables
-const D4DO8HRC77UCI3HO4RHG = process.env.D4DO8HRC77UCI3HO4RHG || 'D4DO8HRC77UCI3HO4RHG';
-const 23eae7f899f49ccebd4415744247725ffbe86dbb = process.env.23eae7f899f49ccebd4415744247725ffbe86dbb;
-const TIKTOK_API_VERSION = 'v1.3';
 
 module.exports = async (req, res) => {
-  // Apenas aceitar POST
+  const axios = require('axios');
+  
+  const TIKTOK_PIXEL_ID = process.env.TIKTOK_PIXEL_ID || 'D4DO8HRC77UCI3HO4RHG';
+  const TIKTOK_ACCESS_TOKEN = process.env.TIKTOK_ACCESS_TOKEN;
+  const TIKTOK_API_VERSION = 'v1.3';
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Habilitar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
   try {
-    const { 
-      event_name,
-      ttclid,
-      user_agent,
-      page_url,
-      referrer_url
-    } = req.body;
+    const { event_name, ttclid, user_agent, page_url, referrer_url } = req.body;
 
     console.log('📊 Conversão recebida:', event_name, 'ttclid:', ttclid);
 
-    // Validar ttclid
     if (!ttclid) {
-      return res.status(400).json({ 
-        success: false, 
-        error: 'ttclid é obrigatório para rastreamento' 
-      });
+      return res.status(400).json({ success: false, error: 'ttclid é obrigatório' });
     }
 
-    // Validar Access Token
-    if (!23eae7f899f49ccebd4415744247725ffbe86dbb) {
-      console.error('❌ 23eae7f899f49ccebd4415744247725ffbe86dbb não configurado!');
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Servidor não configurado corretamente' 
-      });
+    if (!TIKTOK_ACCESS_TOKEN) {
+      console.error('❌ TIKTOK_ACCESS_TOKEN não configurado!');
+      return res.status(500).json({ success: false, error: 'Token não configurado' });
     }
 
-    // Pegar IP real do usuário (Vercel fornece no header)
-    const ip_address = req.headers['x-forwarded-for']?.split(',')[0] || 
-                       req.headers['x-real-ip'] || 
-                       '0.0.0.0';
-
-    // Timestamp atual
+    const ip_address = req.headers['x-forwarded-for']?.split(',')[0] || req.headers['x-real-ip'] || '0.0.0.0';
     const timestamp = Math.floor(Date.now() / 1000);
     
-    // Payload para TikTok Events API
     const payload = {
-      pixel_code: D4DO8HRC77UCI3HO4RHG,
+      pixel_code: TIKTOK_PIXEL_ID,
       event: event_name || 'ClickButton',
       timestamp: timestamp,
       context: {
-        ad: {
-          callback: ttclid
-        },
-        page: {
-          url: page_url || '',
-          referrer: referrer_url || ''
-        },
-        user: {
-          external_id: '',
-          phone_number: '',
-          email: ''
-        },
+        ad: { callback: ttclid },
+        page: { url: page_url || '', referrer: referrer_url || '' },
+        user: { external_id: '', phone_number: '', email: '' },
         user_agent: user_agent || '',
         ip: ip_address
       },
@@ -89,37 +57,29 @@ module.exports = async (req, res) => {
 
     console.log('📤 Enviando para TikTok API...');
 
-    // Enviar para TikTok
     const response = await axios.post(
       `https://business-api.tiktok.com/open_api/${TIKTOK_API_VERSION}/pixel/track/`,
       payload,
       {
         headers: {
-          'Access-Token': 23eae7f899f49ccebd4415744247725ffbe86dbb,
+          'Access-Token': TIKTOK_ACCESS_TOKEN,
           'Content-Type': 'application/json'
         },
-        timeout: 5000 // 5 segundos timeout
+        timeout: 5000
       }
     );
 
     console.log('✅ Resposta TikTok:', response.data);
 
-    // Retornar sucesso
     return res.status(200).json({ 
       success: true, 
-      message: 'Conversão registrada com sucesso',
+      message: 'Conversão registrada',
       tiktok_response: response.data,
-      debug: {
-        pixel_id: D4DO8HRC77UCI3HO4RHG,
-        event: event_name,
-        ttclid: ttclid,
-        ip: ip_address
-      }
+      debug: { pixel_id: TIKTOK_PIXEL_ID, event: event_name, ttclid: ttclid, ip: ip_address }
     });
 
   } catch (error) {
     console.error('❌ Erro:', error.response?.data || error.message);
-    
     return res.status(500).json({ 
       success: false, 
       error: error.response?.data?.message || error.message,
