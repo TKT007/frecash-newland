@@ -525,7 +525,7 @@
 // Substitua TODO o script no final do HTML por este:
 
 <script>
-  // Handle click function with Server-Side + Client-Side tracking
+  // Handle click function com Server-Side + Client-Side tracking
   async function handleClick(event) {
     event.preventDefault();
     console.log('🚀 Botão clicado! Iniciando tracking...');
@@ -540,26 +540,48 @@
 
     // CLIENT-SIDE TRACKING (Backup)
     try {
-      ttq.track('ClickButton', {
+      // CompleteRegistration
+      ttq.track('CompleteRegistration', {
         content_type: 'product',
         content_id: 'freecash-tiktok-rewards',
         value: 1.00,
         currency: 'USD'
       });
-      console.log('✅ Client-side tracking disparado');
+      
+      // Purchase
+      ttq.track('Purchase', {
+        content_type: 'product',
+        content_id: 'freecash-tiktok-rewards',
+        value: 1.00,
+        currency: 'USD'
+      });
+      
+      console.log('✅ Client-side tracking disparado (CompleteRegistration + Purchase)');
     } catch (e) {
       console.warn('⚠️ Client-side tracking falhou:', e);
     }
 
     // SERVER-SIDE TRACKING (Principal)
     try {
+      // CompleteRegistration
+      await fetch('/api', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: 'CompleteRegistration',
+          ttclid: ttclid,
+          user_agent: navigator.userAgent,
+          page_url: window.location.href,
+          referrer_url: document.referrer
+        })
+      });
+
+      // Purchase
       const response = await fetch('/api', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          event_name: 'ClickButton',
+          event_name: 'Purchase',
           ttclid: ttclid,
           user_agent: navigator.userAgent,
           page_url: window.location.href,
@@ -570,7 +592,7 @@
       const data = await response.json();
       
       if (data.success) {
-        console.log('✅ Server-side tracking: SUCESSO', data);
+        console.log('✅ Server-side tracking: SUCESSO (CompleteRegistration + Purchase)', data);
       } else {
         console.error('❌ Server-side tracking: FALHOU', data.error);
       }
@@ -585,7 +607,7 @@
     }, 800);
   }
 
-  // Toast notifications (mantém igual)
+  // Toast notifications
   const notifications = [
     { user: "Jessica", amount: "$73", action: "earned watching", time: "8 min ago" },
     { user: "Marcus", amount: "$156", action: "made from TikTok", time: "15 min ago" },
