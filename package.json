@@ -1,0 +1,8 @@
+{
+  "name": "tiktok-tracking-landing",
+  "version": "1.0.0",
+  "description": "Landing page com TikTok Server-Side Tracking",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
