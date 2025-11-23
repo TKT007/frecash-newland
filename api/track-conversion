@@ -4,7 +4,7 @@
 const axios = require('axios');
 
 // Configurações - usar Vercel Environment Variables
-const TIKTOK_PIXEL_ID = process.env.TIKTOK_PIXEL_ID || 'D41PHSBC77UA61AHK3NG';
+const D41PHSBC77UA61AHK3NG = process.env.D41PHSBC77UA61AHK3NG || 'D41PHSBC77UA61AHK3NG';
 const TIKTOK_ACCESS_TOKEN = process.env.TIKTOK_ACCESS_TOKEN;
 const TIKTOK_API_VERSION = 'v1.3';
 
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
     
     // Payload para TikTok Events API
     const payload = {
-      pixel_code: TIKTOK_PIXEL_ID,
+      pixel_code: D41PHSBC77UA61AHK3NG,
       event: event_name || 'ClickButton',
       timestamp: timestamp,
       context: {
@@ -112,7 +112,7 @@ export default async function handler(req, res) {
       message: 'Conversão registrada com sucesso',
       tiktok_response: response.data,
       debug: {
-        pixel_id: TIKTOK_PIXEL_ID,
+        pixel_id: D41PHSBC77UA61AHK3NG,
         event: event_name,
         ttclid: ttclid,
         ip: ip_address
