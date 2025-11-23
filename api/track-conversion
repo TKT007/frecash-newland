@@ -4,8 +4,8 @@
 const axios = require('axios');
 
 // Configurações - usar Vercel Environment Variables
-const D41PHSBC77UA61AHK3NG = process.env.D41PHSBC77UA61AHK3NG || 'D41PHSBC77UA61AHK3NG';
-const TIKTOK_ACCESS_TOKEN = process.env.TIKTOK_ACCESS_TOKEN;
+const D4DO8HRC77UCI3HO4RHG = process.env.D4DO8HRC77UCI3HO4RHG || 'D4DO8HRC77UCI3HO4RHG';
+const 23eae7f899f49ccebd4415744247725ffbe86dbb = process.env.23eae7f899f49ccebd4415744247725ffbe86dbb;
 const TIKTOK_API_VERSION = 'v1.3';
 
 export default async function handler(req, res) {
@@ -44,8 +44,8 @@ export default async function handler(req, res) {
     }
 
     // Validar Access Token
-    if (!TIKTOK_ACCESS_TOKEN) {
-      console.error('❌ TIKTOK_ACCESS_TOKEN não configurado!');
+    if (!23eae7f899f49ccebd4415744247725ffbe86dbb) {
+      console.error('❌ 23eae7f899f49ccebd4415744247725ffbe86dbb não configurado!');
       return res.status(500).json({ 
         success: false, 
         error: 'Servidor não configurado corretamente' 
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
     
     // Payload para TikTok Events API
     const payload = {
-      pixel_code: D41PHSBC77UA61AHK3NG,
+      pixel_code: D4DO8HRC77UCI3HO4RHG,
       event: event_name || 'ClickButton',
       timestamp: timestamp,
       context: {
@@ -97,7 +97,7 @@ export default async function handler(req, res) {
       payload,
       {
         headers: {
-          'Access-Token': TIKTOK_ACCESS_TOKEN,
+          'Access-Token': 23eae7f899f49ccebd4415744247725ffbe86dbb,
           'Content-Type': 'application/json'
         },
         timeout: 5000 // 5 segundos timeout
@@ -112,7 +112,7 @@ export default async function handler(req, res) {
       message: 'Conversão registrada com sucesso',
       tiktok_response: response.data,
       debug: {
-        pixel_id: D41PHSBC77UA61AHK3NG,
+        pixel_id: D4DO8HRC77UCI3HO4RHG,
         event: event_name,
         ttclid: ttclid,
         ip: ip_address
