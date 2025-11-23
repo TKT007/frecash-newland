@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
     
     const payload = {
       pixel_code: TIKTOK_PIXEL_ID,
-      event: event_name || 'ClickButton',
+      event: event_name || 'CompleteRegistration',
       timestamp: Math.floor(Date.now() / 1000),
       context: {
         ad: { callback: ttclid },
