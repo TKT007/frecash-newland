@@ -4,18 +4,19 @@ module.exports = async (req, res) => {
   const TIKTOK_PIXEL_ID = process.env.TIKTOK_PIXEL_ID || 'D4DO8HRC77UCI3HO4RHG';
   const TIKTOK_ACCESS_TOKEN = process.env.TIKTOK_ACCESS_TOKEN;
   
+  // CORS - PERMITIR WORKERS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  // Handle preflight
   if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     return res.status(200).end();
   }
   
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
-
-  res.setHeader('Access-Control-Allow-Origin', '*');
 
   try {
     const { event_name, ttclid, user_agent, page_url, referrer_url } = req.body;
