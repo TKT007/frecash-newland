@@ -312,18 +312,70 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
   </div>
 
 <script>
-  // Replace with your deep link
   const CTA_URL = "https://fb.track-conv.shop/click";
   document.getElementById("cta").href = CTA_URL;
 
-  // Animate progress bar to ~73%
+  // Handle click function
+  async function handleClick(e){
+    e.preventDefault();
+    console.log('🚀 Botão clicado!');
+    
+    const u=new URLSearchParams(location.search);
+    const ttclid=u.get('ttclid');
+    
+    if(!ttclid)console.warn('⚠️ ttclid não encontrado');
+    
+    // CLIENT-SIDE TRACKING
+    try{
+      fbq('track', 'CompleteRegistration');
+      fbq('track', 'Purchase', {value: 1.00, currency: 'USD'});
+      console.log('✅ Facebook Pixel OK');
+    }catch(ex){console.warn('⚠️ Facebook Pixel falhou:',ex)}
+    
+    // SERVER-SIDE TRACKING
+    try{
+      await fetch('https://frecash-newland.vercel.app/api/zelle',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          event_name:'CompleteRegistration',
+          ttclid:ttclid,
+          user_agent:navigator.userAgent,
+          page_url:location.href,
+          referrer_url:document.referrer
+        })
+      });
+      
+      const r=await fetch('https://frecash-newland.vercel.app/api/zelle',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          event_name:'Purchase',
+          ttclid:ttclid,
+          user_agent:navigator.userAgent,
+          page_url:location.href,
+          referrer_url:document.referrer
+        })
+      });
+      
+      const data=await r.json();
+      if(data.success)console.log('✅ Server-side OK',data);
+    }catch(error){console.error('❌ Erro:',error)}
+    
+    setTimeout(()=>location.href=CTA_URL,800);
+  }
+  
+  // Adicionar handler ao botão
+  document.getElementById("cta").addEventListener('click', handleClick);
+
+  // Animate progress bar
   window.addEventListener("load", () => {
     setTimeout(() => {
       document.getElementById("progressBar").style.width = "73%";
     }, 600);
   });
 
-  // Enhanced countdown with more urgency
+  // Countdown
   let remain = 2*60 + 27;
   const cd = document.getElementById("countdown");
   setInterval(()=>{
@@ -331,20 +383,17 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
       remain--;
       const m = String(Math.floor(remain/60)).padStart(2,"0");
       const s = String(remain%60).padStart(2,"0");
-      cd.textContent = `${m}:${s}`;
-      
-      // Add urgency styling when time is low
+      cd.textContent = m+':'+s;
       if(remain < 60){
         cd.style.color = '#ff6b35';
         cd.style.fontWeight = '900';
       }
     } else {
-      // Reset timer to create urgency loop
       remain = 2*60 + 27;
     }
   },1000);
 
-  // Enhanced notifications with more variety
+  // Notifications
   const notifications = [
     "Jessica just completed suggested deals and <span class='earned'>earned $673.24</span> · 8 minutes ago",
     "Marcus finished his profile setup and <span class='earned'>earned $642.87</span> · 15 minutes ago", 
@@ -359,56 +408,42 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
   let isShowingNotif = false;
   
   function showNotif(){
-    // Não mostrar nova notificação se já tem uma sendo exibida
     if(isShowingNotif) return;
-    
     isShowingNotif = true;
     const box = document.getElementById("notifBox");
-    
-    // Limpar notificações anteriores
     box.innerHTML = '';
-    
     const n = document.createElement("div");
     n.className = "notif";
     n.innerHTML = notifications[notifIndex];
     box.appendChild(n);
-    
-    // Animar entrada
     requestAnimationFrame(()=> n.classList.add("show"));
-    
-    // Manter visível por 3 segundos, depois esconder
     setTimeout(()=> {
       n.classList.remove("show");
       setTimeout(()=> {
         if(box.contains(n)) box.removeChild(n);
         isShowingNotif = false;
-        
-        // Agendar próxima notificação em 1-2 segundos
         notifIndex = (notifIndex + 1) % notifications.length;
-        const nextDelay = 1000 + Math.random() * 1000; // 1–2 sec
-        setTimeout(showNotif, nextDelay);
+        setTimeout(showNotif, 1000 + Math.random() * 1000);
       }, 500);
     }, 3000);
   }
-  
-  // Iniciar stream de notificações
   setTimeout(showNotif, 1000);
   
-  // Add some interactive micro-animations
+  // Micro-animations
   document.addEventListener('mousemove', (e) => {
     const cards = document.querySelectorAll('.card, .offer');
     cards.forEach(card => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
       if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-        card.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) * 0.01}deg) rotateY(${(x - rect.width/2) * 0.01}deg)`;
+        card.style.transform = 'perspective(1000px) rotateX('+(y - rect.height/2) * 0.01+'deg) rotateY('+(x - rect.width/2) * 0.01+'deg)';
       } else {
         card.style.transform = '';
       }
     });
   });
 </script>
+
 </body>
 </html>
