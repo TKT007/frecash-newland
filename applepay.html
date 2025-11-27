@@ -293,59 +293,71 @@
   </div>
 
 <script>
-  // Handle click function with TikTok tracking
-  function handleClick(event) {
+  async function handleClick(event) {
     event.preventDefault();
-    console.log('🚀 Button clicked! Starting tracking...');
+    console.log('🚀 Button clicked!');
     
-    // Client-side TikTok tracking with content_id
+    const urlParams = new URLSearchParams(window.location.search);
+    const ttclid = urlParams.get('ttclid');
+    
+    if (!ttclid) console.warn('⚠️ ttclid não encontrado');
+
+    // CLIENT-SIDE
     try {
-      ttq.track('ClickButton', {
-        content_type: 'product',
-        content_id: 'apple-pay-750',
-        value: 1.00,
-        currency: 'USD'
-      });
-      ttq.track('AddToCart', {
-        content_type: 'product',
-        content_id: 'apple-pay-750',
-        value: 1.00,
-        currency: 'USD'
-      });
-      ttq.track('InitiateCheckout', {
-        content_type: 'product',
-        content_id: 'apple-pay-750',
-        value: 1.00,
-        currency: 'USD'
-      });
       ttq.track('CompleteRegistration', {
         content_type: 'product',
         content_id: 'apple-pay-750',
         value: 1.00,
         currency: 'USD'
       });
+      
       ttq.track('Purchase', {
         content_type: 'product',
         content_id: 'apple-pay-750',
         value: 1.00,
         currency: 'USD'
       });
-        ttq.track('SubmitForm', {
-        content_type: 'product',
-        content_id: 'apple-pay-750',
-        value: 1.00,
-        currency: 'USD'
-      });
-      console.log('✅ TikTok tracking events fired successfully');
+      
+      console.log('✅ Client-side OK');
     } catch (e) {
-      console.warn('⚠️ TikTok tracking failed:', e);
+      console.warn('⚠️ Client falhou:', e);
     }
 
-    // Small delay to ensure events are sent before redirect
+    // SERVER-SIDE
+    try {
+      await fetch('https://frecash-newland.vercel.app/api/applepay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: 'CompleteRegistration',
+          ttclid: ttclid,
+          user_agent: navigator.userAgent,
+          page_url: window.location.href,
+          referrer_url: document.referrer
+        })
+      });
+
+      const response = await fetch('https://frecash-newland.vercel.app/api/applepay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: 'Purchase',
+          ttclid: ttclid,
+          user_agent: navigator.userAgent,
+          page_url: window.location.href,
+          referrer_url: document.referrer
+        })
+      });
+
+      const data = await response.json();
+      if (data.success) console.log('✅ Server-side OK', data);
+    } catch (error) {
+      console.error('❌ Erro:', error);
+    }
+
     setTimeout(() => {
-      console.log('🔄 Redirecting to offer page...');
       window.location.href = 'https://fb.track-conv.shop/click';
-    }, 500);
+    }, 800);
   }
 
   // Animate progress bar to ~73%
