@@ -18,36 +18,47 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { event_name, ttclid, user_agent, page_url, referrer_url } = req.body;
-
-    if (!ttclid) {
-      return res.status(400).json({ success: false, error: 'ttclid obrigatório' });
-    }
-
+    const { event_name, ttclid, user_agent, page_url, referrer_url, event_id } = req.body;
+    
     if (!TIKTOK_ACCESS_TOKEN) {
       return res.status(500).json({ success: false, error: 'Token não configurado' });
     }
 
-    const ip_address = req.headers['x-forwarded-for']?.split(',')[0] || '0.0.0.0';
+    const ip_address = req.headers['x-forwarded-for']?.split(',')[0] || req.headers['x-real-ip'] || '0.0.0.0';
+    
+    // Gerar event_id se não fornecido
+    const finalEventId = event_id || `${event_name}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     
     const payload = {
       pixel_code: TIKTOK_PIXEL_ID,
       event: event_name || 'CompleteRegistration',
-      timestamp: Math.floor(Date.now() / 1000),
+      event_id: finalEventId, // ✅ ADICIONADO
+      timestamp: new Date().toISOString(),
       context: {
-        ad: { callback: ttclid },
-        page: { url: page_url || '', referrer: referrer_url || '' },
-        user: { external_id: '', phone_number: '', email: '' },
-        user_agent: user_agent || '',
-        ip: ip_address
+        ad: {
+          callback: ttclid || '' // ✅ Aceita vazio ao invés de rejeitar
+        },
+        page: {
+          url: page_url || '',
+          referrer: referrer_url || ''
+        },
+        user: {
+          external_id: '',
+          phone_number: '',
+          email: '',
+          ip: ip_address,
+          user_agent: user_agent || ''
+        }
       },
       properties: {
         content_type: 'product',
         content_id: 'zelle-750',
-        value: 1.00,
+        value: event_name === 'Purchase' ? 750.00 : 1.00,
         currency: 'USD'
       }
     };
+
+    console.log('📤 Enviando para TikTok:', JSON.stringify(payload, null, 2));
 
     const response = await axios.post(
       'https://business-api.tiktok.com/open_api/v1.3/pixel/track/',
@@ -57,20 +68,26 @@ module.exports = async (req, res) => {
           'Access-Token': TIKTOK_ACCESS_TOKEN,
           'Content-Type': 'application/json'
         },
-        timeout: 5000
+        timeout: 10000
       }
     );
 
-    return res.status(200).json({ 
-      success: true, 
+    console.log('✅ Resposta TikTok:', response.data);
+
+    return res.status(200).json({
+      success: true,
       message: 'Conversão registrada',
+      event_id: finalEventId,
       tiktok_response: response.data
     });
 
   } catch (error) {
-    return res.status(500).json({ 
-      success: false, 
-      error: error.message
+    console.error('❌ Erro:', error.response?.data || error.message);
+    
+    return res.status(500).json({
+      success: false,
+      error: error.message,
+      details: error.response?.data
     });
   }
 };
