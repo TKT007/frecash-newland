@@ -328,55 +328,61 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
   const CTA_URL = "https://fb.track-conv.shop/click";
   document.getElementById("cta").href = CTA_URL;
 
-  // Handle click function
   async function handleClick(e){
-    e.preventDefault();
-    console.log('🚀 Botão clicado!');
+  e.preventDefault();
+  console.log('🚀 Botão clicado!');
+  
+  const u = new URLSearchParams(location.search);
+  const ttclid = u.get('ttclid') || '';
+  
+  if(!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
+  
+  // CLIENT-SIDE TRACKING
+  try{
+    fbq('track', 'CompleteRegistration');
+    fbq('track', 'Purchase', {value: 750.00, currency: 'USD'});
+    console.log('✅ Facebook Pixel OK');
+  }catch(ex){console.warn('⚠️ Facebook Pixel falhou:',ex)}
+  
+  // SERVER-SIDE TRACKING
+  try{
+    // CompleteRegistration
+    await fetch('https://frecash-newland.vercel.app/api/zelle',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        event_name:'CompleteRegistration',
+        event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+        ttclid: ttclid,
+        user_agent: navigator.userAgent,
+        page_url: location.href,
+        referrer_url: document.referrer
+      })
+    });
     
-    const u=new URLSearchParams(location.search);
-    const ttclid=u.get('ttclid');
+    // Purchase
+    const r = await fetch('https://frecash-newland.vercel.app/api/zelle',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        event_name:'Purchase',
+        event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+        ttclid: ttclid,
+        user_agent: navigator.userAgent,
+        page_url: location.href,
+        referrer_url: document.referrer
+      })
+    });
     
-    if(!ttclid)console.warn('⚠️ ttclid não encontrado');
-    
-    // CLIENT-SIDE TRACKING
-    try{
-      fbq('track', 'CompleteRegistration');
-      fbq('track', 'Purchase', {value: 1.00, currency: 'USD'});
-      console.log('✅ Facebook Pixel OK');
-    }catch(ex){console.warn('⚠️ Facebook Pixel falhou:',ex)}
-    
-    // SERVER-SIDE TRACKING
-    try{
-      await fetch('https://frecash-newland.vercel.app/api/zelle',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          event_name:'CompleteRegistration',
-          ttclid:ttclid,
-          user_agent:navigator.userAgent,
-          page_url:location.href,
-          referrer_url:document.referrer
-        })
-      });
-      
-      const r=await fetch('https://frecash-newland.vercel.app/api/zelle',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          event_name:'Purchase',
-          ttclid:ttclid,
-          user_agent:navigator.userAgent,
-          page_url:location.href,
-          referrer_url:document.referrer
-        })
-      });
-      
-      const data=await r.json();
-      if(data.success)console.log('✅ Server-side OK',data);
-    }catch(error){console.error('❌ Erro:',error)}
-    
-    setTimeout(()=>location.href=CTA_URL,800);
+    const data = await r.json();
+    if(data.success) console.log('✅ Server-side OK',data);
+    else console.error('❌ Server-side erro:', data);
+  }catch(error){
+    console.error('❌ Erro:',error);
   }
+  
+  setTimeout(() => location.href = CTA_URL, 800);
+}
   
   // Adicionar handler ao botão
   document.getElementById("cta").addEventListener('click', handleClick);
