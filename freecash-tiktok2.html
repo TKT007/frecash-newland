@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
@@ -28,8 +26,12 @@
 </script>
 <!-- TikTok Pixel Code End -->
 
+<link rel="icon" type="image/x-icon" href="https://i.imgur.com/d4rEH4U.png">
+<link rel="apple-touch-icon" href="https://i.imgur.com/d4rEH4U.png">
+
 <title>Get Paid Watching TikTok - Freecash</title>
 <style>
+  /* ===== Freecash Dark Theme (Apple Style) ===== */
   :root{
     --bg:#0a0f14;
     --panel:#0e1419;
@@ -40,12 +42,14 @@
     --brand:#00ff88;
     --brand2:#00d175;
     --brandGlow: rgba(0,255,136,.3);
-    --accent:#ff6b35;
-    --tiktok:#fe2c55;
-    --tiktokGlow: rgba(254,44,85,.3);
+    --accent:#fe2c55;
+    --accentGlow: rgba(254,44,85,.3);
+    --warning:#FF9500;
+    --shadow:rgba(0,0,0,.3);
   }
 
-  *{box-sizing:border-box;margin:0;padding:0;}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
   body{
     background: 
       radial-gradient(circle at 20% 80%, rgba(0,255,136,.08) 0%, transparent 50%),
@@ -53,205 +57,138 @@
       radial-gradient(900px 380px at 50% -10%, #0e1a25 0%, #0a0f14 60%), 
       #0a0f14;
     color:var(--text);
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    min-height:100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow-x:hidden;
+    min-height:100vh;
+    line-height:1.47059;
+    font-weight:400;
+    letter-spacing:-.022em;
   }
 
-  /* Hero mobile-first */
-  .hero{
-    padding: 80px 20px 20px;
-    text-align: center;
+  .wrap{
+    max-width:540px;
+    margin:0 auto;
+    padding:100px 24px 32px;
+    text-align:center;
+    position:relative;
   }
-  
+
   .logo{
-    width:72px;
-    height:72px;
-    margin:0 auto 20px;
-    border-radius:18px;
-    display:block;
+    width:80px;height:80px;
+    margin:0 auto 16px;
+    object-fit:contain;border-radius:20px;display:block;
     box-shadow:0 8px 32px rgba(0,0,0,.5), 0 0 20px var(--brandGlow);
+    transition: transform 0.3s ease;
+  }
+  .logo:hover{
+    transform: scale(1.05);
   }
 
-  h1{
-    font-size:28px;
-    font-weight:900;
-    line-height:1.2;
-    margin-bottom:12px;
-    background: linear-gradient(135deg, var(--text), var(--brand));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .headline{
+    font-size:26px;font-weight:700;line-height:1.15;margin:12px 0 12px;
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
   }
 
   .subtitle{
-    font-size:16px;
+    font-size:15px;
     color:var(--muted);
     line-height:1.5;
-    margin-bottom:16px;
+    margin-bottom:24px;
     padding:0 10px;
   }
 
-  .tiktok-image{
-    width:100%;
-    max-width:320px;
-    height:auto;
-    display:block;
-    margin:-20px auto 40px;
-    border-radius:16px;
+  .stats{
+    display:flex;justify-content:space-between;margin:20px 0;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;padding:12px 16px;
+    box-shadow:0 2px 8px var(--shadow);
+  }
+  .stat{
+    text-align:center;flex:1;
+  }
+  .stat-num{
+    font-size:18px;font-weight:700;color:var(--brand);display:block;
+  }
+  .stat-label{
+    font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;
+    font-weight:600;
   }
 
-  /* Container */
-  .container{
-    max-width:540px;
-    margin:0 auto;
-    padding:0 20px 40px;
+  .progress{
+    height:32px;background:var(--panel);border:1px solid var(--line);
+    border-radius:999px;overflow:hidden;margin:24px auto;max-width:440px;position:relative;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.06);
+  }
+  .fill{
+    height:100%;width:0;
+    background:linear-gradient(90deg,var(--brand),var(--brand2));
+    box-shadow: 0 0 15px var(--brandGlow);
+    transition:width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;
+  }
+  .fill::after{
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .goal{
+    position:absolute;right:12px;top:50%;transform:translateY(-50%);
+    font-size:14px;font-weight:600;color:var(--brand);
+    background:rgba(0,255,136,.1);padding:2px 8px;border-radius:8px;
   }
 
-  /* Section titles */
-  .section-title{
-    font-size:22px;
-    font-weight:800;
-    text-align:center;
-    margin-bottom:24px;
-    color:var(--text);
-  }
-
-  /* Method cards */
-  .methods{
-    display:grid;
-    gap:16px;
-    margin-bottom:48px;
-  }
-
-  .method-card{
+  .card{
     background:linear-gradient(145deg,#0e1a28 0%, #0c1218 100%);
     border:1px solid var(--line);
-    border-radius:20px;
-    padding:24px 20px;
-    display:flex;
-    gap:16px;
-    align-items:flex-start;
-    box-shadow:0 8px 24px rgba(0,0,0,.3), 0 0 0 1px rgba(0,255,136,.05);
-    transition: all 0.3s ease;
+    border-radius:24px;padding:24px;text-align:left;margin-top:24px;
+    box-shadow:0 8px 24px var(--shadow), 0 0 0 1px rgba(0,255,136,.05);
+    position:relative;
   }
   
-  .method-card:active{
-    transform: scale(0.98);
-  }
-
-  .method-icon{
-    font-size:40px;
-    flex-shrink:0;
-    filter: drop-shadow(0 0 8px var(--brandGlow));
-  }
-
-  .method-content h3{
-    font-size:17px;
-    font-weight:700;
-    color:var(--text);
-    margin-bottom:6px;
-  }
-
-  .method-content p{
-    font-size:14px;
-    color:var(--muted);
-    line-height:1.5;
-  }
-
-  /* Steps */
-  .steps{
-    margin-bottom:48px;
-  }
-
-  .step{
-    display:flex;
-    gap:16px;
-    margin-bottom:24px;
-    align-items:flex-start;
-  }
-
-  .step-num{
-    width:48px;
-    height:48px;
-    background:linear-gradient(135deg,var(--brand),var(--brand2));
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  .section-title{
     font-size:20px;
-    font-weight:900;
-    color:#0a2318;
-    flex-shrink:0;
-    box-shadow:0 4px 16px var(--brandGlow);
-  }
-
-  .step-content h3{
-    font-size:16px;
-    font-weight:700;
-    color:var(--text);
-    margin-bottom:4px;
-  }
-
-  .step-content p{
-    font-size:14px;
-    color:var(--muted);
-    line-height:1.5;
-  }
-
-  /* Earnings box */
-  .earnings{
-    background:linear-gradient(145deg,#0e1a28 0%, #0c1218 100%);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:24px 20px;
-    margin-bottom:48px;
-    box-shadow:0 8px 24px rgba(0,0,0,.3);
-  }
-
-  .earnings-title{
-    font-size:18px;
     font-weight:700;
     text-align:center;
     margin-bottom:20px;
     color:var(--text);
   }
 
-  .earnings-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 0;
-    border-bottom:1px dashed var(--line);
+  .li{
+    display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start;
+    transition: all 0.3s ease;
   }
-  .earnings-row:last-child{
-    border-bottom:none;
+  .li:last-child{border-bottom:0}
+  .li:hover{
+    background:rgba(0,255,136,.03);margin:0 -8px;padding-left:24px;padding-right:24px;
+    border-radius:12px;
+  }
+  .check{
+    display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+    border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+    font-size:14px;font-weight:700;color:#0a2318;flex-shrink:0;
+    box-shadow:0 4px 16px var(--brandGlow);
+  }
+  .li b{display:block;color:var(--text);font-size:15px;margin-bottom:4px;font-weight:600;}
+  .muted{color:var(--muted);font-size:13px;line-height:1.4;}
+
+  .method-icon{
+    font-size:28px;
+    flex-shrink:0;
   }
 
-  .earnings-label{
-    font-size:15px;
-    color:var(--muted);
-  }
-
-  .earnings-value{
-    font-size:20px;
-    font-weight:800;
-    color:var(--brand);
-    text-shadow:0 0 12px var(--brandGlow);
-  }
-
-  /* Bonus offer */
-  .bonus{
+  .offer{
     background:linear-gradient(135deg, #1a0f0a 0%, #0f1419 100%);
-    border:2px solid var(--accent);
-    border-radius:20px;
-    padding:24px 20px;
-    margin-bottom:32px;
-    position:relative;
-    box-shadow: 0 0 30px rgba(255,107,53,.2);
+    border:2px solid var(--accent);border-radius:18px;padding:18px;margin-top:20px;text-align:left;
+    position:relative;overflow:hidden;
+    box-shadow: 0 0 30px rgba(255,44,85,.2);
   }
-
-  .bonus::before{
+  .offer::before{
     content:'🔥 LIMITED TIME';
     position:absolute;
     top:-1px;
@@ -264,62 +201,30 @@
     border-radius:0 0 8px 8px;
     letter-spacing:.5px;
   }
+  .timer{font-weight:700;color:var(--accent);margin-bottom:8px;font-size:15px;}
 
-  .bonus-title{
-    font-size:18px;
-    font-weight:800;
-    color:var(--text);
-    margin-bottom:12px;
-  }
-
-  .bonus-text{
-    font-size:15px;
-    color:var(--muted);
-    line-height:1.6;
-  }
-
-  .bonus-text b{
-    color:var(--brand);
-  }
-
-  /* CTA Button */
   .cta{
-    display:block;
+    display:block;text-align:center;
     background:linear-gradient(135deg,var(--brand) 0%,var(--brand2) 100%);
-    color:#0a2318;
-    font-weight:900;
-    font-size:18px;
-    text-align:center;
-    padding:20px;
-    border-radius:16px;
+    color:#0a2318 !important;font-weight:700;border-radius:18px;padding:20px;margin-top:24px;font-size:18px;
     text-decoration:none;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    box-shadow:0 12px 32px var(--brandGlow), 0 4px 12px rgba(0,0,0,.3);
-    position:relative;
-    overflow:hidden;
-    margin-bottom:16px;
+    box-shadow:0 8px 20px var(--brandGlow), 0 2px 6px rgba(0,0,0,.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;overflow:hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     cursor:pointer;
   }
-
   .cta::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:100%;
-    height:100%;
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
     background:linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
     transition:left 0.6s ease;
   }
-
-  .cta:active{
-    transform: scale(0.98);
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px var(--brandGlow), 0 4px 8px rgba(0,0,0,.15);
   }
-
-  .cta:active::before{
-    left:100%;
-  }
+  .cta:hover::before{left:100%;}
+  .cta:active{transform:translateY(0);}
 
   .cta-note{
     display:block;
@@ -330,257 +235,259 @@
   }
 
   .cta-note .red{
-    color:#ff2d47;
+    color:var(--accent);
     font-weight:800;
   }
 
-  /* Footer */
-  .footer{
-    text-align:center;
-    padding:20px;
-    font-size:12px;
-    color:var(--muted);
-    line-height:1.6;
-  }
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.8;}
 
-  /* Toast notifications */
-  .toast{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%) translateY(-60px);
-    width:calc(100% - 32px);
-    max-width:400px;
+  .notif-container{
+    position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    width:94%;max-width:440px;z-index:9999;pointer-events:none;
+  }
+  .notif{
     background:linear-gradient(135deg, #0e1a28, #0a0f14);
-    border:1px solid #2a4058;
-    border-radius:12px;
-    padding:14px 16px;
-    display:flex;
-    align-items:center;
-    gap:12px;
+    border:1px solid #2a4058;border-radius:14px;
+    padding:14px 16px;font-size:13px;display:flex;align-items:center;gap:12px;
     box-shadow:0 8px 24px rgba(0,0,0,.6);
-    opacity:0;
-    transition:all .5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index:1000;
+    opacity:0;transform:translateY(-40px);transition:all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    color:var(--text);margin-bottom:8px;
+    backdrop-filter: blur(10px);
+  }
+  .notif.show{opacity:1;transform:translateY(0)}
+  .notif .earned{font-weight:700;color:var(--brand);}
+  .notif::before{
+    content:'💰';font-size:16px;flex-shrink:0;
   }
 
-  .toast.show{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
+  @media (max-width:480px){
+    .headline{font-size:22px}
+    .progress{max-width:100%;height:28px;}
+    .wrap{padding:80px 16px 24px;}
+    .card{padding:20px 16px;}
+    .stats{flex-direction:row;gap:8px;}
+    .stat{padding:4px 0;flex:1;}
   }
 
-  .toast-icon{
-    font-size:24px;
-    flex-shrink:0;
-  }
-
-  .toast-text{
-    flex:1;
-    font-size:13px;
-    line-height:1.4;
-  }
-
-  .toast-amount{
-    color:var(--brand);
-    font-weight:800;
-  }
-
-  .toast-time{
-    font-size:11px;
-    color:var(--muted);
-    display:block;
-    margin-top:2px;
-  }
-
-  /* Pulse animation */
   @keyframes pulse {
-    0%, 100% { box-shadow:0 12px 32px var(--brandGlow), 0 4px 12px rgba(0,0,0,.3); }
-    50% { box-shadow:0 16px 40px var(--brandGlow), 0 6px 16px rgba(0,0,0,.4); }
+    0%, 100% { box-shadow:0 8px 20px var(--brandGlow), 0 2px 6px rgba(0,0,0,.1); }
+    50% { box-shadow:0 12px 25px var(--brandGlow), 0 4px 8px rgba(0,0,0,.15); }
   }
   .cta{
     animation: pulse 3s ease-in-out infinite;
   }
-
-  /* Tablet adjustments */
-  @media (min-width: 600px){
-    h1{font-size:32px;}
-    .hero{padding:100px 40px 60px;}
-    .container{padding:0 40px 60px;}
-  }
 </style>
 </head>
 <body>
-  <!-- Toast -->
-  <div class="toast" id="toast">
-    <div class="toast-icon">💰</div>
-    <div class="toast-text" id="toastText"></div>
-  </div>
+  <div class="notif-container" id="notifBox"></div>
 
-  <!-- Hero -->
-  <div class="hero">
-    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash">
-    <h1>Get Paid Watching TikTok</h1>
-    <p class="subtitle">Turn your TikTok scrolling time into real cash. Sign up to Freecash and start earning money watching videos!</p>
-  </div>
+  <div class="wrap">
+    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
 
- <!-- Container -->
-  <div class="container">
-<!-- Steps -->
-    <h2 class="section-title">Getting Started is Easy</h2>
-    
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h3>Sign up to Freecash</h3>
-          <p>Takes 30 seconds. Use Google or Facebook.</p>
+    <div class="headline">Get Paid Watching TikTok</div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num">847K+</span>
+        <div class="stat-label">Active Users</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">$12.4M</span>
+        <div class="stat-label">Paid Out</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">24/7</span>
+        <div class="stat-label">Support</div>
+      </div>
+    </div>
+
+    <div class="progress">
+      <div class="fill" id="progressBar"></div>
+      <div class="goal">$300</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Getting Started is Easy</div>
+      
+      <div class="li">
+        <span class="check">1</span>
+        <div>
+          <b>Sign up to Freecash</b>
+          <div class="muted">Takes 30 seconds.</div>
         </div>
       </div>
-
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h3>Watch TikTok videos</h3>
-          <p>Browse TikTok while earning. The more you watch, the more you earn.</p>
+      <div class="li">
+        <span class="check">2</span>
+        <div>
+          <b>Watch TikTok videos</b>
+          <div class="muted">Browse TikTok while earning. The more you watch, the more you earn.</div>
         </div>
       </div>
-
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h3>Cash out your earnings</h3>
-          <p>Minimum $5 • PayPal, gift cards & more available.</p>
+      <div class="li">
+        <span class="check">3</span>
+        <div>
+          <b>Cash out your earnings</b>
+          <div class="muted">Minimum $5 • PayPal, gift cards & more available.</div>
         </div>
       </div>
     </div>
-  <!-- CTA -->
-    <a href="https://fb.track-conv.shop/click" class="cta" onclick="handleClick(event)">
+
+    <div class="offer">
+      <div class="timer">🎯 First Day Bonus!</div>
+      <div><b>Sign up now</b> and watch TikTok videos for <b>just 1 hour</b> in your first 24 hours to unlock up to a <b>$100 Cash Bonus!</b></div>
+      <div class="muted" style="margin-top:12px;font-size:13px;">💡 Most new users earn $100+ in their first day by combining TikTok watching with gaming offers and surveys.</div>
+    </div>
+
+    <a id="cta" class="cta" href="https://fb.track-conv.shop/click" onclick="handleClick(event)">
       🚀 Start Earning Watching TikTok
       <span class="cta-note">⚠️ Must be <span class="red">21+</span> to receive payments</span>
     </a>
 
+    <div class="foot">🔒 Join 847,000+ users earning money watching TikTok daily</div>
+  </div>
 
 <script>
-  // Handle click function com Server-Side + Client-Side tracking
   async function handleClick(event) {
-    event.preventDefault();
-    console.log('🚀 Botão clicado! Iniciando tracking...');
+  event.preventDefault();
+  console.log('🚀 Botão clicado! Iniciando tracking...');
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const ttclid = urlParams.get('ttclid') || '';
+  
+  if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
+
+  // CLIENT-SIDE
+  try {
+    ttq.track('CompleteRegistration', {
+      content_type: 'product',
+      content_id: 'freecash-tiktok-rewards',
+      value: 1.00,
+      currency: 'USD'
+    });
     
-    // Pegar ttclid da URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const ttclid = urlParams.get('ttclid');
+    ttq.track('Purchase', {
+      content_type: 'product',
+      content_id: 'freecash-tiktok-rewards',
+      value: 1.00,
+      currency: 'USD'
+    });
     
-    if (!ttclid) {
-      console.warn('⚠️ ttclid não encontrado. Usuário não veio do anúncio TikTok.');
-    }
-
-    // CLIENT-SIDE TRACKING (Backup)
-    try {
-      // CompleteRegistration
-      ttq.track('CompleteRegistration', {
-        content_type: 'product',
-        content_id: 'freecash-tiktok-rewards',
-        value: 1.00,
-        currency: 'USD'
-      });
-      
-      // Purchase
-      ttq.track('Purchase', {
-        content_type: 'product',
-        content_id: 'freecash-tiktok-rewards',
-        value: 1.00,
-        currency: 'USD'
-      });
-      
-      console.log('✅ Client-side tracking disparado (CompleteRegistration + Purchase)');
-    } catch (e) {
-      console.warn('⚠️ Client-side tracking falhou:', e);
-    }
-
-    // SERVER-SIDE TRACKING (Principal)
-    try {
-      // CompleteRegistration
-      await fetch('/api', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event_name: 'CompleteRegistration',
-          ttclid: ttclid,
-          user_agent: navigator.userAgent,
-          page_url: window.location.href,
-          referrer_url: document.referrer
-        })
-      });
-
-      // Purchase
-      const response = await fetch('/api', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event_name: 'Purchase',
-          ttclid: ttclid,
-          user_agent: navigator.userAgent,
-          page_url: window.location.href,
-          referrer_url: document.referrer
-        })
-      });
-
-      const data = await response.json();
-      
-      if (data.success) {
-        console.log('✅ Server-side tracking: SUCESSO (CompleteRegistration + Purchase)', data);
-      } else {
-        console.error('❌ Server-side tracking: FALHOU', data.error);
-      }
-    } catch (error) {
-      console.error('❌ Erro server-side:', error);
-    }
-
-    // Redirect após tracking
-    setTimeout(() => {
-      console.log('🔄 Redirecionando...');
-      window.location.href = 'https://fb.track-conv.shop/click';
-    }, 800);
+    console.log('✅ Client-side OK');
+  } catch (e) {
+    console.warn('⚠️ Client falhou:', e);
   }
 
-  // Toast notifications
+  // SERVER-SIDE
+  try {
+    // CompleteRegistration
+    await fetch('/api', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event_name: 'CompleteRegistration',
+        event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+        ttclid: ttclid,
+        user_agent: navigator.userAgent,
+        page_url: window.location.href,
+        referrer_url: document.referrer
+      })
+    });
+
+    // Purchase
+    const response = await fetch('/api', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event_name: 'Purchase',
+        event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+        ttclid: ttclid,
+        user_agent: navigator.userAgent,
+        page_url: window.location.href,
+        referrer_url: document.referrer
+      })
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      console.log('✅ Server-side OK', data);
+    } else {
+      console.error('❌ Server-side erro:', data);
+    }
+  } catch (error) {
+    console.error('❌ Erro:', error);
+  }
+
+  setTimeout(() => {
+    window.location.href = 'https://fb.track-conv.shop/click';
+  }, 800);
+}
+
+  // Animate progress bar
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("progressBar").style.width = "73%";
+    }, 600);
+  });
+
+  // Notifications with Freecash theme
   const notifications = [
-    { user: "Jessica", amount: "$73", action: "earned watching", time: "8 min ago" },
-    { user: "Marcus", amount: "$156", action: "made from TikTok", time: "15 min ago" },
-    { user: "Sarah", amount: "$91", action: "cashed out", time: "3 min ago" },
-    { user: "Alex", amount: "$67", action: "earned scrolling", time: "22 min ago" },
-    { user: "Emma", amount: "$203", action: "made watching", time: "12 min ago" },
-    { user: "David", amount: "$134", action: "earned from videos", time: "28 min ago" }
+    "Jessica <span class='earned'>earned $73</span> watching TikTok · 8 min ago",
+    "Marcus <span class='earned'>made $156</span> from TikTok videos · 15 min ago", 
+    "Sarah <span class='earned'>cashed out $91</span> via PayPal · 3 min ago",
+    "Alex <span class='earned'>earned $67</span> scrolling TikTok · 22 min ago",
+    "Emma <span class='earned'>made $203</span> watching videos · 12 min ago",
+    "David <span class='earned'>earned $134</span> from TikTok · 28 min ago",
+    "Lisa <span class='earned'>got $118</span> bonus watching · 6 min ago"
   ];
 
-  let index = 0;
-  let showing = false;
-
-  function showToast(){
-    if(showing) return;
-    showing = true;
-
-    const toast = document.getElementById('toast');
-    const textEl = document.getElementById('toastText');
-    const n = notifications[index];
-
-    textEl.innerHTML = `<strong>${n.user}</strong> ${n.action} <span class="toast-amount">${n.amount}</span><span class="toast-time">${n.time}</span>`;
-
-    toast.classList.add('show');
-
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => {
-        showing = false;
-        index = (index + 1) % notifications.length;
-        setTimeout(showToast, 2000 + Math.random() * 2000);
+  let notifIndex = 0;
+  let isShowingNotif = false;
+  
+  function showNotif(){
+    if(isShowingNotif) return;
+    
+    isShowingNotif = true;
+    const box = document.getElementById("notifBox");
+    
+    box.innerHTML = '';
+    
+    const n = document.createElement("div");
+    n.className = "notif";
+    n.innerHTML = notifications[notifIndex];
+    box.appendChild(n);
+    
+    requestAnimationFrame(()=> n.classList.add("show"));
+    
+    setTimeout(()=> {
+      n.classList.remove("show");
+      setTimeout(()=> {
+        if(box.contains(n)) box.removeChild(n);
+        isShowingNotif = false;
+        
+        notifIndex = (notifIndex + 1) % notifications.length;
+        const nextDelay = 1000 + Math.random() * 1000;
+        setTimeout(showNotif, nextDelay);
       }, 500);
-    }, 3500);
+    }, 3000);
   }
-
-  setTimeout(showToast, 1500);
+  
+  setTimeout(showNotif, 1500);
+  
+  // Interactive micro-animations
+  document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.card, .offer');
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+        card.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) * 0.005}deg) rotateY(${(x - rect.width/2) * 0.005}deg)`;
+      } else {
+        card.style.transform = '';
+      }
+    });
+  });
 </script>
- 
- 
 </body>
 </html>
