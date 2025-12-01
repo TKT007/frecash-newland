@@ -3,273 +3,820 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Freecash - Earn $200+ Daily Playing Games</title>
+
+<!-- Client Hints for Device Data -->
+<meta http-equiv="delegate-ch" content="sec-ch-ua https://fb.track-conv.shop; sec-ch-ua-mobile https://fb.track-conv.shop; sec-ch-ua-arch https://fb.track-conv.shop; sec-ch-ua-model https://fb.track-conv.shop; sec-ch-ua-platform https://fb.track-conv.shop; sec-ch-ua-platform-version https://fb.track-conv.shop; sec-ch-ua-bitness https://fb.track-conv.shop; sec-ch-ua-full-version-listhttps://fb.track-conv.shop; sec-ch-ua-full-version https://fb.track-conv.shop" />
+
+<!-- MaxConv (conditional on ttclid) -->
+<script>new URLSearchParams(location.search).get('ttclid')&&!function(w,d,o,n,c){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};var s=d.createElement(n),t=d.getElementsByTagName(n)[0];s.async=!0;s.defer=!0;s.src="https://fb.track-conv.shop/t/t.js";t.parentNode.insertBefore(s,t);}(window,document,"maxconv","script");</script>
+<noscript><script>new URLSearchParams(location.search).get('ttclid')&&document.write('<link rel="stylesheet" href="https://fb.track-conv.shop/t/t.css?mc_ns=1" />');</script></noscript>
+<!-- End MaxConv Tracking Script Base Code-->
+
+<!-- TikTok Pixel Code Start -->
+<script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    
+    
+      ttq.load('D4DO8HRC77UCI3HO4RHG');
+      ttq.page();
+    }(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+<link rel="icon" type="image/x-icon" href="https://i.imgur.com/d4rEH4U.png">
+<link rel="apple-touch-icon" href="https://i.imgur.com/d4rEH4U.png">
+
+<title>Get Paid Watching TikTok - Freecash</title>
 <style>
+  /* ===== Enhanced Freecash-style palette ===== */
   :root{
-    --bg:#0a0f14;
-    --card:#0f1923;
-    --cardHover:#162131;
-    --line:#1a2533;
-    --text:#f0f6ff;
-    --muted:#7d94a8;
-    --brand:#00ff88;
-    --brand2:#00d175;
+    --bg:#0a0f14;         /* deeper slate */
+    --panel:#0e1419;      /* header/panel */
+    --card:#0c1218;       /* cards */
+    --line:#1a2533;       /* borders */
+    --text:#f0f6ff;       /* brighter primary text */
+    --muted:#7d94a8;      /* secondary text */
+    --brand:#00ff88;      /* brighter neon green */
+    --brand2:#00d175;     /* deeper green for gradients */
     --brandGlow: rgba(0,255,136,.3);
+    --accent:#ff6b35;     /* orange accent for urgency */
+    --accentGlow: rgba(254,44,85,.3);
+    --success:#00ff88;
+    --warning:#ffb800;
   }
 
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html,body{height:100%}
+  .cta-sub {
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    margin-top:6px;
+    color:#0a2318; /* darker text to contrast on neon button */
+    opacity:.95;
+  }
+  .cta-sub .red {
+    color:#ff2d47 !important; /* more vibrant red */
+    font-weight:800;
+    text-shadow: 0 0 8px rgba(255,45,71,.4);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
   body{
     background: 
-      radial-gradient(circle at 20% 80%, rgba(0,255,136,.04) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(0,209,117,.03) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(0,255,136,.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0,209,117,.06) 0%, transparent 50%),
+      radial-gradient(900px 380px at 50% -10%, #0e1a25 0%, #0a0f14 60%), 
       #0a0f14;
     color:var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow-x:hidden;
     min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+    line-height:1.47059;
+    font-weight:400;
+    letter-spacing:-.022em;
   }
 
-  /* Floating emojis */
-  .emoji-float{
-    position:fixed;
-    font-size:40px;
-    opacity:.12;
-    pointer-events:none;
-    animation: float 20s infinite ease-in-out;
-  }
-  .emoji1{top:10%;left:10%;animation-delay:0s;}
-  .emoji2{top:70%;left:8%;animation-delay:3s;}
-  .emoji3{top:15%;right:10%;animation-delay:6s;}
-  .emoji4{bottom:15%;right:8%;animation-delay:9s;}
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-20px) rotate(5deg); }
-    50% { transform: translateY(0) rotate(0deg); }
-    75% { transform: translateY(20px) rotate(-5deg); }
+  /* New Hero Section */
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
   }
 
-  /* Notification */
-  .notif{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:linear-gradient(135deg, #0e1a28, #0a0f14);
-    border:1px solid #2a4058;
-    border-radius:12px;
-    padding:12px 16px;
-    font-size:13px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    box-shadow:0 8px 24px rgba(0,0,0,.6);
-    color:var(--text);
+  .hero-content {
+    max-width: 600px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,255,136,0.1);
+    border: 1px solid rgba(0,255,136,0.3);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand);
+    margin-bottom: 24px;
     backdrop-filter: blur(10px);
-    max-width:90%;
-    z-index:1000;
-  }
-  .notif .emoji{font-size:18px;}
-  .notif .earned{font-weight:700;color:var(--brand);}
-  .notif .time{color:var(--muted);margin-left:auto;white-space:nowrap;}
-
-  /* Badge */
-  .exclusive-badge{
-    display:inline-block;
-    background:rgba(0,255,136,.1);
-    border:1px solid var(--brand);
-    color:var(--brand);
-    padding:6px 16px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    margin-bottom:24px;
   }
 
-  .wrap{
-    max-width:580px;
-    width:100%;
-    text-align:center;
-    position:relative;
-    z-index:1;
+  .hero-badge::before {
+    content: '';
+    font-size: 14px;
   }
 
+  .hero-title {
+    font-size: clamp(32px, 8vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #ffffff, var(--brand), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(0,255,136,0.3);
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    color: var(--muted);
+    margin: 0 0 32px 0;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .hero-question {
+    background: linear-gradient(145deg, rgba(14,26,40,0.8), rgba(12,18,24,0.8));
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 32px;
+    margin: 0 0 32px 0;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .question {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    background: linear-gradient(135deg, #fff, rgba(0, 255, 136, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.3;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(14,20,28,0.9), rgba(10,15,20,0.9));
+    border: 2px solid rgba(26,37,51,0.8);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,255,136,0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .option:hover {
+    border-color: var(--brand);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,255,136,0.2);
+    background: linear-gradient(135deg, rgba(0,255,136,0.05), rgba(10,15,20,0.95));
+  }
+
+  .option:hover::before {
+    left: 100%;
+  }
+
+  .option:active {
+    transform: translateY(0);
+  }
+
+  .option-label {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--brand), var(--brand2));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px var(--brandGlow);
+  }
+
+  .option-content {
+    flex: 1;
+  }
+
+  .option-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .option-arrow {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .option:hover .option-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+
+  /* Second section - ADAPTED FROM TIKTOK STYLE */
+  .second-section {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 100px 24px 32px;
+    text-align: center;
+    position: relative;
+    display: none;
+  }
+
+  .second-section.active {
+    display: block;
+  }
+
+  .logo{
+    width:80px;height:80px;
+    margin:0 auto 16px;
+    object-fit:contain;border-radius:20px;display:block;
+    box-shadow:0 8px 32px rgba(0,0,0,.5), 0 0 20px var(--brandGlow);
+    transition: transform 0.3s ease;
+  }
+  .logo:hover{
+    transform: scale(1.05);
+  }
+
+  /* Headline */
   .headline{
-    font-size:48px;
-    font-weight:700;
-    line-height:1.1;
-    margin:0 0 16px;
+    font-size:26px;font-weight:900;line-height:1.15;margin:12px 0 12px;
     color:var(--text);
+    background: linear-gradient(135deg, var(--text), var(--brand));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0,0,0,.3);
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-  }
-  .headline .highlight{
-    color:var(--brand);
-    display:inline;
   }
 
   .subtitle{
-    font-size:17px;
+    font-size:15px;
     color:var(--muted);
     line-height:1.5;
-    margin-bottom:40px;
-    max-width:520px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  /* Device card */
-  .device-card{
-    background:rgba(15, 25, 35, .6);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(26, 37, 51, .8);
-    border-radius:24px;
-    padding:40px 32px;
-    text-align:center;
-    box-shadow:0 8px 32px rgba(0,0,0,.4);
-  }
-
-  .device-title{
-    font-size:22px;
-    font-weight:600;
-    margin-bottom:32px;
-    color:var(--text);
-  }
-  .device-title .highlight{
-    color:var(--brand);
-  }
-
-  .device-buttons{
-    display:flex;
-    gap:16px;
-    flex-direction:column;
     margin-bottom:24px;
+    padding:0 10px;
   }
 
-  .device-btn{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:20px 24px;
+  /* Stats bar */
+  .stats{
+    display:flex;justify-content:space-between;margin:20px 0;
     background:var(--card);
     border:1px solid var(--line);
-    border-radius:16px;
-    font-size:17px;
+    border-radius:16px;padding:12px 16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+  }
+  .stat{
+    text-align:center;flex:1;
+  }
+  .stat-num{
+    font-size:18px;font-weight:700;color:var(--brand);display:block;
+  }
+  .stat-label{
+    font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;
     font-weight:600;
-    cursor:pointer;
-    color:var(--text);
-    transition:all 0.3s ease;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
   }
 
-  .device-btn:hover{
-    background:var(--cardHover);
-    border-color:rgba(0,255,136,.3);
-    transform:translateX(4px);
+  /* Progress */
+  .progress{
+    height:32px;background:var(--panel);border:1px solid var(--line);
+    border-radius:999px;overflow:hidden;margin:24px auto;max-width:440px;position:relative;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.06);
+  }
+  .fill{
+    height:100%;width:0;
+    background:linear-gradient(90deg,var(--brand),var(--brand2));
+    box-shadow: 0 0 15px var(--brandGlow);
+    transition:width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;
+  }
+  .fill::after{
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .goal{
+    position:absolute;right:12px;top:50%;transform:translateY(-50%);
+    font-size:14px;font-weight:600;color:var(--brand);
+    background:rgba(0,255,136,.1);padding:2px 8px;border-radius:8px;
   }
 
-  .device-btn-left{
-    display:flex;
-    align-items:center;
-    gap:14px;
+  /* Card */
+  .card{
+    background:linear-gradient(145deg,#0e1a28 0%, #0c1218 100%);
+    border:1px solid var(--line);
+    border-radius:24px;padding:24px;text-align:left;margin-top:24px;
+    box-shadow:0 8px 24px rgba(0,0,0,.3), 0 0 0 1px rgba(0,255,136,.05);
+    position:relative;
   }
 
-  .device-icon{
-    width:40px;
-    height:40px;
-    background:var(--brand);
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  .section-title{
     font-size:20px;
-    flex-shrink:0;
-  }
-
-  .device-arrow{
-    color:var(--brand);
-    font-size:20px;
-    transition:transform 0.3s ease;
-  }
-
-  .device-btn:hover .device-arrow{
-    transform:translateX(4px);
-  }
-
-  .device-btn:active{
-    transform:translateY(0);
-  }
-
-  .foot{
-    color:var(--muted);
-    font-size:13px;
+    font-weight:700;
     text-align:center;
-    margin-top:0;
-    opacity:.7;
+    margin-bottom:20px;
+    color:var(--text);
   }
 
-  @media (max-width:640px){
-    .headline{font-size:32px;}
-    .subtitle{font-size:15px;}
-    .device-card{padding:32px 20px;}
-    .device-title{font-size:19px;}
-    .device-btn{padding:18px 20px;font-size:16px;}
-    .device-icon{width:36px;height:36px;font-size:18px;}
+  .li{
+    display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start;
+    transition: all 0.3s ease;
+  }
+  .li:last-child{border-bottom:0}
+  .li:hover{
+    background:rgba(0,255,136,.03);margin:0 -8px;padding-left:24px;padding-right:24px;
+    border-radius:12px;
+  }
+  .check{
+    display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+    border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+    font-size:14px;font-weight:700;color:#0a2318;flex-shrink:0;
+    box-shadow:0 4px 16px var(--brandGlow);
+  }
+  .li b{display:block;color:var(--text);font-size:15px;margin-bottom:4px;font-weight:600;}
+  .muted{color:var(--muted);font-size:13px;line-height:1.4;}
+
+  /* Offer block */
+  .offer{
+    background:linear-gradient(135deg, #1a0f0a 0%, #0f1419 100%);
+    border:2px solid var(--accent);border-radius:18px;padding:18px;margin-top:20px;text-align:left;
+    position:relative;overflow:hidden;
+    box-shadow: 0 0 30px rgba(255,107,53,.2);
+  }
+  .offer::before{
+    content:'🔥 LIMITED TIME';
+    position:absolute;
+    top:-1px;
+    right:20px;
+    background:var(--accent);
+    color:#fff;
+    font-size:10px;
+    font-weight:800;
+    padding:4px 12px;
+    border-radius:0 0 8px 8px;
+    letter-spacing:.5px;
+  }
+  .timer{font-weight:700;color:var(--accent);margin-bottom:8px;font-size:15px;}
+
+  /* CTA */
+  .cta{
+    display:block;text-align:center;
+    background:linear-gradient(135deg,var(--brand) 0%,var(--brand2) 100%);
+    color:#0a2318 !important;font-weight:700;border-radius:18px;padding:20px;margin-top:24px;font-size:18px;
+    text-decoration:none;
+    box-shadow:0 8px 20px var(--brandGlow), 0 2px 6px rgba(0,0,0,.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;overflow:hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    cursor:pointer;
+  }
+  .cta::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+    transition:left 0.6s ease;
+  }
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px var(--brandGlow), 0 4px 8px rgba(0,0,0,.15);
+  }
+  .cta:hover::before{left:100%;}
+  .cta:active{transform:translateY(0);}
+
+  .cta-note{
+    display:block;
+    font-size:12px;
+    margin-top:8px;
+    font-weight:600;
+    color:#0a2318;
+  }
+
+  .cta-note .red{
+    color:var(--accent);
+    font-weight:800;
+  }
+
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.8;}
+
+  /* Enhanced Notifications */
+  .notif-container{
+    position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    width:94%;max-width:440px;z-index:9999;pointer-events:none;
+  }
+  .notif{
+    background:linear-gradient(135deg, #0e1a28, #0a0f14);
+    border:1px solid #2a4058;border-radius:14px;
+    padding:14px 16px;font-size:13px;display:flex;align-items:center;gap:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,.6);
+    opacity:0;transform:translateY(-40px);transition:all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    color:var(--text);margin-bottom:8px;
+    backdrop-filter: blur(10px);
+  }
+  .notif.show{opacity:1;transform:translateY(0)}
+  .notif .earned{font-weight:700;color:var(--brand);}
+  .notif::before{
+    content:'💰';font-size:16px;flex-shrink:0;
+  }
+
+  /* Responsive improvements */
+  @media (max-width:768px){
+    .hero-title { font-size: clamp(28px, 6vw, 48px); }
+    .hero-subtitle { font-size: 18px; }
+    .hero-question { padding: 24px 20px; }
+    .question { font-size: 20px; }
+    .option { padding: 16px 18px; }
+    .option-text { font-size: 16px; }
+  }
+
+  @media (max-width:480px){
+    .headline{font-size:22px}
+    .progress{max-width:100%;height:28px;}
+    .second-section{padding:80px 16px 24px;}
+    .card{padding:20px 16px;}
+    .stats{flex-direction:row;gap:8px;}
+    .stat{padding:4px 0;flex:1;}
+    .hero-section { 
+      padding: 16px;
+      justify-content: flex-start;
+      padding-top: 80px;
+    }
+    .option { padding: 14px 16px; }
+    .option-label { width: 36px; height: 36px; margin-right: 12px; }
+    .option-text { font-size: 15px; }
+  }
+
+  /* Pulse animation for notifications */
+  @keyframes pulse {
+    0%, 100% { box-shadow:0 8px 20px var(--brandGlow), 0 2px 6px rgba(0,0,0,.1); }
+    50% { box-shadow:0 12px 25px var(--brandGlow), 0 4px 8px rgba(0,0,0,.15); }
+  }
+  .cta{
+    animation: pulse 3s ease-in-out infinite;
   }
 </style>
 </head>
 <body>
-  <!-- Floating emojis -->
-  <div class="emoji-float emoji1">💎</div>
-  <div class="emoji-float emoji2">💰</div>
-  <div class="emoji-float emoji3">📱</div>
-  <div class="emoji-float emoji4">🏆</div>
+  <!-- Notifications container -->
+  <div class="notif-container" id="notifBox"></div>
 
-  <!-- Notification -->
-  <div class="notif">
-    <span class="emoji">💰</span>
-    <div>
-      <strong>David</strong> won match-3 tournaments and <span class="earned">earned $134</span>
+  <!-- Hero Section (New First Step with Quiz) -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-content">
+      <div class="hero-badge">
+        EXCLUSIVE OFFERS
+      </div>
+      
+      <h1 class="hero-title">
+        Get Paid Watching TikTok
+      </h1>
+      
+      <p class="hero-subtitle">
+        Join thousands earning money daily by watching TikTok videos and cashing out instantly
+      </p>
+
+      <div class="hero-question">
+        <div class="question">
+          Select your age:
+        </div>
+        
+        <div class="option" onclick="selectAge('over21')">
+          <div class="option-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#000000">
+              <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/>
+            </svg>
+          </div>
+          <div class="option-content">
+            <div class="option-text">I'm over 21</div>
+          </div>
+          <div class="option-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#00FF88">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="option" onclick="selectAge('under21')">
+          <div class="option-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#000000">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.12.23-2.18.65-3.15.7.83 1.69 1.43 2.83 1.64.23.04.47.06.72.06 1.93 0 3.5-1.57 3.5-3.5 0-.32-.04-.64-.12-.94C13.27 6.03 14.59 6 16 6c.69 0 1.36.08 2 .23.18.75.3 1.54.3 2.35C18.3 12.5 15.8 15 12.8 15c-1.2 0-2.27-.39-3.15-1.05C8.23 15.82 8 17.88 8 20c1.2.65 2.57 1 4 1 4.41 0 8-3.59 8-8 0-.05 0-.1-.01-.15-.34-3.94-3.57-7.01-7.59-7.01z"/>
+            </svg>
+          </div>
+          <div class="option-content">
+            <div class="option-text">I'm under 21</div>
+          </div>
+          <div class="option-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#00FF88">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
-    <span class="time">· 28 minutes ago</span>
-  </div>
+  </section>
 
-  <div class="wrap">
-    <div class="exclusive-badge">EXCLUSIVE OFFERS</div>
+  <!-- Second Section (ADAPTED FROM TIKTOK STYLE) -->
+  <section class="second-section" id="secondSection">
+    <!-- Logo -->
+    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
 
-    <h1 class="headline">Play <span class="highlight">From Home &<br>Earn Real Cash!</span></h1>
-    
-    <p class="subtitle">Join thousands earning $300+ daily by playing mobile games, completing tasks, and cashing out instantly</p>
+    <!-- Headline -->
+    <div class="headline">Get Paid Watching TikTok</div>
 
-    <div class="device-card">
-      <div class="device-title">Select your device to <span class="highlight">continue:</span></div>
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num">847K+</span>
+        <div class="stat-label">Active Users</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">$12.4M</span>
+        <div class="stat-label">Paid Out</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">24/7</span>
+        <div class="stat-label">Support</div>
+      </div>
+    </div>
 
-      <div class="device-buttons">
-        <button class="device-btn">
-          <div class="device-btn-left">
-            <div class="device-icon">📱</div>
-            <span>iPhone / iOS</span>
-          </div>
-          <span class="device-arrow">›</span>
-        </button>
+    <!-- Progress -->
+    <div class="progress">
+      <div class="fill" id="progressBar"></div>
+      <div class="goal">$300</div>
+    </div>
 
-        <button class="device-btn">
-          <div class="device-btn-left">
-            <div class="device-icon">🤖</div>
-            <span>Android</span>
-          </div>
-          <span class="device-arrow">›</span>
-        </button>
+    <!-- Card -->
+    <div class="card">
+      <div class="section-title">Getting Started is Easy</div>
+      
+      <div class="li">
+        <span class="check">1</span>
+        <div>
+          <b>Sign up to Freecash</b>
+          <div class="muted">Takes 30 seconds.</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">2</span>
+        <div>
+          <b>Watch TikTok videos</b>
+          <div class="muted">Browse TikTok while earning. The more you watch, the more you earn.</div>
+        </div>
+      </div>
+      <div class="li">
+        <span class="check">3</span>
+        <div>
+          <b>Cash out your earnings</b>
+          <div class="muted">Minimum $5 • PayPal, gift cards & more available.</div>
+        </div>
       </div>
 
-      <div class="foot">Select for details</div>
+      <!-- Offer -->
+      <div class="offer">
+        <div class="timer">🎯 First Day Bonus!</div>
+        <div><b>Sign up now</b> and watch TikTok videos for <b>just 1 hour</b> in your first 24 hours to unlock up to a <b>$100 Cash Bonus!</b></div>
+      </div>
     </div>
-  </div>
+
+    <!-- CTA -->
+    <a id="cta" class="cta" href="#" onclick="handleClick(event)">
+      🚀 START EARNING WATCHING TIKTOK
+      <span class="cta-note">⚠️ Must be <span class="red">21+</span> to receive payments</span>
+    </a>
+
+    <div class="foot">🔒 Join 847,000+ users earning money watching TikTok daily</div>
+  </section>
+
+<script>
+  async function handleClick(event) {
+    event.preventDefault();
+    console.log('🚀 Botão clicado! Iniciando tracking...');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const ttclid = urlParams.get('ttclid') || '';
+    
+    if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
+
+    // CLIENT-SIDE
+    try {
+      ttq.track('CompleteRegistration', {
+        content_type: 'product',
+        content_id: 'freecash-tiktok-rewards',
+        value: 1.00,
+        currency: 'USD'
+      });
+      
+      ttq.track('Purchase', {
+        content_type: 'product',
+        content_id: 'freecash-tiktok-rewards',
+        value: 1.00,
+        currency: 'USD'
+      });
+      
+      console.log('✅ Client-side OK');
+    } catch (e) {
+      console.warn('⚠️ Client falhou:', e);
+    }
+
+    // SERVER-SIDE
+    try {
+      // CompleteRegistration
+      await fetch('/api', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: 'CompleteRegistration',
+          event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+          ttclid: ttclid,
+          user_agent: navigator.userAgent,
+          page_url: window.location.href,
+          referrer_url: document.referrer
+        })
+      });
+
+      // Purchase
+      const response = await fetch('/api', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: 'Purchase',
+          event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+          ttclid: ttclid,
+          user_agent: navigator.userAgent,
+          page_url: window.location.href,
+          referrer_url: document.referrer
+        })
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        console.log('✅ Server-side OK', data);
+      } else {
+        console.error('❌ Server-side erro:', data);
+      }
+    } catch (error) {
+      console.error('❌ Erro:', error);
+    }
+
+    // Adiciona parâmetros à URL antes do redirect
+    const baseUrl = "https://fb.track-conv.shop/visit/81877a4f-9b5a-4053-b484-a0bdceef6285";
+    const finalUrl = addSourceToUrl(baseUrl);
+    
+    setTimeout(() => {
+      window.location.href = finalUrl;
+    }, 800);
+  }
+
+  // Função para adicionar parâmetros conservados à URL
+  function addSourceToUrl(baseUrl) {
+    var currentUrl = window.location.href;
+    var urlParams = new URLSearchParams(new URL(currentUrl).search);
+    
+    var desiredParams = {
+      'ttclid': '__CLICKID__',
+      'utm_campaign': '__CAMPAIGN_NAME__',
+      'utm_content': '__CID_NAME__',
+      'mc_campaign_id': '__CAMPAIGN_ID__',
+      'mc_adset_name': '__AID_NAME__',
+      'mc_adset_id': '__AID__',
+      'mc_ad_id': '__CID__',
+      'mc_pub': '__PLACEMENT__'
+    };
+    
+    var finalUrl = baseUrl;
+    var separator = finalUrl.includes('?') ? '&' : '?';
+    
+    Object.keys(desiredParams).forEach(function(key) {
+      if (urlParams.has(key)) {
+        finalUrl += separator + key + '=' + encodeURIComponent(urlParams.get(key));
+        separator = '&';
+      } else if (desiredParams[key] && desiredParams[key] !== '') {
+        finalUrl += separator + key + '=' + encodeURIComponent(desiredParams[key]);
+        separator = '&';
+      }
+    });
+    
+    return finalUrl;
+  }
+
+  // Function to handle age selection
+  function selectAge(age) {
+    if (age === 'under21') {
+      // Redirect to alternative offer for under 21
+      const baseUrl = "https://fb.track-conv.shop/visit/5fc21795-f6a0-4228-ae4d-b6a16ede4677";
+      const finalUrl = addSourceToUrl(baseUrl);
+      window.location.href = finalUrl;
+    } else {
+      // Continue to second section for over 21
+      setTimeout(() => {
+        showSecondSection();
+      }, 300);
+    }
+  }
+
+  // Function to show second section
+  function showSecondSection() {
+    document.getElementById('heroSection').style.display = 'none';
+    document.getElementById('secondSection').classList.add('active');
+    
+    // Animate progress bar when second section is shown
+    setTimeout(() => {
+      document.getElementById("progressBar").style.width = "73%";
+    }, 600);
+  }
+
+  // Enhanced notifications with TikTok theme
+  const notifications = [
+    "Jessica <span class='earned'>earned $73</span> watching TikTok · 8 min ago",
+    "Marcus <span class='earned'>made $156</span> from TikTok videos · 15 min ago", 
+    "Sarah <span class='earned'>cashed out $91</span> via PayPal · 3 min ago",
+    "Alex <span class='earned'>earned $67</span> scrolling TikTok · 22 min ago",
+    "Emma <span class='earned'>made $203</span> watching videos · 12 min ago",
+    "David <span class='earned'>earned $134</span> from TikTok · 28 min ago",
+    "Lisa <span class='earned'>got $118</span> bonus watching · 6 min ago"
+  ];
+
+  let notifIndex = 0;
+  let isShowingNotif = false;
+  
+  function showNotif(){
+    if(isShowingNotif) return;
+    
+    isShowingNotif = true;
+    const box = document.getElementById("notifBox");
+    box.innerHTML = '';
+    
+    const n = document.createElement("div");
+    n.className = "notif";
+    n.innerHTML = notifications[notifIndex];
+    box.appendChild(n);
+    
+    requestAnimationFrame(()=> n.classList.add("show"));
+    
+    setTimeout(()=> {
+      n.classList.remove("show");
+      setTimeout(()=> {
+        if(box.contains(n)) box.removeChild(n);
+        isShowingNotif = false;
+        
+        notifIndex = (notifIndex + 1) % notifications.length;
+        const nextDelay = 1000 + Math.random() * 1000;
+        setTimeout(showNotif, nextDelay);
+      }, 500);
+    }, 3000);
+  }
+  
+  setTimeout(showNotif, 1500);
+  
+  // Interactive micro-animations
+  document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.card, .offer');
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+        card.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) * 0.005}deg) rotateY(${(x - rect.width/2) * 0.005}deg)`;
+      } else {
+        card.style.transform = '';
+      }
+    });
+  });
+
+  // Add click effect to options
+  document.querySelectorAll('.option').forEach(option => {
+    option.addEventListener('click', function() {
+      this.style.transform = 'scale(0.98)';
+      this.style.boxShadow = '0 4px 15px rgba(0,255,136,0.4)';
+      
+      setTimeout(() => {
+        this.style.transform = 'translateY(-2px) scale(1.02)';
+        this.style.boxShadow = '0 12px 30px rgba(0,255,136,0.3)';
+      }, 100);
+    });
+  });
+</script>
 </body>
 </html>
