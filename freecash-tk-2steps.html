@@ -269,31 +269,59 @@
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
   }
 
+  /* You're In! Section */
+  .youre-in-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0 24px;
+  }
+
+  .check-circle {
+    width: 56px;
+    height: 56px;
+    border: 3px solid var(--brand);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px var(--brandGlow);
+  }
+
+  .check-circle svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .youre-in-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .youre {
+    color: #ffffff;
+  }
+
+  .in-badge {
+    background: var(--brand);
+    color: #000000;
+    padding: 8px 20px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+
   .subtitle{
     font-size:15px;
     color:var(--muted);
     line-height:1.5;
     margin-bottom:24px;
     padding:0 10px;
-  }
-
-  /* Stats bar */
-  .stats{
-    display:flex;justify-content:space-between;margin:20px 0;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:16px;padding:12px 16px;
-    box-shadow:0 2px 8px rgba(0,0,0,.3);
-  }
-  .stat{
-    text-align:center;flex:1;
-  }
-  .stat-num{
-    font-size:18px;font-weight:700;color:var(--brand);display:block;
-  }
-  .stat-label{
-    font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;
-    font-weight:600;
   }
 
   /* Progress */
@@ -465,6 +493,22 @@
     .option { padding: 14px 16px; }
     .option-label { width: 36px; height: 36px; margin-right: 12px; }
     .option-text { font-size: 15px; }
+    .youre-in-text {
+      font-size: 36px;
+      gap: 6px;
+    }
+    .check-circle {
+      width: 48px;
+      height: 48px;
+    }
+    .check-circle svg {
+      width: 24px;
+      height: 24px;
+    }
+    .in-badge {
+      padding: 6px 16px;
+      border-radius: 10px;
+    }
   }
 
   /* Pulse animation for notifications */
@@ -541,22 +585,16 @@
     <!-- Logo -->
     <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
 
-    <!-- Headline -->
-    <div class="headline">Get Paid Watching TikTok</div>
-
-    <!-- Stats -->
-    <div class="stats">
-      <div class="stat">
-        <span class="stat-num">847K+</span>
-        <div class="stat-label">Active Users</div>
+    <!-- You're In! Section -->
+    <div class="youre-in-section">
+      <div class="check-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
       </div>
-      <div class="stat">
-        <span class="stat-num">$12.4M</span>
-        <div class="stat-label">Paid Out</div>
-      </div>
-      <div class="stat">
-        <span class="stat-num">24/7</span>
-        <div class="stat-label">Support</div>
+      <div class="youre-in-text">
+        <span class="youre">You're</span>
+        <span class="in-badge">In!</span>
       </div>
     </div>
 
