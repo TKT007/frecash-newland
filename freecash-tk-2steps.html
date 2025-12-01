@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Freecash - Earn $200+ Daily Playing Games</title>
+<style>
+  /* ===== Enhanced Freecash-style palette ===== */
+  :root{
+    --bg:#0a0f14;
+    --panel:#0e1419;
+    --card:#0c1218;
+    --line:#1a2533;
+    --text:#f0f6ff;
+    --muted:#7d94a8;
+    --brand:#00ff88;
+    --brand2:#00d175;
+    --brandGlow: rgba(0,255,136,.3);
+    --shadow:rgba(0,0,0,.3);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(0,255,136,.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0,209,117,.06) 0%, transparent 50%),
+      radial-gradient(900px 380px at 50% -10%, #0e1a25 0%, #0a0f14 60%), 
+      #0a0f14;
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x:hidden;
+    min-height:100vh;
+    line-height:1.47059;
+    font-weight:400;
+    letter-spacing:-.022em;
+  }
+
+  .wrap{
+    max-width:540px;
+    margin:0 auto;
+    padding:100px 24px 32px;
+    text-align:center;
+    position:relative;
+  }
+
+  .logo{
+    width:80px;height:80px;
+    margin:0 auto 16px;
+    object-fit:contain;border-radius:20px;display:block;
+    box-shadow:0 8px 32px rgba(0,0,0,.5), 0 0 20px var(--brandGlow);
+    transition: transform 0.3s ease;
+  }
+  .logo:hover{
+    transform: scale(1.05);
+  }
+
+  .headline{
+    font-size:26px;font-weight:700;line-height:1.15;margin:12px 0 12px;
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  }
+
+  .subtitle{
+    font-size:15px;
+    color:var(--muted);
+    line-height:1.5;
+    margin-bottom:24px;
+    padding:0 10px;
+  }
+
+  /* Device Selection Card */
+  .device-card{
+    background:linear-gradient(145deg,#0e1a28 0%, #0c1218 100%);
+    border:1px solid var(--line);
+    border-radius:24px;padding:32px 24px;text-align:center;margin-top:24px;
+    box-shadow:0 8px 24px var(--shadow), 0 0 0 1px rgba(0,255,136,.05);
+    position:relative;
+  }
+
+  .device-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:8px;
+    color:var(--text);
+  }
+
+  .device-subtitle{
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:28px;
+    line-height:1.5;
+  }
+
+  .device-buttons{
+    display:flex;
+    gap:12px;
+    flex-direction:column;
+  }
+
+  .device-btn{
+    padding:18px 24px;
+    border-radius:16px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .device-btn::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+    transition:left 0.6s ease;
+  }
+
+  .device-btn:hover::before{left:100%;}
+
+  .device-btn.iphone{
+    background:linear-gradient(135deg,var(--brand) 0%,var(--brand2) 100%);
+    color:#0a2318;
+    box-shadow:0 8px 20px var(--brandGlow), 0 2px 6px rgba(0,0,0,.1);
+  }
+
+  .device-btn.iphone:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px var(--brandGlow), 0 4px 8px rgba(0,0,0,.15);
+  }
+
+  .device-btn.android{
+    background:var(--card);
+    color:var(--text);
+    border:2px solid var(--line);
+    box-shadow:0 2px 8px var(--shadow);
+  }
+
+  .device-btn.android:hover{
+    background:var(--panel);
+    border-color:var(--muted);
+    transform:translateY(-2px);
+  }
+
+  .device-btn:active{
+    transform:translateY(0);
+  }
+
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.8;}
+
+  @media (max-width:480px){
+    .headline{font-size:22px}
+    .wrap{padding:80px 16px 24px;}
+    .device-card{padding:24px 16px;}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
+
+    <div class="headline">Play From Home & Earn Real Cash!</div>
+    <div class="subtitle">Join thousands earning $300+ daily by playing mobile games, completing tasks, and cashing out instantly</div>
+
+    <div class="device-card">
+      <div class="device-title">Select your device to continue:</div>
+      <div class="device-subtitle">Choose your device type to get started with the best earning opportunities</div>
+
+      <div class="device-buttons">
+        <button class="device-btn iphone">
+          📱 iPhone / iOS
+        </button>
+        <button class="device-btn android">
+          🤖 Android
+        </button>
+      </div>
+    </div>
+
+    <div class="foot">🔒 Your privacy is protected. Device selection helps us show you the best offers.</div>
+  </div>
+</body>
+</html>
