@@ -634,50 +634,23 @@
 
 <script>
 // ========================================
-// FREECASH TRACKING SCRIPT - CORRETO
+// FREECASH TRACKING SCRIPT - FINAL CORRETO
 // Todos os eventos disparam APENAS no botão final
 // ========================================
 
-// Função auxiliar para adicionar parâmetros à URL
-function addSourceToUrl(baseUrl) {
-  var currentUrl = window.location.href;
-  var urlParams = new URLSearchParams(new URL(currentUrl).search);
-  
-  var desiredParams = {
-    'ttclid': '__CLICKID__',
-    'utm_campaign': '__CAMPAIGN_NAME__',
-    'utm_content': '__CID_NAME__',
-    'mc_campaign_id': '__CAMPAIGN_ID__',
-    'mc_adset_name': '__AID_NAME__',
-    'mc_adset_id': '__AID__',
-    'mc_ad_id': '__CID__',
-    'mc_pub': '__PLACEMENT__'
-  };
-  
-  var finalUrl = baseUrl;
-  var separator = finalUrl.includes('?') ? '&' : '?';
-  
-  Object.keys(desiredParams).forEach(function(key) {
-    if (urlParams.has(key)) {
-      finalUrl += separator + key + '=' + encodeURIComponent(urlParams.get(key));
-      separator = '&';
-    } else if (desiredParams[key] && desiredParams[key] !== '') {
-      finalUrl += separator + key + '=' + encodeURIComponent(desiredParams[key]);
-      separator = '&';
-    }
-  });
-  
-  return finalUrl;
-}
-
-// Função para selecionar idade (SEM TRACKING)
+// Função para selecionar idade (COM utm_content APENAS no under21)
 function selectAge(age) {
   console.log('🎯 Usuário selecionou idade:', age);
   
   if (age === 'under21') {
-    // Redireciona para oferta alternativa
-    const baseUrl = "https://fb.track-conv.shop/visit/5fc21795-f6a0-4228-ae4d-b6a16ede4677";
-    const finalUrl = addSourceToUrl(baseUrl);
+    // Pega o valor do utm_content
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmContent = urlParams.get('utm_content') || '';
+    
+    // Monta o link com utm_content após U21-
+    const finalUrl = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-" + utmContent;
+    
+    console.log('🔀 Redirecionando under21 para:', finalUrl);
     window.location.href = finalUrl;
   } else {
     // Continua para segunda seção
@@ -790,13 +763,10 @@ async function handleClick(event) {
     console.error('❌ Erro server-side:', error);
   }
 
-  // Redireciona após tracking
-  const baseUrl = "https://fb.track-conv.shop/click";
-  const finalUrl = addSourceToUrl(baseUrl);
-  
+  // Redireciona após tracking - SEM PARÂMETROS
   setTimeout(() => {
-    console.log('🔀 Redirecionando para:', finalUrl);
-    window.location.href = finalUrl;
+    console.log('🔀 Redirecionando para: https://fb.track-conv.shop/click');
+    window.location.href = "https://fb.track-conv.shop/click";
   }, 800);
 }
 
