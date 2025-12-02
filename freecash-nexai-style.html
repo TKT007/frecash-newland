@@ -494,164 +494,195 @@
     </section>
 
 <script>
-    // The original JavaScript functions were kept to ensure functionality (tracking, pixel, quiz, etc.).
+// ========================================
+// FREECASH TRACKING SCRIPT - ADAPTADO
+// AddToCart, CompleteRegistration e Purchase no botão final
+// Under21 com utm_content após U21-
+// ========================================
 
-    async function handleClick(event) {
-        event.preventDefault();
-        console.log('🚀 Button clicked! Initiating tracking...');
-        
+// Função para selecionar idade
+function selectAge(age) {
+    console.log('🎯 Usuário selecionou idade:', age);
+    
+    // Micro-animation click effect
+    const btn = event.currentTarget;
+    btn.style.transform = 'scale(0.98)';
+    
+    if (age === 'under21') {
+        // Pega o valor do utm_content
         const urlParams = new URLSearchParams(window.location.search);
-        const ttclid = urlParams.get('ttclid') || '';
+        const utmContent = urlParams.get('utm_content') || '';
         
-        if (!ttclid) console.warn('⚠️ ttclid not found - continuing anyway');
-
-        // CLIENT-SIDE
-        try {
-            ttq.track('CompleteRegistration', {
-                content_type: 'product',
-                content_id: 'freecash-tiktok-rewards',
-                value: 1.00,
-                currency: 'USD'
-            });
-            
-            ttq.track('Purchase', {
-                content_type: 'product',
-                content_id: 'freecash-tiktok-rewards',
-                value: 1.00,
-                currency: 'USD'
-            });
-            
-            console.log('✅ Client-side OK');
-        } catch (e) {
-            console.warn('⚠️ Client failed:', e);
-        }
-
-        // SERVER-SIDE (mocked endpoint since the actual server-side logic is outside the scope of the single-file HTML)
-        try {
-            // Mocking the server-side call for tracking purposes
-            console.log('🔗 Attempting Server-side tracking (simulation)...');
-            // const response = await fetch('/api', {...}); // Real call commented out
-            console.log('✅ Server-side OK (simulated)');
-        } catch (error) {
-            console.error('❌ Error:', error);
-        }
-
-        // Adds parameters to the URL before redirect
-        const baseUrl = "https://fb.track-conv.shop/click";
-        const finalUrl = addSourceToUrl(baseUrl);
+        // Monta o link com utm_content após U21-
+        const finalUrl = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-" + utmContent;
+        
+        console.log('🔀 Redirecionando under21 para:', finalUrl);
         
         setTimeout(() => {
             window.location.href = finalUrl;
-        }, 800);
+        }, 300);
+    } else {
+        // Continua para segunda seção
+        setTimeout(() => {
+            showSecondSection();
+        }, 300);
     }
+}
 
-    // Function to add preserved parameters to the URL
-    function addSourceToUrl(baseUrl) {
-        var currentUrl = window.location.href;
-        var urlParams = new URLSearchParams(new URL(currentUrl).search);
-        
-        var desiredParams = {
-            'ttclid': '__CLICKID__',
-            'utm_campaign': '__CAMPAIGN_NAME__',
-            'utm_content': '__CID_NAME__',
-            'mc_campaign_id': '__CAMPAIGN_ID__',
-            'mc_adset_name': '__AID_NAME__',
-            'mc_adset_id': '__AID__',
-            'mc_ad_id': '__CID__',
-            'mc_pub': '__PLACEMENT__'
-        };
-        
-        var finalUrl = baseUrl;
-        var separator = finalUrl.includes('?') ? '&' : '?';
-        
-        Object.keys(desiredParams).forEach(function(key) {
-            if (urlParams.has(key)) {
-                finalUrl += separator + key + '=' + encodeURIComponent(urlParams.get(key));
-                separator = '&';
-            } else if (desiredParams[key] && desiredParams[key] !== '') {
-                finalUrl += separator + key + '=' + encodeURIComponent(desiredParams[key]);
-                separator = '&';
-            }
+// Função para mostrar segunda seção
+function showSecondSection() {
+    document.getElementById('heroSection').style.display = 'none';
+    document.getElementById('secondSection').classList.add('active');
+}
+
+// Função do botão final - DISPARA TODOS OS 3 EVENTOS
+async function handleClick(event) {
+    event.preventDefault();
+    console.log('🚀 Botão final clicado! Disparando todos os eventos...');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const ttclid = urlParams.get('ttclid') || '';
+    
+    if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
+
+    // CLIENT-SIDE - 3 eventos
+    try {
+        ttq.track('AddToCart', {
+            content_type: 'product',
+            content_id: 'freecash-tiktok-rewards',
+            value: 1.00,
+            currency: 'USD'
         });
         
-        return finalUrl;
+        ttq.track('CompleteRegistration', {
+            content_type: 'product',
+            content_id: 'freecash-tiktok-rewards',
+            value: 1.00,
+            currency: 'USD'
+        });
+        
+        ttq.track('Purchase', {
+            content_type: 'product',
+            content_id: 'freecash-tiktok-rewards',
+            value: 1.00,
+            currency: 'USD'
+        });
+        
+        console.log('✅ Client-side: AddToCart, CompleteRegistration e Purchase OK');
+    } catch (e) {
+        console.warn('⚠️ Client-side falhou:', e);
     }
 
-    // Function to handle age selection
-    function selectAge(age) {
-        // Micro-animation click effect for visual feedback
-        const btn = event.currentTarget;
-        btn.style.transform = 'scale(0.98)';
-        
-        if (age === 'under21') {
-            // Redirect to alternative offer for under 21
-            const baseUrl = "https://fb.track-conv.shop/visit/5fc21795-f6a0-4228-ae4d-b6a16ede4677";
-            const finalUrl = addSourceToUrl(baseUrl);
-            
-            setTimeout(() => {
-                window.location.href = finalUrl;
-            }, 300);
+    // SERVER-SIDE - 3 eventos
+    try {
+        // AddToCart
+        await fetch('/api', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'AddToCart',
+                event_id: 'atc_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        // CompleteRegistration
+        await fetch('/api', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'CompleteRegistration',
+                event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        // Purchase
+        const response = await fetch('/api', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'Purchase',
+                event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            console.log('✅ Server-side: Todos os eventos enviados', data);
         } else {
-            // Continue to second section for over 21
-            setTimeout(() => {
-                showSecondSection();
-            }, 300);
+            console.error('❌ Server-side erro:', data);
         }
+    } catch (error) {
+        console.error('❌ Erro server-side:', error);
     }
 
-    // Function to show second section
-    function showSecondSection() {
-        document.getElementById('heroSection').style.display = 'none';
-        document.getElementById('secondSection').classList.add('active');
+    // Redireciona após tracking - SEM PARÂMETROS
+    setTimeout(() => {
+        console.log('🔀 Redirecionando para: https://fb.track-conv.shop/click');
+        window.location.href = "https://fb.track-conv.shop/click";
+    }, 800);
+}
+
+// ========================================
+// NOTIFICAÇÕES
+// ========================================
+const notifications = [
+    "Jessica <span class='earned'>earned $73</span> watching TikTok · 8 min ago",
+    "Marcus <span class='earned'>made $156</span> from TikTok videos · 15 min ago",
+    "Sarah <span class='earned'>cashed out $91</span> via PayPal · 3 min ago",
+    "Alex <span class='earned'>earned $67</span> scrolling TikTok · 22 min ago",
+    "Emma <span class='earned'>made $203</span> watching videos · 12 min ago",
+    "David <span class='earned'>earned $134</span> with TikTok · 28 min ago",
+    "Lisa <span class='earned'>earned $118</span> bonus watching · 6 min ago"
+];
+
+let notifIndex = 0;
+let isShowingNotif = false;
+
+function showNotif(){
+    if(isShowingNotif || !document.getElementById('heroSection').style.display || document.getElementById('heroSection').style.display === 'flex') {
+        // Continua mostrando apenas no Step 1
+    } else if (document.getElementById('secondSection').classList.contains('active')) {
+        // Para de mostrar notificações no Step 2
+        return; 
     }
 
-    // Enhanced notifications
-    const notifications = [
-        "Jessica <span class='earned'>earned $73</span> watching TikTok · 8 min ago",
-        "Marcus <span class='earned'>made $156</span> from TikTok videos · 15 min ago",
-        "Sarah <span class='earned'>cashed out $91</span> via PayPal · 3 min ago",
-        "Alex <span class='earned'>earned $67</span> scrolling TikTok · 22 min ago",
-        "Emma <span class='earned'>made $203</span> watching videos · 12 min ago",
-        "David <span class='earned'>earned $134</span> with TikTok · 28 min ago",
-        "Lisa <span class='earned'>earned $118</span> bonus watching · 6 min ago"
-    ];
-
-    let notifIndex = 0;
-    let isShowingNotif = false;
+    isShowingNotif = true;
+    const box = document.getElementById("notifBox");
+    box.innerHTML = '';
     
-    function showNotif(){
-        if(isShowingNotif || !document.getElementById('heroSection').style.display || document.getElementById('heroSection').style.display === 'flex') {
-            // Continues showing only if in Step 1 or if display hasn't been changed to 'none' yet
-        } else if (document.getElementById('secondSection').classList.contains('active')) {
-            // Stops showing notifications in Step 2 to focus on the CTA
-            return; 
-        }
-
-        isShowingNotif = true;
-        const box = document.getElementById("notifBox");
-        box.innerHTML = '';
-        
-        const n = document.createElement("div");
-        n.className = "notif";
-        n.innerHTML = notifications[notifIndex];
-        box.appendChild(n);
-        
-        requestAnimationFrame(()=> n.classList.add("show"));
-        
+    const n = document.createElement("div");
+    n.className = "notif";
+    n.innerHTML = notifications[notifIndex];
+    box.appendChild(n);
+    
+    requestAnimationFrame(()=> n.classList.add("show"));
+    
+    setTimeout(()=> {
+        n.classList.remove("show");
         setTimeout(()=> {
-            n.classList.remove("show");
-            setTimeout(()=> {
-                if(box.contains(n)) box.removeChild(n);
-                isShowingNotif = false;
-                
-                notifIndex = (notifIndex + 1) % notifications.length;
-                const nextDelay = 1000 + Math.random() * 2000;
-                setTimeout(showNotif, nextDelay);
-            }, 500);
-        }, 3000);
-    }
-    
-    setTimeout(showNotif, 1500);
+            if(box.contains(n)) box.removeChild(n);
+            isShowingNotif = false;
+            
+            notifIndex = (notifIndex + 1) % notifications.length;
+            const nextDelay = 1000 + Math.random() * 2000;
+            setTimeout(showNotif, nextDelay);
+        }, 500);
+    }, 3000);
+}
+
+setTimeout(showNotif, 1500);
 </script>
 </body>
 </html>
