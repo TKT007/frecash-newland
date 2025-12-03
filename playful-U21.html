@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Todo o código de rastreamento de terceiros (MaxConv, TikTok Pixel, etc.) foi removido. -->
+
+    <!-- Updated logo/favicon for Playful Rewards -->
+    <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
+    <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
+    <title>Playful Rewards</title>
+    <style>
+        /* ==================================== */
+        /* ===== COLORS & VARIABLES (PLAYFUL REWARDS: PURPLE/NEON) ===== */
+        /* ==================================== */
+        :root{
+            /* Cores Playful Rewards */
+            --bg: #050510;            /* Background Deep Blue/Black */
+            --text: #e8e4f3;          /* High contrast text (White/Light Purple) */
+            --muted: #a89cc8;         /* Muted text */
+            --brand: #a855f7;         /* Primary Brand Color (Purple) */
+            --brand2: #7c3aed;        /* Secondary Brand Color (Darker Purple) */
+            --accent-red: #ff4757;    /* Warning/Highlight (Mantido do Freecash) */
+            /* Elementos */
+            --bg-card: rgba(15,10,30,.6); /* Card background with blur effect */
+            --border: rgba(168,85,247,.2); /* Subtle borders */
+            --brand-glow: rgba(168,85,247,.4); /* Glow effect */
+        }
+
+        /* Reset and Base Styling */
+        *{box-sizing:border-box}
+        html,body{margin:0;height:100%}
+        body{
+            color:var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x:hidden;
+            min-height:100vh;
+            line-height:1.47059;
+            font-weight:400;
+            letter-spacing:-.022em;
+            /* Background Playful Rewards */
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(168,85,247,.15), transparent),
+                linear-gradient(180deg, #050510 0%, #0a0520 50%, #0f0a30 100%);
+            position: relative;
+        }
+
+        /* Animated background elements (Mantido do Playful Rewards) */
+        .bg-orb{
+            position:fixed;
+            border-radius:50%;
+            filter:blur(80px);
+            opacity:.3;
+            pointer-events:none;
+            z-index:0;
+        }
+        .orb1{
+            width:400px;height:400px;
+            background:radial-gradient(circle, rgba(168,85,247,.4), transparent);
+            top:-100px;left:-100px;
+            animation:float1 20s ease-in-out infinite;
+        }
+        .orb2{
+            width:300px;height:300px;
+            background:radial-gradient(circle, rgba(124,58,237,.3), transparent);
+            bottom:-50px;right:-50px;
+            animation:float2 15s ease-in-out infinite;
+        }
+
+        @keyframes float1{
+            0%, 100%{transform:translate(0,0) scale(1);}
+            50%{transform:translate(50px,50px) scale(1.1);}
+        }
+        @keyframes float2{
+            0%, 100%{transform:translate(0,0) scale(1);}
+            50%{transform:translate(-30px,-40px) scale(1.15);}
+        }
+
+        /* Layout (Ajustado para o nome second-section) */
+        .second-section {
+            max-width: 480px; /* Mantido do Playful Rewards */
+            margin: 0 auto;
+            padding: 60px 20px 40px; /* Mantido do Playful Rewards */
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Para ficar acima dos orbs */
+        }
+
+        /* Logo Styling (Mantido o novo estilo de wrapper) */
+        .logo-wrapper{
+            width:70px;
+            height:70px;
+            margin:0 auto 20px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(168,85,247,.1);
+            border:1px solid rgba(168,85,247,.3);
+            box-shadow:0 10px 40px rgba(168,85,247,.4);
+        }
+        /* Updated logo src */
+        .logo{
+            width:70px;
+            height:70px;
+            object-fit:cover;
+            border-radius:20px;
+        }
+
+        /* You're In! Section (Adaptado) */
+        .youre-in-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 30px 0 20px;
+        }
+        .check-circle {
+            width: 60px;
+            height: 60px;
+            /* Cor do Playful Rewards */
+            background: var(--brand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px var(--brand-glow);
+        }
+        .check-circle svg {
+            width: 32px;
+            height: 32px;
+            color: var(--bg); /* Cor de fundo no ícone */
+        }
+        .youre-in-text {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1;
+            /* Gradiente do Playful Rewards */
+            background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0,0,0,.3);
+        }
+        .text-neon { color: var(--brand); } /* Mantido, mas agora é roxo */
+
+
+        .subtitle{
+            font-size:15px; /* Ajustado para o estilo Playful Rewards */
+            color:var(--muted);
+            line-height:1.5;
+            margin-bottom:30px; /* Ajustado para o estilo Playful Rewards */
+            padding:0 10px;
+        }
+
+        /* Card (Earning Journey Steps) - Estilo Playful Rewards */
+        .card{
+            background:var(--bg-card); /* bg com blur */
+            border:1px solid var(--border);
+            border-radius:24px; /* Mais arredondado */
+            text-align:left;
+            backdrop-filter:blur(20px);
+            box-shadow:0 20px 60px rgba(0,0,0,.3);
+            position:relative;
+            padding: 0;
+            margin-top: 40px; /* Espaçamento do CTA */
+        }
+
+        /* Título centralizado (Atualizado para REWARDS STEPS) */
+        .section-title{
+            font-size:14px;
+            font-weight:700;
+            text-align:center;
+            margin-top:0;
+            margin-bottom:0;
+            padding: 24px 0;
+            color: var(--muted);
+            text-shadow: none;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* List Items (Adaptado do Playful Rewards .feature) */
+        .li{
+            display:flex;gap:16px;
+            padding:20px 24px; /* Ajustado para Playful */
+            border-bottom:1px solid rgba(168,85,247,.08);
+            align-items:flex-start;
+            text-align: left;
+            background: transparent;
+        }
+        .li:first-of-type {
+             border-top: 1px solid rgba(168,85,247,.08);
+         }
+        .li:last-child{border-bottom:0}
+
+        .check{
+            display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+            border-radius:50%;
+            /* Cor do Playful Rewards */
+            background:var(--brand);
+            font-size:14px;font-weight:700;color:var(--bg);flex-shrink:0;
+            box-shadow:0 0 10px var(--brand-glow);
+        }
+        .li b{
+            display:block;
+            color:var(--text); /* Cor de texto padrão */
+            font-size:16px;
+            margin-bottom:4px;
+            font-weight:700; /* Mais negrito */
+        }
+        .muted-text{
+            color:var(--muted);
+            font-size:13px;
+            line-height:1.4;
+        }
+
+        /* Main CTA Button - Estilo Playful Rewards */
+        .cta{
+            display:block;
+            width:100%;
+            background:linear-gradient(135deg, var(--brand), var(--brand2));
+            color:#fff !important;
+            font-weight:800;
+            font-size:17px;
+            text-transform:uppercase;
+            letter-spacing:.5px;
+            border:0;
+            border-radius:16px;
+            padding:20px;
+            margin-top:30px;
+            margin-bottom: 40px; /* Adicionado margem para footer */
+            text-decoration:none;
+            cursor:pointer;
+            position:relative;
+            overflow:hidden;
+            box-shadow:0 10px 30px var(--brand-glow);
+            transition: all 0.3s ease;
+            animation: pulse 3s ease-in-out infinite; /* Mantido o pulse */
+        }
+        .cta::before{
+            content:'';
+            position:absolute;
+            top:0;left:-100%;
+            width:100%;height:100%;
+            background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+            transition:left 0.5s;
+        }
+        .cta:hover{
+            transform:translateY(-2px);
+            box-shadow:0 15px 40px rgba(168,85,247,.5);
+        }
+        .cta:hover::before{left:100%;}
+
+
+        .cta-sub {
+            display:block;
+            font-size:12px;
+            font-weight:600;
+            margin-top:6px;
+            color:#fff; /* Cor branca para contraste no roxo */
+            opacity:.9;
+        }
+        .cta-sub .red {
+            color:var(--accent-red);
+            font-weight:800;
+        }
+
+        /* Footer styling */
+        .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
+
+        /* Animation for Main CTA Button */
+        @keyframes pulse {
+            0%, 100% { box-shadow:0 10px 30px var(--brand-glow); }
+            50% { box-shadow:0 15px 40px rgba(168,85,247,.6);}
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .second-section { padding: 40px 16px 32px; }
+            .youre-in-text { font-size: 42px; }
+            .li { padding-left: 16px; padding-right: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background orbs -->
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+
+    <!-- Seção Principal -->
+    <section class="second-section" id="secondSection">
+
+        <!-- Logo -->
+        <div class="logo-wrapper">
+            <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
+        </div>
+
+        <!-- You're In! Section -->
+        <div class="youre-in-section">
+            <div class="check-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <div class="youre-in-text">
+                You're <span class="text-neon">In!</span>
+            </div>
+        </div>
+
+        <!-- Subtitle -->
+        <p class="subtitle" style="margin-bottom: 32px; padding: 0;">
+            Where Your Opinions Power Your Earnings.
+        </p>
+
+        <!-- CTA (Botão principal - agora redireciona diretamente via href) -->
+        <a id="cta" class="cta" href="https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-">
+            START PLAYING & EARNING
+        </a>
+
+        <!-- Card: Earning Journey Steps -->
+        <div class="card">
+             <!-- Title -->
+            <div class="section-title">YOUR REWARDS STEPS</div>
+
+            <!-- Lista de Passos -->
+            <div class="li">
+                <span class="check">1</span>
+                <div>
+                    <b>Download the Playful app</b>
+                    <div class="muted-text">Click the button below</div>
+                </div>
+            </div>
+            <div class="li">
+                <span class="check">2</span>
+                <div>
+                    <b>Earn More by Testing Multiple Games</b>
+                    <div class="muted-text">Earn up to $200-$500/day</div>
+                </div>
+            </div>
+            <div class="li" style="border-bottom: none;">
+                <span class="check">3</span>
+                <div>
+                    <b>Pro tip: Make in-app purchases on the games to earn faster</b>
+                    <div class="muted-text">They reimburse you for anything you spend!</div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim do Card -->
+
+        <!-- Footer -->
+        <div class="foot">Free to play • Cash out from $1.00</div>
+    </section>
+
+
+</body>
+</html>
