@@ -413,7 +413,7 @@
 <script>
 // ========================================
 // PLAYFUL REWARDS - ATUALIZA HREF DO BOTÃO
-// Adiciona utm_source ao link do botão ao carregar
+// Adiciona utm_content ao link do botão ao carregar
 // ========================================
 
 // Configuração do delay de carregamento em milissegundos
@@ -430,14 +430,14 @@ function startLoadingTimer() {
         return;
     }
     
-    // Pega o valor do utm_source
+    // Pega o valor do utm_content
     const urlParams = new URLSearchParams(window.location.search);
-    const utmSource = urlParams.get('utm_source') || '';
+    const utmcontent = urlParams.get('utm_content') || '';
     
-    console.log('📊 utm_source capturado:', utmSource || '(vazio)');
+    console.log('📊 utm_content capturado:', utmcontent || '(vazio)');
     
-    // Monta o link final com utm_source após U21-
-    const finalUrl = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-" + utmSource;
+    // Monta o link final com utm_content após U21-
+    const finalUrl = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-" + utmcontent;
     
     // Atualiza o href do botão
     ctaButton.href = finalUrl;
