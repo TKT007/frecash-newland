@@ -277,7 +277,7 @@
 
         /* Responsiveness */
         @media (max-width: 600px) {
-            .second-section { padding: 40px 16px 32px; }
+            .second-section { padding: 90px 16px 32px; } /* ATUALIZADO: Aumentado o padding superior para 90px */
             .youre-in-text { font-size: 42px; }
             .li { padding-left: 16px; padding-right: 16px; }
         }
@@ -371,7 +371,7 @@
             Where Your Opinions Power Your Earnings.
         </p>
 
-        <!-- CTA (Botão principal - agora usa JS para redirecionar após o carregamento) -->
+        <!-- CTA (Botão principal - o link permanece com #) -->
         <a id="cta" class="cta" href="#">
             START PLAYING & EARNING
         </a>
@@ -411,41 +411,33 @@
     </section>
 
 <script>
-    // URL de destino final (O link que você forneceu)
-    const FINAL_REDIRECT_URL = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-";
-    const LOADING_DELAY_MS = 2000; // 2 segundos
+    // Configuração do delay de carregamento em milissegundos
+    const LOADING_DELAY_MS = 2000; 
 
     const loadingOverlay = document.getElementById('loading-overlay');
-    const ctaButton = document.getElementById('cta');
+    // const ctaButton = document.getElementById('cta'); // Não mais necessário, pois removemos o redirecionamento JS
 
-    // Função que inicia o timer e redireciona
-    function startRedirectTimer() {
-        // Redireciona após o atraso definido
+    // Função que inicia o timer e apenas esconde o overlay
+    function startLoadingTimer() {
+        // Esconde o overlay após o atraso definido (2 segundos)
         setTimeout(() => {
             // Esconde o overlay (com transição CSS)
             loadingOverlay.classList.add('hidden');
-            
-            // Redireciona para o link final
-            window.location.href = FINAL_REDIRECT_URL;
         }, LOADING_DELAY_MS);
     }
 
-    // Lida com o clique do usuário: redireciona imediatamente (caso clique antes do auto-redirect)
-    function handleCtaClick(event) {
-        event.preventDefault();
-        window.location.href = FINAL_REDIRECT_URL;
-    }
-
-    // Anexa o evento de clique ao botão CTA
-    ctaButton.addEventListener('click', handleCtaClick);
+    /*
+    // Removido: A função handleCtaClick e o listener de clique
+    // O CTA agora age como um link HTML normal (href="#")
+    */
 
     // Inicia a animação de loading e o timer assim que o DOM estiver pronto
     document.addEventListener('DOMContentLoaded', () => {
         // Garante que o overlay está visível no início
         loadingOverlay.classList.remove('hidden');
         
-        // Inicia o timer de redirecionamento.
-        startRedirectTimer();
+        // Inicia o timer para mostrar a página.
+        startLoadingTimer();
     });
 
 </script>
