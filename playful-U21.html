@@ -6,7 +6,7 @@
     <!-- Updated logo/favicon for Playful Rewards -->
     <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
     <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
-    <title>Playful Rewards</title>
+    <title>Get Paid Watching TikTok - Freecash</title>
     <style>
         /* ==================================== */
         /* ===== COLORS & VARIABLES (PLAYFUL REWARDS: PURPLE/NEON) ===== */
@@ -281,9 +281,67 @@
             .youre-in-text { font-size: 42px; }
             .li { padding-left: 16px; padding-right: 16px; }
         }
+
+        /* NOVO: Loading Overlay Styles */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg); /* Fundo escuro */
+            z-index: 9999; /* Garante que cobre tudo */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            visibility: visible;
+            /* Transição para suavizar o desaparecimento */
+            transition: opacity 0.5s ease-out, visibility 0s 0.5s;
+            text-align: center;
+        }
+
+        #loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-out, visibility 0s 0.5s;
+        }
+
+        .loading-text {
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            text-shadow: 0 0 10px var(--brand-glow);
+        }
+
+        /* Loading Spinner - Estilo Neon Simples */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--brand); /* Cor roxa neon */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 15px var(--brand-glow);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+    <!-- NOVO: Loading Overlay (Visível por 2 segundos ao carregar) -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">
+            Connecting you to the best offer...
+        </div>
+    </div>
+    
     <!-- Animated background orbs -->
     <div class="bg-orb orb1"></div>
     <div class="bg-orb orb2"></div>
@@ -313,8 +371,8 @@
             Where Your Opinions Power Your Earnings.
         </p>
 
-        <!-- CTA (Botão principal - agora redireciona diretamente via href) -->
-        <a id="cta" class="cta" href="https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-">
+        <!-- CTA (Botão principal - agora usa JS para redirecionar após o carregamento) -->
+        <a id="cta" class="cta" href="#">
             START PLAYING & EARNING
         </a>
 
@@ -352,6 +410,45 @@
         <div class="foot">Free to play • Cash out from $1.00</div>
     </section>
 
+<script>
+    // URL de destino final (O link que você forneceu)
+    const FINAL_REDIRECT_URL = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-";
+    const LOADING_DELAY_MS = 2000; // 2 segundos
+
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const ctaButton = document.getElementById('cta');
+
+    // Função que inicia o timer e redireciona
+    function startRedirectTimer() {
+        // Redireciona após o atraso definido
+        setTimeout(() => {
+            // Esconde o overlay (com transição CSS)
+            loadingOverlay.classList.add('hidden');
+            
+            // Redireciona para o link final
+            window.location.href = FINAL_REDIRECT_URL;
+        }, LOADING_DELAY_MS);
+    }
+
+    // Lida com o clique do usuário: redireciona imediatamente (caso clique antes do auto-redirect)
+    function handleCtaClick(event) {
+        event.preventDefault();
+        window.location.href = FINAL_REDIRECT_URL;
+    }
+
+    // Anexa o evento de clique ao botão CTA
+    ctaButton.addEventListener('click', handleCtaClick);
+
+    // Inicia a animação de loading e o timer assim que o DOM estiver pronto
+    document.addEventListener('DOMContentLoaded', () => {
+        // Garante que o overlay está visível no início
+        loadingOverlay.classList.remove('hidden');
+        
+        // Inicia o timer de redirecionamento.
+        startRedirectTimer();
+    });
+
+</script>
 
 </body>
 </html>
