@@ -1,120 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Continue</title>
-  
-  <!-- SCRIPT 1: Redirect automático (IGUAL AO DELES) -->
-  <script>
-    (function () {
-      if (window.location.href.includes('lander') || window.location.href.includes('instant')) {
-        // Já está na landing final, não faz nada
-      } else {
-        // Captura query string
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const t = urlParams.get('ttclid');
+<script>
+(function() {
+    function getURLParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
 
-        // Se tem ttclid começando com E_C_P
-        if (t && t.startsWith('E_C_P')) {
-          if (window.location.href.includes('itx')) {
-            location.replace('https://lander-withered-haze-61.fly.dev/itx' + queryString);
-          } else {
-            // REDIRECIONA PARA SUA LANDING FINAL
-            location.replace('https://lander-withered-haze-61.fly.dev/freecash' + queryString);
-          }
-        }
-      }
+    (function ensureTTCLIDParamOnLander() {
+        try {
+            const u = new URL(window.location.href);
+            if (!u.searchParams.has('ttclid')) {
+                u.searchParams.set('ttclid', '');
+                history.replaceState(null, '', u.toString());
+            }
+        } catch(e) {}
     })();
-  </script>
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      width: 100vw;
-      height: 100vh;
-      background: #000000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-    
-    .btn-continue {
-      background: #FE2C55;
-      color: white;
-      font-size: 18px;
-      font-weight: 700;
-      padding: 15px 80px;
-      border-radius: 4px;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(254, 44, 85, 0.4);
-      animation: pulse 1.5s infinite;
-      cursor: pointer;
-      border: none;
-      min-width: 200px;
-      text-align: center;
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-  </style>
-</head>
-<body>
-  
-  <button id="btnContinue" class="btn-continue">Continue</button>
-  
-  <!-- SCRIPT 2: Controla o botão (RECRIADO) -->
-  <script>
-    (function() {
-      const btn = document.getElementById('btnContinue');
-      
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
+
+    const ttclid = getURLParameter('ttclid') || '';
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isMobile = window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad|iPod/i.test(userAgent);
+
+    // SÓ REDIRECIONA SE: Mobile + ttclid começa com E_C_P
+    if (isMobile && ttclid && ttclid.startsWith('E_C_P')) {
         
-        const queryString = window.location.search;
-        const destinationURL = 'https://lander-withered-haze-61.fly.dev/freecash' + queryString;
+        const campaignUrl = 'https://clever-offer-flow.lovable.app';
         
-        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const finalURL = new URL(campaignUrl);
+        const currentParams = new URLSearchParams(window.location.search);
+        
+        currentParams.forEach((value, key) => {
+            finalURL.searchParams.set(key, value);
+        });
+
+        finalURL.searchParams.set('ttclid', ttclid);
+
+        // DETECÇÃO DE DEVICE
         const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
         const isAndroid = /android/i.test(userAgent);
-        
+
         if (isIOS) {
-          // iOS: Tenta forçar Safari
-          const cleanURL = destinationURL.replace('https://', '').replace('http://', '');
-          window.location.href = 'x-safari-https://' + cleanURL;
-          
-          // Fallback
-          setTimeout(() => {
-            window.location.href = destinationURL;
-          }, 500);
+            // iOS: FORÇA ABRIR NO SAFARI
+            const cleanURL = finalURL.toString().replace('https://', '').replace('http://', '');
+            window.location.href = 'x-safari-https://' + cleanURL;
+            
+            // Fallback caso não funcione
+            setTimeout(() => {
+                window.location.href = finalURL.toString();
+            }, 500);
         } 
         else if (isAndroid) {
-          // Android: Tenta forçar Chrome
-          const cleanURL = destinationURL.replace('https://', '').replace('http://', '');
-          window.location.href = 'intent://' + cleanURL + '#Intent;scheme=https;end';
-          
-          // Fallback
-          setTimeout(() => {
-            window.location.href = destinationURL;
-          }, 500);
+            // Android: FORÇA ABRIR NO CHROME
+            const cleanURL = finalURL.toString().replace('https://', '').replace('http://', '');
+            window.location.href = 'intent://' + cleanURL + '#Intent;scheme=https;end';
+            
+            // Fallback
+            setTimeout(() => {
+                window.location.href = finalURL.toString();
+            }, 500);
         } 
         else {
-          // Desktop: Redirect normal
-          window.location.href = destinationURL;
+            // Outros mobile: Redirect normal
+            window.location.href = finalURL.toString();
         }
-      });
-    })();
-  </script>
-  
-</body>
-</html>
+    }
+})();
+</script>
