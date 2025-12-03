@@ -411,18 +411,29 @@
     </section>
 
 <script>
- // ========================================
-// PLAYFUL REWARDS - SCRIPT DE REDIRECIONAMENTO
-// Captura utm_source e adiciona após U21-
+// ========================================
+// PLAYFUL REWARDS - SCRIPT COM CLIQUE NO BOTÃO
+// Captura utm_source e adiciona após U21- ao clicar
 // ========================================
 
 // Configuração do delay de carregamento em milissegundos
 const LOADING_DELAY_MS = 2000; 
 
 const loadingOverlay = document.getElementById('loading-overlay');
+const ctaButton = document.getElementById('cta');
 
-// Função que inicia o timer e redireciona após o delay
+// Função que apenas esconde o overlay (sem redirecionar)
 function startLoadingTimer() {
+    // Esconde o overlay após o atraso definido (2 segundos)
+    setTimeout(() => {
+        loadingOverlay.classList.add('hidden');
+    }, LOADING_DELAY_MS);
+}
+
+// Função para redirecionar ao clicar no CTA
+function handleCtaClick(event) {
+    event.preventDefault(); // Previne o comportamento padrão do link
+    
     // Pega o valor do utm_source
     const urlParams = new URLSearchParams(window.location.search);
     const utmSource = urlParams.get('utm_source') || '';
@@ -432,25 +443,20 @@ function startLoadingTimer() {
     
     console.log('🔀 Redirecionando para:', finalUrl);
     
-    // Esconde o overlay e redireciona após o atraso definido (2 segundos)
-    setTimeout(() => {
-        // Esconde o overlay (com transição CSS)
-        loadingOverlay.classList.add('hidden');
-        
-        // Redireciona após mais 500ms (tempo da transição CSS)
-        setTimeout(() => {
-            window.location.href = finalUrl;
-        }, 500);
-    }, LOADING_DELAY_MS);
+    // Redireciona
+    window.location.href = finalUrl;
 }
 
-// Inicia a animação de loading e o timer assim que o DOM estiver pronto
+// Inicia a animação de loading assim que o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
     // Garante que o overlay está visível no início
     loadingOverlay.classList.remove('hidden');
     
-    // Inicia o timer para redirecionar
+    // Inicia o timer para esconder o overlay
     startLoadingTimer();
+    
+    // Adiciona evento de clique no botão CTA
+    ctaButton.addEventListener('click', handleCtaClick);
 });
 </script>
 
