@@ -419,14 +419,22 @@
 // Configuração do delay de carregamento em milissegundos
 const LOADING_DELAY_MS = 2000; 
 
-const loadingOverlay = document.getElementById('loading-overlay');
-const ctaButton = document.getElementById('cta');
-
 // Função que esconde o overlay e atualiza o link do botão
 function startLoadingTimer() {
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const ctaButton = document.getElementById('cta');
+    
+    // Verifica se os elementos existem
+    if (!ctaButton) {
+        console.error('❌ Botão CTA não encontrado!');
+        return;
+    }
+    
     // Pega o valor do utm_source
     const urlParams = new URLSearchParams(window.location.search);
     const utmSource = urlParams.get('utm_source') || '';
+    
+    console.log('📊 utm_source capturado:', utmSource || '(vazio)');
     
     // Monta o link final com utm_source após U21-
     const finalUrl = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-" + utmSource;
@@ -437,19 +445,20 @@ function startLoadingTimer() {
     console.log('✅ Link do botão atualizado para:', finalUrl);
     
     // Esconde o overlay após o atraso definido (2 segundos)
-    setTimeout(() => {
-        loadingOverlay.classList.add('hidden');
-    }, LOADING_DELAY_MS);
+    if (loadingOverlay) {
+        setTimeout(() => {
+            loadingOverlay.classList.add('hidden');
+        }, LOADING_DELAY_MS);
+    }
 }
 
 // Inicia quando o DOM estiver pronto
-document.addEventListener('DOMContentLoaded', () => {
-    // Garante que o overlay está visível no início
-    loadingOverlay.classList.remove('hidden');
-    
-    // Inicia o timer e atualiza o link
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startLoadingTimer);
+} else {
+    // DOM já está pronto
     startLoadingTimer();
-});
+}
 </script>
 
 </body>
