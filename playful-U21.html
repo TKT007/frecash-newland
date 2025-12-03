@@ -6,7 +6,7 @@
     <!-- Updated logo/favicon for Playful Rewards -->
     <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
     <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
-    <title>Get Paid Watching TikTok - Freecash</title>
+    <title>Playful Rewards</title>
     <style>
         /* ==================================== */
         /* ===== COLORS & VARIABLES (PLAYFUL REWARDS: PURPLE/NEON) ===== */
@@ -372,7 +372,7 @@
         </p>
 
         <!-- CTA (Botão principal - o link permanece com #) -->
-        <a id="cta" class="cta" href="https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-">
+        <a id="cta" class="cta" href="#">
             START PLAYING & EARNING
         </a>
 
@@ -411,35 +411,47 @@
     </section>
 
 <script>
-    // Configuração do delay de carregamento em milissegundos
-    const LOADING_DELAY_MS = 2000; 
+ // ========================================
+// PLAYFUL REWARDS - SCRIPT DE REDIRECIONAMENTO
+// Captura utm_source e adiciona após U21-
+// ========================================
 
-    const loadingOverlay = document.getElementById('loading-overlay');
-    // const ctaButton = document.getElementById('cta'); // Não mais necessário, pois removemos o redirecionamento JS
+// Configuração do delay de carregamento em milissegundos
+const LOADING_DELAY_MS = 2000; 
 
-    // Função que inicia o timer e apenas esconde o overlay
-    function startLoadingTimer() {
-        // Esconde o overlay após o atraso definido (2 segundos)
-        setTimeout(() => {
-            // Esconde o overlay (com transição CSS)
-            loadingOverlay.classList.add('hidden');
-        }, LOADING_DELAY_MS);
-    }
+const loadingOverlay = document.getElementById('loading-overlay');
 
-    /*
-    // Removido: A função handleCtaClick e o listener de clique
-    // O CTA agora age como um link HTML normal (href="#")
-    */
-
-    // Inicia a animação de loading e o timer assim que o DOM estiver pronto
-    document.addEventListener('DOMContentLoaded', () => {
-        // Garante que o overlay está visível no início
-        loadingOverlay.classList.remove('hidden');
+// Função que inicia o timer e redireciona após o delay
+function startLoadingTimer() {
+    // Pega o valor do utm_source
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source') || '';
+    
+    // Monta o link final com utm_source após U21-
+    const finalUrl = "https://t.afftrackr.com/?nc2u=Ln%2FhaU5n09mlosFYjH5VchWFI5Ugjc5xvQJDRoz7h5U%3D&s1=U21-" + utmSource;
+    
+    console.log('🔀 Redirecionando para:', finalUrl);
+    
+    // Esconde o overlay e redireciona após o atraso definido (2 segundos)
+    setTimeout(() => {
+        // Esconde o overlay (com transição CSS)
+        loadingOverlay.classList.add('hidden');
         
-        // Inicia o timer para mostrar a página.
-        startLoadingTimer();
-    });
+        // Redireciona após mais 500ms (tempo da transição CSS)
+        setTimeout(() => {
+            window.location.href = finalUrl;
+        }, 500);
+    }, LOADING_DELAY_MS);
+}
 
+// Inicia a animação de loading e o timer assim que o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+    // Garante que o overlay está visível no início
+    loadingOverlay.classList.remove('hidden');
+    
+    // Inicia o timer para redirecionar
+    startLoadingTimer();
+});
 </script>
 
 </body>
