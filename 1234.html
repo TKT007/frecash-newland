@@ -147,62 +147,125 @@
     </div>
 
     <script>
+        console.log('========================================');
+        console.log('🚀 SCRIPT CARREGADO');
+        console.log('========================================');
+        console.log('📍 URL Atual:', window.location.href);
+        console.log('📍 Query String:', window.location.search);
+        console.log('========================================');
+
         var getURLParameter = function(paramName) {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(paramName);
+            const value = urlParams.get(paramName);
+            console.log(`📥 getURLParameter('${paramName}'):`, value);
+            return value;
         };
 
         var addParameterToURL = function(url, paramName, paramValue) {
-            if (!paramValue) return url;
+            if (!paramValue) {
+                console.log(`⏭️  Parâmetro '${paramName}' vazio, pulando...`);
+                return url;
+            }
             const separator = url.includes('?') ? '&' : '?';
-            return url + separator + paramName + '=' + encodeURIComponent(paramValue);
+            const newURL = url + separator + paramName + '=' + encodeURIComponent(paramValue);
+            console.log(`➕ Adicionando parâmetro '${paramName}' = '${paramValue}'`);
+            console.log(`   URL antes:  ${url}`);
+            console.log(`   URL depois: ${newURL}`);
+            return newURL;
         };
 
         var isAndroid = function() {
-            return /Android/.test(navigator.userAgent);
+            const android = /Android/.test(navigator.userAgent);
+            console.log('📱 isAndroid():', android);
+            return android;
         };
 
         var createSpecialURL = function(url, platform) {
+            console.log('🔧 createSpecialURL() chamada');
+            console.log('   URL original:', url);
+            console.log('   Platform:', platform);
+            
             let urlObj;
             try {
                 urlObj = new URL(url);
             } catch(error) {
+                console.error('❌ Erro ao criar URL:', error);
                 return url;
             }
             
             const hostname = urlObj.hostname;
             const path = urlObj.pathname + urlObj.search + urlObj.hash;
             
+            console.log('   Hostname:', hostname);
+            console.log('   Path:', path);
+            
             if (platform === 'a') {
-                return "intent://" + hostname + path + "#Intent;scheme=https;end;";
+                const intentURL = "intent://" + hostname + path + "#Intent;scheme=https;end;";
+                console.log('🤖 Android detectado - Intent URL:', intentURL);
+                return intentURL;
             } else {
-                return url
+                const safariURL = url
                     .replace(/^https:\/\//, "x-safari-https://")
                     .replace(/^http:\/\//, "x-safari-http://");
+                console.log('🍎 iOS/macOS detectado - Safari URL:', safariURL);
+                return safariURL;
             }
         };
 
         function handleContinue() {
+            console.log('\n========================================');
+            console.log('🔘 BOTÃO CLICADO - handleContinue()');
+            console.log('========================================');
+            
+            // 1. Pega rurl
+            console.log('\n📌 PASSO 1: Pegando parâmetro rurl...');
             let rurl = getURLParameter('rurl');
             
             if (!rurl) {
+                console.error('❌ ERRO: rurl não encontrado!');
+                console.log('❌ Parâmetros disponíveis:');
+                const allParams = new URLSearchParams(window.location.search);
+                allParams.forEach((value, key) => {
+                    console.log(`   - ${key} = ${value}`);
+                });
                 alert('Missing redirect URL. Please use a valid link.');
                 return;
             }
             
-            try {
-                rurl = decodeURIComponent(rurl);
-            } catch(error) {}
+            console.log('✅ rurl encontrado:', rurl);
             
+            // 2. Decodifica rurl
+            console.log('\n📌 PASSO 2: Decodificando rurl...');
+            try {
+                const decodedRurl = decodeURIComponent(rurl);
+                console.log('✅ rurl decodificado:', decodedRurl);
+                rurl = decodedRurl;
+            } catch(error) {
+                console.warn('⚠️  Erro ao decodificar rurl:', error);
+            }
+            
+            // 3. Pega ttclid
+            console.log('\n📌 PASSO 3: Pegando ttclid...');
             const ttclid = getURLParameter('ttclid');
+            
+            // 4. Pega todos os parâmetros
+            console.log('\n📌 PASSO 4: Pegando parâmetros adicionais...');
             const currentParams = new URLSearchParams(window.location.search);
             const paramsToAdd = ['sparkid', 'linkid', 'BN', 'CID'];
             
+            console.log('📋 Parâmetros para verificar:', paramsToAdd);
+            
             let reconstructed = false;
             
+            // 5. Adiciona parâmetros faltantes
+            console.log('\n📌 PASSO 5: Verificando parâmetros faltantes na rurl...');
             for (let i = 0; i < paramsToAdd.length; i++) {
                 const paramName = paramsToAdd[i];
                 const paramValue = currentParams.get(paramName);
+                
+                console.log(`\n🔍 Verificando '${paramName}'...`);
+                console.log(`   Valor na URL atual: ${paramValue}`);
+                console.log(`   Existe na rurl? ${rurl.includes(paramName + '=')}`);
                 
                 if (paramValue && !rurl.includes(paramName + '=') && !rurl.includes(paramName.toLowerCase() + '=')) {
                     rurl = addParameterToURL(rurl, paramName, paramValue);
@@ -211,12 +274,22 @@
             }
             
             if (reconstructed) {
-                console.warn('Reconstructed rurl with missing parameters');
+                console.warn('⚠️  rurl foi reconstruída com parâmetros faltantes');
+            } else {
+                console.log('✅ rurl já tinha todos os parâmetros necessários');
             }
             
+            // 6. Adiciona ttclid
+            console.log('\n📌 PASSO 6: Adicionando ttclid...');
             if (ttclid) {
                 rurl = addParameterToURL(rurl, 'ttclid', ttclid);
+            } else {
+                console.log('⏭️  ttclid não encontrado, pulando...');
             }
+            
+            // 7. Cria URL especial
+            console.log('\n📌 PASSO 7: Criando URL especial baseada no device...');
+            console.log('🌐 User Agent:', navigator.userAgent);
             
             let finalURL = rurl;
             
@@ -225,6 +298,13 @@
             } else {
                 finalURL = createSpecialURL(rurl, 'i');
             }
+            
+            // 8. Redireciona
+            console.log('\n📌 PASSO 8: Redirecionando...');
+            console.log('🎯 URL Final:', finalURL);
+            console.log('========================================');
+            console.log('🚀 EXECUTANDO REDIRECT...');
+            console.log('========================================\n');
             
             window.location.href = finalURL;
         }
