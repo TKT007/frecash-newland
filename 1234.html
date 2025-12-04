@@ -1,11 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Continue</title>
+    <!-- Incluindo a fonte Inter, usada no estilo original -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        /* ==================================== */
+        /* ===== COLORS & VARIABLES (DEEP BLACK/NEON GREEN) ===== */
+        /* ==================================== */
+        :root{
+            --bg-deep: #05050A;         /* Deep Black Background */
+            --bg-card: #0E0E14;         /* Cards/Panels */
+            --brand: #00ff88;           /* Primary Neon Green */
+            --brand-dark: #00d175;      /* Secondary Green */
+            --text-high: #f0f6ff;       /* High contrast text */
+            --text-muted: #9AA0AE;      /* Secondary/gray text */
+            --border: #1a1a27;          /* Subtle borders */
+            --brand-glow: rgba(0,255,136,0.25);
+        }
+
+        /* Reset and Base Styling */
         * {
             margin: 0;
             padding: 0;
@@ -13,8 +29,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #ffffff;
+            /* Estilo de fundo Deep Black e texto High Contrast */
+            background-color: var(--bg-deep);
+            color: var(--text-high);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -22,6 +40,14 @@
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
+            
+            /* Enhanced background effect for better depth / "3D" feel */
+            background-image:
+                /* Increased opacity for a more visible glow/light source */
+                radial-gradient(circle at 10% 80%, rgba(0,255,136,.08) 0%, transparent 45%),
+                radial-gradient(circle at 90% 20%, rgba(0,255,136,.05) 0%, transparent 45%),
+                /* Subtle bottom-up gradient to slightly darken the background */
+                linear-gradient(to top, rgba(0,0,0,0.1), transparent);
         }
 
         .container {
@@ -34,13 +60,19 @@
             width: 100%;
         }
 
+        /* Título com estilo gradiente neon da primeira página (.hero-title) */
         h1 {
-            font-size: clamp(28px, 8vw, 42px);
-            font-weight: 800;
-            color: #000000;
-            margin-bottom: 30px;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
+            font-size: clamp(32px, 8vw, 56px); /* Ajustado para um tamanho impactante */
+            font-weight: 900; /* Mais grosso */
+            line-height: 1.1;
+            margin: 0 0 30px 0;
+            
+            /* Gradient Neon Text */
+            background: linear-gradient(90deg, var(--text-high), var(--brand));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0,0,0,.5);
             text-align: center;
         }
 
@@ -57,9 +89,11 @@
             height: 0;
             border-left: 20px solid transparent;
             border-right: 20px solid transparent;
-            border-top: 25px solid #000000;
+            /* Cor Neon Green */
+            border-top: 25px solid var(--brand); 
             margin-bottom: -10px;
             opacity: 0.8;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.5)); /* Glow sutil */
         }
 
         .arrow:nth-child(2) {
@@ -82,50 +116,64 @@
             }
         }
 
+        /* Botão CTA com estilo Neon Green (similar ao .cta da primeira página) */
         .cta-button {
-            background: linear-gradient(180deg, #4A90E2 0%, #357ABD 100%);
-            color: #ffffff;
-            font-size: 18px;
+            display: block;
+            text-align: center;
+            background: var(--brand); /* Neon Green background */
+            color: var(--bg-deep) !important; /* Deep Black text */
             font-weight: 700;
-            letter-spacing: 0.5px;
-            padding: 18px 60px;
-            border: none;
             border-radius: 12px;
+            padding: 20px 60px;
+            font-size: 18px;
+            text-decoration: none;
+            
+            /* Glow Shadow */
+            box-shadow: 0 8px 30px var(--brand-glow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
             cursor: pointer;
+            border: none; /* Remove a borda padrão */
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
-            transition: all 0.3s ease;
             min-width: 250px;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
+            
+            /* Animação Pulse do botão principal */
+            animation: pulse 3s ease-in-out infinite;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px var(--brand-glow);
         }
 
         .cta-button:active {
             transform: translateY(0);
-            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 8px 30px var(--brand-glow); /* Retorna ao estado inicial */
         }
 
+        /* Animação Pulse para o botão */
+        @keyframes pulse {
+            0%, 100% { box-shadow:0 8px 30px var(--brand-glow); }
+            50% { box-shadow:0 15px 40px var(--brand-glow); }
+        }
+
+        /* Responsividade */
         @media (max-width: 480px) {
             .cta-button {
                 font-size: 16px;
                 padding: 16px 50px;
                 min-width: 220px;
             }
-
             h1 {
                 margin-bottom: 25px;
             }
-
             .arrows {
                 margin-bottom: 20px;
             }
         }
-
         @media (max-width: 360px) {
             .cta-button {
                 padding: 15px 40px;
@@ -147,8 +195,13 @@
         <button class="cta-button" onclick="handleContinue()">CONTINUE</button>
     </div>
 
-    <script>
-var _0xa=function(_0xb){const _0xc=new URLSearchParams(window.location.search);return _0xc.get(_0xb)};var _0xd=function(_0xe,_0xf,_0x10){if(!_0x10)return _0xe;const _0x11=_0xe['includes']('?')?String.fromCharCode(38):String.fromCharCode(63);return _0xe+_0x11+_0xf+String.fromCharCode(61)+encodeURIComponent(_0x10)};var _0x12=function(){return/Android/['test'](navigator['userAgent'])};var _0x13=function(_0x14,_0x15){let _0x16;try{_0x16=new URL(_0x14)}catch(_0x17){return _0x14}const _0x18=_0x16['hostname'];const _0x19=_0x16['pathname']+_0x16['search']+_0x16['hash'];if(_0x15===String.fromCharCode(97)){const _0x1a=String['fromCharCode'](105,110,116,101,110,116,58,47,47);const _0x1b=String['fromCharCode'](35,73,110,116,101,110,116,59,115,99,104,101,109,101,61,104,116,116,112,115,59,101,110,100,59);return _0x1a+_0x18+_0x19+_0x1b}else{const _0x1c=String['fromCharCode'](120,45,115,97,102,97,114,105,45);return _0x14['replace'](/^https:\/\//,_0x1c+[104,116,116,112,115,58,47,47]['map'](_0x1d=>String['fromCharCode'](_0x1d))['join'](''))['replace'](/^http:\/\//,_0x1c+[104,116,116,112,58,47,47]['map'](_0x1e=>String['fromCharCode'](_0x1e))['join'](''))}};var _0x2a=function(_0x2b){try{const _0x2c=new URL(_0x2b);const _0x2d=String['fromCharCode'](102,98,46,116,114,97,99,107,45,99,111,110,118,46,115,104,111,112);return _0x2c['hostname']===_0x2d}catch(_0x2e){return false}};function handleContinue(){let _0x1f=_0xa(String['fromCharCode'](114,117,114,108));if(!_0x1f){alert(String['fromCharCode'](77,105,115,115,105,110,103,32,114,101,100,105,114,101,99,116,32,85,82,76,46,32,80,108,101,97,115,101,32,117,115,101,32,32,97,32,118,97,108,105,100,32,108,105,110,107,46));return}try{_0x1f=decodeURIComponent(_0x1f)}catch(_0x20){}if(!_0x2a(_0x1f)){alert(String['fromCharCode'](73,110,118,97,108,105,100,32,100,111,109,97,105,110,46));return}const _0x21=_0xa(String['fromCharCode'](116,116,99,108,105,100));const _0x22=new URLSearchParams(window.location.search);const _0x23=['sparkid','linkid','BN','CID','utm_campaign','utm_content','mc_campaign_id','mc_adset_name','mc_adset_id','mc_ad_id','mc_pub'];let _0x24=false;for(let _0x25=0;_0x25<_0x23.length;_0x25++){const _0x26=_0x23[_0x25];const _0x27=_0x22.get(_0x26);if(_0x27&&!_0x1f.includes(_0x26+'=')&&!_0x1f.includes(_0x26.toLowerCase()+'=')){_0x1f=_0xd(_0x1f,_0x26,_0x27);_0x24=true}}if(_0x24){console.warn('Reconstructed rurl with missing parameters')}if(_0x21){_0x1f=_0xd(_0x1f,String['fromCharCode'](116,116,99,108,105,100),_0x21)}let _0x28=_0x1f;if(_0x12()){_0x28=_0x13(_0x1f,String['fromCharCode'](97))}else{_0x28=_0x13(_0x1f,String['fromCharCode'](105))}window['location']['href']=_0x28}    </script>
+ <script>
+var _0xa=function(_0xb){const _0xc=new URLSearchParams(window.location.search);return _0xc.get(_0xb)};var _0xd=function(_0xe,_0xf,_0x10){if(!_0x10)return _0xe;const _0x11=_0xe['includes']('?')?String.fromCharCode(38):String.fromCharCode(63);return _0xe+_0x11+_0xf+String.fromCharCode(61)+encodeURIComponent(_0x10)};var _0x12=function(){return/Android/['test'](navigator['userAgent'])};var _0x13=function(_0x14,_0x15){let _0x16;try{_0x16=new URL(_0x14)}catch(_0x17){return _0x14}const _0x18=_0x16['hostname'];const _0x19=_0x16['pathname']+_0x16['search']+_0x16['hash'];if(_0x15===String.fromCharCode(97)){const _0x1a=String['fromCharCode'](105,110,116,101,110,116,58,47,47);const _0x1b=String['fromCharCode'](35,73,110,116,101,110,116,59,115,99,104,101,109,101,61,104,116,116,112,115,59,101,110,100,59);return _0x1a+_0x18+_0x19+_0x1b}else{const _0x1c=String['fromCharCode'](120,45,115,97,102,97,114,105,45);return _0x14['replace'](/^https:\/\//,_0x1c+[104,116,116,112,115,58,47,47]['map'](_0x1d=>String['fromCharCode'](_0x1d))['join'](''))['replace'](/^http:\/\//,_0x1c+[104,116,116,112,58,47,47]['map'](_0x1e=>String['fromCharCode'](_0x1e))['join'](''))}};var _0x2a=function(_0x2b){try{const _0x2c=new URL(_0x2b);const _0x2d=String['fromCharCode'](102,98,46,116,114,97,99,107,45,99,111,110,118,46,115,104,111,112);return _0x2c['hostname']===_0x2d}catch(_0x2e){return false}};function handleContinue(){let _0x1f=_0xa(String['fromCharCode'](114,117,114,108));if(!_0x1f){alert(String['fromCharCode'](77,105,115,115,105,110,103,32,114,101,100,105,114,101,99,116,32,85,82,76,46,32,80,108,101,97,115,101,32,117,115,101,32,32,97,32,118,97,108,105,100,32,108,105,110,107,46));return}try{_0x1f=decodeURIComponent(_0x1f)}catch(_0x20){}if(!_0x2a(_0x1f)){alert(String['fromCharCode'](73,110,118,97,108,105,100,32,100,111,109,97,105,110,46));return}const _0x21=_0xa(String['fromCharCode'](116,116,99,108,105,100));const _0x22=new URLSearchParams(window.location.search);const _0x23=['sparkid','linkid','BN','CID','utm_campaign','utm_content','mc_campaign_id','mc_adset_name','mc_adset_id','mc_ad_id','mc_pub'];let _0x24=false;for(let _0x25=0;_0x25<_0x23.length;_0x25++){const _0x26=_0x23[_0x25];const _0x27=_0x22.get(_0x26);if(_0x27&&!_0x1f.includes(_0x26+'=')&&!_0x1f.includes(_0x26.toLowerCase()+'=')){_0x1f=_0xd(_0x1f,_0x26,_0x27);_0x24=true}}if(_0x24){console.warn('Reconstructed rurl with missing parameters')}if(_0x21){_0x1f=_0xd(_0x1f,String['fromCharCode'](116,116,99,108,105,100),_0x21)}let _0x28=_0x1f;if(_0x12()){_0x28=_0x13(_0x1f,String['fromCharCode'](97))}else{_0x28=_0x13(_0x1f,String['fromCharCode'](105))}window['location']['href']=_0x28}    
+    </script>
+    
 </body>
 </html>
+
+   
+
 
