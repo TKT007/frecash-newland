@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Client Hints for Device Data -->
+    <meta http-equiv="delegate-ch" content="sec-ch-ua https://fb.track-conv.shop; sec-ch-ua-mobile https://fb.track-conv.shop; sec-ch-ua-arch https://fb.track-conv.shop; sec-ch-ua-model https://fb.track-conv.shop; sec-ch-ua-platform https://fb.track-conv.shop; sec-ch-ua-platform-version https://fb.track-conv.shop; sec-ch-ua-bitness https://try.maxconv.shop; sec-ch-ua-full-version-listhttps://fb.track-conv.shop; sec-ch-ua-full-version https://fb.track-conv.shop" />
+    <!-- MaxConv (conditional on ttclid) -->
+    <script>new URLSearchParams(location.search).get('ttclid')&&!function(w,d,o,n,c){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};var s=d.createElement(n),t=d.getElementsByTagName(n)[0];s.async=!0;s.defer=!0;s.src="https://fb.track-conv.shop/t/t.js";t.parentNode.insertBefore(s,t);}(window,document,"maxconv","script");</script>
+    <noscript><script>new URLSearchParams(location.search).get('ttclid')&&document.write('<link rel="stylesheet" href="https://fb.track-conv.shop/t/t.css?mc_ns=1" />');</script></noscript>
+    <!-- End MaxConv Tracking Script Base Code-->
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[]
+      ;ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0;n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+      ttq.load('D4DO8HRC77UCI3HO4RHG');
+      ttq.page();
+    }(window, document, 'ttq');</script>
+    <!-- TikTok Pixel Code End -->
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/d4rEH4U.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/d4rEH4U.png">
+    <title>Get Paid Watching TikTok - Freecash</title>
+    <style>
+        /* ==================================== */
+        /* ===== COLORS & VARIABLES (DEEP BLACK/NEON GREEN) ===== */
+        /* ==================================== */
+        :root{
+            --bg-deep: #05050A;      /* Deep Black Background */
+            --bg-card: #0E0E14;      /* Cards/Panels */
+            --brand: #00ff88;        /* Primary Neon Green */
+            --brand-dark: #00d175;   /* Secondary Green */
+            --text-high: #f0f6ff;    /* High contrast text */
+            --text-muted: #9AA0AE;   /* Secondary/gray text */
+            --border: #1a1a27;       /* Subtle borders */
+            --brand-glow: rgba(0,255,136,0.25);
+            --accent-red: #ff4757;   /* Warning/Highlight */
+            --accent-orange: #ff6b35; /* Orange for limited time badge */
+        }
+
+        /* Reset and Base Styling */
+        *{box-sizing:border-box}
+        html,body{margin:0;height:100%;overflow-x:hidden}
+        body{
+            background-color: var(--bg-deep);
+            color: var(--text-high);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x:hidden;
+            min-height:100vh;
+            line-height:1.47059;
+            font-weight:400;
+            letter-spacing:-.022em;
+            background-image:
+                radial-gradient(circle at 10% 80%, rgba(0,255,136,.08) 0%, transparent 45%),
+                radial-gradient(circle at 90% 20%, rgba(0,255,136,.05) 0%, transparent 45%),
+                linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+        }
+
+        /* Utility Classes */
+        .shadow-glow { box-shadow: 0 0 20px var(--brand-glow); }
+        .text-neon { color: var(--brand); }
+        .bg-neon { background-color: var(--brand); color: var(--bg-deep); }
+        .rounded-xl { border-radius: 1rem; }
+
+        /* ==================================== */
+        /* ===== QUIZ CONTAINER & PROGRESS BAR ===== */
+        /* ==================================== */
+        .quiz-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            text-align: center;
+            z-index: 10; 
+            transition: opacity 0.5s ease;
+        }
+
+        .quiz-content {
+            max-width: 680px;
+            text-align: center;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .progress-bar-wrapper {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 30px;
+            position: relative;
+            padding-top: 20px;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: var(--bg-card);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+            border: 1px solid var(--border);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--brand-dark), var(--brand));
+            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 0 15px var(--brand-glow);
+        }
+
+        .progress-text {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* ==================================== */
+        /* ===== QUIZ STEP & ANIMATION (CORRIGIDO) ===== */
+        /* ==================================== */
+
+        .quiz-step {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+        
+        .quiz-step.active {
+            position: relative;
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: all;
+        }
+
+        .quiz-step-transition-group {
+            position: relative;
+            width: 100%;
+            min-height: 450px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hero/Question Content Styles */
+        .hero-title {
+            font-size: clamp(40px, 7vw, 60px); 
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0 0 16px 0;
+            background: linear-gradient(90deg, var(--text-high), var(--brand));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0,0,0,.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 3vw, 22px);
+            color: var(--text-muted);
+            margin: 0 0 40px 0;
+            font-weight: 400;
+            line-height: 1.4;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            margin: 40px auto 0;
+        }
+
+        /* Style for Quiz option buttons */
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--border); 
+            background: var(--bg-card);
+            color: var(--text-high);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+        }
+
+        .option-button:hover {
+            border-color: var(--brand);
+            color: var(--brand);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,255,136,0.15);
+        }
+        
+        .option-button.primary {
+            background: var(--brand);
+            color: var(--bg-deep);
+            border-color: transparent;
+            box-shadow: 0 8px 25px var(--brand-glow);
+        }
+
+        .option-button.primary:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 12px 30px var(--brand-glow);
+            color: var(--bg-deep);
+        }
+
+        /* Final button styles */
+        .cta {
+            display:block;text-align:center;
+            background:var(--brand);
+            color:var(--bg-deep) !important;font-weight:700;border-radius:12px;padding:20px;
+            font-size:18px;
+            text-decoration:none;
+            box-shadow:0 8px 30px var(--brand-glow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position:relative;overflow:hidden;
+            font-family: 'Inter', sans-serif;
+            cursor:pointer;
+        }
+        .cta:hover{ transform:translateY(-3px); box-shadow:0 15px 40px var(--brand-glow); }
+        .cta:active{ transform:translateY(0); }
+        
+        /* Button subtitles */
+        .button-subtitle {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 4px;
+            opacity: 0.8;
+            color: inherit;
+        }
+        .option-button.primary .button-subtitle {
+            color: var(--bg-deep);
+            opacity: 0.7;
+        }
+        .option-button:not(.primary) .button-subtitle {
+            color: var(--text-muted);
+        }
+
+
+        /* ==================================== */
+        /* ===== FINAL SECTION (SUCCESS PAGE) ===== */
+        /* ==================================== */
+        .second-section {
+            max-width: 540px;
+            width: 90%;
+            margin: 0;
+            padding: 80px 24px 32px;
+            text-align: center;
+            
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            opacity: 0; 
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, visibility 0s 0.8s;
+            z-index: 20;
+        }
+
+        .second-section.active { 
+            opacity: 1; 
+            visibility: visible; 
+            transition-delay: 0s;
+        }
+        
+        /* Remaining styles */
+        .hero-badge {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
+            background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); 
+            padding: 8px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; 
+            color: var(--brand); margin-bottom: 24px; backdrop-filter: blur(5px); 
+            text-transform: uppercase;
+        }
+        .logo{
+            width:70px;height:70px; margin:0 auto 16px; object-fit:contain;border-radius:16px;display:block;
+            box-shadow:0 0 30px rgba(0,255,136,0.3); margin-bottom: 24px;
+        }
+        .youre-in-section {
+            display: flex; align-items: center; justify-content: center; gap: 12px; margin: 30px 0 20px;
+        }
+        .check-circle {
+            width: 50px; height: 50px; background: var(--brand); border-radius: 50%; display: flex; 
+            align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 20px var(--brand-glow);
+        }
+        .check-circle svg {
+            width: 26px; height: 26px; color: var(--bg-deep);
+        }
+        .youre-in-text {
+            font-size: 52px; font-weight: 900; line-height: 1; 
+            background: linear-gradient(90deg, var(--text-high), var(--brand));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; 
+            text-shadow: 0 2px 4px rgba(0,0,0,.3);
+        }
+        .subtitle{
+            font-size:16px; color:var(--text-muted); line-height:1.5; margin-bottom:24px; padding:0 10px;
+        }
+        .card{
+            background:var(--bg-card); border:1px solid var(--border); border-radius:20px; text-align:left;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 30px var(--brand-glow); position:relative;
+        }
+        .section-title{
+            font-size:14px; font-weight:700; text-align:center; margin-top:0; margin-bottom:0; 
+            padding: 24px 0; color: var(--text-muted); text-shadow: none; font-family: 'Inter', sans-serif;
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+        .li{
+            display:flex;gap:16px;padding:18px 24px;border-bottom:1px solid var(--border);
+            align-items:flex-start; text-align: left; background: transparent;
+        }
+        .li:first-of-type { border-top: none; }
+        .li:last-child{border-bottom:0}
+        .check{
+            display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+            border-radius:50%; background:var(--brand); font-size:14px;font-weight:700;color:var(--bg-deep);flex-shrink:0;
+            box-shadow:0 0 10px (0,255,136,0.5);
+        }
+        .li b{display:block;color:var(--text-high);font-size:16px;margin-bottom:4px;font-weight:600;}
+        .muted-text{color:var(--text-muted);font-size:13px;line-height:1.4;}
+        .cta-sub {
+            display:block; font-size:12px; font-weight:600; margin-top:6px; color:var(--bg-deep); opacity:.9;
+        }
+        .cta-sub .red {
+            color:var(--accent-red); font-weight:800;
+        }
+        .bonus{
+            background:linear-gradient(135deg, #1a0f0a 0%, #0f1419 100%); border:2px solid var(--accent-red);
+            border-radius:20px; padding:18px 16px; margin-top:24px; margin-bottom:16px; position:relative;
+            box-shadow: 0 0 30px rgba(255,107,53,.2); text-align:left;
+        }
+        .bonus::before{
+            content:'🔥 LIMITED SPOTS'; position:absolute; top:-1px; right:20px; background:var(--accent-red);
+            color:#fff; font-size:10px; font-weight:800; padding:4px 12px; border-radius:0 0 8px 8px; 
+            letter-spacing:.5px;
+        }
+        .bonus-title{
+            font-size:18px; font-weight:800; color:var(--text-high); margin-bottom:12px;
+        }
+        .bonus-text{
+            font-size:15px; color:var(--text-muted); line-height:1.6;
+        }
+        .bonus-text b{
+            color:var(--brand);
+        }
+        .foot{color:var(--text-muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
+        /* Notifications */
+        .notif-container{
+            position:fixed;top:16px;left:50%;transform:translateX(-50%);
+            width:94%;max-width:440px;z-index:9999;pointer-events:none;
+        }
+        .notif{
+            background:var(--bg-card); border:1px solid var(--border);border-radius:14px;
+            padding:14px 16px;font-size:13px;display:flex;align-items:center;gap:12px;
+            box-shadow:0 8px 24px rgba(0,0,0,.6);
+            opacity:0;transform:translateY(-40px);transition:all .5s cubic-bezier(0.4, 0, 0.2, 1);
+            color:var(--text-high);margin-bottom:8px;
+            backdrop-filter: blur(5px);
+        }
+        .notif.show{opacity:1;transform:translateY(0)}
+        .notif .earned{font-weight:700;color:var(--brand);}
+        .notif::before{
+            content:'💰';font-size:16px;flex-shrink:0;
+        }
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .quiz-container { padding-top: 0; }
+            .quiz-content { transform: translateY(-10%); }
+            .hero-title { font-size: 44px; }
+            .hero-subtitle { font-size: 16px; }
+            .cta-container { max-width: 100%; }
+            .option-button { padding: 16px 20px; font-size: 17px; }
+            .youre-in-text { font-size: 42px; }
+            .li { padding-left: 16px; padding-right: 16px; }
+            .bonus { padding: 20px 16px; }
+            .bonus-title { font-size: 16px; }
+            .quiz-step-transition-group { min-height: 380px; }
+            .second-section { transform: translate(-50%, -50%); } 
+        }
+        @media (max-width: 400px) {
+            .quiz-container { padding: 16px; }
+            .option-button .button-subtitle { display: none; }
+            .bonus::before { right: 12px; font-size: 9px; padding: 3px 10px; }
+        }
+
+        /* Animation for Final CTA Button */
+        @keyframes pulse {
+            0%, 100% { box-shadow:0 8px 30px var(--brand-glow); }
+            50% { box-shadow:0 15px 40px var(--brand-glow); }
+        }
+        .cta{
+            animation: pulse 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Notifications container -->
+    <div class="notif-container" id="notifBox"></div>
+
+    <!-- Quiz Container -->
+    <section class="quiz-container" id="quizContainer">
+        <div class="quiz-content">
+
+            <div class="hero-badge">FREECASH APP</div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-bar-wrapper">
+                <div class="progress-text">
+                    <span id="currentQuestionText">Question 1 of 3</span>
+                    <span id="progressPercent">0% Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="progressBarFill"></div>
+                </div>
+            </div>
+
+            <!-- Quiz Step Transition Group -->
+            <div class="quiz-step-transition-group" id="quizSteps">
+                
+                <!-- STEP 1: Age Verification -->
+                <div class="quiz-step active" id="step1">
+                    <h1 class="hero-title">Get Paid Watching TikTok</h1>
+                    <p class="hero-subtitle">
+                        Join thousands of people earning daily by watching TikTok videos.
+                    </p>
+
+                    <div class="cta-container">
+                        <button class="option-button primary" onclick="nextStep(1, 'over21')">
+                            I am over 21
+                            <span class="button-subtitle">Instant Withdrawals: PayPal, CashApp, Crypto & Transfer</span>
+                        </button>
+                        <button class="option-button" onclick="nextStep(1, 'under21')">
+                            I am under 21
+                            <span class="button-subtitle">Limited Withdrawals: Bank Transfer Only</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: TikTok Hours -->
+                <div class="quiz-step" id="step2">
+                    <h1 class="hero-title">TikTok Time</h1>
+                    <p class="hero-subtitle">
+                        How many hours per day do you spend watching TikTok?
+                    </p>
+
+                    <div class="cta-container">
+                        <button class="option-button" onclick="nextStep(2, '1-2h')">
+                            1-2 Hours/Day
+                        </button>
+                        <button class="option-button" onclick="nextStep(2, '2-4h')">
+                            2-4 Hours/Day
+                        </button>
+                        <button class="option-button primary" onclick="nextStep(2, '5h+')">
+                            5+ Hours/Day
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Poll Preparation -->
+                <div class="quiz-step" id="step3">
+                    <h1 class="hero-title">Quick Survey</h1>
+                    <p class="hero-subtitle">
+                        Are you prepared to take a short survey about the videos/creators you watch on TikTok?
+                    </p>
+
+                    <div class="cta-container">
+                        <button class="option-button primary" onclick="nextStep(3, 'Yes')">
+                            Yes
+                        </button>
+                        <button class="option-button" onclick="nextStep(3, 'No')">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section (Final Success Page) -->
+    <section class="second-section" id="secondSection">
+        <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
+        <div class="youre-in-section">
+            <div class="check-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <div class="youre-in-text">
+                You <span class="text-neon">are</span> Qualified!
+            </div>
+        </div>
+
+        <p class="subtitle" style="margin-bottom: 32px; padding: 0;">
+            Your account is pre-qualified for higher payouts. Complete registration to activate full access.
+        </p>
+
+        <a id="cta" class="cta" href="https://fb.track-conv.shop/click" onclick="handleClick(event)" style="margin-top: 24px; margin-bottom: 40px;">
+            🚀 START WATCHING & EARNING NOW
+            <span class="cta-sub">⚠️ Must be <span class="red">21+</span> to receive payments</span>
+        </a>
+
+        <!-- Card: Earning Journey Steps -->
+        <div class="card" style="padding: 0; margin-top: 0;">
+            <div class="section-title">YOUR EARNING JOURNEY</div>
+            <div class="li" style="background: transparent; border-top: 1px solid var(--border);">
+                <span class="check">1</span>
+                <div>
+                    <b>Sign Up to Freecash</b>
+                    <div class="muted-text">Takes 30 seconds.</div>
+                </div>
+            </div>
+            <div class="li" style="background: transparent;">
+                <span class="check">2</span>
+                <div>
+                    <b>Watch TikTok Videos</b>
+                    <div class="muted-text">Play your favorite game to unlock this exclusive feature and earn while watching videos!</div>
+                </div>
+            </div>
+            <div class="li" style="background: transparent; border-bottom: none;">
+                <span class="check">3</span>
+                <div>
+                    <b>Cash Out Your Earnings</b>
+                    <div class="muted-text">Minimum $5 • PayPal, Gift Cards & more available.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bonus -->
+        <div class="bonus">
+            <div class="bonus-title">🎯 First-Day Bonus!</div>
+            <p class="bonus-text">Sign up now and unlock the <b>"paid to scroll"</b> feature to earn real cash watching TikTok videos! Users who sign up and play their favorite games in the first 24 hours earn up to a <b>$300 Cash Bonus!</b></p>
+            <p class="bonus-text" style="margin-top:12px;font-size:13px;">💡 Most new users earn $100+ on the first day, combining TikTok viewing with game offers and surveys.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="foot">🔒 Join over 847,000 users earning money daily by watching TikTok</div>
+    </section>
+
+<script>
+    // ========================================
+    // QUIZ CONFIGURATION (CORRIGIDO)
+    // ========================================
+    const TOTAL_STEPS = 3;
+    let currentStep = 1;
+    let quizAnswers = {};
+
+    const progressFill = document.getElementById('progressBarFill');
+    const progressText = document.getElementById('currentQuestionText');
+    const progressPercent = document.getElementById('progressPercent');
+    const quizStepsContainer = document.getElementById('quizSteps');
+    const quizContainer = document.getElementById('quizContainer');
+    const finalSection = document.getElementById('secondSection');
+
+    // Function to update the progress bar
+    function updateProgress(step) {
+        const completedSteps = step - 1;
+        const percent = Math.round((completedSteps / TOTAL_STEPS) * 100);
+
+        if (percent > 0) {
+            progressFill.style.width = percent + '%';
+            progressPercent.textContent = `${percent}% Complete`;
+        } else {
+            progressFill.style.width = '0%';
+            progressPercent.textContent = '0% Complete';
+        }
+
+        if (step <= TOTAL_STEPS) {
+            progressText.textContent = `Question ${completedSteps + 1} of ${TOTAL_STEPS}`;
+        } else {
+            progressText.textContent = `Quiz Complete!`;
+            progressPercent.textContent = '100% Complete';
+            progressFill.style.width = '100%';
+        }
+    }
+
+    // CORRIGIDO: Main function to advance quiz steps
+    function nextStep(step, answer) {
+        // 1. Redirection Logic for 'under 21'
+        if (step === 1 && answer === 'under21') {
+            handleUnder21Redirect();
+            return;
+        }
+
+        // 2. Store the answer
+        quizAnswers[`Q${step}`] = answer;
+        console.log(`Q${step} Answer: ${answer}`);
+
+        currentStep = step + 1;
+        updateProgress(currentStep);
+
+        // 3. Get elements
+        const prevStepElement = document.getElementById(`step${step}`);
+        const nextStepElement = document.getElementById(`step${currentStep}`);
+
+        // 4. Handle Quiz Completion (After last step)
+        if (currentStep > TOTAL_STEPS) {
+            // Slide out the last step
+            if (prevStepElement) {
+                prevStepElement.style.transform = 'translateX(-100%)';
+                prevStepElement.style.opacity = '0';
+                
+                setTimeout(() => {
+                    prevStepElement.classList.remove('active');
+                    showFinalSection();
+                }, 600);
+            } else {
+                showFinalSection();
+            }
+            return;
+        }
+
+        // 5. CORRIGIDO: Transition for intermediate steps
+        // Slide out previous
+        if (prevStepElement) {
+            prevStepElement.style.transform = 'translateX(-100%)';
+            prevStepElement.style.opacity = '0';
+            
+            setTimeout(() => {
+                prevStepElement.classList.remove('active');
+            }, 600);
+        }
+
+        // Slide in next - CORRIGIDO
+        if (nextStepElement) {
+            // Reset position to start from right
+            nextStepElement.style.transition = 'none';
+            nextStepElement.style.transform = 'translateX(100%)';
+            nextStepElement.style.opacity = '0';
+            
+            // Force reflow
+            nextStepElement.offsetHeight;
+            
+            // Add active class
+            nextStepElement.classList.add('active');
+            
+            // Enable transition and animate to center
+            setTimeout(() => {
+                nextStepElement.style.transition = 'opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                nextStepElement.style.transform = 'translateX(0)';
+                nextStepElement.style.opacity = '1';
+            }, 50);
+        }
+    }
+
+    // Function to show the final section
+    function showFinalSection() {
+        quizContainer.style.opacity = '0';
+        
+        setTimeout(() => {
+            quizContainer.style.display = 'none';
+            finalSection.classList.add('active');
+        }, 500);
+    }
+
+    // Redirection logic for 'under 21'
+    function handleUnder21Redirect() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmContent = urlParams.get('utm_content') || '';
+        const finalUrl = "https://www.dealsonlinede.shop/playful-U21.html/?utm_content=" + utmContent;
+
+        console.log('🔀 Redirecting under21 to:', finalUrl);
+
+        setTimeout(() => {
+            window.location.href = finalUrl;
+        }, 300);
+    }
+
+    // Initialize progress state
+    updateProgress(currentStep);
+    
+    // ========================================
+    // FREECASH TRACKING SCRIPT
+    // ========================================
+    
+    async function handleClick(event) {
+        event.preventDefault();
+        console.log('🚀 Final button clicked! Triggering all events...');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const ttclid = urlParams.get('ttclid') || '';
+
+        if (!ttclid) console.warn('⚠️ ttclid not found - continuing anyway');
+
+        // CLIENT-SIDE - 3 events
+        try {
+            ttq.track('AddToCart', {
+                content_type: 'product',
+                content_id: 'freecash-tiktok-rewards',
+                value: 1.00,
+                currency: 'USD'
+            });
+
+            ttq.track('CompleteRegistration', {
+                content_type: 'product',
+                content_id: 'freecash-tiktok-rewards',
+                value: 1.00,
+                currency: 'USD'
+            });
+
+            ttq.track('Purchase', {
+                content_type: 'product',
+                content_id: 'freecash-tiktok-rewards',
+                value: 1.00,
+                currency: 'USD'
+            });
+
+            console.log('✅ Client-side: AddToCart, CompleteRegistration, and Purchase OK');
+        } catch (e) {
+            console.warn('⚠️ Client-side failed:', e);
+        }
+
+        // SERVER-SIDE - 3 events
+        try {
+            await fetch('/api', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event_name: 'AddToCart', ttclid: ttclid }) });
+            await fetch('/api', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event_name: 'CompleteRegistration', ttclid: ttclid }) });
+            await fetch('/api', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event_name: 'Purchase', ttclid: ttclid }) });
+
+            console.log('✅ Server-side: Tracking events sent.');
+        } catch (error) {
+             console.log('❌ Server-side error:', error.message);
+        }
+
+        // Redirect after tracking
+        setTimeout(() => {
+            console.log('🔀 Redirecting to: https://fb.track-conv.shop/click');
+            window.location.href = "https://fb.track-conv.shop/click";
+        }, 800);
+    }
+
+    // ========================================
+    // NOTIFICATIONS
+    // ========================================
+    const notifications = [
+        "Jessica <span class='earned'>earned $73</span> watching TikTok · 8 min ago",
+        "Marcus <span class='earned'>made $156</span> from TikTok videos · 15 min ago",
+        "Sarah <span class='earned'>cashed out $91</span> via PayPal · 3 min ago",
+        "Alex <span class='earned'>earned $67</span> scrolling TikTok · 22 min ago",
+        "Emma <span class='earned'>made $203</span> watching videos · 12 min ago",
+        "David <span class='earned'>earned $134</span> with TikTok · 28 min ago",
+        "Lisa <span class='earned'>earned $118</span> bonus watching · 6 min ago"];
+
+    let notifIndex = 0;
+    let isShowingNotif = false;
+    let notifTimeoutId = null;
+
+    function showNotif(){
+        if(finalSection.classList.contains('active')) {
+             if (notifTimeoutId) clearTimeout(notifTimeoutId);
+             return;
+        }
+
+        if(isShowingNotif) return;
+
+        isShowingNotif = true;
+        const box = document.getElementById("notifBox");
+        box.innerHTML = '';
+
+        const n = document.createElement("div");
+        n.className = "notif";
+        n.innerHTML = notifications[notifIndex];
+        box.appendChild(n);
+
+        requestAnimationFrame(()=> n.classList.add("show"));
+
+        setTimeout(()=> {
+            n.classList.remove("show");
+            setTimeout(()=> {
+                if(box.contains(n)) box.removeChild(n);
+                isShowingNotif = false;
+
+                notifIndex = (notifIndex + 1) % notifications.length;
+                const nextDelay = 1000 + Math.random() * 2000;
+                notifTimeoutId = setTimeout(showNotif, nextDelay);
+            }, 500);
+        }, 3000);
+    }
+
+    setTimeout(showNotif, 1500);
+</script>
+</body>
+</html>
