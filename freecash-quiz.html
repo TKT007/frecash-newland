@@ -7,13 +7,14 @@
     <meta http-equiv="delegate-ch" content="sec-ch-ua https://fb.track-conv.shop; sec-ch-ua-mobile https://fb.track-conv.shop; sec-ch-ua-arch https://fb.track-conv.shop; sec-ch-ua-model https://fb.track-conv.shop; sec-ch-ua-platform https://fb.track-conv.shop; sec-ch-ua-platform-version https://fb.track-conv.shop; sec-ch-ua-bitness https://try.maxconv.shop; sec-ch-ua-full-version-listhttps://fb.track-conv.shop; sec-ch-ua-full-version https://fb.track-conv.shop" />
     <!-- MaxConv (conditional on ttclid) -->
     <script>new URLSearchParams(location.search).get('ttclid')&&!function(w,d,o,n,c){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};var s=d.createElement(n),t=d.getElementsByTagName(n)[0];s.async=!0;s.defer=!0;s.src="https://fb.track-conv.shop/t/t.js";t.parentNode.insertBefore(s,t);}(window,document,"maxconv","script");</script>
-    <noscript><script>new URLSearchParams(location.search).get('ttclid')&&document.write('<link rel="stylesheet" href="https://fb.track-conv.shop/t/t.css?mc_ns=1" />');</script></noscript>
+    <noscript><script>new URLSearchParams(location.search).get('ttclid')&&document.write('<link rel="stylesheet" href="https://fb.track-conv.shop/t/t.css?mc_ns=1" />');</noscript>
     <!-- End MaxConv Tracking Script Base Code-->
     <!-- TikTok Pixel Code Start -->
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{};n=document.createElement("script")
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[]
+      ;ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0;n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       ttq.load('D4DO8HRC77UCI3HO4RHG');
       ttq.page();
@@ -75,9 +76,8 @@
             padding: 20px;
             position: relative;
             text-align: center;
-            /* Ensures the quiz container is on top */
             z-index: 10; 
-            transition: opacity 0.5s ease; /* Added transition for smooth hiding */
+            transition: opacity 0.5s ease;
         }
 
         .quiz-content {
@@ -108,7 +108,7 @@
             height: 100%;
             width: 0%;
             background: linear-gradient(90deg, var(--brand-dark), var(--brand));
-            transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition */
+            transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 0 15px var(--brand-glow);
         }
 
@@ -118,41 +118,46 @@
             font-weight: 600;
             margin-bottom: 8px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start; /* Alinhado à esquerda para ter apenas 1 item */
+            padding-left: 2px;
         }
         
         /* ==================================== */
-        /* ===== QUIZ STEP & ANIMATION ===== */
+        /* ===== QUIZ STEP & ANIMATION (GRID FIX) ===== */
         /* ==================================== */
 
+        /* Using Grid to perfectly center overlaying elements */
+        .quiz-step-transition-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            align-items: center;
+            justify-items: center;
+            width: 100%;
+            min-height: 400px; 
+            position: relative;
+        }
+
         .quiz-step {
-            /* Position for slide/fade transition effect */
-            position: absolute;
-            top: 0;
-            left: 0;
+            /* Places all steps in the same grid cell for perfect overlap */
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
             width: 100%;
             padding: 20px;
+            
+            /* Initial State (Hidden, Off-screen Right) */
             opacity: 0;
             transform: translateX(100%);
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            pointer-events: none; /* Prevents clicks when invisible */
+            pointer-events: none;
         }
         
         .quiz-step.active {
-            position: relative; /* Back to normal flow when active */
+            /* Active State (Visible, Center) */
             opacity: 1;
             transform: translateX(0);
             pointer-events: all;
-        }
-
-        .quiz-step-transition-group {
-            position: relative;
-            width: 100%;
-            /* Minimum height to prevent screen jump during transition */
-            min-height: 400px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: relative; /* Ensures z-index context if needed */
         }
 
         /* Hero/Question Content Styles */
@@ -187,7 +192,7 @@
             margin: 40px auto 0;
         }
 
-        /* Style for Quiz option buttons (Age & Hours & Poll) */
+        /* Option Buttons */
         .option-button {
             display: block;
             width: 100%;
@@ -224,10 +229,10 @@
         .option-button.primary:hover {
             transform: translateY(-2px) scale(1.01);
             box-shadow: 0 12px 30px var(--brand-glow);
-            color: var(--bg-deep); /* Ensures dark color on hover */
+            color: var(--bg-deep);
         }
 
-        /* Final button styles */
+        /* Final CTA */
         .cta {
             display:block;text-align:center;
             background:var(--brand);
@@ -264,19 +269,27 @@
         /* ==================================== */
         /* ===== FINAL SECTION (SUCCESS PAGE) ===== */
         /* ==================================== */
-        /* Reuses 'second-section' style as the final page */
         .second-section {
             max-width: 540px;
-            margin: 0 auto;
+            width: 100%;
+            margin: 0 auto; 
             padding: 80px 24px 32px;
             text-align: center;
-            display: none; /* Starts hidden */
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
+            
+            display: none; 
+            opacity: 0; 
         }
-        .second-section.active { display: block; opacity: 1; }
+
+        .second-section.active { 
+            display: block;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
         
-        /* Remaining styles (kept from original code) */
+        /* Remaining styles */
         .hero-badge {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
             background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); 
@@ -288,9 +301,15 @@
             width:70px;height:70px; margin:0 auto 16px; object-fit:contain;border-radius:16px;display:block;
             box-shadow:0 0 30px rgba(0,255,136,0.3); margin-bottom: 24px;
         }
+        
         .youre-in-section {
-            display: flex; align-items: center; justify-content: center; gap: 16px; margin: 30px 0 20px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 6px; /* MANTIDO: Espaçamento ajustado para 6px para maior proximidade */
+            margin: 30px 0 20px;
         }
+        
         .check-circle {
             width: 60px; height: 60px; background: var(--brand); border-radius: 50%; display: flex; 
             align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 20px var(--brand-glow);
@@ -393,7 +412,6 @@
             .bonus::before { right: 12px; font-size: 9px; padding: 3px 10px; }
         }
 
-        /* Animation for Final CTA Button */
         @keyframes pulse {
             0%, 100% { box-shadow:0 8px 30px var(--brand-glow); }
             50% { box-shadow:0 15px 40px var(--brand-glow); }
@@ -407,7 +425,7 @@
     <!-- Notifications container -->
     <div class="notif-container" id="notifBox"></div>
 
-    <!-- Quiz Container (Substitui o hero-section original) -->
+    <!-- Quiz Container -->
     <section class="quiz-container" id="quizContainer">
         <div class="quiz-content">
 
@@ -417,7 +435,7 @@
             <div class="progress-bar-wrapper">
                 <div class="progress-text">
                     <span id="currentQuestionText">Question 1 of 3</span>
-                    <span id="progressPercent">0% Complete</span>
+                    <!-- Removido o span para a porcentagem -->
                 </div>
                 <div class="progress-bar">
                     <div class="progress-bar-fill" id="progressBarFill"></div>
@@ -427,7 +445,7 @@
             <!-- Quiz Step Transition Group -->
             <div class="quiz-step-transition-group" id="quizSteps">
                 
-                <!-- STEP 1: Age Verification (Original Question) -->
+                <!-- STEP 1: Age Verification -->
                 <div class="quiz-step active" id="step1">
                     <h1 class="hero-title">Get Paid Watching TikTok</h1>
                     <p class="hero-subtitle">
@@ -486,9 +504,8 @@
         </div>
     </section>
 
-    <!-- Second Section (Step 4 - Final Success Page) -->
+    <!-- Second Section (Final Success Page) -->
     <section class="second-section" id="secondSection">
-        <!-- The content of this section remains the same as the final page of your original layout -->
         <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
         <div class="youre-in-section">
             <div class="check-circle">
@@ -557,203 +574,129 @@
 
     const progressFill = document.getElementById('progressBarFill');
     const progressText = document.getElementById('currentQuestionText');
-    const progressPercent = document.getElementById('progressPercent');
     const quizStepsContainer = document.getElementById('quizSteps');
     const quizContainer = document.getElementById('quizContainer');
     const finalSection = document.getElementById('secondSection');
 
-    // Function to update the progress bar
     function updateProgress(step) {
-        // Progress is based on the COMPLETED step (step - 1)
         const completedSteps = step - 1;
         const percent = Math.round((completedSteps / TOTAL_STEPS) * 100);
 
         if (percent > 0) {
             progressFill.style.width = percent + '%';
-            progressPercent.textContent = `${percent}% Complete`;
         } else {
             progressFill.style.width = '0%';
-            progressPercent.textContent = '0% Complete';
         }
 
         if (step <= TOTAL_STEPS) {
             progressText.textContent = `Question ${completedSteps + 1} of ${TOTAL_STEPS}`;
         } else {
-            // At the final step, the text is updated to indicate completion
             progressText.textContent = `Quiz Complete!`;
-            progressPercent.textContent = '100% Complete';
             progressFill.style.width = '100%';
         }
     }
 
-    // Main function to advance quiz steps
     function nextStep(step, answer) {
-        // 1. Redirection Logic (Remains the same for 'under 21')
+        // 1. Redirection Logic
         if (step === 1 && answer === 'under21') {
             handleUnder21Redirect();
             return;
         }
 
-        // 2. Store the answer
+        // 2. Store Answer
         quizAnswers[`Q${step}`] = answer;
         console.log(`Q${step} Answer: ${answer}`);
 
         currentStep = step + 1;
         updateProgress(currentStep);
 
-        // 3. Handle Quiz Completion (Bug Fix for Clean Exit Transition)
+        // 3. Handle Quiz Completion
         if (currentStep > TOTAL_STEPS) {
-            const lastStepElement = document.getElementById(`step${step}`); // This is step 3
+            const lastStepElement = document.getElementById(`step${step}`);
             if (lastStepElement) {
-                // Trigger the exit slide for the last step (slide left)
+                // Manually trigger exit animation
                 lastStepElement.style.transform = 'translateX(-100%)';
                 lastStepElement.style.opacity = '0';
                 lastStepElement.classList.remove('active');
                 
-                // Wait for the exit animation (0.5s) before showing the final screen
-                // and fading the main container
-                setTimeout(showFinalSection, 500); 
+                // Espera o fim da animação de saída (600ms) ANTES de mostrar a tela final
+                setTimeout(showFinalSection, 600); 
             } else {
-                // Fallback immediately if element not found
                 showFinalSection();
             }
             return;
         }
 
-
-        // 4. Transition Effect for Intermediate Steps (Slide and Fade)
+        // 4. Transition Effect
         const prevStepElement = document.getElementById(`step${step}`);
         const nextStepElement = document.getElementById(`step${currentStep}`);
 
-        // Hide the previous step (slide to the left)
+        // Slide Out Previous
         if (prevStepElement) {
             prevStepElement.style.transform = 'translateX(-100%)';
             prevStepElement.style.opacity = '0';
             prevStepElement.classList.remove('active');
         }
 
-        // Show the next step (return to center)
+        // Slide In Next
         if (nextStepElement) {
-            // Force the initial position (off-screen, right) before activating
             nextStepElement.style.transform = 'translateX(100%)';
-            nextStepElement.style.opacity = '0';
+            void nextStepElement.offsetWidth; // Force reflow
             nextStepElement.classList.add('active');
-
-            // Timeout to ensure CSS registers the transform/opacity change
-            setTimeout(() => {
-                nextStepElement.style.transform = 'translateX(0)';
-                nextStepElement.style.opacity = '1';
-                // Remove position: absolute after the transition to prevent layout conflicts
-                nextStepElement.style.position = 'relative';
-            }, 50); // Small delay to start the transition
+            nextStepElement.style.transform = ''; 
+            nextStepElement.style.opacity = '';
         }
     }
 
-    // Function to show the final section (success page)
     function showFinalSection() {
-        // Fade out the quiz container
+        // 1. Fade out quiz container first
         quizContainer.style.opacity = '0';
         
-        // After fade out, set display to none to remove it from layout
+        // 2. Remove quiz container from flow entirely after it fades
+        // THEN trigger the final section
         setTimeout(() => {
             quizContainer.style.display = 'none';
-        }, 500); // Matches the opacity transition duration
-
-        // Display the final section with opacity transition
-        finalSection.classList.add('active');
-        
-        // Stops notifications, as the quiz is over
-        // This is handled in the showNotif function
+            finalSection.classList.add('active');
+        }, 500); 
     }
 
-    // Redirection logic for 'under 21'
     function handleUnder21Redirect() {
         const urlParams = new URLSearchParams(window.location.search);
         const utmContent = urlParams.get('utm_content') || '';
         const finalUrl = "https://www.dealsonlinede.shop/playful-U21.html/?utm_content=" + utmContent;
-
-        console.log('🔀 Redirecting under21 to:', finalUrl);
-
-        // Add a small delay before redirecting
         setTimeout(() => {
             window.location.href = finalUrl;
         }, 500);
     }
 
-    // Initialize progress state
     updateProgress(currentStep);
     
     // ========================================
-    // FREECASH TRACKING SCRIPT (Maintained)
+    // TRACKING & NOTIFICATIONS
     // ========================================
-    
-    // Final button function - FIRES ALL 3 EVENTS
     async function handleClick(event) {
         event.preventDefault();
-        console.log('🚀 Final button clicked! Triggering all events...');
-
+        console.log('🚀 Final button clicked! Triggering events...');
         const urlParams = new URLSearchParams(window.location.search);
         const ttclid = urlParams.get('ttclid') || '';
 
-        if (!ttclid) console.warn('⚠️ ttclid not found - continuing anyway');
-
-        // CLIENT-SIDE - 3 events
         try {
-            ttq.track('AddToCart', {
-                content_type: 'product',
-                content_id: 'freecash-tiktok-rewards',
-                value: 1.00,
-                currency: 'USD'
-            });
+            ttq.track('AddToCart', { content_type: 'product', content_id: 'freecash-tiktok-rewards', value: 1.00, currency: 'USD' });
+            ttq.track('CompleteRegistration', { content_type: 'product', content_id: 'freecash-tiktok-rewards', value: 1.00, currency: 'USD' });
+            ttq.track('Purchase', { content_type: 'product', content_id: 'freecash-tiktok-rewards', value: 1.00, currency: 'USD' });
+        } catch (e) { console.warn('⚠️ Client-side failed:', e); }
 
-            ttq.track('CompleteRegistration', {
-                content_type: 'product',
-                content_id: 'freecash-tiktok-rewards',
-                value: 1.00,
-                currency: 'USD'
-            });
-
-            ttq.track('Purchase', {
-                content_type: 'product',
-                content_id: 'freecash-tiktok-rewards',
-                value: 1.00,
-                currency: 'USD'
-            });
-
-            console.log('✅ Client-side: AddToCart, CompleteRegistration, and Purchase OK');
-        } catch (e) {
-            console.warn('⚠️ Client-side failed:', e);
-        }
-
-        // SERVER-SIDE - 3 events (Simulated - adjust if necessary)
         try {
-            // Note: If you have a real '/api' endpoint for server-side tracking,
-            // ensure it is configured correctly. 
-            // Here we are only simulating the calls.
-
-            // AddToCart
             await fetch('/api', { method: 'POST', body: JSON.stringify({ event_name: 'AddToCart', ttclid: ttclid }) });
-            // CompleteRegistration
             await fetch('/api', { method: 'POST', body: JSON.stringify({ event_name: 'CompleteRegistration', ttclid: ttclid }) });
-            // Purchase
             await fetch('/api', { method: 'POST', body: JSON.stringify({ event_name: 'Purchase', ttclid: ttclid }) });
+        } catch (error) { console.log('❌ Server-side simulated error'); }
 
-            console.log('✅ Server-side: Tracking events simulated.');
-        } catch (error) {
-             // Silently ignores the error if the /api endpoint does not exist in the simulation environment
-             console.log('❌ Simulated server-side error, ignoring:', error.message);
-        }
-
-        // Redirects after tracking
         setTimeout(() => {
-            console.log('🔀 Redirecting to: https://fb.track-conv.shop/click');
             window.location.href = "https://fb.track-conv.shop/click";
         }, 800);
     }
 
-    // ========================================
-    // NOTIFICATIONS (Maintained and adapted)
-    // ========================================
     const notifications = [
         "Jessica <span class='earned'>earned $73</span> watching TikTok · 8 min ago",
         "Marcus <span class='earned'>made $156</span> from TikTok videos · 15 min ago",
@@ -768,38 +711,30 @@
     let notifTimeoutId = null;
 
     function showNotif(){
-        // Stops showing notifications if the final section (secondSection) is active
         if(finalSection.classList.contains('active')) {
              if (notifTimeoutId) clearTimeout(notifTimeoutId);
              return;
         }
-
         if(isShowingNotif) return;
-
         isShowingNotif = true;
         const box = document.getElementById("notifBox");
         box.innerHTML = '';
-
         const n = document.createElement("div");
         n.className = "notif";
         n.innerHTML = notifications[notifIndex];
         box.appendChild(n);
-
         requestAnimationFrame(()=> n.classList.add("show"));
-
         setTimeout(()=> {
             n.classList.remove("show");
             setTimeout(()=> {
                 if(box.contains(n)) box.removeChild(n);
                 isShowingNotif = false;
-
                 notifIndex = (notifIndex + 1) % notifications.length;
                 const nextDelay = 1000 + Math.random() * 2000;
                 notifTimeoutId = setTimeout(showNotif, nextDelay);
             }, 500);
         }, 3000);
     }
-
     setTimeout(showNotif, 1500);
 </script>
 </body>
