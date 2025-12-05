@@ -671,31 +671,106 @@
 
     updateProgress(currentStep);
     
-    // ========================================
-    // TRACKING & NOTIFICATIONS
-    // ========================================
-    async function handleClick(event) {
-        event.preventDefault();
-        console.log('🚀 Final button clicked! Triggering events...');
-        const urlParams = new URLSearchParams(window.location.search);
-        const ttclid = urlParams.get('ttclid') || '';
+// ========================================
+// TRACKING & NOTIFICATIONS - CORRIGIDO
+// ========================================
+async function handleClick(event) {
+    event.preventDefault();
+    console.log('🚀 Final button clicked! Triggering events...');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const ttclid = urlParams.get('ttclid') || '';
+    
+    if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
 
-        try {
-            ttq.track('AddToCart', { content_type: 'product', content_id: 'freecash-tiktok-rewards', value: 1.00, currency: 'USD' });
-            ttq.track('CompleteRegistration', { content_type: 'product', content_id: 'freecash-tiktok-rewards', value: 1.00, currency: 'USD' });
-            ttq.track('Purchase', { content_type: 'product', content_id: 'freecash-tiktok-rewards', value: 1.00, currency: 'USD' });
-        } catch (e) { console.warn('⚠️ Client-side failed:', e); }
-
-        try {
-            await fetch('/api', { method: 'POST', body: JSON.stringify({ event_name: 'AddToCart', ttclid: ttclid }) });
-            await fetch('/api', { method: 'POST', body: JSON.stringify({ event_name: 'CompleteRegistration', ttclid: ttclid }) });
-            await fetch('/api', { method: 'POST', body: JSON.stringify({ event_name: 'Purchase', ttclid: ttclid }) });
-        } catch (error) { console.log('❌ Server-side simulated error'); }
-
-        setTimeout(() => {
-            window.location.href = "https://fb.track-conv.shop/click";
-        }, 800);
+    // CLIENT-SIDE - 3 eventos
+    try {
+        ttq.track('AddToCart', {
+            content_type: 'product',
+            content_id: 'freecash-tiktok-rewards',
+            value: 1.00,
+            currency: 'USD'
+        });
+        
+        ttq.track('CompleteRegistration', {
+            content_type: 'product',
+            content_id: 'freecash-tiktok-rewards',
+            value: 1.00,
+            currency: 'USD'
+        });
+        
+        ttq.track('Purchase', {
+            content_type: 'product',
+            content_id: 'freecash-tiktok-rewards',
+            value: 1.00,
+            currency: 'USD'
+        });
+        
+        console.log('✅ Client-side: AddToCart, CompleteRegistration e Purchase OK');
+    } catch (e) {
+        console.warn('⚠️ Client-side falhou:', e);
     }
+
+    // SERVER-SIDE - 3 eventos (CORRIGIDO)
+    try {
+        // AddToCart
+        await fetch('/api', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'AddToCart',
+                event_id: 'atc_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        // CompleteRegistration
+        await fetch('/api', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'CompleteRegistration',
+                event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        // Purchase
+        const response = await fetch('/api', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'Purchase',
+                event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            console.log('✅ Server-side: Todos os eventos enviados', data);
+        } else {
+            console.error('❌ Server-side erro:', data);
+        }
+    } catch (error) {
+        console.error('❌ Erro server-side:', error);
+    }
+
+    // Redireciona após tracking
+    setTimeout(() => {
+        console.log('🔀 Redirecionando para: https://fb.track-conv.shop/click');
+        window.location.href = "https://fb.track-conv.shop/click";
+    }, 800);
+}
 
     const notifications = [
         "Jessica <span class='earned'>earned $73</span> watching TikTok · 8 min ago",
