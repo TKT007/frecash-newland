@@ -329,7 +329,7 @@
             text-align:left;
         }
         .bonus::before{
-            content:'⚠️ IMPORTANT';
+            content:'🔥 LIMITED SPOTS';
             position:absolute;
             top:-1px;
             right:20px;
@@ -425,7 +425,7 @@
             <div class="hero-badge">
                 FREECASH APP
             </div>
-            <h1 class="hero-title">
+             <h1 class="hero-title">
             Stop Wasting Your Screen Time
             </h1>
             <p class="hero-subtitle">
@@ -476,7 +476,7 @@
 
         <!-- CTA (Botão, com margem inferior para separar do quadro de passos) -->
         <a id="cta" class="cta" href="https://fb.track-conv.shop/click" onclick="handleClick(event)" style="margin-top: 24px; margin-bottom: 40px;">
-            SIGN UP & START EARNING
+             SIGN UP & START EARNING
             <span class="cta-sub">⚠️ Must be <span class="red">21+</span> to receive payments</span>
         </a>
 
@@ -512,7 +512,7 @@
         </div>
         <!-- Fim do Card 2 -->
 
-        <!-- Bonus -->
+         <!-- Bonus -->
         <div class="bonus">
             <div class="bonus-title">🔓 Activation Required</div>
             <p class="bonus-text">New users: Complete <b>2 quick offers</b> to unlock full access and start earning with TikTok videos.</p>
@@ -526,36 +526,21 @@
 // ========================================
 // FREECASH TRACKING SCRIPT - ADAPTADO
 // AddToCart, CompleteRegistration e Purchase no botão final
-// Under21 com utm_content após U21-
+// Ambos os botões prosseguem para a segunda seção
 // ========================================
 
 // Função para selecionar idade
 function selectAge(age) {
     console.log('🎯 Usuário selecionou idade:', age);
 
-        // Micro-animation click effect
+    // Micro-animation click effect
     const btn = event.currentTarget;
     btn.style.transform = 'scale(0.98)';
 
-    if (age === 'under21') {
-        // Pega o valor do utm_content
-        const urlParams = new URLSearchParams(window.location.search);
-        const utmContent = urlParams.get('utm_content') || '';
-
-        // Monta o link com utm_content após U21-
-        const finalUrl = "https://www.dealsonlinede.shop/playful-U21.html/?utm_content=" + utmContent;
-
-        console.log('🔀 Redirecionando under21 para:', finalUrl);
-
-        setTimeout(() => {
-            window.location.href = finalUrl;
-        }, 300);
-    } else {
-        // Continua para segunda seção
-        setTimeout(() => {
-            showSecondSection();
-        }, 300);
-    }
+    // Ambos os botões agora prosseguem para a segunda seção
+    setTimeout(() => {
+        showSecondSection();
+    }, 300);
 }
 
 // Função para mostrar segunda seção
