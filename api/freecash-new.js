@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-  const TIKTOK_PIXEL_ID = 'D4S5A6JC77UE9IMLMC0G';
-  const TIKTOK_ACCESS_TOKEN = '89f0208a96fee6ea708534b2cefb280b7bae1fc9';
+  const TIKTOK_PIXEL_ID = process.env.TIKTOK_PIXEL_ID_FREECASH_NEW || 'D4S5A6JC77UE9IMLMC0G';
+  const TIKTOK_ACCESS_TOKEN = process.env.TIKTOK_ACCESS_TOKEN_FREECASH_NEW;
   
   // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
