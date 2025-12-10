@@ -44,8 +44,7 @@ module.exports = async (req, res) => {
         const payload = {
           pixel_code: pixel.id,
           event: event_name || 'CompleteRegistration',
-          event_id: finalEventId,
-          timestamp: new Date().toISOString(),
+          timestamp: Math.floor(Date.now() / 1000),
           context: {
             ad: {
               callback: ttclid || ''
