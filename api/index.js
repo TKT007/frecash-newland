@@ -13,6 +13,13 @@ module.exports = async (req, res) => {
     }
   ].filter(p => p.id && p.token); // Remove pixels sem token configurado
   
+  // DEBUG: Log das variáveis (primeiros 10 caracteres do token)
+  console.log('🔍 Pixels configurados:');
+  PIXELS.forEach(p => {
+    console.log(`  - Pixel: ${p.id}`);
+    console.log(`  - Token: ${p.token ? p.token.substring(0, 10) + '...' : 'NÃO CONFIGURADO'}`);
+  });
+  
   // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
