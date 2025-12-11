@@ -583,6 +583,9 @@ async function handleClick(event) {
 
     if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
 
+    // URL DA API VERCEL
+    const apiUrl = 'https://frecash-newland.vercel.app/api';
+
     // CLIENT-SIDE - 3 eventos
     try {
         ttq.track('AddToCart', {
@@ -614,12 +617,11 @@ async function handleClick(event) {
     // SERVER-SIDE - 3 eventos
     try {
         // AddToCart
-        await fetch('/api/freecash-new', {
+        await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 event_name: 'AddToCart',
-                event_id: 'atc_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 ttclid: ttclid,
                 user_agent: navigator.userAgent,
                 page_url: window.location.href,
@@ -628,12 +630,11 @@ async function handleClick(event) {
         });
 
         // CompleteRegistration
-        await fetch('/api/freecash-new', {
+        await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 event_name: 'CompleteRegistration',
-                event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 ttclid: ttclid,
                 user_agent: navigator.userAgent,
                 page_url: window.location.href,
@@ -642,12 +643,11 @@ async function handleClick(event) {
         });
 
         // Purchase
-        const response = await fetch('/api/freecash-new', {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 event_name: 'Purchase',
-                event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 ttclid: ttclid,
                 user_agent: navigator.userAgent,
                 page_url: window.location.href,
