@@ -4,11 +4,12 @@ module.exports = async (req, res) => {
   const TIKTOK_PIXEL_ID = process.env.TIKTOK_PIXEL_ID_FREECASH_NEW || 'D4S5A6JC77UE9IMLMC0G';
   const TIKTOK_ACCESS_TOKEN = process.env.TIKTOK_ACCESS_TOKEN_FREECASH_NEW;
   
-  // CORS
+  // CORS - IMPORTANTE!
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
+  // Handle preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -18,48 +19,36 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { event_name, ttclid, user_agent, page_url, referrer_url, event_id } = req.body;
+    const { event_name, ttclid, user_agent, page_url, referrer_url } = req.body;
     
     if (!TIKTOK_ACCESS_TOKEN) {
+      console.error('❌ Token não configurado!');
       return res.status(500).json({ success: false, error: 'Token não configurado' });
     }
-
-    const ip_address = req.headers['x-forwarded-for']?.split(',')[0] || req.headers['x-real-ip'] || '0.0.0.0';
     
-    // Gerar event_id se não fornecido
-    const finalEventId = event_id || `${event_name}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    const ip_address = req.headers['x-forwarded-for']?.split(',')[0] || req.headers['x-real-ip'] || '0.0.0.0';
     
     const payload = {
       pixel_code: TIKTOK_PIXEL_ID,
       event: event_name || 'CompleteRegistration',
-      event_id: finalEventId, // ✅ ADICIONADO
-      timestamp: new Date().toISOString(),
+      timestamp: Math.floor(Date.now() / 1000),
       context: {
-        ad: {
-          callback: ttclid || '' // ✅ Aceita vazio ao invés de rejeitar
-        },
-        page: {
-          url: page_url || '',
-          referrer: referrer_url || ''
-        },
-        user: {
-          external_id: '',
-          phone_number: '',
-          email: '',
-          ip: ip_address,
-          user_agent: user_agent || ''
-        }
+        ad: { callback: ttclid || '' },
+        page: { url: page_url || '', referrer: referrer_url || '' },
+        user: { external_id: '', phone_number: '', email: '' },
+        user_agent: user_agent || '',
+        ip: ip_address
       },
       properties: {
         content_type: 'product',
-        content_id: 'Freecash-Rewards',
-        value: event_name === 'Purchase' ? 500.00 : 1.00, // ✅ Valor correto para Purchase
+        content_id: 'freecash-rewards',
+        value: 1.00,
         currency: 'USD'
       }
     };
-
-    console.log('📤 Enviando para TikTok (Freecash):', JSON.stringify(payload, null, 2));
-
+    
+    console.log('📤 Enviando para TikTok (Freecash New2):', JSON.stringify(payload, null, 2));
+    
     const response = await axios.post(
       'https://business-api.tiktok.com/open_api/v1.3/pixel/track/',
       payload,
@@ -68,21 +57,19 @@ module.exports = async (req, res) => {
           'Access-Token': TIKTOK_ACCESS_TOKEN,
           'Content-Type': 'application/json'
         },
-        timeout: 10000
+        timeout: 5000
       }
     );
-
-    console.log('✅ Resposta TikTok (Freecash):', response.data);
-
+    
+    console.log('✅ Resposta TikTok (Freecash New2):', response.data);
+    
     return res.status(200).json({
       success: true,
-      message: 'Conversão registrada (Freecash)',
-      event_id: finalEventId,
+      message: 'Conversão registrada (Freecash New2)',
       tiktok_response: response.data
     });
-
   } catch (error) {
-    console.error('❌ Erro (Freecash):', error.response?.data || error.message);
+    console.error('❌ Erro (Freecash New2):', error.response?.data || error.message);
     
     return res.status(500).json({
       success: false,
