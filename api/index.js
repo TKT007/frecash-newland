@@ -53,20 +53,11 @@ module.exports = async (req, res) => {
           event: event_name || 'CompleteRegistration',
           timestamp: Math.floor(Date.now() / 1000),
           context: {
-            ad: {
-              callback: ttclid || ''
-            },
-            page: {
-              url: page_url || '',
-              referrer: referrer_url || ''
-            },
-            user: {
-              external_id: '',
-              phone_number: '',
-              email: '',
-              ip: ip_address,
-              user_agent: user_agent || ''
-            }
+            ad: { callback: ttclid || '' },
+            page: { url: page_url || '', referrer: referrer_url || '' },
+            user: { external_id: '', phone_number: '', email: '' },
+            user_agent: user_agent || '',
+            ip: ip_address
           },
           properties: {
             content_type: 'product',
