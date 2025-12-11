@@ -614,7 +614,7 @@ async function handleClick(event) {
     // SERVER-SIDE - 3 eventos
     try {
         // AddToCart
-       const response = await fetch('https://frecash-newland.vercel.app/api/freecash-new', {
+        await fetch('/api', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -628,7 +628,7 @@ async function handleClick(event) {
         });
 
         // CompleteRegistration
-       const response = await fetch('https://frecash-newland.vercel.app/api/freecash-new', {
+        await fetch('/api', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
