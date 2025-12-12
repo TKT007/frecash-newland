@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Continue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: clamp(32px, 8vw, 56px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0 0 30px 0;
+            color: #000000;
+        }
+
+        .arrows {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+            animation: bounce 2s infinite;
+        }
+
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 25px solid #000000;
+            margin-bottom: -10px;
+            opacity: 0.8;
+        }
+
+        .arrow:nth-child(2) {
+            opacity: 0.5;
+        }
+
+        .arrow:nth-child(3) {
+            opacity: 0.3;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .cta-button {
+            display: block;
+            text-align: center;
+            background: #000000;
+            color: #ffffff !important;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 20px 60px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            min-width: 250px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        @media (max-width: 480px) {
+            .cta-button {
+                font-size: 16px;
+                padding: 16px 50px;
+                min-width: 220px;
+            }
+            h1 {
+                margin-bottom: 25px;
+            }
+            .arrows {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .cta-button {
+                padding: 15px 40px;
+                min-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click Here To Continue</h1>
+        
+        <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+
+        <button class="cta-button" onclick="handleContinue()">CONTINUE</button>
+    </div>
+</body>
+</html>
