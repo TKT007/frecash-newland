@@ -489,7 +489,51 @@
     console.log(`✅ Tracking initialized for ${ctaButtons.length} button(s)`);
   });
 </script>
-<script>document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll("a").forEach((e=>{e.getAttribute("href")?.includes("#")||(e.getAttribute("href")?.includes("?")?e.setAttribute("href",e.getAttribute("href")+window.location.search.replace("?","&")):e.getAttribute("href")?e.setAttribute("href",e.getAttribute("href")+window.location.search):"")}))}));</script>	
+<script>
+(function() {
+  'use strict';
+  
+  function appendSourceToLinks() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var source = urlParams.get('source');
+    
+    if (!source) {
+      console.log('ℹ️ No source parameter found in URL');
+      return;
+    }
+    
+    console.log('✅ Source parameter found:', source);
+    
+    var links = document.getElementsByTagName('a');
+    var updatedCount = 0;
+    
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      var href = link.getAttribute('href');
+      
+      if (!href || href.charAt(0) === '#' || href.indexOf('javascript:') === 0) continue;
+      if (href.charAt(0) === '/' && href.charAt(1) !== '/') continue;
+      if (href.indexOf('http') !== 0) continue;
+      if (href.indexOf('source=') !== -1) continue;
+      
+      var separator = href.indexOf('?') !== -1 ? '&' : '?';
+      var newHref = href + separator + 'source=' + encodeURIComponent(source);
+      
+      link.setAttribute('href', newHref);
+      updatedCount++;
+      console.log('🔗 Updated link:', newHref);
+    }
+    
+    console.log('✅ Total links updated with source:', updatedCount);
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', appendSourceToLinks);
+  } else {
+    appendSourceToLinks();
+  }
+})();
+</script>
 
 
     <div class="footer">
