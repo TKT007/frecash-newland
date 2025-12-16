@@ -421,72 +421,92 @@
         </div>
       </div>
     </div>
-    <script>
+<script>
   // Handle click function with TikTok tracking for Playful buttons
   function handlePlayfulClick(event) {
     event.preventDefault();
     console.log('🚀 Playful button clicked! Starting tracking...');
     
-    // Client-side TikTok tracking with content_id for Playful
+    const urlParams = new URLSearchParams(window.location.search);
+    const ttclid = urlParams.get('ttclid') || '';
+    
+    if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
+    
+    // URL DA API VERCEL - CPI ENDPOINT
+    const apiUrl = 'https://frecash-newland.vercel.app/api/playful-cpi';
+    
+    // CLIENT-SIDE - 2 eventos
     try {
-      ttq.track('ClickButton', {
-        content_type: 'product',
-        content_id: 'playful-rewards',
-        value: 1.00,
-        currency: 'USD'
-      });
-      ttq.track('AddToCart', {
-        content_type: 'product',
-        content_id: 'playful-rewards',
-        value: 1.00,
-        currency: 'USD'
-      });
-      ttq.track('InitiateCheckout', {
-        content_type: 'product',
-        content_id: 'playful-rewards',
-        value: 1.00,
-        currency: 'USD'
-      });
       ttq.track('CompleteRegistration', {
         content_type: 'product',
         content_id: 'playful-rewards',
         value: 1.00,
         currency: 'USD'
       });
+      
       ttq.track('Purchase', {
         content_type: 'product',
         content_id: 'playful-rewards',
         value: 1.00,
         currency: 'USD'
       });
-      ttq.track('SubmitForm', {
-        content_type: 'product',
-        content_id: 'playful-rewards',
-        value: 1.00,
-        currency: 'USD'
-      });
-      console.log('✅ TikTok tracking events fired successfully');
+      
+      console.log('✅ Client-side: CompleteRegistration e Purchase OK');
     } catch (e) {
-      console.warn('⚠️ TikTok tracking failed:', e);
+      console.warn('⚠️ Client-side falhou:', e);
     }
 
-    // Small delay to ensure events are sent before redirect
+    // SERVER-SIDE - 2 eventos
+    (async () => {
+      try {
+        // CompleteRegistration
+        await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event_name: 'CompleteRegistration',
+            ttclid: ttclid,
+            user_agent: navigator.userAgent,
+            page_url: window.location.href,
+            referrer_url: document.referrer
+          })
+        });
+        
+        // Purchase
+        await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event_name: 'Purchase',
+            ttclid: ttclid,
+            user_agent: navigator.userAgent,
+            page_url: window.location.href,
+            referrer_url: document.referrer
+          })
+        });
+        
+        console.log('✅ Server-side: CompleteRegistration e Purchase enviados');
+      } catch (error) {
+        console.error('❌ Erro server-side:', error);
+      }
+    })();
+
+    // Redireciona após tracking
     setTimeout(() => {
-      console.log('🔄 Redirecting to offer page...');
+      console.log('🔄 Redirecionando para offer page...');
       window.location.href = 'https://fb.track-conv.shop/click';
     }, 500);
   }
 
   // Add event listeners to all CTA buttons on page load
   document.addEventListener('DOMContentLoaded', function() {
-    // Get all links that point to the tracking URL
     const ctaButtons = document.querySelectorAll('a[href="https://fb.track-conv.shop/click"]');
     
     ctaButtons.forEach(button => {
       button.addEventListener('click', handlePlayfulClick);
     });
     
-    console.log(`✅ Tracking initialized for ${ctaButtons.length} button(s)`);
+    console.log(`✅ Tracking inicializado para ${ctaButtons.length} botão(ões)`);
   });
 </script>
 
