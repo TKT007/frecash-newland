@@ -475,7 +475,7 @@
             </p>
 
             <!-- CTA (Botão principal) -->
-            <a id="cta" class="cta" href="https://fb.track-conv.shop/visit/9a250cd1-9989-4fae-89b3-a9188fb31563?utm_content=U21-">
+            <a id="cta" class="cta" href="https://fb.track-conv.shop/click">
                 START PLAYING & EARNING
             </a>
 
@@ -542,34 +542,7 @@ function selectDevice(device) {
         
         // Trigger fade in animation
         secondStep.classList.add('fade-in');
-        
-        // Update CTA link with device info
-        updateCtaLink();
     }, 400);
-}
-
-function updateCtaLink() {
-    const ctaButton = document.getElementById('cta');
-    
-    if (!ctaButton) {
-        console.error('❌ Botão CTA não encontrado!');
-        return;
-    }
-    
-    // Pega o valor do utm_content
-    const urlParams = new URLSearchParams(window.location.search);
-    const utmcontent = urlParams.get('utm_content') || '';
-    
-    console.log('📊 utm_content capturado:', utmcontent || '(vazio)');
-    console.log('📱 Device type:', selectedDeviceType);
-    
-    // Monta o link final com utm_content após U21-
-    const finalUrl = "https://fb.track-conv.shop/visit/9a250cd1-9989-4fae-89b3-a9188fb31563?utm_content=U21-" + utmcontent;
-    
-    // Atualiza o href do botão
-    ctaButton.href = finalUrl;
-    
-    console.log('✅ Link do botão atualizado para:', finalUrl);
 }
 </script>
 
