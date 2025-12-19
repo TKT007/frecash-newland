@@ -225,7 +225,7 @@ ttq.page();
             gap: 12px;
             padding: 20px 24px;
             background: var(--bg-card);
-            border: 2px solid var(--border);
+            border: 2px solid var(--brand);
             border-radius: 16px;
             color: var(--text);
             font-size: 18px;
@@ -234,6 +234,7 @@ ttq.page();
             transition: all 0.3s ease;
             backdrop-filter: blur(20px);
             text-decoration: none;
+            box-shadow: 0 0 20px var(--brand-glow);
         }
 
         .device-btn:hover {
@@ -685,7 +686,7 @@ async function handleClick(event) {
     // SERVER-SIDE - 3 eventos
     try {
         // AddToCart
-        await fetch('/api', {
+        await fetch('/api/cpi', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -699,7 +700,7 @@ async function handleClick(event) {
         });
 
         // CompleteRegistration
-        await fetch('/api', {
+        await fetch('/api/cpi', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -713,7 +714,7 @@ async function handleClick(event) {
         });
 
         // Purchase
-        const response = await fetch('/api', {
+        const response = await fetch('/api/cpi', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
