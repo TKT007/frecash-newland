@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- Todo o código de rastreamento de terceiros (MaxConv, TikTok Pixel, etc.) foi removido. -->
-
     <!-- Updated logo/favicon for Playful Rewards -->
     <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
     <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
@@ -18,7 +18,7 @@
             --muted: #a89cc8;         /* Muted text */
             --brand: #a855f7;         /* Primary Brand Color (Purple) */
             --brand2: #7c3aed;        /* Secondary Brand Color (Darker Purple) */
-            --accent-red: #ff4757;    /* Warning/Highlight (Mantido do Freecash) */
+            --accent-red: #ff4757;    /* Warning/Highlight */
             /* Elementos */
             --bg-card: rgba(15,10,30,.6); /* Card background with blur effect */
             --border: rgba(168,85,247,.2); /* Subtle borders */
@@ -43,7 +43,7 @@
             position: relative;
         }
 
-        /* Animated background elements (Mantido do Playful Rewards) */
+        /* Animated background elements */
         .bg-orb{
             position:fixed;
             border-radius:50%;
@@ -74,21 +74,28 @@
             50%{transform:translate(-30px,-40px) scale(1.15);}
         }
 
-        /* Layout (Ajustado para o nome second-section) */
-        .second-section {
-            max-width: 480px; /* Mantido do Playful Rewards */
+        /* Layout Container */
+        .container {
+            max-width: 480px;
             margin: 0 auto;
-            padding: 60px 20px 40px; /* Mantido do Playful Rewards */
+            padding: 60px 20px 40px;
             text-align: center;
             position: relative;
-            z-index: 1; /* Para ficar acima dos orbs */
+            z-index: 1;
         }
 
-        /* Logo Styling (Mantido o novo estilo de wrapper) */
+        /* Logo Styling - Partnership Design */
         .logo-wrapper{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap: 16px;
+            margin:0 auto 20px;
+        }
+        
+        .logo-container {
             width:70px;
             height:70px;
-            margin:0 auto 20px;
             border-radius:20px;
             display:flex;
             align-items:center;
@@ -96,16 +103,44 @@
             background:rgba(168,85,247,.1);
             border:1px solid rgba(168,85,247,.3);
             box-shadow:0 10px 40px rgba(168,85,247,.4);
+            transition: transform 0.3s ease;
         }
-        /* Updated logo src */
+        
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        
         .logo{
             width:70px;
             height:70px;
             object-fit:cover;
             border-radius:20px;
         }
+        
+        .partnership-x {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 8px rgba(168,85,247,.5);
+            animation: pulse-x 2s ease-in-out infinite;
+            user-select: none;
+        }
+        
+        @keyframes pulse-x {
+            0%, 100% { 
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(168,85,247,.4));
+            }
+            50% { 
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 16px rgba(168,85,247,.6));
+            }
+        }
 
-        /* You're In! Section (Adaptado) */
+        /* You're In! Section */
         .youre-in-section {
             display: flex;
             align-items: center;
@@ -116,7 +151,6 @@
         .check-circle {
             width: 60px;
             height: 60px;
-            /* Cor do Playful Rewards */
             background: var(--brand);
             border-radius: 50%;
             display: flex;
@@ -128,44 +162,41 @@
         .check-circle svg {
             width: 32px;
             height: 32px;
-            color: var(--bg); /* Cor de fundo no ícone */
+            color: var(--bg);
         }
         .youre-in-text {
             font-size: 52px;
             font-weight: 900;
             line-height: 1;
-            /* Gradiente do Playful Rewards */
             background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 2px 4px rgba(0,0,0,.3);
         }
-        .text-neon { color: var(--brand); } /* Mantido, mas agora é roxo */
-
+        .text-neon { color: var(--brand); }
 
         .subtitle{
-            font-size:15px; /* Ajustado para o estilo Playful Rewards */
+            font-size:15px;
             color:var(--muted);
             line-height:1.5;
-            margin-bottom:30px; /* Ajustado para o estilo Playful Rewards */
+            margin-bottom:30px;
             padding:0 10px;
         }
 
-        /* Card (Earning Journey Steps) - Estilo Playful Rewards */
+        /* Card (Earning Journey Steps) */
         .card{
-            background:var(--bg-card); /* bg com blur */
+            background:var(--bg-card);
             border:1px solid var(--border);
-            border-radius:24px; /* Mais arredondado */
+            border-radius:24px;
             text-align:left;
             backdrop-filter:blur(20px);
             box-shadow:0 20px 60px rgba(0,0,0,.3);
             position:relative;
             padding: 0;
-            margin-top: 40px; /* Espaçamento do CTA */
+            margin-top: 40px;
         }
 
-        /* Título centralizado (Atualizado para REWARDS STEPS) */
         .section-title{
             font-size:14px;
             font-weight:700;
@@ -180,10 +211,9 @@
             text-transform: uppercase;
         }
 
-        /* List Items (Adaptado do Playful Rewards .feature) */
         .li{
             display:flex;gap:16px;
-            padding:20px 24px; /* Ajustado para Playful */
+            padding:20px 24px;
             border-bottom:1px solid rgba(168,85,247,.08);
             align-items:flex-start;
             text-align: left;
@@ -197,17 +227,16 @@
         .check{
             display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
             border-radius:50%;
-            /* Cor do Playful Rewards */
             background:var(--brand);
             font-size:14px;font-weight:700;color:var(--bg);flex-shrink:0;
             box-shadow:0 0 10px var(--brand-glow);
         }
         .li b{
             display:block;
-            color:var(--text); /* Cor de texto padrão */
+            color:var(--text);
             font-size:16px;
             margin-bottom:4px;
-            font-weight:700; /* Mais negrito */
+            font-weight:700;
         }
         .muted-text{
             color:var(--muted);
@@ -215,7 +244,7 @@
             line-height:1.4;
         }
 
-        /* Main CTA Button - Estilo Playful Rewards */
+        /* Main CTA Button */
         .cta{
             display:block;
             width:100%;
@@ -229,14 +258,14 @@
             border-radius:16px;
             padding:20px;
             margin-top:30px;
-            margin-bottom: 40px; /* Adicionado margem para footer */
+            margin-bottom: 40px;
             text-decoration:none;
             cursor:pointer;
             position:relative;
             overflow:hidden;
             box-shadow:0 10px 30px var(--brand-glow);
             transition: all 0.3s ease;
-            animation: pulse 3s ease-in-out infinite; /* Mantido o pulse */
+            animation: pulse 3s ease-in-out infinite;
         }
         .cta::before{
             content:'';
@@ -252,52 +281,89 @@
         }
         .cta:hover::before{left:100%;}
 
-
-        .cta-sub {
-            display:block;
-            font-size:12px;
-            font-weight:600;
-            margin-top:6px;
-            color:#fff; /* Cor branca para contraste no roxo */
-            opacity:.9;
-        }
-        .cta-sub .red {
-            color:var(--accent-red);
-            font-weight:800;
-        }
-
         /* Footer styling */
         .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
 
-        /* Animation for Main CTA Button */
-        @keyframes pulse {
-            0%, 100% { box-shadow:0 10px 30px var(--brand-glow); }
-            50% { box-shadow:0 15px 40px rgba(168,85,247,.6);}
+        /* Activation Required Notice */
+        .activation-notice {
+            background: rgba(168,85,247,.08);
+            border: 2px solid var(--accent-red);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: left;
+            box-shadow: 0 0 30px rgba(255,71,87,.3);
+            animation: glow-border 2s ease-in-out infinite;
         }
 
-        /* Responsiveness */
-        @media (max-width: 600px) {
-            .second-section { padding: 90px 16px 32px; } /* ATUALIZADO: Aumentado o padding superior para 90px */
-            .youre-in-text { font-size: 42px; }
-            .li { padding-left: 16px; padding-right: 16px; }
+        @keyframes glow-border {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255,71,87,.3);
+                border-color: var(--accent-red);
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(255,71,87,.5);
+                border-color: #ff6b7a;
+            }
         }
 
-        /* NOVO: Loading Overlay Styles */
+        .activation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .lock-icon {
+            font-size: 20px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .activation-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .important-badge {
+            background: var(--accent-red);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .activation-text {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .highlight-green {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Loading Overlay Styles */
         #loading-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--bg); /* Fundo escuro */
-            z-index: 9999; /* Garante que cobre tudo */
+            background-color: var(--bg);
+            z-index: 9999;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             opacity: 1;
             visibility: visible;
-            /* Transição para suavizar o desaparecimento */
             transition: opacity 0.5s ease-out, visibility 0s 0.5s;
             text-align: center;
         }
@@ -316,10 +382,10 @@
             text-shadow: 0 0 10px var(--brand-glow);
         }
 
-        /* Loading Spinner - Estilo Neon Simples */
+        /* Loading Spinner */
         .spinner {
             border: 4px solid rgba(255, 255, 255, 0.1);
-            border-top: 4px solid var(--brand); /* Cor roxa neon */
+            border-top: 4px solid var(--brand);
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -331,10 +397,23 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Animation for Main CTA Button */
+        @keyframes pulse {
+            0%, 100% { box-shadow:0 10px 30px var(--brand-glow); }
+            50% { box-shadow:0 15px 40px rgba(168,85,247,.6);}
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .container { padding: 90px 16px 32px; }
+            .youre-in-text { font-size: 42px; }
+            .li { padding-left: 16px; padding-right: 16px; }
+        }
     </style>
 </head>
 <body>
-    <!-- NOVO: Loading Overlay (Visível por 2 segundos ao carregar) -->
+    <!-- Loading Overlay -->
     <div id="loading-overlay">
         <div class="spinner"></div>
         <div class="loading-text">
@@ -346,12 +425,18 @@
     <div class="bg-orb orb1"></div>
     <div class="bg-orb orb2"></div>
 
-    <!-- Seção Principal -->
-    <section class="second-section" id="secondSection">
+    <!-- Container -->
+    <div class="container">
 
-        <!-- Logo -->
+        <!-- Logo Partnership -->
         <div class="logo-wrapper">
-            <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
+            <div class="logo-container">
+                <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok Logo" />
+            </div>
+            <span class="partnership-x">×</span>
+            <div class="logo-container">
+                <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
+            </div>
         </div>
 
         <!-- You're In! Section -->
@@ -368,11 +453,11 @@
 
         <!-- Subtitle -->
         <p class="subtitle" style="margin-bottom: 32px; padding: 0;">
-            Where Your Opinions Power Your Earnings.
+            Complete 2 Offers & Unlock Unlimited Earnings
         </p>
 
-        <!-- CTA (Botão principal - o link permanece com #) -->
-        <a id="cta" class="cta" href="https://fb.track-conv.shop/visit/9a250cd1-9989-4fae-89b3-a9188fb31563?utm_content=U21-">
+        <!-- CTA (Main Button) -->
+        <a id="cta" class="cta" href="#">
             START PLAYING & EARNING
         </a>
 
@@ -381,7 +466,7 @@
              <!-- Title -->
             <div class="section-title">YOUR REWARDS STEPS</div>
 
-            <!-- Lista de Passos -->
+            <!-- Steps List -->
             <div class="li">
                 <span class="check">1</span>
                 <div>
@@ -392,7 +477,7 @@
             <div class="li">
                 <span class="check">2</span>
                 <div>
-                    <b>Earn More by Testing Multiple Games</b>
+                    <b>Complete at least 2 offers</b>
                     <div class="muted-text">Earn up to $200-$500/day</div>
                 </div>
             </div>
@@ -404,11 +489,23 @@
                 </div>
             </div>
         </div>
-        <!-- Fim do Card -->
+        <!-- End of Card -->
+
+        <!-- Activation Required Notice -->
+        <div class="activation-notice">
+            <div class="activation-header">
+                <span class="lock-icon">🔓</span>
+                <span class="activation-title">Activation Required</span>
+                <span class="important-badge">⚠️ IMPORTANT</span>
+            </div>
+            <p class="activation-text">
+                New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning with TikTok videos.
+            </p>
+        </div>
 
         <!-- Footer -->
         <div class="foot">Free to play • Cash out from $1.00</div>
-    </section>
+    </div>
 
 <script>
 // ========================================
