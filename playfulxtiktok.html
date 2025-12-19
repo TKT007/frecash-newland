@@ -412,11 +412,11 @@
             <!-- Logo Partnership -->
             <div class="logo-wrapper">
                 <div class="logo-container">
-                    <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
+                    <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok Logo" />
                 </div>
                 <span class="partnership-x">×</span>
                 <div class="logo-container">
-                    <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok Logo" />
+                    <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
                 </div>
             </div>
 
@@ -449,11 +449,11 @@
             <!-- Logo Partnership -->
             <div class="logo-wrapper">
                 <div class="logo-container">
-                    <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
+                    <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok Logo" />
                 </div>
                 <span class="partnership-x">×</span>
                 <div class="logo-container">
-                    <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok Logo" />
+                    <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
                 </div>
             </div>
 
@@ -537,10 +537,11 @@ function selectDevice(device) {
         firstStep.classList.add('hidden');
         secondStep.classList.remove('hidden');
         
+        // Force reflow to ensure animation triggers
+        void secondStep.offsetWidth;
+        
         // Trigger fade in animation
-        setTimeout(() => {
-            secondStep.classList.add('fade-in');
-        }, 50);
+        secondStep.classList.add('fade-in');
         
         // Update CTA link with device info
         updateCtaLink();
