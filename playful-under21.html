@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Updated logo/favicon for Playful Rewards -->
+    <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
+    <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs">
+    <title>Playful Rewards</title>
+    <style>
+        /* ==================================== */
+        /* ===== COLORS & VARIABLES (PLAYFUL REWARDS: PURPLE/NEON) ===== */
+        /* ==================================== */
+        :root{
+            /* Cores Playful Rewards */
+            --bg: #050510;            /* Background Deep Blue/Black */
+            --text: #e8e4f3;          /* High contrast text (White/Light Purple) */
+            --muted: #a89cc8;         /* Muted text */
+            --brand: #a855f7;         /* Primary Brand Color (Purple) */
+            --brand2: #7c3aed;        /* Secondary Brand Color (Darker Purple) */
+            --accent-red: #ff4757;    /* Warning/Highlight */
+            /* Elementos */
+            --bg-card: rgba(15,10,30,.6); /* Card background with blur effect */
+            --border: rgba(168,85,247,.2); /* Subtle borders */
+            --brand-glow: rgba(168,85,247,.4); /* Glow effect */
+        }
+
+        /* Reset and Base Styling */
+        *{box-sizing:border-box}
+        html,body{margin:0;height:100%}
+        body{
+            color:var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x:hidden;
+            min-height:100vh;
+            line-height:1.47059;
+            font-weight:400;
+            letter-spacing:-.022em;
+            /* Background Playful Rewards */
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(168,85,247,.15), transparent),
+                linear-gradient(180deg, #050510 0%, #0a0520 50%, #0f0a30 100%);
+            position: relative;
+        }
+
+        /* Animated background elements */
+        .bg-orb{
+            position:fixed;
+            border-radius:50%;
+            filter:blur(80px);
+            opacity:.3;
+            pointer-events:none;
+            z-index:0;
+        }
+        .orb1{
+            width:400px;height:400px;
+            background:radial-gradient(circle, rgba(168,85,247,.4), transparent);
+            top:-100px;left:-100px;
+            animation:float1 20s ease-in-out infinite;
+        }
+        .orb2{
+            width:300px;height:300px;
+            background:radial-gradient(circle, rgba(124,58,237,.3), transparent);
+            bottom:-50px;right:-50px;
+            animation:float2 15s ease-in-out infinite;
+        }
+
+        @keyframes float1{
+            0%, 100%{transform:translate(0,0) scale(1);}
+            50%{transform:translate(50px,50px) scale(1.1);}
+        }
+        @keyframes float2{
+            0%, 100%{transform:translate(0,0) scale(1);}
+            50%{transform:translate(-30px,-40px) scale(1.15);}
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Logo Styling - Partnership Design */
+        .logo-wrapper{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap: 16px;
+            margin:0 auto 20px;
+        }
+        
+        .logo-container {
+            width:70px;
+            height:70px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(168,85,247,.1);
+            border:1px solid rgba(168,85,247,.3);
+            box-shadow:0 10px 40px rgba(168,85,247,.4);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo{
+            width:70px;
+            height:70px;
+            object-fit:cover;
+            border-radius:20px;
+        }
+        
+        .partnership-x {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 8px rgba(168,85,247,.5);
+            animation: pulse-x 2s ease-in-out infinite;
+            user-select: none;
+        }
+        
+        @keyframes pulse-x {
+            0%, 100% { 
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(168,85,247,.4));
+            }
+            50% { 
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 16px rgba(168,85,247,.6));
+            }
+        }
+
+        /* You're In! Section */
+        .youre-in-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 30px 0 20px;
+        }
+        .check-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--brand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px var(--brand-glow);
+        }
+        .check-circle svg {
+            width: 32px;
+            height: 32px;
+            color: var(--bg);
+        }
+        .youre-in-text {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0,0,0,.3);
+        }
+        .text-neon { color: var(--brand); }
+
+        .subtitle{
+            font-size:15px;
+            color:var(--muted);
+            line-height:1.5;
+            margin-bottom:30px;
+            padding:0 10px;
+        }
+
+        /* Card (Earning Journey Steps) */
+        .card{
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:24px;
+            text-align:left;
+            backdrop-filter:blur(20px);
+            box-shadow:0 20px 60px rgba(0,0,0,.3);
+            position:relative;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .section-title{
+            font-size:14px;
+            font-weight:700;
+            text-align:center;
+            margin-top:0;
+            margin-bottom:0;
+            padding: 24px 0;
+            color: var(--muted);
+            text-shadow: none;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .li{
+            display:flex;gap:16px;
+            padding:20px 24px;
+            border-bottom:1px solid rgba(168,85,247,.08);
+            align-items:flex-start;
+            text-align: left;
+            background: transparent;
+        }
+        .li:first-of-type {
+             border-top: 1px solid rgba(168,85,247,.08);
+         }
+        .li:last-child{border-bottom:0}
+
+        .check{
+            display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+            border-radius:50%;
+            background:var(--brand);
+            font-size:14px;font-weight:700;color:var(--bg);flex-shrink:0;
+            box-shadow:0 0 10px var(--brand-glow);
+        }
+        .li b{
+            display:block;
+            color:var(--text);
+            font-size:16px;
+            margin-bottom:4px;
+            font-weight:700;
+        }
+        .muted-text{
+            color:var(--muted);
+            font-size:13px;
+            line-height:1.4;
+        }
+
+        /* Main CTA Button */
+        .cta{
+            display:block;
+            width:100%;
+            background:linear-gradient(135deg, var(--brand), var(--brand2));
+            color:#fff !important;
+            font-weight:800;
+            font-size:17px;
+            text-transform:uppercase;
+            letter-spacing:.5px;
+            border:0;
+            border-radius:16px;
+            padding:20px;
+            margin-top:30px;
+            margin-bottom: 40px;
+            text-decoration:none;
+            cursor:pointer;
+            position:relative;
+            overflow:hidden;
+            box-shadow:0 10px 30px var(--brand-glow);
+            transition: all 0.3s ease;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .cta::before{
+            content:'';
+            position:absolute;
+            top:0;left:-100%;
+            width:100%;height:100%;
+            background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+            transition:left 0.5s;
+        }
+        .cta:hover{
+            transform:translateY(-2px);
+            box-shadow:0 15px 40px rgba(168,85,247,.5);
+        }
+        .cta:hover::before{left:100%;}
+
+        /* Footer styling */
+        .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
+
+        /* Activation Required Notice */
+        .activation-notice {
+            background: rgba(168,85,247,.08);
+            border: 2px solid var(--accent-red);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: left;
+            box-shadow: 0 0 30px rgba(255,71,87,.3);
+            animation: glow-border 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-border {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255,71,87,.3);
+                border-color: var(--accent-red);
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(255,71,87,.5);
+                border-color: #ff6b7a;
+            }
+        }
+
+        .activation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .lock-icon {
+            font-size: 20px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .activation-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .important-badge {
+            background: var(--accent-red);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .activation-text {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .highlight-green {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Loading Overlay Styles */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease-out, visibility 0s 0.5s;
+            text-align: center;
+        }
+
+        #loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-out, visibility 0s 0.5s;
+        }
+
+        .loading-text {
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            text-shadow: 0 0 10px var(--brand-glow);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--brand);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 15px var(--brand-glow);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Animation for Main CTA Button */
+        @keyframes pulse {
+            0%, 100% { box-shadow:0 10px 30px var(--brand-glow); }
+            50% { box-shadow:0 15px 40px rgba(168,85,247,.6);}
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .container { padding: 90px 16px 32px; }
+            .youre-in-text { font-size: 42px; }
+            .li { padding-left: 16px; padding-right: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">
+            Connecting you to the best offer...
+        </div>
+    </div>
+    
+    <!-- Animated background orbs -->
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Logo Partnership -->
+        <div class="logo-wrapper">
+            <div class="logo-container">
+                <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok Logo" />
+            </div>
+            <span class="partnership-x">×</span>
+            <div class="logo-container">
+                <img class="logo" src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful Rewards Logo" />
+            </div>
+        </div>
+
+        <!-- You're In! Section -->
+        <div class="youre-in-section">
+            <div class="check-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <div class="youre-in-text">
+                You're <span class="text-neon">In!</span>
+            </div>
+        </div>
+
+        <!-- Subtitle -->
+        <p class="subtitle" style="margin-bottom: 32px; padding: 0;">
+            Complete 2 Offers & Unlock Unlimited Earnings
+        </p>
+
+        <!-- CTA (Main Button) -->
+        <a id="cta" class="cta" href="#">
+            START PLAYING & EARNING
+        </a>
+
+        <!-- Card: Earning Journey Steps -->
+        <div class="card">
+             <!-- Title -->
+            <div class="section-title">YOUR REWARDS STEPS</div>
+
+            <!-- Steps List -->
+            <div class="li">
+                <span class="check">1</span>
+                <div>
+                    <b>Download the Playful app</b>
+                    <div class="muted-text">Click the button below</div>
+                </div>
+            </div>
+            <div class="li">
+                <span class="check">2</span>
+                <div>
+                    <b>Complete at least 2 offers</b>
+                    <div class="muted-text">Earn up to $200-$500/day</div>
+                </div>
+            </div>
+            <div class="li" style="border-bottom: none;">
+                <span class="check">3</span>
+                <div>
+                    <b>Pro tip: Make in-app purchases on the games to earn faster</b>
+                    <div class="muted-text">They reimburse you for anything you spend!</div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Card -->
+
+        <!-- Activation Required Notice -->
+        <div class="activation-notice">
+            <div class="activation-header">
+                <span class="lock-icon">🔓</span>
+                <span class="activation-title">Activation Required</span>
+                <span class="important-badge">⚠️ IMPORTANT</span>
+            </div>
+            <p class="activation-text">
+                New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning with TikTok videos.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="foot">Free to play • Cash out from $1.00</div>
+    </div>
+
+<script>
+// ========================================
+// PLAYFUL REWARDS - ATUALIZA HREF DO BOTÃO
+// Adiciona utm_content ao link do botão ao carregar
+// ========================================
+
+// Configuração do delay de carregamento em milissegundos
+const LOADING_DELAY_MS = 2000; 
+
+// Função que esconde o overlay e atualiza o link do botão
+function startLoadingTimer() {
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const ctaButton = document.getElementById('cta');
+    
+    // Verifica se os elementos existem
+    if (!ctaButton) {
+        console.error('❌ Botão CTA não encontrado!');
+        return;
+    }
+    
+    // Pega o valor do utm_content
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmcontent = urlParams.get('utm_content') || '';
+    
+    console.log('📊 utm_content capturado:', utmcontent || '(vazio)');
+    
+    // Monta o link final com utm_content após U21-
+    const finalUrl = "https://fb.track-conv.shop/visit/9a250cd1-9989-4fae-89b3-a9188fb31563?utm_content=U21-" + utmcontent;
+    
+    // Atualiza o href do botão
+    ctaButton.href = finalUrl;
+    
+    console.log('✅ Link do botão atualizado para:', finalUrl);
+    
+    // Esconde o overlay após o atraso definido (2 segundos)
+    if (loadingOverlay) {
+        setTimeout(() => {
+            loadingOverlay.classList.add('hidden');
+        }, LOADING_DELAY_MS);
+    }
+}
+
+// Inicia quando o DOM estiver pronto
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startLoadingTimer);
+} else {
+    // DOM já está pronto
+    startLoadingTimer();
+}
+</script>
+
+</body>
+</html>
