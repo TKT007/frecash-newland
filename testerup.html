@@ -647,7 +647,7 @@ async function handleClick(event) {
     // SERVER-SIDE - 3 eventos
     try {
         // AddToCart
-        await fetch('/api/cpi', {
+        await fetch('/api/testerup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -661,7 +661,7 @@ async function handleClick(event) {
         });
 
         // CompleteRegistration
-        await fetch('/api/cpi', {
+        await fetch('/api/testerup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -675,7 +675,7 @@ async function handleClick(event) {
         });
 
         // Purchase
-        const response = await fetch('/api/cpi', {
+        const response = await fetch('/api/testerup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
