@@ -383,6 +383,71 @@
         /* Footer styling */
         .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
 
+        /* Activation Required Notice */
+        .activation-notice {
+            background: rgba(168,85,247,.08);
+            border: 2px solid var(--accent-red);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: left;
+            box-shadow: 0 0 30px rgba(255,71,87,.3);
+            animation: glow-border 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-border {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255,71,87,.3);
+                border-color: var(--accent-red);
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(255,71,87,.5);
+                border-color: #ff6b7a;
+            }
+        }
+
+        .activation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .lock-icon {
+            font-size: 20px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .activation-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .important-badge {
+            background: var(--accent-red);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .activation-text {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .highlight-green {
+            color: #10b981;
+            font-weight: 700;
+        }
+
         /* Animation for Main CTA Button */
         @keyframes pulse {
             0%, 100% { box-shadow:0 10px 30px var(--brand-glow); }
@@ -471,7 +536,7 @@
 
             <!-- Subtitle -->
             <p class="subtitle" style="margin-bottom: 32px; padding: 0;">
-                Where Your Opinions Power Your Earnings.
+                Complete 2 Offers & Unlock Unlimited Earnings
             </p>
 
             <!-- CTA (Botão principal) -->
@@ -495,7 +560,7 @@
                 <div class="li">
                     <span class="check">2</span>
                     <div>
-                        <b>Earn More by Testing Multiple Games</b>
+                        <b>Complete at least 2 offers</b>
                         <div class="muted-text">Earn up to $200-$500/day</div>
                     </div>
                 </div>
@@ -508,6 +573,18 @@
                 </div>
             </div>
             <!-- Fim do Card -->
+
+            <!-- Activation Required Notice -->
+            <div class="activation-notice">
+                <div class="activation-header">
+                    <span class="lock-icon">🔓</span>
+                    <span class="activation-title">Activation Required</span>
+                    <span class="important-badge">⚠️ IMPORTANT</span>
+                </div>
+                <p class="activation-text">
+                    New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning with TikTok videos.
+                </p>
+            </div>
 
             <!-- Footer -->
             <div class="foot">Free to play • Cash out from $1.00</div>
