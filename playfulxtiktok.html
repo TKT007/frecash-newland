@@ -540,7 +540,7 @@
             </p>
 
             <!-- CTA (Botão principal) -->
-            <a id="cta" class="cta" href="https://fb.track-conv.shop/click">
+            <a id="cta" class="cta" href="https://fb.track-conv.shop/click" onclick="handleClick(event)">
                 START PLAYING & EARNING
             </a>
 
@@ -621,6 +621,109 @@ function selectDevice(device) {
         secondStep.classList.add('fade-in');
     }, 400);
 }
+
+// ========================================
+// TIKTOK TRACKING - EXATAMENTE COMO O FREECASH
+// Dispara AddToCart, CompleteRegistration e Purchase no botão final
+// ========================================
+
+// Função do botão final - DISPARA TODOS OS 3 EVENTOS
+async function handleClick(event) {
+    event.preventDefault();
+    console.log('🚀 Botão final clicado! Disparando todos os eventos...');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const ttclid = urlParams.get('ttclid') || '';
+
+    if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
+
+    // CLIENT-SIDE - 3 eventos
+    try {
+        ttq.track('AddToCart', {
+            content_type: 'product',
+            content_id: 'playful-rewards-offers',
+            value: 1.00,
+            currency: 'USD'
+        });
+
+        ttq.track('CompleteRegistration', {
+            content_type: 'product',
+            content_id: 'playful-rewards-offers',
+            value: 1.00,
+            currency: 'USD'
+        });
+
+        ttq.track('Purchase', {
+            content_type: 'product',
+            content_id: 'playful-rewards-offers',
+            value: 1.00,
+            currency: 'USD'
+        });
+
+        console.log('✅ Client-side: AddToCart, CompleteRegistration e Purchase OK');
+    } catch (e) {
+        console.warn('⚠️ Client-side falhou:', e);
+    }
+
+    // SERVER-SIDE - 3 eventos
+    try {
+        // AddToCart
+        await fetch('/api/cpi', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'AddToCart',
+                event_id: 'atc_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        // CompleteRegistration
+        await fetch('/api/cpi', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'CompleteRegistration',
+                event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        // Purchase
+        const response = await fetch('/api/cpi', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'Purchase',
+                event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            console.log('✅ Server-side: Todos os eventos enviados', data);
+        } else {
+            console.error('❌ Server-side erro:', data);
+        }
+    } catch (error) {
+        console.error('❌ Erro server-side:', error);
+    }
+
+    // Redireciona SEM DELAY - seu server-side cuida de tudo
+    console.log('🔀 Redirecionando para: https://fb.track-conv.shop/click');
+    window.location.href = "https://fb.track-conv.shop/click";
+}
+
 </script>
 
 </body>
