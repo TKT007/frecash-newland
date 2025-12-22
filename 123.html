@@ -1,66 +1,96 @@
 <script>
 (function() {
-    function getURLParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
+  function getURLParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  function getSlugFromPath() {
+    const path = window.location.pathname;
+    const slug = path.replace(/^\/+|\/+$/g, '');
+    return slug || '';
+  }
+
+  (function ensureTTCLIDParamOnLander() {
+    try {
+      const u = new URL(window.location.href);
+      if (!u.searchParams.has('ttclid')) {
+        u.searchParams.set('ttclid', '');
+        history.replaceState(null, '', u.toString());
+        console.log('Ensured ttclid param on lander URL');
+      }
+    } catch(e) {
+      console.log('ttclid lander ensure error', e);
+    }
+  })();
+
+  let s = getURLParameter('s');
+  const o = getURLParameter('o') || 'cash';
+  const slug = getSlugFromPath();
+  const ttclid = getURLParameter('ttclid') || '';
+
+  let campaignUrl;
+  let sourceValue = s;
+  let forceEmptySource = false;
+  let isSpecialCase = false;
+
+  console.log('Checking offer:', o.toLowerCase(), 'source:', s);
+  console.log('ttclid value:', ttclid);
+
+  if (o.toLowerCase() === 'play' && s === 'Test') {
+    campaignUrl = 'https://fb.track-conv.shop/visit/0cb61078-78f0-4942-98c3-e1cb9ccaa706';
+    sourceValue = 'Test';
+    forceEmptySource = true;
+    isSpecialCase = true;
+  }
+
+  if (o.toLowerCase() === 'zlle' && s === 'Test') {
+    campaignUrl = 'https://fb.track-conv.shop/visit/3dfaf134-2f26-4e98-ae90-9e9faa2e9e1e';
+    sourceValue = 'Test';
+    forceEmptySource = true;
+    isSpecialCase = true;
+  }
+
+  console.log('Final campaignUrl:', campaignUrl);
+  console.log('Final sourceValue:', sourceValue);
+  console.log('forceEmptySource:', forceEmptySource);
+
+  const isMobile = window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile && campaignUrl) {
+    if (!ttclid || !ttclid.startsWith('E_C_P')) {
+      console.log('ttclid does not start with E_C_P, blocking redirect. ttclid:', ttclid);
+      return;
     }
 
-    (function ensureTTCLIDParamOnLander() {
-        try {
-            const u = new URL(window.location.href);
-            if (!u.searchParams.has('ttclid')) {
-                u.searchParams.set('ttclid', '');
-                history.replaceState(null, '', u.toString());
-            }
-        } catch(e) {}
-    })();
+    const finalURL = new URL(campaignUrl);
+    const currentParams = new URLSearchParams(window.location.search);
 
-    const ttclid = getURLParameter('ttclid') || '';
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isMobile = window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad|iPod/i.test(userAgent);
+    currentParams.forEach((value, key) => {
+      finalURL.searchParams.set(key, value);
+    });
 
-    // SÓ REDIRECIONA SE: Mobile + ttclid começa com E_C_P
-    if (isMobile && ttclid && ttclid.startsWith('E_C_P')) {
-        
-        const campaignUrl = 'https://clever-offer-flow.lovable.app';
-        
-        const finalURL = new URL(campaignUrl);
-        const currentParams = new URLSearchParams(window.location.search);
-        
-        currentParams.forEach((value, key) => {
-            finalURL.searchParams.set(key, value);
-        });
-
-        finalURL.searchParams.set('ttclid', ttclid);
-
-        // DETECÇÃO DE DEVICE
-        const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-        const isAndroid = /android/i.test(userAgent);
-
-        if (isIOS) {
-            // iOS: FORÇA ABRIR NO SAFARI
-            const cleanURL = finalURL.toString().replace('https://', '').replace('http://', '');
-            window.location.href = 'x-safari-https://' + cleanURL;
-            
-            // Fallback caso não funcione
-            setTimeout(() => {
-                window.location.href = finalURL.toString();
-            }, 500);
-        } 
-        else if (isAndroid) {
-            // Android: FORÇA ABRIR NO CHROME
-            const cleanURL = finalURL.toString().replace('https://', '').replace('http://', '');
-            window.location.href = 'intent://' + cleanURL + '#Intent;scheme=https;end';
-            
-            // Fallback
-            setTimeout(() => {
-                window.location.href = finalURL.toString();
-            }, 500);
-        } 
-        else {
-            // Outros mobile: Redirect normal
-            window.location.href = finalURL.toString();
-        }
+    if (forceEmptySource) {
+      finalURL.searchParams.set('s1', '');
+      console.log('Adding empty s1');
+    } else if (sourceValue) {
+      finalURL.searchParams.set('s1', sourceValue);
+      console.log('Adding s1:', sourceValue);
     }
+
+    if (slug) {
+      finalURL.searchParams.set('s2', slug);
+      console.log('Adding s2:', slug);
+    }
+
+    finalURL.searchParams.set('ttclid', ttclid);
+    finalURL.searchParams.set('ct3', ttclid);
+    console.log('Adding ttclid/ct3:', ttclid);
+
+    console.log('Redirecting to:', finalURL.toString());
+    window.location.href = finalURL.toString();
+  } else {
+    console.log('Not mobile or no campaign URL');
+  }
 })();
 </script>
