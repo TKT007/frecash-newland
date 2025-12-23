@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+ttq.load('D41PHSBC77UA61AHK3NG');
+ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+    <!-- Updated logo/favicon for Apple Pay -->
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/2560px-Apple_Pay_logo.svg.png">
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/2560px-Apple_Pay_logo.svg.png">
+    <title>Apple Pay Rewards</title>
+    <style>
+        /* ==================================== */
+        /* ===== COLORS & VARIABLES (APPLE PAY: BLUE) ===== */
+        /* ==================================== */
+        :root{
+            /* Cores Apple Pay */
+            --bg: #f5f5f7;            /* Background Light Gray (Apple style) */
+            --text: #1d1d1f;          /* Dark text for high contrast */
+            --muted: #6e6e73;         /* Muted text */
+            --brand: #007aff;         /* Primary Brand Color (Apple Blue) */
+            --brand2: #0051d5;        /* Secondary Brand Color (Darker Blue) */
+            --accent-blue: #0a84ff;   /* Highlight Blue */
+            /* Elementos */
+            --bg-card: rgba(255,255,255,.95); /* Card background with blur effect */
+            --border: rgba(0,122,255,.2); /* Subtle borders */
+            --brand-glow: rgba(0,122,255,.3); /* Glow effect */
+        }
+
+        /* Reset and Base Styling */
+        *{box-sizing:border-box}
+        html,body{margin:0;height:100%}
+        body{
+            color:var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x:hidden;
+            min-height:100vh;
+            line-height:1.47059;
+            font-weight:400;
+            letter-spacing:-.022em;
+            /* Background Apple Pay */
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,122,255,.1), transparent),
+                linear-gradient(180deg, #f5f5f7 0%, #fafafa 50%, #f0f0f2 100%);
+            position: relative;
+        }
+
+        /* Animated background elements */
+        .bg-orb{
+            position:fixed;
+            border-radius:50%;
+            filter:blur(80px);
+            opacity:.2;
+            pointer-events:none;
+            z-index:0;
+        }
+        .orb1{
+            width:400px;height:400px;
+            background:radial-gradient(circle, rgba(0,122,255,.25), transparent);
+            top:-100px;left:-100px;
+            animation:float1 20s ease-in-out infinite;
+        }
+        .orb2{
+            width:300px;height:300px;
+            background:radial-gradient(circle, rgba(10,132,255,.2), transparent);
+            bottom:-50px;right:-50px;
+            animation:float2 15s ease-in-out infinite;
+        }
+
+        @keyframes float1{
+            0%, 100%{transform:translate(0,0) scale(1);}
+            50%{transform:translate(50px,50px) scale(1.1);}
+        }
+        @keyframes float2{
+            0%, 100%{transform:translate(0,0) scale(1);}
+            50%{transform:translate(-30px,-40px) scale(1.15);}
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Transition Styles */
+        .section {
+            opacity: 1;
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        }
+
+        .section.fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        .section.fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo Styling - Centralized Design */
+        .logo-wrapper{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:0 auto 20px;
+        }
+        
+        .logo-container {
+            width:90px;
+            height:90px;
+            border-radius:24px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(0,122,255,.08);
+            border:1px solid rgba(0,122,255,.25);
+            box-shadow:0 10px 40px rgba(0,122,255,.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo{
+            width:70px;
+            height:auto;
+            object-fit:contain;
+        }
+
+        /* First Step Styles */
+        .main-title {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 30px 0 20px;
+            color: var(--brand);
+            text-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+
+        .question-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 40px 0 12px;
+        }
+
+        .question-subtitle {
+            font-size: 15px;
+            color: var(--muted);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Device Selection Buttons */
+        .device-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .device-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,.05);
+        }
+
+        .device-btn:hover {
+            background: rgba(0,122,255,.1);
+            border-color: var(--brand);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--brand-glow);
+        }
+
+        .device-btn:active {
+            transform: translateY(0);
+        }
+
+        .device-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Second Step Styles (Previous content) */
+        .youre-in-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 30px 0 20px;
+        }
+        .check-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--brand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px var(--brand-glow);
+        }
+        .check-circle svg {
+            width: 32px;
+            height: 32px;
+            color: #fff;
+        }
+        .youre-in-text {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--brand);
+            text-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .text-neon { 
+            color: var(--brand);
+        }
+
+        .subtitle{
+            font-size:15px;
+            color:var(--muted);
+            line-height:1.5;
+            margin-bottom:30px;
+            padding:0 10px;
+        }
+
+        /* Card (Earning Journey Steps) */
+        .card{
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:24px;
+            text-align:left;
+            backdrop-filter:blur(20px);
+            box-shadow:0 8px 32px rgba(0,0,0,.08);
+            position:relative;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .section-title{
+            font-size:14px;
+            font-weight:700;
+            text-align:center;
+            margin-top:0;
+            margin-bottom:0;
+            padding: 24px 0;
+            color: var(--muted);
+            text-shadow: none;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .li{
+            display:flex;gap:16px;
+            padding:20px 24px;
+            border-bottom:1px solid rgba(0,122,255,.1);
+            align-items:flex-start;
+            text-align: left;
+            background: transparent;
+        }
+        .li:first-of-type {
+             border-top: 1px solid rgba(0,122,255,.1);
+         }
+        .li:last-child{border-bottom:0}
+
+        .check{
+            display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+            border-radius:50%;
+            background:var(--brand);
+            font-size:14px;font-weight:700;color:#fff;flex-shrink:0;
+            box-shadow:0 0 10px var(--brand-glow);
+        }
+        .li b{
+            display:block;
+            color:var(--text);
+            font-size:16px;
+            margin-bottom:4px;
+            font-weight:700;
+        }
+        .muted-text{
+            color:var(--muted);
+            font-size:13px;
+            line-height:1.4;
+        }
+
+        /* Main CTA Button */
+        .cta{
+            display:block;
+            width:100%;
+            background:linear-gradient(135deg, var(--brand), var(--brand2));
+            color:#fff !important;
+            font-weight:800;
+            font-size:17px;
+            text-transform:uppercase;
+            letter-spacing:.5px;
+            border:0;
+            border-radius:16px;
+            padding:20px;
+            margin-top:30px;
+            margin-bottom: 40px;
+            text-decoration:none;
+            cursor:pointer;
+            position:relative;
+            overflow:hidden;
+            box-shadow:0 10px 30px var(--brand-glow);
+            transition: all 0.3s ease;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .cta::before{
+            content:'';
+            position:absolute;
+            top:0;left:-100%;
+            width:100%;height:100%;
+            background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+            transition:left 0.5s;
+        }
+        .cta:hover{
+            transform:translateY(-2px);
+            box-shadow:0 15px 40px rgba(0,122,255,.4);
+        }
+        .cta:hover::before{left:100%;}
+
+        /* Footer styling */
+        .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
+
+        /* Activation Required Notice */
+        .activation-notice {
+            background: rgba(0,122,255,.08);
+            border: 2px solid var(--accent-blue);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: left;
+            box-shadow: 0 0 30px rgba(10,132,255,.2);
+            animation: glow-border 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-border {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(10,132,255,.2);
+                border-color: var(--accent-blue);
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(10,132,255,.35);
+                border-color: #3a9fff;
+            }
+        }
+
+        .activation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .lock-icon {
+            font-size: 20px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .activation-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .important-badge {
+            background: var(--accent-blue);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .activation-text {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .highlight-green {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Animation for Main CTA Button */
+        @keyframes pulse {
+            0%, 100% { box-shadow:0 10px 30px var(--brand-glow); }
+            50% { box-shadow:0 15px 40px rgba(0,122,255,.4);}
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .container { padding: 60px 16px 32px; }
+            .main-title { font-size: 46px; }
+            .youre-in-text { font-size: 42px; }
+            .li { padding-left: 16px; padding-right: 16px; }
+            .question-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background orbs -->
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- FIRST STEP: Device Selection -->
+        <section class="section" id="firstStep">
+            <!-- Logo Apple Pay -->
+            <div class="logo-wrapper">
+                <div class="logo-container">
+                    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/2560px-Apple_Pay_logo.svg.png" alt="Apple Pay Logo" />
+                </div>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="main-title">Get Started Apple Pay Rewards!</h1>
+
+            <!-- Question -->
+            <h2 class="question-title">What type of device are you using?</h2>
+            <p class="question-subtitle">Please select your device so we can <br>optimize your experience.</p>
+
+            <!-- Device Selection Buttons -->
+            <div class="device-buttons">
+                <button class="device-btn" onclick="selectDevice('ios')">
+                    <svg class="device-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    iOS
+                </button>
+                <button class="device-btn" onclick="selectDevice('android')">
+                    <svg class="device-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.84L6.4 9.48A10.81 10.81 0 0 0 1 18h22a10.81 10.81 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/>
+                    </svg>
+                    Android
+                </button>
+            </div>
+        </section>
+
+        <!-- SECOND STEP: You're In! -->
+        <section class="section hidden" id="secondStep">
+            <!-- Logo Apple Pay -->
+            <div class="logo-wrapper">
+                <div class="logo-container">
+                    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/2560px-Apple_Pay_logo.svg.png" alt="Apple Pay Logo" />
+                </div>
+            </div>
+
+            <!-- You're In! Section -->
+            <div class="youre-in-section">
+                <div class="check-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="youre-in-text">
+                    You're <span class="text-neon">In!</span>
+                </div>
+            </div>
+
+            <!-- Subtitle -->
+            <p class="subtitle" style="margin-bottom: 32px; padding: 0;">
+               Your device is confirmed compatible. Start earning with<br> Apple Pay rewards today!
+            </p>
+
+            <!-- CTA (Botão principal) -->
+            <a id="cta" class="cta" href="https://fb.track-conv.shop/click" onclick="handleClick(event)">
+                START EARNING NOW
+            </a>
+
+            <!-- Card: Earning Journey Steps -->
+            <div class="card">
+                 <!-- Title -->
+                <div class="section-title">YOUR REWARDS STEPS</div>
+
+                <!-- Lista de Passos -->
+                <div class="li">
+                    <span class="check">✓</span>
+                    <div>
+                        <b>Click on "Start Earning Now"</b>
+                        <div class="muted-text">(The button)</div>
+                    </div>
+                </div>
+                <div class="li">
+                    <span class="check">✓</span>
+                    <div>
+                        <b>Complete at least 2–5 suggested deals</b>
+                        <div class="muted-text">(Most people cashout at least $250 in cashable payouts with just a few deals!)</div>
+                    </div>
+                </div>
+                <div class="li" style="border-bottom: none;">
+                    <span class="check">✓</span>
+                    <div>
+                        <b>Claim your deposit & repeat anytime</b>
+                        <div class="muted-text">(Many top users complete multiple deals for bonus payouts)</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Card -->
+
+            <!-- Activation Required Notice -->
+            <div class="activation-notice">
+                <div class="activation-header">
+                    <span class="lock-icon">🔓</span>
+                    <span class="activation-title">Activation Required</span>
+                    <span class="important-badge">⚠️ IMPORTANT</span>
+                </div>
+                <p class="activation-text">
+                    New users: Complete <span class="highlight-green">2 quick offers</span> in a single day to receive an additional <span class="highlight-green">cash bonus!</span>
+                </p>
+            </div>
+
+            <!-- Footer -->
+            <div class="foot">Secure & Private</div>
+        </section>
+
+    </div>
+
+<script>
+// ========================================
+// APPLE PAY - DEVICE SELECTION & TRANSITION
+// ========================================
+
+let selectedDeviceType = '';
+
+function selectDevice(device) {
+    selectedDeviceType = device;
+    console.log('📱 Device selected:', device);
+    
+    const firstStep = document.getElementById('firstStep');
+    const secondStep = document.getElementById('secondStep');
+    
+    // Fade out first step
+    firstStep.classList.add('fade-out');
+    
+    // Wait for fade out animation to complete
+    setTimeout(() => {
+        firstStep.classList.add('hidden');
+        secondStep.classList.remove('hidden');
+        
+        // Force reflow to ensure animation triggers
+        void secondStep.offsetWidth;
+        
+        // Trigger fade in animation
+        secondStep.classList.add('fade-in');
+    }, 400);
+}
+
+// ========================================
+// TIKTOK TRACKING
+// ========================================
+
+async function handleClick(event) {
+    event.preventDefault();
+    console.log('🚀 Button clicked!');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const ttclid = urlParams.get('ttclid') || '';
+    
+    if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
+
+    // CLIENT-SIDE
+    try {
+        ttq.track('CompleteRegistration', {
+            content_type: 'product',
+            content_id: 'applepay-rewards',
+            value: 1.00,
+            currency: 'USD'
+        });
+        
+        ttq.track('Purchase', {
+            content_type: 'product',
+            content_id: 'applepay-rewards',
+            value: 1.00,
+            currency: 'USD'
+        });
+        
+        console.log('✅ Client-side OK');
+    } catch (e) {
+        console.warn('⚠️ Client falhou:', e);
+    }
+
+    // SERVER-SIDE
+    try {
+        // CompleteRegistration
+        await fetch('https://frecash-newland.vercel.app/api/applepay', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'CompleteRegistration',
+                event_id: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        // Purchase
+        const response = await fetch('https://frecash-newland.vercel.app/api/applepay', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_name: 'Purchase',
+                event_id: 'pur_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                ttclid: ttclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                referrer_url: document.referrer
+            })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            console.log('✅ Server-side OK', data);
+        } else {
+            console.error('❌ Server-side erro:', data);
+        }
+    } catch (error) {
+        console.error('❌ Erro:', error);
+    }
+
+    // Redireciona imediatamente
+    window.location.href = 'https://fb.track-conv.shop/click';
+}
+
+</script>
+
+</body>
+</html>
