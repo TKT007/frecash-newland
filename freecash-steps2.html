@@ -525,9 +525,9 @@
 
 <script>
 // ========================================
-// FREECASH TRACKING SCRIPT - ADAPTADO
-// AddToCart, CompleteRegistration e Purchase no botão final
-// Ambos os botões prosseguem para a segunda seção
+// FREECASH TRACKING SCRIPT - TESTE
+// SÓ SERVER-SIDE - 3 eventos (AddToCart, CompleteRegistration, Purchase)
+// Remove client-side para evitar duplicação
 // ========================================
 
 // Função para selecionar idade
@@ -573,45 +573,19 @@ function showSecondSection() {
     }, 400);
 }
 
-// Função do botão final - DISPARA TODOS OS 3 EVENTOS
+// Função do botão final - SÓ SERVER-SIDE (3 eventos)
 async function handleClick(event) {
     event.preventDefault();
-    console.log('🚀 Botão final clicado! Disparando todos os eventos...');
+    console.log('🚀 Botão final clicado! Disparando 3 eventos server-side...');
 
     const urlParams = new URLSearchParams(window.location.search);
     const ttclid = urlParams.get('ttclid') || '';
 
     if (!ttclid) console.warn('⚠️ ttclid não encontrado - continuando mesmo assim');
 
-    // CLIENT-SIDE - 3 eventos
-    try {
-        ttq.track('AddToCart', {
-            content_type: 'product',
-            content_id: 'freecash-daily-offers',
-            value: 1.00,
-            currency: 'USD'
-        });
+    // ❌ CLIENT-SIDE REMOVIDO - evita duplicação no TikTok
 
-        ttq.track('CompleteRegistration', {
-            content_type: 'product',
-            content_id: 'freecash-daily-offers',
-            value: 1.00,
-            currency: 'USD'
-        });
-
-        ttq.track('Purchase', {
-            content_type: 'product',
-            content_id: 'freecash-daily-offers',
-            value: 1.00,
-            currency: 'USD'
-        });
-
-        console.log('✅ Client-side: AddToCart, CompleteRegistration e Purchase OK');
-    } catch (e) {
-        console.warn('⚠️ Client-side falhou:', e);
-    }
-
-    // SERVER-SIDE - 3 eventos
+    // ✅ SERVER-SIDE - 3 EVENTOS
     try {
         // AddToCart
         await fetch('/api', {
@@ -657,7 +631,7 @@ async function handleClick(event) {
 
         const data = await response.json();
         if (data.success) {
-            console.log('✅ Server-side: Todos os eventos enviados', data);
+            console.log('✅ Server-side: Todos os 3 eventos enviados', data);
         } else {
             console.error('❌ Server-side erro:', data);
         }
@@ -665,7 +639,7 @@ async function handleClick(event) {
         console.error('❌ Erro server-side:', error);
     }
 
-    // Redireciona após tracking - SEM PARÂMETROS
+    // Redireciona após tracking
     setTimeout(() => {
         console.log('🔀 Redirecionando para: https://fb.track-conv.shop/click');
         window.location.href = "https://fb.track-conv.shop/click";
@@ -721,5 +695,6 @@ function showNotif(){
 
 setTimeout(showNotif, 1500);
 </script>
+
 </body>
 </html>
