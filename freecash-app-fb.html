@@ -2,7 +2,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!-- Updated logo/favicon for Freecash -->
-  <!-- Facebook Pixel Code -->
+    <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -102,26 +102,19 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
             z-index: 1;
         }
 
-        /* Logo Styling - Partnership Design */
-        .logo-wrapper{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            gap: 16px;
-            margin:0 auto 20px;
-        }
-        
+        /* Logo Styling - Single Centered Logo */
         .logo-container {
-            width:70px;
-            height:70px;
-            border-radius:20px;
+            width:90px;
+            height:90px;
+            border-radius:24px;
             display:flex;
             align-items:center;
             justify-content:center;
             background:rgba(0,255,136,.1);
-            border:1px solid rgba(0,255,136,.3);
+            border:2px solid rgba(0,255,136,.3);
             box-shadow:0 10px 40px rgba(0,255,136,.4);
             transition: transform 0.3s ease;
+            margin: 0 auto 30px;
         }
         
         .logo-container:hover {
@@ -129,33 +122,10 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
         }
         
         .logo{
-            width:70px;
-            height:70px;
+            width:90px;
+            height:90px;
             object-fit:cover;
-            border-radius:20px;
-        }
-        
-        .partnership-x {
-            font-size: 32px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 2px 8px rgba(0,255,136,.5);
-            animation: pulse-x 2s ease-in-out infinite;
-            user-select: none;
-        }
-        
-        @keyframes pulse-x {
-            0%, 100% { 
-                transform: scale(1);
-                filter: drop-shadow(0 0 8px rgba(0,255,136,.4));
-            }
-            50% { 
-                transform: scale(1.1);
-                filter: drop-shadow(0 0 16px rgba(0,255,136,.6));
-            }
+            border-radius:24px;
         }
 
         /* Section Transition Styles */
@@ -523,22 +493,16 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
 
         <!-- FIRST STEP: Age Selection -->
         <section class="section" id="firstStep">
-            <!-- Logo Partnership -->
-            <div class="logo-wrapper">
-                <div class="logo-container">
-                    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_de_Facebook.png/1028px-Logo_de_Facebook.png" alt="Facebook Logo" />
-                </div>
-                <span class="partnership-x">×</span>
-                <div class="logo-container">
-                    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
-                </div>
+            <!-- Logo Freecash Centered -->
+            <div class="logo-container">
+                <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
             </div>
 
             <!-- Main Title -->
             <h1 class="main-title">Get Paid to Scroll</h1>
 
             <!-- Subtitle -->
-            <p class="question-subtitle">Join thousands earning daily by watching Facebook videos<br>and cashing out instantly.</p>
+            <p class="question-subtitle">Join thousands earning daily by completing offers<br>and cashing out instantly.</p>
 
             <!-- Age Selection Buttons -->
             <div class="age-buttons">
@@ -555,15 +519,9 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
 
         <!-- SECOND STEP: You're In! -->
         <section class="section hidden" id="secondStep">
-            <!-- Logo Partnership -->
-            <div class="logo-wrapper">
-                <div class="logo-container">
-                    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_de_Facebook.png/1028px-Logo_de_Facebook.png" alt="Facebook Logo" />
-                </div>
-                <span class="partnership-x">×</span>
-                <div class="logo-container">
-                    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
-                </div>
+            <!-- Logo Freecash Centered -->
+            <div class="logo-container">
+                <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
             </div>
 
             <!-- You're In! Section -->
@@ -608,7 +566,7 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
                     <span class="check">2</span>
                     <div>
                         <b>Complete Daily Offers</b>
-                        <div class="muted-text">Watch Netflix, scroll Facebook, test apps & games, or take surveys!</div>
+                        <div class="muted-text">Watch videos, test apps & games, or take surveys!</div>
                     </div>
                 </div>
                 <div class="li" style="border-bottom: none;">
@@ -628,7 +586,7 @@ src="https://www.facebook.com/tr?id=2466641977039062&ev=PageView&noscript=1"
                     <span class="activation-title">Activation Required</span>
                 </div>
                 <p class="activation-text">
-                    New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning with Facebook videos.
+                    New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning.
                 </p>
             </div>
 
