@@ -1,329 +1,131 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
     <!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    <script>
+    !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-ttq.load('D4DO8HRC77UCI3HO4RHG');
-ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
-    <!-- Updated logo/favicon for Freecash -->
+    ttq.load('D4DO8HRC77UCI3HO4RHG');
+    ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <meta property="og:title" content="Get Paid to Scroll">
+    <meta property="og:description" content="Join thousands earning daily by watching videos and cashing out instantly.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/d4rEH4U.png">
-    <link rel="apple-touch-icon" href="https://i.imgur.com/d4rEH4U.png">
-    <title>Freecash - Download App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>Freecash - Get Paid to Scroll</title>
+    
     <style>
-        /* ==================================== */
-        /* ===== COLORS & VARIABLES (FREECASH: DEEP BLACK/NEON GREEN) ===== */
-        /* ==================================== */
-        :root{
-            /* Cores Freecash - Tons Ajustados */
-            --bg: #000000;            /* Background Pure Black */
-            --text: #ffffff;          /* Pure White text */
-            --muted: #7a8394;         /* Muted text - mais escuro */
-            --brand: #00ff9d;         /* Primary Brand Color (Brighter Neon Green) */
-            --brand2: #00cc7a;        /* Secondary Brand Color (Vibrant Green) */
-            --accent-red: #ff3d5c;    /* Warning/Highlight - mais saturado */
-            /* Elementos */
-            --bg-card: #0a0a0f;       /* Card background - mais escuro */
-            --border: #1a1f2e;        /* Subtle borders - mais azulado */
-            --brand-glow: rgba(0,255,157,0.3); /* Glow effect - mais intenso */
+        :root {
+            --background: #0a0f0d;
+            --foreground: #ffffff;
+            --muted-foreground: #94a3b8;
+            --card: #1a1f1d;
+            --border: #2d3532;
+            --primary: #22c55e;
+            --primary-foreground: #000000;
+            --primary-hover: #16a34a;
         }
 
-        /* Reset and Base Styling */
-        *{box-sizing:border-box}
-        html,body{margin:0;height:100%}
-        body{
-            color:var(--text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            overflow-x:hidden;
-            min-height:100vh;
-            line-height:1.47059;
-            font-weight:400;
-            letter-spacing:-.022em;
-            /* Background Freecash */
-            background-color: var(--bg);
-            background-image:
-                radial-gradient(circle at 10% 80%, rgba(0,255,157,.12) 0%, transparent 45%),
-                radial-gradient(circle at 90% 20%, rgba(0,255,157,.08) 0%, transparent 45%),
-                linear-gradient(to top, rgba(0,0,0,0.2), transparent);
-            position: relative;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Animated background elements */
-        .bg-orb{
-            position:fixed;
-            border-radius:50%;
-            filter:blur(80px);
-            opacity:.3;
-            pointer-events:none;
-            z-index:0;
-        }
-        .orb1{
-            width:400px;height:400px;
-            background:radial-gradient(circle, rgba(0,255,157,.5), transparent);
-            top:-100px;left:-100px;
-            animation:float1 20s ease-in-out infinite;
-        }
-        .orb2{
-            width:300px;height:300px;
-            background:radial-gradient(circle, rgba(0,204,122,.4), transparent);
-            bottom:-50px;right:-50px;
-            animation:float2 15s ease-in-out infinite;
+        html, body {
+            height: 100%;
+            width: 100%;
         }
 
-        @keyframes float1{
-            0%, 100%{transform:translate(0,0) scale(1);}
-            50%{transform:translate(50px,50px) scale(1.1);}
-        }
-        @keyframes float2{
-            0%, 100%{transform:translate(0,0) scale(1);}
-            50%{transform:translate(-30px,-40px) scale(1.15);}
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* Layout Container */
+        /* Background with pattern */
+        .bg-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.4;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 60 0 L 0 0 0 60" fill="none" stroke="%2322c55e" stroke-width="0.5" opacity="0.1"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100%25" height="100%25" fill="url(%23grid)"/%3E%3C/svg%3E');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, rgba(10, 15, 13, 0.5) 50%, var(--background));
+        }
+
+        /* Main container */
         .container {
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 60px 20px 40px;
-            text-align: center;
             position: relative;
-            z-index: 1;
-        }
-
-        /* Logo Styling - Partnership Design */
-        .logo-wrapper{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            gap: 16px;
-            margin:0 auto 20px;
-        }
-        
-        .logo-container {
-            width:70px;
-            height:70px;
-            border-radius:20px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:rgba(0,255,157,.12);
-            border:1px solid rgba(0,255,157,.35);
-            box-shadow:0 10px 40px rgba(0,255,157,.5);
-            transition: transform 0.3s ease;
-        }
-        
-        .logo-container:hover {
-            transform: scale(1.05);
-        }
-        
-        .logo{
-            width:70px;
-            height:70px;
-            object-fit:cover;
-            border-radius:20px;
-        }
-        
-        .partnership-x {
-            font-size: 32px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, var(--brand) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 2px 8px rgba(0,255,157,.6);
-            animation: pulse-x 2s ease-in-out infinite;
-            user-select: none;
-        }
-        
-        @keyframes pulse-x {
-            0%, 100% { 
-                transform: scale(1);
-                filter: drop-shadow(0 0 8px rgba(0,255,157,.5));
-            }
-            50% { 
-                transform: scale(1.1);
-                filter: drop-shadow(0 0 16px rgba(0,255,157,.7));
-            }
-        }
-
-        /* You're In Title (without check) */
-        .youre-in-text {
-            font-size: 52px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin: 30px 0 20px;
-            background: linear-gradient(90deg, var(--text), var(--brand));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 2px 4px rgba(0,0,0,.3);
-        }
-        .text-neon { color: var(--brand); }
-
-        .subtitle{
-            font-size:15px;
-            color:var(--muted);
-            line-height:1.5;
-            margin-bottom:30px;
-            padding:0 10px;
-        }
-
-        /* Age Selection Buttons */
-        .age-buttons {
+            z-index: 10;
+            max-width: 512px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            max-width: 400px;
-            margin: 0 auto 30px;
-            transition: all 0.4s ease;
+            align-items: center;
+            justify-content: center;
         }
 
-        .age-buttons.fade-out {
+        /* Content wrapper */
+        .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            opacity: 1;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .content.fade-out {
             opacity: 0;
             transform: translateY(-10px);
         }
 
-        .age-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 24px;
-            background: #12141f;
-            border: 2px solid #1f2333;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .age-btn-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 0;
-            color: var(--text);
-        }
-
-        .age-btn-subtitle {
-            font-size: 12px;
-            color: #6a7080;
-            font-weight: 500;
-            line-height: 1.4;
-            opacity: 0.8;
-        }
-
-        .age-btn.primary {
-            background: var(--brand);
-            border-color: var(--brand);
-            box-shadow: 0 8px 30px rgba(0,255,157,.5);
-        }
-
-        .age-btn.primary .age-btn-title {
-            color: #000;
-        }
-
-        .age-btn.primary .age-btn-subtitle {
-            color: #003d26;
-            opacity: 0.8;
-        }
-
-        .age-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,255,157,.25);
-        }
-
-        .age-btn.primary:hover {
-            background: #00ff9d;
-            box-shadow: 0 12px 40px rgba(0,255,157,.6);
-        }
-
-        .age-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Loading State */
-        .loading-container {
+        .content.hidden {
             display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            padding: 40px 20px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
         }
 
-        .loading-container.show {
-            display: flex;
+        .content.fade-in {
             animation: fadeIn 0.4s ease forwards;
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(0,255,136,.2);
-            border-top-color: var(--brand);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .loading-text {
-            font-size: 16px;
-            color: var(--muted);
-            font-weight: 600;
-        }
-
-        /* Main CTA Button */
-        .cta{
-            display:none;
-            align-items:center;
-            justify-content:center;
-            gap:12px;
-            width:100%;
-            background:linear-gradient(135deg, var(--brand), var(--brand2));
-            color:var(--bg) !important;
-            font-weight:800;
-            font-size:17px;
-            text-transform:uppercase;
-            letter-spacing:.5px;
-            border:0;
-            border-radius:16px;
-            padding:20px;
-            margin-top:0;
-            margin-bottom: 40px;
-            text-decoration:none;
-            cursor:pointer;
-            position:relative;
-            overflow:hidden;
-            box-shadow:0 10px 30px var(--brand-glow);
-            transition: all 0.3s ease;
-            animation: pulse 3s ease-in-out infinite;
-            opacity: 0;
-        }
-
-        .cta.show {
-            display: flex;
-            animation: slideInCta 0.5s ease forwards;
-        }
-
-        @keyframes slideInCta {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(10px);
             }
             to {
                 opacity: 1;
@@ -331,350 +133,558 @@ ttq.page();
             }
         }
 
-        .cta-icon{
-            width:24px;
-            height:24px;
-            flex-shrink:0;
-        }
-        .cta::before{
-            content:'';
-            position:absolute;
-            top:0;left:-100%;
-            width:100%;height:100%;
-            background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
-            transition:left 0.5s;
-        }
-        .cta:hover{
-            transform:translateY(-2px);
-            box-shadow:0 15px 40px rgba(0,255,157,.6);
-        }
-        .cta:hover::before{left:100%;}
-
-        /* Card (Earning Journey Steps) */
-        .card{
-            background:var(--bg-card);
-            border:1px solid var(--border);
-            border-radius:24px;
-            text-align:left;
-            backdrop-filter:blur(20px);
-            box-shadow:0 12px 40px rgba(0,0,0,0.9), 0 0 40px var(--brand-glow);
-            position:relative;
-            padding: 0;
-            margin-top: 40px;
-        }
-
-        .section-title{
-            font-size:14px;
-            font-weight:700;
-            text-align:center;
-            margin-top:0;
-            margin-bottom:0;
-            padding: 24px 0;
-            color: var(--muted);
-            text-shadow: none;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .li{
-            display:flex;gap:16px;
-            padding:20px 24px;
-            border-bottom:1px solid var(--border);
-            align-items:flex-start;
-            text-align: left;
-            background: transparent;
-        }
-        .li:first-of-type {
-             border-top: 1px solid var(--border);
-         }
-        .li:last-child{border-bottom:0}
-
-        .check{
-            display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
-            border-radius:50%;
-            background:var(--brand);
-            font-size:14px;font-weight:700;color:var(--bg);flex-shrink:0;
-            box-shadow:0 0 10px var(--brand-glow);
-        }
-        .li b{
-            display:block;
-            color:var(--text);
-            font-size:16px;
-            margin-bottom:4px;
-            font-weight:700;
-        }
-        .muted-text{
-            color:var(--muted);
-            font-size:13px;
-            line-height:1.4;
-        }
-
-        /* Footer styling */
-        .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
-
-        /* Activation Required Notice */
-        .activation-notice {
-            background: linear-gradient(135deg, #0f0505 0%, #050a0f 100%);
-            border: 2px solid var(--accent-red);
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 24px;
-            text-align: left;
-            box-shadow: 0 0 30px rgba(255,61,92,.35);
-            animation: glow-border 2s ease-in-out infinite;
+        /* Logo Partnership */
+        .logo-lockup {
+            width: 192px;
+            height: 64px;
             position: relative;
-        }
-
-        .activation-notice::before{
-            content:'⚠️ IMPORTANT';
-            position:absolute;
-            top:-1px;
-            right:20px;
-            background:var(--accent-red);
-            color:#fff;
-            font-size:10px;
-            font-weight:800;
-            padding:4px 12px;
-            border-radius:0 0 8px 8px;
-            letter-spacing:.5px;
-        }
-
-        @keyframes glow-border {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(255,61,92,.35);
-                border-color: var(--accent-red);
-            }
-            50% { 
-                box-shadow: 0 0 35px rgba(255,61,92,.55);
-                border-color: #ff5c75;
-            }
-        }
-
-        .activation-header {
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
+            justify-content: center;
+            gap: 12px;
         }
 
-        .lock-icon {
-            font-size: 20px;
-            line-height: 1;
+        .logo-container {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .partnership-x {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--muted-foreground);
+            opacity: 0.5;
+        }
+
+        /* Typography */
+        .title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to bottom right, white, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--muted-foreground);
+            max-width: 460px;
+        }
+
+        /* Buttons */
+        .button-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: left;
+            border: 1px solid;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: none;
+            font-family: inherit;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border-color: rgba(34, 197, 94, 0.5);
+            box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(26, 31, 29, 0.8);
+            border-color: rgba(45, 53, 50, 0.8);
+            transform: translateY(-4px);
+        }
+
+        .btn-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary .btn-title {
+            color: var(--primary-foreground);
+        }
+
+        .btn-secondary .btn-title {
+            color: var(--foreground);
+            font-size: 1.25rem;
+        }
+
+        .btn-subtitle {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .btn-primary .btn-subtitle {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .btn-secondary .btn-subtitle {
+            color: var(--muted-foreground);
+        }
+
+        /* Check icon */
+        .check-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-primary:hover .check-icon {
+            opacity: 1;
+        }
+
+        /* Shimmer effect */
+        .btn-shimmer {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 1s ease;
+        }
+
+        .btn-primary:hover .btn-shimmer {
+            transform: translateX(100%);
+        }
+
+        /* Second step styles */
+        .success-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .check-circle {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
         }
 
-        .activation-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text);
-            flex: 1;
+        .check-circle svg {
+            width: 28px;
+            height: 28px;
+            color: #000;
+            stroke-width: 3;
         }
 
-        .activation-text {
-            font-size: 14px;
-            color: var(--muted);
+        .success-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .success-highlight {
+            color: var(--primary);
+        }
+
+        /* CTA Button */
+        .cta {
+            width: 100%;
+            background: var(--primary);
+            color: var(--primary-foreground);
+            font-size: 1.125rem;
+            font-weight: 700;
+            padding: 1.25rem 1.5rem;
+            border: none;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+        }
+
+        .cta:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+        }
+
+        .cta-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Journey Card */
+        .journey-card {
+            width: 100%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .journey-title {
+            text-align: center;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted-foreground);
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .journey-step {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .journey-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            color: var(--primary-foreground);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            text-align: left;
+        }
+
+        .step-content h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--foreground);
+            margin-bottom: 0.25rem;
+            text-align: left;
+        }
+
+        .step-content p {
+            font-size: 0.8125rem;
+            color: var(--muted-foreground);
             line-height: 1.5;
-            margin: 0;
+            text-align: left;
+        }
+
+        /* Activation Notice */
+        .activation-notice {
+            width: 100%;
+            background: rgba(113, 63, 18, 0.2);
+            border: 1px solid rgba(217, 119, 6, 0.5);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lock-icon {
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .activation-content {
+            text-align: left;
+        }
+
+        .activation-content h4 {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--foreground);
+            margin-bottom: 0.375rem;
+            text-align: left;
+        }
+
+        .activation-content p {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            line-height: 1.5;
+            text-align: left;
         }
 
         .highlight-green {
-            color: var(--brand);
-            font-weight: 700;
+            color: var(--primary);
+            font-weight: 600;
         }
 
-        /* Animation for Main CTA Button */
-        @keyframes pulse {
-            0%, 100% { box-shadow:0 10px 30px var(--brand-glow); }
-            50% { box-shadow:0 15px 40px rgba(0,255,157,.7);}
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 10;
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
         }
 
-        /* Responsiveness */
-        @media (max-width: 600px) {
-            .container { padding: 100px 16px 32px; }
-            .youre-in-text { font-size: 42px; }
-            .li { padding-left: 16px; padding-right: 16px; }
-            .age-btn-title { font-size: 18px; }
+        /* Responsive */
+        @media (max-width: 640px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .success-title {
+                font-size: 2.5rem;
+            }
+
+            .btn-title {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Animated background orbs -->
-    <div class="bg-orb orb1"></div>
-    <div class="bg-orb orb2"></div>
-
-    <!-- Container -->
-    <div class="container">
-        <!-- Logo Partnership -->
-        <div class="logo-wrapper">
-            <div class="logo-container">
-                <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok Logo" />
-            </div>
-            <span class="partnership-x">×</span>
-            <div class="logo-container">
-                <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
-            </div>
-        </div>
-
-        <!-- Main Title -->
-        <div class="youre-in-text">
-            Get Paid to <span class="text-neon">Scroll</span>
-        </div>
-
-        <!-- Subtitle -->
-        <p class="subtitle" style="margin-bottom: 32px; padding: 0;">
-            Join thousands earning daily by watching TikTok videos and cashing out instantly.
-        </p>
-
-        <!-- Age Selection Buttons -->
-        <div class="age-buttons" id="ageButtons">
-            <button class="age-btn primary" onclick="selectAge('over21')">
-                <div class="age-btn-title">I'm over 21</div>
-            </button>
-            <button class="age-btn" onclick="selectAge('under21')">
-                <div class="age-btn-title">I'm under 21</div>
-            </button>
-        </div>
-
-        <!-- Loading State -->
-        <div class="loading-container" id="loadingContainer">
-            <div class="loading-spinner"></div>
-            <div class="loading-text">Preparing your account...</div>
-        </div>
-
-        <!-- CTA (Botão principal) -->
-        <a id="cta" class="cta" href="https://fb.track-conv.shop/click" onclick="handleClick(event)">
-            <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-            </svg>
-            Download Now
-        </a>
-
-        <!-- Card: Earning Journey Steps -->
-        <div class="card">
-             <!-- Title -->
-            <div class="section-title">YOUR EARNING JOURNEY</div>
-
-            <!-- Lista de Passos -->
-            <div class="li">
-                <span class="check">1</span>
-                <div>
-                    <b>Download Freecash App</b>
-                    <div class="muted-text">Available on iOS & Android - Takes less than 60 seconds</div>
-                </div>
-            </div>
-            <div class="li">
-                <span class="check">2</span>
-                <div>
-                    <b>Complete Daily Offers</b>
-                    <div class="muted-text">Watch Netflix, scroll TikTok, test apps & games, or take surveys!</div>
-                </div>
-            </div>
-            <div class="li" style="border-bottom: none;">
-                <span class="check">3</span>
-                <div>
-                    <b>Cash Out Your Earnings</b>
-                    <div class="muted-text">Instant Payouts: PayPal, CashApp, Venmo, Crypto & Wire</div>
-                </div>
-            </div>
-        </div>
-        <!-- Fim do Card -->
-
-        <!-- Activation Required Notice -->
-        <div class="activation-notice">
-            <div class="activation-header">
-                <span class="lock-icon">🔓</span>
-                <span class="activation-title">Activation Required</span>
-            </div>
-            <p class="activation-text">
-                New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning with TikTok videos.
-            </p>
-        </div>
-
-        <!-- Footer -->
-        <div class="foot">Trusted by over 500,000 users earning money daily</div>
+    <div class="bg-wrapper">
+        <div class="bg-pattern"></div>
+        <div class="bg-gradient"></div>
     </div>
 
-<script>
-// ========================================
-// FREECASH - AGE SELECTION WITH LOADING
-// ========================================
+    <main class="container">
+        <!-- FIRST STEP -->
+        <div class="content" id="firstStep">
+            <!-- Logo Partnership -->
+            <div class="logo-lockup">
+                <div class="logo-container">
+                    <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok">
+                </div>
+                <span class="partnership-x">×</span>
+                <div class="logo-container">
+                    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash">
+                </div>
+            </div>
 
-let selectedAge = '';
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <h1 class="title">Get Paid to Scroll</h1>
+                <p class="subtitle">Join thousands earning daily by watching short videos and cashing out instantly.</p>
+            </div>
 
-function selectAge(age) {
-    selectedAge = age;
-    console.log('🎂 Age selected:', age);
-    
-    const ageButtons = document.getElementById('ageButtons');
-    const loadingContainer = document.getElementById('loadingContainer');
-    const ctaButton = document.getElementById('cta');
-    
-    // Fade out age buttons
-    ageButtons.classList.add('fade-out');
-    
-    // Wait for fade out, then show loading
-    setTimeout(() => {
-        ageButtons.style.display = 'none';
-        loadingContainer.classList.add('show');
-        
-        // After 1.5 seconds of loading, show CTA button
-        setTimeout(() => {
-            loadingContainer.classList.remove('show');
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="selectAge('over21')">
+                    <div class="btn-content">
+                        <span class="btn-title">
+                            I'm over 21
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                        </span>
+                        <span class="btn-subtitle">Instant Payouts: PayPal, CashApp, Venmo, Crypto & Wire</span>
+                    </div>
+                    <div class="btn-shimmer"></div>
+                </button>
+
+                <button class="btn btn-secondary" onclick="selectAge('under21')">
+                    <div class="btn-content">
+                        <span class="btn-title">I'm under 21</span>
+                        <span class="btn-subtitle">Limited Payouts: Wire Transfer Only</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- SECOND STEP -->
+        <div class="content hidden" id="secondStep">
+            <!-- Logo Partnership -->
+            <div class="logo-lockup">
+                <div class="logo-container">
+                    <img class="logo" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg" alt="TikTok">
+                </div>
+                <span class="partnership-x">×</span>
+                <div class="logo-container">
+                    <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash">
+                </div>
+            </div>
+
+            <div class="success-header">
+                <div class="check-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h1 class="success-title">You're <span class="success-highlight">in!</span></h1>
+            </div>
+
+            <p class="subtitle" style="margin-top: 0;">Your account is pre-qualified for higher payouts.<br>Download the app to activate full access.</p>
+
+            <a class="cta" href="https://fb.track-conv.shop/click" onclick="handleClick(event)">
+                <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                Download Now
+            </a>
+
+            <div class="journey-card">
+                <div class="journey-title">YOUR EARNING JOURNEY</div>
+                
+                <div class="journey-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download Freecash App</h3>
+                        <p>Available on iOS & Android - Takes less than 60 seconds</p>
+                    </div>
+                </div>
+
+                <div class="journey-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Complete Daily Offers</h3>
+                        <p>Watch videos, test apps & games, or take surveys!</p>
+                    </div>
+                </div>
+
+                <div class="journey-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Cash Out Your Earnings</h3>
+                        <p>Instant Payouts: PayPal, CashApp, Crypto & Wire</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activation-notice">
+                <div class="lock-icon">🔓</div>
+                <div class="activation-content">
+                    <h4>Activation Required</h4>
+                    <p>New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Trusted by over 500,000 users earning money daily
+    </footer>
+
+    <script>
+        let selectedAge = '';
+
+        function selectAge(age) {
+            selectedAge = age;
+            console.log('Age selected:', age);
+            
+            const firstStep = document.getElementById('firstStep');
+            const secondStep = document.getElementById('secondStep');
+            
+            firstStep.classList.add('fade-out');
+            
             setTimeout(() => {
-                loadingContainer.style.display = 'none';
-                ctaButton.classList.add('show');
-            }, 400);
-        }, 1500);
-    }, 400);
-}
+                firstStep.classList.add('hidden');
+                secondStep.classList.remove('hidden');
+                void secondStep.offsetWidth;
+                secondStep.classList.add('fade-in');
+            }, 300);
+        }
 
-// ========================================
-// TIKTOK TRACKING - CLIENT-SIDE ONLY
-// Dispara AddToCart, CompleteRegistration e Purchase no botão final
-// ========================================
+        function handleClick(event) {
+            event.preventDefault();
+            console.log('CTA clicked - Firing tracking events...');
 
-// Função do botão final - DISPARA TODOS OS 3 EVENTOS (CLIENT-SIDE ONLY)
-function handleClick(event) {
-    event.preventDefault();
-    console.log('🚀 Botão final clicado! Disparando eventos client-side...');
+            try {
+                ttq.track('AddToCart', {
+                    content_type: 'product',
+                    content_id: 'freecash-tiktok-rewards',
+                    value: 1.00,
+                    currency: 'USD'
+                });
 
-    // CLIENT-SIDE - 3 eventos
-    try {
-        ttq.track('AddToCart', {
-            content_type: 'product',
-            content_id: 'freecash-tiktok-rewards',
-            value: 1.00,
-            currency: 'USD'
-        });
+                ttq.track('CompleteRegistration', {
+                    content_type: 'product',
+                    content_id: 'freecash-tiktok-rewards',
+                    value: 1.00,
+                    currency: 'USD'
+                });
 
-        ttq.track('CompleteRegistration', {
-            content_type: 'product',
-            content_id: 'freecash-tiktok-rewards',
-            value: 1.00,
-            currency: 'USD'
-        });
+                ttq.track('Purchase', {
+                    content_type: 'product',
+                    content_id: 'freecash-tiktok-rewards',
+                    value: 1.00,
+                    currency: 'USD'
+                });
 
-        ttq.track('Purchase', {
-            content_type: 'product',
-            content_id: 'freecash-tiktok-rewards',
-            value: 1.00,
-            currency: 'USD'
-        });
+                console.log('All tracking events fired successfully');
+            } catch (e) {
+                console.warn('Tracking error:', e);
+            }
 
-        console.log('✅ Client-side: AddToCart, CompleteRegistration e Purchase OK');
-    } catch (e) {
-        console.warn('⚠️ Client-side falhou:', e);
-    }
+            window.location.href = "https://fb.track-conv.shop/click";
+        }
+    </script>
 
-    // Redireciona imediatamente
-    console.log('🔀 Redirecionando para: https://fb.track-conv.shop/click');
-    window.location.href = "https://fb.track-conv.shop/click";
-}
-
-</script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"581b6059657a41199e82826c10f0ed37","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"581b6059657a41199e82826c10f0ed37","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="1u5mkx6pj61e" data-repl-id="da69fc29-e791-4c00-a6f7-1e2d5bb4ec55"></script>
+    <div id="replit-pill-host"></div>
 </body>
 </html>
