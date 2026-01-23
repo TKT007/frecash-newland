@@ -89,7 +89,7 @@
             z-index: 10;
             max-width: 512px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -104,7 +104,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 1.5rem;
+            gap: 0.75rem;
             opacity: 1;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
@@ -138,7 +138,7 @@
             width: 192px;
             height: 64px;
             position: relative;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -312,7 +312,7 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .check-circle {
@@ -360,8 +360,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
             box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
         }
 
@@ -383,7 +383,7 @@
             border: 1px solid var(--border);
             border-radius: 1.25rem;
             overflow: hidden;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .journey-title {
@@ -450,7 +450,7 @@
             padding: 1.25rem;
             display: flex;
             gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0rem;
         }
 
         .lock-icon {
@@ -486,7 +486,7 @@
         footer {
             position: relative;
             z-index: 10;
-            padding: 1.5rem;
+            padding: 1.5rem 1rem 0.75rem;
             text-align: center;
             color: var(--muted-foreground);
             font-size: 0.875rem;
@@ -504,6 +504,12 @@
 
             .btn-title {
                 font-size: 1.25rem;
+            }
+
+            /* Ajuste para subir conteúdo no mobile */
+            .container {
+                justify-content: flex-start;
+                padding-top: 4rem;
             }
         }
     </style>
@@ -683,8 +689,5 @@
             window.location.href = "https://fb.track-conv.shop/click";
         }
     </script>
-
-    <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="1u5mkx6pj61e" data-repl-id="da69fc29-e791-4c00-a6f7-1e2d5bb4ec55"></script>
-    <div id="replit-pill-host"></div>
 </body>
 </html>
