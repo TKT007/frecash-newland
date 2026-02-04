@@ -128,20 +128,69 @@
     }
     .slider-thumb:active { cursor: grabbing; }
     .slider-thumb svg { width: 24px; height: 24px; stroke: #000; stroke-width: 3; fill: none; }
+    
+    .slider-arrow {
+      animation: arrowBounce 1s ease-in-out infinite;
+    }
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
+    }
 
     .float-icon { position: absolute; pointer-events: none; color: rgba(0,255,136,0.15); }
     .float-icon.dollar { top: -80px; right: 20px; }
     .float-icon.gift { bottom: -120px; left: -10px; }
     .float-icon svg { width: 48px; height: 48px; }
 
-    /* SCREEN 2 */
+    /* SCREEN 2: ACCESS GRANTED */
     #screen2 {
+      min-height: 100vh; display: none; flex-direction: column;
+      align-items: center; justify-content: flex-start;
+      padding-top: 64px; position: relative; z-index: 10;
+    }
+    #screen2.visible { display: flex; }
+
+    .screen2-content { text-align: center; }
+
+    .check-circle {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: #00ff88; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 50px rgba(0,255,136,0.6); margin: 0 auto 32px;
+      animation: scaleIn 0.4s ease;
+    }
+    .check-circle svg { width: 48px; height: 48px; stroke: #000; }
+
+    @keyframes scaleIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .access-title {
+      font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px;
+      animation: fadeInUp 0.4s ease 0.2s both;
+    }
+    .access-subtitle {
+      color: rgba(0,255,136,0.8); font-size: 16px;
+      animation: fadeInUp 0.4s ease 0.3s both, pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.5; }
+    }
+
+    /* SCREEN 3: MAIN */
+    #screen3 {
       min-height: 100vh; display: none; flex-direction: column;
       align-items: center; justify-content: flex-start;
       padding: 32px 16px; position: relative; z-index: 10;
       animation: fadeIn 0.4s ease;
     }
-    #screen2.visible { display: flex; }
+    #screen3.visible { display: flex; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
     .content { width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 24px; padding: 32px 0; }
@@ -265,7 +314,9 @@
         <div class="slider-progress" id="sliderProgress"></div>
         <div class="slider-text" id="sliderText">Slide to Unlock</div>
         <div class="slider-thumb" id="sliderThumb">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div class="slider-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </div>
       </div>
       <div class="float-icon dollar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
@@ -273,8 +324,21 @@
     </div>
   </div>
 
-  <!-- SCREEN 2: MAIN -->
+  <!-- SCREEN 2: ACCESS GRANTED (Transition) -->
   <div id="screen2">
+    <div class="screen2-content">
+      <div class="check-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5"/>
+        </svg>
+      </div>
+      <h2 class="access-title">Access Granted!</h2>
+      <p class="access-subtitle">Setting up your workspace...</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: MAIN -->
+  <div id="screen3">
     <div class="content">
       <div class="logos2">
         <div class="logo-box2 tiktok"><img alt="TikTok" src="https://img.freepik.com/vetores-premium/logo-do-tik-tok_578229-290.jpg"></div>
@@ -339,6 +403,7 @@
       const text = document.getElementById('sliderText');
       const screen1 = document.getElementById('screen1');
       const screen2 = document.getElementById('screen2');
+      const screen3 = document.getElementById('screen3');
 
       let isDragging = false, startX = 0, currentX = 0;
       const maxX = slider.offsetWidth - thumb.offsetWidth - 8;
@@ -356,6 +421,12 @@
         screen1.classList.add('hidden');
         screen2.classList.add('visible');
         if (typeof ttq !== 'undefined') ttq.track('CompleteRegistration');
+        
+        // Transition to screen3 after 1.5s
+        setTimeout(function() {
+          screen2.classList.remove('visible');
+          screen3.classList.add('visible');
+        }, 1500);
       }
 
       function reset() {
