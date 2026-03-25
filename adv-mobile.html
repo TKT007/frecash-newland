@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer News: The ISP Loophole</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Arial&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            font-family: 'Georgia', serif;
+            letter-spacing: -0.01em;
+        }
+        .article-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header-top {
+            border-top: 5px solid #000;
+            border-bottom: 1px solid #eee;
+        }
+        .ad-disclaimer {
+            font-size: 11px;
+            color: #999;
+            text-align: center;
+            padding: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Etiqueta de Publicidade -->
+    <div class="ad-disclaimer border-b border-gray-50">
+        Advertisement
+    </div>
+
+    <!-- Cabeçalho Principal -->
+    <header class="bg-white mb-8">
+        <div class="article-container header-top py-6 flex flex-col md:flex-row justify-between items-center md:items-end">
+            <div class="text-center md:text-left">
+                <div class="text-3xl font-black tracking-tighter uppercase mb-1">NATIONAL<span class="text-red-700">FINANCE</span>DAILY</div>
+                <div class="text-[11px] text-gray-400 font-bold tracking-widest">CONSUMER PROTECTION DIVISION</div>
+            </div>
+            <div class="text-center md:text-right mt-4 md:mt-0">
+                <div class="text-[11px] text-gray-500 font-bold uppercase">
+                    <span id="current-date"></span><br>
+                    <span class="text-red-600">Special Report</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <article>
+            <!-- Título Principal -->
+            <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight text-gray-900">
+                Exposed: How ISPs Have Been Quietly Profiting Off Your Unused Internet (And How Americans Are Fighting Back)
+            </h1>
+
+            <!-- Subtítulo -->
+            <h2 class="text-xl md:text-2xl text-gray-500 mb-8 font-normal italic leading-snug">
+                A retired logistics manager from Ohio discovered a legal loophole paying him $1,182/month from his home router.
+            </h2>
+
+            <!-- Linha de Autor -->
+            <div class="flex items-center justify-between border-y border-gray-100 py-3 mb-10">
+                <div class="text-[12px] font-bold text-gray-700 uppercase">
+                    By Marcus Thorne <span class="text-gray-300 mx-2">|</span> Investigative Tech Reporter
+                </div>
+                <div class="text-[11px] text-gray-400 font-bold">
+                    UPDATED: <span id="update-time"></span>
+                </div>
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="text-[18px] text-gray-800 space-y-6">
+                <p><strong>[COLUMBUS, OH]</strong> — For decades, internet service providers have charged Americans full price for bandwidth they never actually use.</p>
+
+                <p>The average household uses just 10% to 15% of their available connection. The other 85% doesn't disappear. ISPs have been quietly monetizing this excess capacity through third-party data agreements — and keeping every penny of the profit.</p>
+
+                <div class="py-6 px-8 border-l-4 border-red-600 bg-gray-50 my-10">
+                    <p class="italic text-xl text-gray-700 font-serif">
+                        "I pay $89/month for my fiber connection," says Harold, 58, from Ohio. "I found out my ISP was making almost triple that off my unused bandwidth. Now, I'm the one getting the deposit."
+                    </p>
+                </div>
+
+                <!-- Imagem em Destaque: Harold com o cheque -->
+                <div class="my-10">
+                    <figure>
+                        <img src="https://imgur.com/a/UTv9Mua.png" alt="[Imagem de Harold segurando um cheque de liquidação]" class="w-full h-auto rounded shadow-md border border-gray-100">
+                        <figcaption class="text-[12px] text-gray-500 italic mt-2 text-center font-bold uppercase">
+                            Harold R. showing his latest monthly earnings check from the leasing network.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <p>The method is called <strong>"Bandwidth Leasing"</strong> — and it is a completely legal and secure process.</p>
+
+                <h3 class="text-2xl font-bold text-gray-900 pt-2">How it works:</h3>
+
+                <p>Your router broadcasts a constant signal, but most of it remains idle. Global data companies need this excess capacity for processing micro-transactions and secure cloud routing.</p>
+                
+                <p>A new program allows homeowners to "lease" this unused signal automatically. Setup takes less than 10 minutes and requires no technical knowledge.</p>
+
+                <!-- Texto de chamada -->
+                <p class="text-center text-gray-500 italic text-base mt-12 mb-4">
+                    The video presentation below explains the setup process and how to check if your current router qualifies.
+                </p>
+
+                <!-- Botão CTA -->
+                <div class="text-center pb-12">
+                    <a href="https://go.dailybonus.app/click" class="inline-block bg-[#cc0000] hover:bg-black text-white font-bold text-2xl px-14 py-7 rounded-md transition-all transform hover:scale-105 uppercase tracking-tighter shadow-xl">
+                        Watch Free Presentation
+                    </a>
+                </div>
+
+                <div class="bg-gray-50 p-6 border border-gray-100 rounded text-sm text-gray-600 leading-relaxed">
+                    <strong>IMPORTANT NOTICE:</strong> Major Internet Service Providers have already filed legal petitions to have this information suppressed. If the link above is inactive, the presentation has likely been removed due to corporate pressure.
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="mt-20 border-t border-gray-100 py-20 px-4">
+        <div class="article-container text-center">
+            <div class="text-xl font-black uppercase mb-8">NATIONAL<span class="text-red-700">FINANCE</span>DAILY</div>
+            
+            <p class="text-[11px] text-gray-400 leading-relaxed mb-8 max-w-lg mx-auto uppercase tracking-wide">
+                Advertorial: This content is sponsored and is not news. The story depicted is for illustrative purposes. Results will vary based on ISP terms, location, and hardware.
+            </p>
+            
+            <div class="flex justify-center gap-8 text-[11px] font-bold text-gray-400 uppercase tracking-widest">
+                <a href="#" class="hover:text-black transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-black transition-colors">Terms of Use</a>
+                <a href="#" class="hover:text-black transition-colors">Contact</a>
+            </div>
+            
+            <div class="mt-10 text-[10px] text-gray-300 font-bold uppercase">
+                &copy; <span id="year"></span> All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const dateEl = document.getElementById('current-date');
+        const options = { month: 'long', day: 'numeric', year: 'numeric' };
+        dateEl.textContent = new Date().toLocaleDateString('en-US', options);
+        
+        document.getElementById('update-time').textContent = new Date().getHours() + ":04 AM EST";
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"026d1f61bbfb423a96f53124a981a0a5","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
