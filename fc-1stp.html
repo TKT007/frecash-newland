@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/d4rEH4U.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/d4rEH4U.png">
+    <title>Freecash - Download App</title>
+    <style>
+        :root{
+            --bg: #05050A;
+            --text: #f0f6ff;
+            --muted: #9AA0AE;
+            --brand: #00ff88;
+            --brand2: #00d175;
+            --accent-red: #ff4757;
+            --bg-card: #0E0E14;
+            --border: #1a1a27;
+            --brand-glow: rgba(0,255,136,0.25);
+        }
+
+        *{box-sizing:border-box}
+        html,body{margin:0;height:100%}
+        body{
+            color:var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x:hidden;
+            min-height:100vh;
+            line-height:1.47059;
+            font-weight:400;
+            letter-spacing:-.022em;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 10% 80%, rgba(0,255,136,.08) 0%, transparent 45%),
+                radial-gradient(circle at 90% 20%, rgba(0,255,136,.05) 0%, transparent 45%),
+                linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+            position: relative;
+        }
+
+        .bg-orb{
+            position:fixed; border-radius:50%; filter:blur(80px);
+            opacity:.3; pointer-events:none; z-index:0;
+        }
+        .orb1{
+            width:400px;height:400px;
+            background:radial-gradient(circle, rgba(0,255,136,.4), transparent);
+            top:-100px;left:-100px;
+            animation:float1 20s ease-in-out infinite;
+        }
+        .orb2{
+            width:300px;height:300px;
+            background:radial-gradient(circle, rgba(0,213,117,.3), transparent);
+            bottom:-50px;right:-50px;
+            animation:float2 15s ease-in-out infinite;
+        }
+
+        @keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,50px) scale(1.1)}}
+        @keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,-40px) scale(1.15)}}
+
+        .container {
+            max-width: 480px; margin: 0 auto;
+            padding: 60px 20px 40px;
+            text-align: center; position: relative; z-index: 1;
+        }
+
+        .section.fade-in { animation: fadeIn 0.5s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-container {
+            width:90px; height:90px; border-radius:24px;
+            display:flex; align-items:center; justify-content:center;
+            background:rgba(0,255,136,.1);
+            border:2px solid rgba(0,255,136,.3);
+            box-shadow:0 10px 40px rgba(0,255,136,.4);
+            transition: transform 0.3s ease;
+            margin: 0 auto 30px;
+        }
+        .logo-container:hover { transform: scale(1.05); }
+        .logo { width:90px; height:90px; object-fit:cover; border-radius:24px; }
+
+        .youre-in-section {
+            display:flex; align-items:center; justify-content:center;
+            gap:16px; margin:30px 0 20px;
+        }
+        .check-circle {
+            width:60px; height:60px; background:var(--brand); border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            flex-shrink:0; box-shadow:0 0 20px var(--brand-glow);
+        }
+        .check-circle svg { width:32px; height:32px; color:var(--bg); }
+        .youre-in-text {
+            font-size:52px; font-weight:900; line-height:1;
+            background: linear-gradient(90deg, var(--text), var(--brand));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .text-neon { color:var(--brand); }
+
+        .subtitle {
+            font-size:15px; color:var(--muted); line-height:1.5;
+            margin-bottom:30px; padding:0 10px;
+        }
+
+        .cta {
+            display:flex; align-items:center; justify-content:center; gap:12px;
+            width:100%;
+            background:linear-gradient(135deg, var(--brand), var(--brand2));
+            color:var(--bg) !important;
+            font-weight:800; font-size:17px;
+            text-transform:none; letter-spacing:0;
+            border:0; border-radius:16px;
+            padding:20px; margin-top:30px; margin-bottom:40px;
+            text-decoration:none; cursor:pointer;
+            position:relative; overflow:hidden;
+            box-shadow:0 10px 30px var(--brand-glow);
+            transition: all 0.3s ease;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .cta::before{
+            content:''; position:absolute; top:0; left:-100%;
+            width:100%; height:100%;
+            background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+            transition:left 0.5s;
+        }
+        .cta:hover { transform:translateY(-2px); box-shadow:0 15px 40px rgba(0,255,136,.5); }
+        .cta:hover::before { left:100%; }
+        .cta:active { transform:scale(0.97); }
+        .cta-icon { width:24px; height:24px; flex-shrink:0; }
+
+        @keyframes pulse {
+            0%,100% { box-shadow:0 10px 30px var(--brand-glow); }
+            50% { box-shadow:0 15px 40px rgba(0,255,136,.6); }
+        }
+
+        .card {
+            background:var(--bg-card); border:1px solid var(--border);
+            border-radius:24px; text-align:left;
+            backdrop-filter:blur(20px);
+            box-shadow:0 12px 40px rgba(0,0,0,.8), 0 0 30px var(--brand-glow);
+            position:relative; padding:0; margin-top:40px;
+        }
+        .section-title {
+            font-size:14px; font-weight:700; text-align:center;
+            margin:0; padding:24px 0;
+            color:var(--muted); letter-spacing:1px; text-transform:uppercase;
+        }
+        .li {
+            display:flex; gap:16px; padding:20px 24px;
+            border-bottom:1px solid var(--border);
+            align-items:flex-start; text-align:left;
+        }
+        .li:first-of-type { border-top:1px solid var(--border); }
+        .li:last-child { border-bottom:0; }
+        .check {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:24px; height:24px; border-radius:50%;
+            background:var(--brand);
+            font-size:14px; font-weight:700; color:var(--bg); flex-shrink:0;
+            box-shadow:0 0 10px var(--brand-glow);
+        }
+        .li b { display:block; color:var(--text); font-size:16px; margin-bottom:4px; font-weight:700; }
+        .muted-text { color:var(--muted); font-size:13px; line-height:1.4; }
+
+        .activation-notice {
+            background: linear-gradient(135deg, #1a0f0a 0%, #0f1419 100%);
+            border:2px solid var(--accent-red);
+            border-radius:16px; padding:20px; margin-top:24px; text-align:left;
+            box-shadow:0 0 30px rgba(255,71,87,.3);
+            animation:glow-border 2s ease-in-out infinite;
+            position:relative;
+        }
+        .activation-notice::before {
+            content:'⚠️ IMPORTANT';
+            position:absolute; top:-1px; right:20px;
+            background:var(--accent-red); color:#fff;
+            font-size:10px; font-weight:800;
+            padding:4px 12px; border-radius:0 0 8px 8px; letter-spacing:.5px;
+        }
+        @keyframes glow-border {
+            0%,100% { box-shadow:0 0 20px rgba(255,71,87,.3); border-color:var(--accent-red); }
+            50% { box-shadow:0 0 35px rgba(255,71,87,.5); border-color:#ff6b7a; }
+        }
+        .activation-header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+        .lock-icon { font-size:20px; line-height:1; flex-shrink:0; }
+        .activation-title { font-size:16px; font-weight:700; color:var(--text); flex:1; }
+        .activation-text { font-size:14px; color:var(--muted); line-height:1.5; margin:0; }
+        .highlight-green { color:var(--brand); font-weight:700; }
+
+        .foot { color:var(--muted); font-size:12px; text-align:center; margin-top:16px; opacity:.7; }
+
+        @media (max-width:600px) {
+            .container { padding:60px 16px 32px; }
+            .youre-in-text { font-size:42px; }
+            .li { padding-left:16px; padding-right:16px; }
+        }
+        @media (max-width:375px) { .youre-in-text { font-size:34px; } }
+    </style>
+</head>
+<body>
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+
+    <div class="container">
+        <section class="section fade-in">
+
+            <div class="logo-container">
+                <img class="logo" src="https://i.imgur.com/d4rEH4U.png" alt="Freecash Logo" />
+            </div>
+
+            <div class="youre-in-section">
+                <div class="youre-in-text">
+                    Get Paid to <span class="text-neon">Play</span>
+                </div>
+            </div>
+
+            <p class="subtitle" style="margin-bottom:32px;padding:0;">
+                Complete 2 Offers &amp; Unlock Unlimited Earnings
+            </p>
+
+            <a id="cta" class="cta trxbutton" href="https://go.unlockbonusapp.com/click">
+                <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Start Earning Now — It's Free
+            </a>
+
+            <div class="card">
+                <div class="section-title">Your Rewards Steps</div>
+                <div class="li">
+                    <span class="check">1</span>
+                    <div>
+                        <b>Create your free Freecash account</b>
+                        <div class="muted-text">Sign up in under 60 seconds — no credit card needed</div>
+                    </div>
+                </div>
+                <div class="li">
+                    <span class="check">2</span>
+                    <div>
+                        <b>Complete at least 2 offers</b>
+                        <div class="muted-text">Play games, fill surveys &amp; try apps — earn up to $200–$500/day</div>
+                    </div>
+                </div>
+                <div class="li">
+                    <span class="check">3</span>
+                    <div>
+                        <b>Pro tip: try featured game offers</b>
+                        <div class="muted-text">Gaming companies pay you to play — some offers pay $100+ alone!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activation-notice">
+                <div class="activation-header">
+                    <span class="lock-icon">🔓</span>
+                    <span class="activation-title">Activation Required</span>
+                </div>
+                <p class="activation-text">
+                    New users: Complete <span class="highlight-green">2 quick offers</span> to unlock full access and start earning real cash rewards.
+                </p>
+            </div>
+
+            <div class="foot">Free to join &bull; Cash out from $5.00 &bull; PayPal, Crypto &amp; more</div>
+        </section>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var searchParams = window.location.search;
+        if (searchParams) {
+            document.querySelectorAll('.trxbutton').forEach(function(btn) {
+                var href = btn.getAttribute('href');
+                if (href && href !== '#') {
+                    var separator = href.indexOf('?') !== -1 ? '&' : '?';
+                    var params = searchParams.startsWith('?') ? searchParams.substring(1) : searchParams;
+                    btn.setAttribute('href', href + separator + params);
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
