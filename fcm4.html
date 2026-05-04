@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freecash — Get paid for testing apps, games & surveys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --fc-bg:       #0d0e1e;
+      --fc-bg-2:     #151731;
+      --fc-card:     #1c1f3c;
+      --fc-card-2:   #232748;
+      --fc-border:   rgba(255,255,255,.08);
+      --fc-text:     #ffffff;
+      --fc-mute:     #a7abc9;
+      --fc-green:    #00d369;
+      --fc-green-dk: #00a854;
+      --fc-tp:       #00b67a;
+      --fc-star:     #ffce00;
+    }
+
+    body {
+      margin: 0;
+      background: var(--fc-bg);
+      color: var(--fc-text);
+      font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #fc-lander {
+      background: var(--fc-bg);
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    /* ───── HERO ───── */
+    .fc-hero {
+      position: relative;
+      padding: 44px 20px 32px;
+      text-align: center;
+      background:
+        radial-gradient(900px 500px at 50% -10%, rgba(0,211,105,.14), transparent 60%),
+        radial-gradient(700px 420px at 100% 10%, rgba(120,80,255,.18), transparent 60%),
+        var(--fc-bg);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .fc-logo {
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: .2px;
+      color: var(--fc-text);
+      margin-bottom: 26px;
+    }
+    .fc-logo span { color: var(--fc-green); }
+
+    .fc-hero h1 {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 900;
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -.5px;
+      margin: 0 auto 14px;
+      max-width: 720px;
+    }
+    .fc-hero h1 em { color: var(--fc-green); font-style: italic; }
+
+    .fc-hero p {
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--fc-mute);
+      margin: 0 auto 24px;
+      max-width: 560px;
+    }
+
+    .fc-btn-primary {
+      display: inline-block;
+      background: var(--fc-green);
+      color: #062013;
+      font-weight: 900;
+      font-size: 17px;
+      text-decoration: none;
+      padding: 15px 34px;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0,211,105,.38), inset 0 -3px 0 rgba(0,0,0,.15);
+      transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+      font-family: 'Mulish', sans-serif;
+    }
+    .fc-btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 30px rgba(0,211,105,.5), inset 0 -3px 0 rgba(0,0,0,.15);
+    }
+    .fc-btn-primary:active { transform: translateY(0); }
+
+    .fc-no-cc {
+      margin-top: 12px;
+      color: var(--fc-mute);
+      font-size: 12px;
+    }
+
+    /* Trustpilot badge */
+    .fc-tp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      padding: 10px 16px;
+      background: var(--fc-card);
+      border: 1px solid var(--fc-border);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--fc-text);
+    }
+    .fc-tp-badge:hover { border-color: rgba(0,182,122,.4); }
+
+    .fc-stars {
+      display: inline-flex;
+      gap: 2px;
+    }
+    .fc-stars .s {
+      width: 18px; height: 18px;
+      background: var(--fc-tp);
+      display: inline-grid;
+      place-items: center;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      border-radius: 2px;
+    }
+    .fc-stars .s-half {
+      background: linear-gradient(90deg, var(--fc-tp) 50%, #4a5570 50%);
+    }
+
+    /* Stats row */
+    .fc-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 720px;
+      margin: 28px auto 0;
+    }
+    .fc-stat {
+      background: var(--fc-card);
+      border: 1px solid var(--fc-border);
+      border-radius: 14px;
+      padding: 16px 10px;
+      text-align: center;
+    }
+    .fc-stat-num {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--fc-green);
+    }
+    .fc-stat-label {
+      font-size: 12px;
+      color: var(--fc-mute);
+      margin-top: 4px;
+    }
+
+    /* ───── SECTIONS ───── */
+    .fc-section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 20px 20px;
+    }
+    .fc-section h2 {
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 1.15;
+      margin: 0 0 6px;
+      text-align: center;
+    }
+    .fc-section h2 em { color: var(--fc-green); font-style: italic; }
+    .fc-section .fc-sub {
+      text-align: center;
+      color: var(--fc-mute);
+      font-size: 15px;
+      margin: 0 0 24px;
+    }
+
+    /* How grid */
+    .fc-how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .fc-how-card {
+      background: var(--fc-card);
+      border: 1px solid var(--fc-border);
+      border-radius: 18px;
+      padding: 22px 18px;
+    }
+    .fc-step-num {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: rgba(0,211,105,.15);
+      color: var(--fc-green);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .fc-how-card h3 { font-weight: 900; font-size: 17px; margin-bottom: 6px; }
+    .fc-how-card p  { font-size: 14px; color: var(--fc-mute); line-height: 1.5; }
+
+    /* Earn grid */
+    .fc-earn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .fc-earn-card {
+      background: linear-gradient(180deg, var(--fc-card) 0%, var(--fc-card-2) 100%);
+      border: 1px solid var(--fc-border);
+      border-radius: 18px;
+      padding: 22px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .fc-earn-icon { font-size: 32px; margin-bottom: 10px; }
+    .fc-earn-card h3 { font-weight: 900; font-size: 18px; margin-bottom: 6px; }
+    .fc-earn-card p  { font-size: 13px; color: var(--fc-mute); line-height: 1.5; }
+
+    /* Cashout grid */
+    .fc-cashout-section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 30px 20px 10px;
+    }
+    .fc-cashout-section h2 { font-weight: 900; font-size: 22px; line-height: 1.15; margin: 0 0 16px; text-align: center; }
+    .fc-cashout-section h2 em { color: var(--fc-green); font-style: italic; }
+    .fc-cashout-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .fc-cashout-item {
+      background: var(--fc-card);
+      border: 1px solid var(--fc-border);
+      border-radius: 12px;
+      padding: 14px 10px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    /* ───── REVIEWS ───── */
+    .fc-reviews-section {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 40px 0 20px;
+    }
+    .fc-reviews-header {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px 20px;
+      text-align: center;
+    }
+    .fc-reviews-header h2 { font-weight: 900; font-size: 28px; line-height: 1.15; margin: 0 0 10px; }
+    .fc-reviews-header h2 em { color: var(--fc-green); font-style: italic; }
+    .fc-reviews-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--fc-mute);
+      font-size: 14px;
+    }
+    .fc-reviews-meta .stars-sm .s { width: 16px; height: 16px; font-size: 10px; }
+    .fc-reviews-meta .stars-sm .s-half { background: linear-gradient(90deg, var(--fc-tp) 50%, #4a5570 50%); }
+
+    .fc-reviews-viewport {
+      position: relative;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    }
+    .fc-reviews-track {
+      display: flex;
+      gap: 16px;
+      padding: 6px 20px;
+      width: max-content;
+      animation: fc-marquee 65s linear infinite;
+    }
+    .fc-reviews-viewport:hover .fc-reviews-track { animation-play-state: paused; }
+
+    @keyframes fc-marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .fc-review {
+      flex: 0 0 320px;
+      background: var(--fc-card);
+      border: 1px solid var(--fc-border);
+      border-radius: 16px;
+      padding: 18px;
+      box-sizing: border-box;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+    .fc-review:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,211,105,.4);
+    }
+    .fc-review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 10px;
+    }
+    .fc-review-stars::before {
+      content: "★★★★★";
+      color: var(--fc-tp);
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+    .fc-review-title { font-weight: 900; font-size: 15px; margin-bottom: 8px; color: var(--fc-text); line-height: 1.3; }
+    .fc-review-body  { font-size: 13px; line-height: 1.55; color: var(--fc-mute); flex: 1; margin-bottom: 10px; }
+    .fc-review-meta  { font-size: 12px; color: var(--fc-mute); }
+    .fc-review-meta strong { color: var(--fc-text); font-weight: 800; margin-right: 4px; }
+
+    .fc-all-reviews-link {
+      text-align: center;
+      margin-top: 18px;
+    }
+    .fc-all-reviews-link a {
+      color: var(--fc-mute);
+      font-size: 13px;
+      text-decoration: underline;
+    }
+
+    /* ───── CTA BOTTOM ───── */
+    .fc-cta-section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px 20px 20px;
+      text-align: center;
+    }
+    .fc-cta-section h2 { font-weight: 900; font-size: 28px; line-height: 1.15; margin: 0 0 10px; }
+    .fc-cta-section h2 em { color: var(--fc-green); font-style: italic; }
+    .fc-cta-section p { color: var(--fc-mute); font-size: 15px; margin: 0 0 20px; }
+    .fc-cta-section .fc-tos {
+      margin-top: 12px;
+      color: var(--fc-mute);
+      font-size: 12px;
+    }
+
+    /* ───── FOOTER ───── */
+    footer {
+      max-width: 1080px;
+      margin: 20px auto 0;
+      padding: 20px;
+      color: var(--fc-mute);
+      font-size: 11px;
+      line-height: 1.6;
+      text-align: center;
+      border-top: 1px solid var(--fc-border);
+    }
+    footer .fc-copy { margin-top: 8px; opacity: .7; }
+
+    /* ───── LEGAL LINKS ───── */
+    .fc-legal-links {
+      text-align: center;
+      padding: 10px;
+    }
+    .fc-legal-links a {
+      color: var(--fc-text);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    .fc-legal-links a:hover { text-decoration: underline; }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 680px) {
+      .fc-hero h1 { font-size: 32px !important; }
+      .fc-stats-row { grid-template-columns: repeat(3,1fr); }
+      .fc-stat-num { font-size: 18px !important; }
+      .fc-stat-label { font-size: 10px !important; }
+      .fc-how-grid,
+      .fc-earn-grid { grid-template-columns: 1fr !important; }
+      .fc-cashout-grid { grid-template-columns: repeat(2,1fr) !important; }
+      .fc-review { flex-basis: 280px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fc-reviews-track { animation: none; }
+      .fc-reviews-viewport { overflow-x: auto; scroll-snap-type: x mandatory; }
+      .fc-review { scroll-snap-align: start; }
+    }
+  </style>
+</head>
+<body>
+<div id="fc-lander">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="fc-hero">
+    <div class="fc-logo"><span>free</span>cash</div>
+
+    <h1><em>Get paid</em> for testing apps, games &amp; surveys</h1>
+    <p>Play games, take surveys, and try new apps. Cash out via PayPal, crypto, gift cards, or bank transfer.</p>
+
+    <a class="fc-btn-primary" href="https://go.unlockbonusapp.com/click">Sign Up for Free →</a>
+    <div class="fc-no-cc">No credit card required. Free to join.</div>
+
+    <a href="https://www.trustpilot.com/review/freecash.com" target="_blank" rel="noopener" class="fc-tp-badge">
+      <span style="font-weight:800;font-size:13px;">Excellent</span>
+      <span class="fc-stars">
+        <span class="s">★</span><span class="s">★</span><span class="s">★</span><span class="s">★</span>
+        <span class="s s-half">★</span>
+      </span>
+      <span style="font-weight:700;font-size:13px;color:var(--fc-mute);">274,977 reviews on</span>
+      <span style="font-weight:900;font-size:13px;color:var(--fc-tp);">★ Trustpilot</span>
+    </a>
+
+    <div class="fc-stats-row">
+      <div class="fc-stat">
+        <div class="fc-stat-num">$50M+</div>
+        <div class="fc-stat-label">Total paid out to users</div>
+      </div>
+      <div class="fc-stat">
+        <div class="fc-stat-num">4.5/5</div>
+        <div class="fc-stat-label">Trustpilot rating</div>
+      </div>
+      <div class="fc-stat">
+        <div class="fc-stat-num">9,000+</div>
+        <div class="fc-stat-label">Offers available now</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="fc-section">
+    <h2>Want to earn within minutes? <em>Here's how</em></h2>
+    <p class="fc-sub">Three simple steps, no catch.</p>
+    <div class="fc-how-grid">
+      <div class="fc-how-card">
+        <div class="fc-step-num">1</div>
+        <h3>Choose an offer</h3>
+        <p>Pick from thousands of tasks. Games, surveys, free trials, and app tests, all in one place.</p>
+      </div>
+      <div class="fc-how-card">
+        <div class="fc-step-num">2</div>
+        <h3>Complete it</h3>
+        <p>Most offers take a few minutes. Follow the steps and you'll earn coins toward your balance.</p>
+      </div>
+      <div class="fc-how-card">
+        <div class="fc-step-num">3</div>
+        <h3>Get paid</h3>
+        <p>Cash out via PayPal, crypto, gift cards, or bank transfer. Most payouts process instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BEST WAYS TO EARN ═══ -->
+  <section class="fc-section" style="padding-top:30px;">
+    <h2>Best ways to <em>earn</em></h2>
+    <div class="fc-earn-grid" style="margin-top:24px;">
+      <div class="fc-earn-card">
+        <div class="fc-earn-icon">🎮</div>
+        <h3>Play games</h3>
+        <p>Gaming companies pay you to try their games. Reach in-game milestones and earn.</p>
+      </div>
+      <div class="fc-earn-card">
+        <div class="fc-earn-icon">📱</div>
+        <h3>Try apps</h3>
+        <p>Discover new apps. Get paid to download and try them out.</p>
+      </div>
+      <div class="fc-earn-card">
+        <div class="fc-earn-icon">📋</div>
+        <h3>Take surveys</h3>
+        <p>Share your opinion. Companies pay for feedback to build better products.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CASHOUT ═══ -->
+  <section class="fc-cashout-section">
+    <h2>Cashout <em>your way</em></h2>
+    <div class="fc-cashout-grid">
+      <div class="fc-cashout-item">PayPal</div>
+      <div class="fc-cashout-item">Bitcoin</div>
+      <div class="fc-cashout-item">Ethereum</div>
+      <div class="fc-cashout-item">Litecoin</div>
+      <div class="fc-cashout-item">Visa</div>
+      <div class="fc-cashout-item">Gift Cards</div>
+      <div class="fc-cashout-item">Bank Transfer</div>
+      <div class="fc-cashout-item">+ more</div>
+    </div>
+  </section>
+
+  <!-- ═══ REVIEWS ═══ -->
+  <section class="fc-reviews-section">
+    <div class="fc-reviews-header">
+      <h2>Everyone's <em>talking</em> about Freecash</h2>
+      <div class="fc-reviews-meta">
+        <span style="font-weight:800;color:var(--fc-text);">Excellent</span>
+        <span class="fc-stars stars-sm">
+          <span class="s">★</span><span class="s">★</span><span class="s">★</span><span class="s">★</span>
+          <span class="s s-half">★</span>
+        </span>
+        <span>Based on 274,977 reviews</span>
+      </div>
+    </div>
+
+    <div class="fc-reviews-viewport">
+      <div class="fc-reviews-track" id="reviewsTrack">
+        <!-- set 1 -->
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Fast and Easy Way to Earn Extra Cash</div>
+          <div class="fc-review-body">Freecash.com is one of the most reliable and rewarding platforms I've used. The site is user-friendly, offers a wide range of surveys and tasks, and payments are superfast.</div>
+          <div class="fc-review-meta"><strong>Ruslan</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Reliable Earning Platform</div>
+          <div class="fc-review-body">The tasks are simple, the offers are fair, and the payout system is fast and efficient. I especially appreciate how easy it is to withdraw via PayPal, crypto, or gift cards.</div>
+          <div class="fc-review-meta"><strong>Michael</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Honest Opinion/Review</div>
+          <div class="fc-review-body">The app is legit. You can cash out daily, multiple times a day. I was a bit skeptical at first, worried I was wasting my time. BUT I WAS WRONG. Love Freecash.com.</div>
+          <div class="fc-review-meta"><strong>Diamond Extracts</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Most reliable play-to-earn source</div>
+          <div class="fc-review-body">Best and most reliable play-to-earn source I have used. I rarely have any problems with payouts, and when I do, I can always speak with customer support.</div>
+          <div class="fc-review-meta"><strong>KillSwtch</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Better than other pay-for-gaming apps</div>
+          <div class="fc-review-body">I've been using Freecash for a couple years. It's an easy way to make extra spending money. Pay redemption is simple. Customer service is quick to help with any problems.</div>
+          <div class="fc-review-meta"><strong>Brenda</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">No Other Site Compares</div>
+          <div class="fc-review-body">The no. 1 site for making money while playing games. I have tried many others and nothing compares to the rate that Freecash pays out. Numerous payout options and help is always available.</div>
+          <div class="fc-review-meta"><strong>Samantha R.</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Amazing platform to earn extra cash!</div>
+          <div class="fc-review-body">Freecash.com is by far the best rewards site I've ever used. Easy to navigate, wide variety of tasks and surveys, and payouts are super fast. Transparent and legit.</div>
+          <div class="fc-review-meta"><strong>Darakhshan J.</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Really surprised how easy it was</div>
+          <div class="fc-review-body">I was really surprised how easy it was to start earning free gift cards. Such a great way to get the pleasure of playing good games and earning from them. Highly recommended.</div>
+          <div class="fc-review-meta"><strong>Brian W.</strong> <span>· Verified review</span></div>
+        </div>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Fast and Easy Way to Earn Extra Cash</div>
+          <div class="fc-review-body">Freecash.com is one of the most reliable and rewarding platforms I've used. The site is user-friendly, offers a wide range of surveys and tasks, and payments are superfast.</div>
+          <div class="fc-review-meta"><strong>Ruslan</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Reliable Earning Platform</div>
+          <div class="fc-review-body">The tasks are simple, the offers are fair, and the payout system is fast and efficient. I especially appreciate how easy it is to withdraw via PayPal, crypto, or gift cards.</div>
+          <div class="fc-review-meta"><strong>Michael</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Honest Opinion/Review</div>
+          <div class="fc-review-body">The app is legit. You can cash out daily, multiple times a day. I was a bit skeptical at first, worried I was wasting my time. BUT I WAS WRONG. Love Freecash.com.</div>
+          <div class="fc-review-meta"><strong>Diamond Extracts</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Most reliable play-to-earn source</div>
+          <div class="fc-review-body">Best and most reliable play-to-earn source I have used. I rarely have any problems with payouts, and when I do, I can always speak with customer support.</div>
+          <div class="fc-review-meta"><strong>KillSwtch</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Better than other pay-for-gaming apps</div>
+          <div class="fc-review-body">I've been using Freecash for a couple years. It's an easy way to make extra spending money. Pay redemption is simple. Customer service is quick to help with any problems.</div>
+          <div class="fc-review-meta"><strong>Brenda</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">No Other Site Compares</div>
+          <div class="fc-review-body">The no. 1 site for making money while playing games. I have tried many others and nothing compares to the rate that Freecash pays out.</div>
+          <div class="fc-review-meta"><strong>Samantha R.</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Amazing platform to earn extra cash!</div>
+          <div class="fc-review-body">Freecash.com is by far the best rewards site I've ever used. Easy to navigate, wide variety of tasks and surveys, and payouts are super fast.</div>
+          <div class="fc-review-meta"><strong>Darakhshan J.</strong> <span>· Verified review</span></div>
+        </div>
+        <div class="fc-review" aria-hidden="true">
+          <div class="fc-review-stars"></div>
+          <div class="fc-review-title">Really surprised how easy it was</div>
+          <div class="fc-review-body">I was really surprised how easy it was to start earning free gift cards. Such a great way to get the pleasure of playing good games and earning from them.</div>
+          <div class="fc-review-meta"><strong>Brian W.</strong> <span>· Verified review</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fc-all-reviews-link">
+      <a href="https://www.trustpilot.com/review/freecash.com" target="_blank" rel="noopener">
+        See all 274,977 reviews on Trustpilot →
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BOTTOM ═══ -->
+  <section class="fc-cta-section">
+    <h2>Ready to <em>start earning?</em></h2>
+    <p>Join a community of users earning online through Freecash.</p>
+    <a class="fc-btn-primary" href="https://go.unlockbonusapp.com/click">Sign Up for Free →</a>
+    <div class="fc-tos">By signing up you agree to the Terms of Service and Privacy Policy.</div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    This page contains affiliate links. We may receive a commission when you sign up through links on this page, at no additional cost to you. Earnings on Freecash depend on which tasks you choose to complete and the time you spend on the platform. Freecash does not guarantee any specific amount of earnings. Reviews shown are verified reviews published on Trustpilot.
+    <div class="fc-copy">© Freecash 2026. Not affiliated with third-party brands mentioned in user reviews.</div>
+  </footer>
+
+  <!-- ═══ LEGAL LINKS ═══ -->
+  <div class="fc-legal-links">
+    <a href="#" onclick="return false;">Privacy Policy</a>
+    <a href="#" onclick="return false;">Terms Of Service</a>
+  </div>
+
+</div>
+</body>
+</html>
